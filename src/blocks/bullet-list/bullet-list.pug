@@ -1,0 +1,6 @@
+mixin bullet-list(bulletList)
+    ul.bullet-list
+        each bullet in bulletList
+            li.bullet-list__bullet= bullet
+        else
+            li There are no values
