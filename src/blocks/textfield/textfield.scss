@@ -1,0 +1,29 @@
+@import "../../assets/scss/colors";
+
+.textfield {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  width: 305px;
+  border: 1px solid $dark-25;
+  border-radius: 4px;
+  padding-left: 14px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  user-select: none;
+  color: $dark-50;
+  outline: none;
+  &::placeholder{
+    color: $dark-25;
+  }
+
+  &:focus, &:hover{
+    border: 1px solid $dark-50;
+  }
+
+  &:focus::placeholder, &:hover::placeholder{
+    color: $dark-50;
+  }
+}
