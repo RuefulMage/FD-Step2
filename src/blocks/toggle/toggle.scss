@@ -1,0 +1,55 @@
+@import "../../assets/scss/colors.scss";
+
+.toggle{
+  display: flex;
+  align-items: center;
+  &__button{
+    flex-shrink: 0;
+    position: relative;
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid $dark-25;
+    outline: none;
+
+    &:hover{
+      &:not(checked){
+        border-color: $purple;
+      }
+    }
+
+    &:focus{
+      box-shadow: 0 0 2px $dark-50;
+    }
+
+    &:after{
+      content: '';
+      width: 12px;
+      height: 12px;
+      top: 3px;
+      left: 3px;
+      position: absolute;
+      background: $dark-25;
+      border-radius: 100%;
+      transition: left .3s;
+    }
+
+    &:checked{
+      border-color: $purple;
+
+      &:after{
+        background: $gradient;
+        left: 23px;
+      }
+    }
+  }
+
+  &__text{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: $dark-75;
+  }
+}
