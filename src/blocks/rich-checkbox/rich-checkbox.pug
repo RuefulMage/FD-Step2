@@ -1,0 +1,6 @@
+include ../checkbox/checkbox
+
+mixin rich-checkbox(primaryText, secondaryText)
+    .rich-rich-checkbox
+        +checkbox(primaryText, true)
+        span.rich-checkbox__secondary-text=secondaryText

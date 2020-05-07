@@ -1,0 +1,15 @@
+@import "../../assets/scss/colors.scss";
+
+.rich-checkbox{
+
+  &__secondary-text{
+    display: inline-block;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: $dark-50;
+    padding-left: 30px;
+  }
+}
