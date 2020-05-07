@@ -1,7 +1,9 @@
-mixin link-button(text, link, filled=false)
-    - let classes = ['link-button__content']
+mixin link-button(text, link, filled=false, isLarge=false)
+    - let content_classes = ['link-button__content']
+    - let wrapper_classes = ['link-button']
     if filled
-        - classes.push('link-button__content_filled')
-    .link-button
-        .link-button__gradient-border
-        a(class=classes)=text
+        - content_classes.push('link-button__content_filled')
+    if isLarge
+        - wrapper_classes.push('link-button_large')
+    div(class=wrapper_classes)
+        a(class=content_classes)=text
