@@ -1,0 +1,43 @@
+@import "../../assets/scss/colors.scss";
+
+.icon-text{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 58px;
+  &__icon {
+    left: 0px;
+    position: absolute;
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 48px;
+    height: 48px;
+    width: 48px;
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 41px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__title{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+    color: $dark-75;
+  }
+
+  &__description{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: $dark-75;
+  }
+}
