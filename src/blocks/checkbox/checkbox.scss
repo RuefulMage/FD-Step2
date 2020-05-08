@@ -4,7 +4,6 @@
   display: flex;
   align-items: center;
   &__button{
-    margin: 0;
     --opacity: 0;
     position: relative;
     width: 20px;
@@ -31,7 +30,7 @@
     }
 
     &:after{
-      display: inline-block;
+      display: block;
       content: '';
       position: absolute;
       top: 4px;
@@ -59,7 +58,6 @@
     line-height: 18px;
     color: $dark-50;
     vertical-align: center;
-    text-align: center;
 
     &_bold{
       font-family: Montserrat;
@@ -69,6 +67,5 @@
       line-height: 18px;
       color: $dark-75;
     }
-
   }
 }
