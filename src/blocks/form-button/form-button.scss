@@ -1,8 +1,13 @@
+@import "../../../assets/scss/colors.scss";
+
+//TODO задать шрифтам относительные размеры
+
 .form-button{
   position: relative;
-  width: 320px;
+  width: 100%;
+  padding: 0 44px 0 20px ;
   height: 44px;
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background: $gradient;
   border-radius: 22px;
   text-transform: uppercase;
   color: white;
@@ -10,8 +15,9 @@
   font-size: 12px;
   font-weight: bold;
   outline: none;
+  user-select: none;
   &:hover{
-    background:linear-gradient(180deg, rgba(#BC9CFF, 0.5) 0%, rgba(#8BA4F9, 0.5) 100%);
+    background:$gradient-semitransparent;
   }
   &__arrow{
     position: absolute;
