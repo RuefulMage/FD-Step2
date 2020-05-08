@@ -18,8 +18,12 @@
     height: 44px;
   }
 
-  &:hover{
+  &:hover, &_disabled{
     background:$gradient-semitransparent;
+  }
+  &_disabled{
+    cursor: auto;
+    pointer-events: none;
   }
 
   &__content{
@@ -42,6 +46,7 @@
       background: transparent;
       color: white;
     }
+
   }
 
 }
