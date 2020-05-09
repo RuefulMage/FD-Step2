@@ -1,4 +1,4 @@
-mixin toggle(value, name, text)
+mixin toggle(value, name, text, checked=false)
     label.toggle
-        input.toggle__button(type="checkbox", value=value, name=name)
+        input.toggle__button(type="checkbox", value=value, name=name, checked=checked)
         span.toggle__text=text
