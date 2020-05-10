@@ -3,15 +3,17 @@
 .comment-box{
   display: flex;
   flex-direction: column;
+
   &__user-container{
     display: flex;
   }
+
   &__user-avatar{
     box-sizing: border-box;
     width: 48px;
     height: 48px;
-    border: 2px solid #ffffff;
-    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.1);
+    border: 2px solid white;
+    box-shadow: 0 10px 20px $shadow;
     border-radius: 32px;
   }
 
@@ -31,10 +33,11 @@
   &__comment{
     display: flex;
     padding-top: 10px;
+    padding-left: 4px;
   }
 
   &__comment-text{
-    padding-left: 10px;
+    padding-left: 14px;
     font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
