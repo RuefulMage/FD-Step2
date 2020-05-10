@@ -6,7 +6,8 @@
   border: 1px solid $dark-25;
   border-radius: 4px;
   height: 44px;
-  width: 267px;
+  //width: 267px;
+  width: 100%;
 
   &:focus, &:hover{
     border: 1px solid $dark-50;
@@ -15,7 +16,8 @@
 
   &__textfield{
     border: none;
-    width: 223px;
+    //width: 223px;
+    width: 83%;
     user-select: none;
     color: $dark-75;
     outline: none;
@@ -24,10 +26,8 @@
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    line-height: 24px;
-    padding-left: 15px;
-    justify-content: center;
-    align-items: center;
+    //line-height: 18px;
+    padding-left: 14px;
     &::placeholder{
       letter-spacing: normal;
       color: $dark-25;
@@ -36,7 +36,8 @@
 
   &__button{
     display: flex;
-    width: 44px;
+    //width: 44px;
+    width: 17%;
     font-family: Material Icons;
     font-style: normal;
     font-weight: normal;
