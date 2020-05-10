@@ -2,12 +2,7 @@
 
 .icon-text{
   display: flex;
-  flex-direction: column;
-  position: relative;
-  padding-left: 58px;
   &__icon {
-    left: 0px;
-    position: absolute;
     background: $gradient;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -20,24 +15,22 @@
     line-height: 41px;
     display: flex;
     align-items: center;
-    text-align: center;
+  }
+
+  &__text{
+    padding-left: 10px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: $dark-75;
   }
 
   &__title{
-    font-family: Montserrat;
-    font-style: normal;
     font-weight: bold;
-    font-size: 14px;
-    line-height: 24px;
-    color: $dark-75;
   }
 
   &__description{
-    font-family: Montserrat;
-    font-style: normal;
     font-weight: normal;
-    font-size: 14px;
-    line-height: 24px;
-    color: $dark-75;
   }
 }
