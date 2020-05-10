@@ -2,8 +2,8 @@
 //    button(class="like-button like-button_colored" name=name)
 //        .like-button__icon favorite
 //        .like-button__amount=likeAmount
-mixin like-button(value, name, likeAmount, colored=false)
-    if colored
+mixin like-button(value, name, likeAmount, liked=false)
+    if liked
         button.like-button.like-button_colored(name=name)
             .like-button__content
                 .like-button__icon favorite
