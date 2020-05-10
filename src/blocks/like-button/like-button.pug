@@ -2,7 +2,14 @@
 //    button(class="like-button like-button_colored" name=name)
 //        .like-button__icon favorite
 //        .like-button__amount=likeAmount
-mixin like-button(value, name, likeAmount)
-    button(class="like-button" name=name)
-        .like-button__icon favorite_border
-        .like-button__amount=likeAmount
+mixin like-button(value, name, likeAmount, colored=false)
+    if colored
+        button.like-button.like-button_colored(name=name)
+            .like-button__content
+                .like-button__icon favorite
+                .like-button__amount=likeAmount
+    else
+        button.like-button(name=name)
+            .like-button__content
+                .like-button__icon favorite_border
+                .like-button__amount=likeAmount
