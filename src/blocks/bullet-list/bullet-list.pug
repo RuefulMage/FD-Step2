@@ -1,6 +1,8 @@
+include ../bullet/bullet
+
 mixin bullet-list(bulletList)
     ul.bullet-list
         each bullet in bulletList
-            li.bullet-list__bullet= bullet
+            +bullet(bullet.text, bullet.style, bullet.withPadding)
         else
             li There are no values

@@ -1,0 +1,50 @@
+@import "../../assets/scss/colors.scss";
+
+.bullet{
+  padding-left: 20px;
+  position: relative;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: $dark-75;
+
+
+  &:before{
+    display: inline-block;
+    position: absolute;
+    top: 7px;
+    border-radius: 100%;
+    left: 0px;
+    content: '';
+    width: 10px;
+    height: 10px;
+  }
+
+
+  &_style_default:before{
+    background-color: $dark-25;
+  }
+
+  &_style_great:before{
+    background: $great;
+  }
+
+  &_style_good:before{
+    background: $good;
+  }
+
+  &_style_satisfactorily:before{
+    background: $gradient;
+  }
+
+  &_style_bad:before{
+    background: $bad;
+  }
+
+
+  &_with-padding{
+    padding-bottom: 10px;
+  }
+}
