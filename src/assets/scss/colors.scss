@@ -1,6 +1,13 @@
+$dark-5: rgba(31, 32, 65, 0.05);
 $dark-25: rgba(31, 32, 65, 0.25);
 $dark-50: rgba(31, 32, 65, 0.5);
 $dark-75: rgba(31, 32, 65, 0.75);
+$dark-100: #1F2041;
 $purple: #BC9CFF;
+$green: #6FCF97;
 $gradient: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
 $gradient-semitransparent: linear-gradient(180deg, rgba($purple, 0.5) 0%, rgba(#8BA4F9, 0.5) 100%);
+$shadow: rgba(31, 32, 65, 0.1);
+$great: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+$good: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+$bad: linear-gradient(180deg, #919191 0%, #3D4975 100%);
