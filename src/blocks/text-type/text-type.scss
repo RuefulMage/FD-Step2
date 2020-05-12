@@ -1,0 +1,62 @@
+@import "../../assets/scss/colors.scss";
+
+.text-type{
+  display: flex;
+
+  &__name{
+    color: $dark-25;
+    font-family: Montserrat, OpenSans, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: right;
+    width: 9%;
+    flex-shrink: 0;
+
+    &_font_large{
+      font-size: 24px;
+      line-height: 29px;
+    }
+
+    &_font_medium{
+      font-size: 19px;
+      line-height: 23px;
+    }
+
+    &_font_small{
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+
+  &__text{
+    padding-left: 30px;
+    color: $dark-75;
+    font-family: Montserrat, OpenSans, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+
+    &_font_large{
+      font-size: 24px;
+      line-height: 30px;
+      color: $dark-100;
+      font-family: Quicksand;
+      font-weight: bold;
+    }
+
+    &_font_medium{
+      font-size: 19px;
+      line-height: 24px;
+      color: $dark-100;
+      font-family: Quicksand;
+      font-weight: bold;
+    }
+
+    &_font_small{
+      font-size: 12px;
+      line-height: 16px;
+      text-transform: uppercase;
+      color: $dark-100;
+      font-weight: bold;
+    }
+  }
+}
