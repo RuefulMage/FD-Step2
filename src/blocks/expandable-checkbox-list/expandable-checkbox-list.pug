@@ -1,0 +1,10 @@
+include ../checkbox/checkbox
+
+mixin expandable-checkbox-list(title, itemsList)
+    h2
+    ul.expandable-checkbox-list
+        each checkbox in itemsList
+            li.expandable-checkbox-list__checkbox
+                +checkbox(checkbox)
+        else
+            li There are no values

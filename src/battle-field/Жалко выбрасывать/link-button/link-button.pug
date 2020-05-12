@@ -1,0 +1,7 @@
+mixin link-button(text, link, bordered=false, filled=false)
+    - let classes = ['link-button']
+    if bordered
+        - classes.push('link-button_bordered')
+    if filled
+        - classes.push('link-button_filled')
+    a(class=classes)=text

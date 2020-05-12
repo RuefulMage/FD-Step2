@@ -11,6 +11,7 @@ ul, ol, li{
 //
 body{
   padding: 0;
+  margin: 0;
 }
 //
 //
@@ -28,6 +29,8 @@ li,
 figure,
 figcaption,
 blockquote,
+button,
+input,
 dl,
 dd {
   margin: 0;
@@ -79,6 +82,10 @@ button{
   /* отображаем курсор в виде руки при наведении; некоторые
     считают, что необходимо оставлять стрелочный вид для кнопок */
   cursor: pointer;
+}
+
+a{
+  text-decoration: none;
 }
 //
 //a {
