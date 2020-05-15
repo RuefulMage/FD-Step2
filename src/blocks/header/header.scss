@@ -1,0 +1,74 @@
+@import "../../assets/scss/colors.scss";
+
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 140px;
+  box-sizing: border-box;
+  height: 70px;
+
+  &__logo{
+    cursor: pointer;
+  }
+
+  &__navigation{
+    width: 100%;
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+  }
+
+  &__menu{
+    display: flex;
+  }
+
+  &__link {
+    font-size: 14px;
+    font-family: Montserrat, OpenSans, sans-serif;
+    margin-right: 20px;
+    color: $dark-50;
+
+    &_large-margin{
+      margin-right: 30px;
+    }
+
+    &_dropdowned{
+      display: inline-flex;
+      align-items: center;
+      margin-right: 20px;
+      &:after{
+        font-family: "Material Icons";
+        content: "expand_more";
+        font-size: 24px;
+        line-height: 18px;
+        width: 24px;
+      }
+
+    }
+    &_current{
+      color: $dark-75;
+      font-weight: bold;
+    }
+  }
+
+  &__buttons{
+    display: flex;
+  }
+
+  &__username{
+    display: flex;
+    align-items: center;
+    height: 30px;
+    font-family: Montserrat, OpenSans, sans-serif;
+    color: $dark-50;
+    font-size: 14px;
+    padding-left: 30px;
+    border-left: 1px solid rgba(31, 32, 65, 0.1);
+  }
+
+  &__signin-button{
+    margin-right: 20px;
+  }
+
+}
