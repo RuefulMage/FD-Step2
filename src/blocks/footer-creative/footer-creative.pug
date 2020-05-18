@@ -1,0 +1,12 @@
+include ../logo-with-text/logo-with-text
+include ../social-net-icon/social-net-icon
+
+mixin footer-creative(text, icons)
+    .footer-creative
+        .footer-creative__logo
+            +logo-with-text
+        .footer-creative__text=text
+        .footer-creative__socials
+            each icon in icons
+                .footer-creative__icon
+                    +social-net-icon(icon.icon, icon.link)
