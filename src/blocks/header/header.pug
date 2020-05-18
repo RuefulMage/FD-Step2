@@ -1,29 +1,15 @@
 include ../logo-with-text/logo-with-text
 include ../link-button/link-button
+include ../header-navigation/header-navigation
 
 //TODO реализовать контейнер вместо паддингов
+//TODO попробовать реализовать ссылки блоками
 mixin header(links, loginButtonText, registerButtonText,  largeMargin=false, authorized=false, username)
-    - let sizeClass = "";
-    if largeMargin
-        - sizeClass = "header__link_large-margin"
-
     header.header
         .header__logo
             +logo-with-text
         nav.header__navigation
-            ul.header__menu
-                each link in links
-                    li
-                    if link.dropdowned
-                        if link.current
-                            a.header__link.header__link_dropdowned.header__link_current(class = sizeClass href="#")=link.text
-                        else
-                            a.header__link.header__link_dropdowned(class = sizeClass href="#")=link.text
-                    else
-                        if link.current
-                            a.header__link.header__link_current(class = sizeClass href="#")=link.text
-                        else
-                           a.header__link(class = sizeClass href="#")=link.text
+            +header-navigation(links, largeMargin)
             if authorized
                 .header__username= username
             else

@@ -7,6 +7,7 @@
   padding: 0 140px;
   box-sizing: border-box;
   height: 70px;
+  width: 1440px;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
   &__logo{
@@ -22,35 +23,6 @@
 
   &__menu{
     display: flex;
-  }
-
-  &__link {
-    font-size: 14px;
-    font-family: Montserrat, OpenSans, sans-serif;
-    margin-right: 20px;
-    color: $dark-50;
-
-    &_large-margin{
-      margin-right: 30px;
-    }
-
-    &_dropdowned{
-      display: inline-flex;
-      align-items: center;
-      margin-right: 20px;
-      &:after{
-        font-family: "Material Icons";
-        content: "expand_more";
-        font-size: 24px;
-        line-height: 18px;
-        width: 24px;
-      }
-
-    }
-    &_current{
-      color: $dark-75;
-      font-weight: bold;
-    }
   }
 
   &__buttons{
