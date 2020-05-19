@@ -1,0 +1,47 @@
+@import "../../assets/scss/colors.scss";
+
+.expandable-checkbox-list{
+	&__button{
+		display: flex;
+		align-items: center;
+		margin-bottom: 3px;
+		outline: none;
+		user-select: none;
+	}
+
+	&__title{
+		font-family: Montserrat, OpenSans, sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		line-height: 15px;
+		text-transform: uppercase;
+		color: $dark-100;
+		margin-right: 30px;
+	}
+	&__arrow{
+		font-family: Material Icons;
+		font-size: 24px;
+		line-height: 24px;
+		height: 44px;
+		width: 44px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: $dark-50;
+
+		&_rotated{
+			transform: rotate(-180deg);
+		}
+	}
+	&__list{
+		display: none;
+	}
+	&__list-item{
+		margin-bottom: 10px;
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+}
