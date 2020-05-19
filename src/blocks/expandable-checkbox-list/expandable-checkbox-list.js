@@ -1,15 +1,16 @@
-let checkboxListButton = document.getElementsByClassName(
-    "expandable-checkbox-list__button");
+let checkboxListButton = document.getElementsByClassName("expandable-checkbox-list__button");
+let i;
 
-checkboxListButton[0].addEventListener("click", function () {
-  this.classList
-  let checkboxList = this.nextElementSibling;
-  let icon = this.lastChild;
-  if(checkboxList.style.display === "block"){
-    checkboxList.style.display = "none";
-    icon.classList.remove("expandable-checkbox-list__arrow_rotated");
-  } else{
-    checkboxList.style.display = "block";
-    icon.classList.add("expandable-checkbox-list__arrow_rotated");
-  }
-})
+for (i = 0; i < checkboxListButton.length; i++) {
+  checkboxListButton[i].addEventListener("click", function() {
+    let checkboxList = this.nextElementSibling;
+    let icon = this.lastChild;
+    if (checkboxList.style.display === "block") {
+      checkboxList.style.display = "none";
+      icon.classList.remove("expandable-checkbox-list__arrow_rotated");
+    } else {
+      checkboxList.style.display = "block";
+      icon.classList.add("expandable-checkbox-list__arrow_rotated");
+    }
+  });
+}
