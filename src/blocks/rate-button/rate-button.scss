@@ -1,0 +1,35 @@
+@import "../../assets/scss/colors.scss";
+
+.rate-button{
+  margin: 0;
+  padding: 0;
+  border: none;
+
+
+  &__star{
+    padding: 0;
+    outline: none;
+
+    &:after{
+      content: "star";
+      font-family: Material Icons;
+      font-size: 24px;
+      line-height: 20px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      background: $gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      outline: none;
+      user-select: none;
+      cursor: pointer;
+    }
+
+    &:checked ~ &{
+      &:after{
+        content: "star_border";
+      }
+    }
+  }
+}
