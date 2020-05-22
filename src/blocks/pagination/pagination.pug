@@ -1,0 +1,6 @@
+mixin pagination(currentPage, pageAmount, link)
+    - let n = 1;
+    .content_detail__pagination.pagination(current-page=currentPage)
+        while n <= pageAmount
+            a(page-number= n href=link + n class="pagination__item pagination__page")=n++
+        a(page-number= "+1" href="#!+1" class="pagination__item pagination__last") arrow_forward

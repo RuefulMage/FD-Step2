@@ -1,0 +1,99 @@
+@import "../../assets/scss/colors.scss";
+@import "../../assets/scss/sizes.scss";
+
+.pagination {
+  display: flex;
+
+  &__item {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+
+    &:last-child,
+    &:nth-child(2),
+    &:nth-last-child(2) {
+      display: flex;
+    }
+  }
+
+  &__page{
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $dark-50;
+    font-weight: bold;
+
+  }
+
+  &:not([current-page="1"]) &__item:nth-child(1) {
+    display: flex;
+  }
+
+  &__last{
+    font-family: 'Material Icons';
+    font-size: 24px;
+    line-height: 20px;
+    color: white;
+    height: 40px;
+    width: 40px;
+    background: $green;
+  }
+
+}
+
+@for $i from 1 through $max-page {
+  .pagination[current-page="#{$i}"] {
+    // 3 before
+    .pagination__item:nth-child(#{$i - 3}):not(:first-child) {
+      display: flex;
+      pointer-events: none;
+      color: transparent;
+      &:after {
+        content: '...';
+        font-family: Montserrat, OpenSans, sans-serif;
+        color: $dark-50;
+        font-size: 12px;
+      }
+    }
+    // 2 before
+    .pagination__item:nth-child(#{$i - 2}){
+      display: flex;
+    }
+    // before
+    .pagination__item:nth-child(#{$i - 1}){
+      display: flex;
+    }
+    // active
+    .pagination__item:nth-child(#{$i}) {
+      background:$gradient;
+      color: #fff;
+      display: flex;
+
+      +.pagination__item:last-child {
+        display: none;
+      }
+    }
+    // next
+    .pagination__item:nth-child(#{$i + 1}):not(:last-child) {
+      display: flex;
+    }
+    // 2 next
+    .pagination__item:nth-child(#{$i + 2}):not(:last-child) {
+      display: flex;
+    }
+    // 3 next
+    .pagination__item:nth-child(#{$i + 3}):not(:last-child):not(:nth-last-child(2)) {
+      display: flex;
+      pointer-events: none;
+      color: transparent;
+      &:after {
+        content: '...';
+        color: $dark-50;
+        font-size: 12px;
+      }
+    }
+  }
+}
