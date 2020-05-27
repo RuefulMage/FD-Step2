@@ -3,7 +3,7 @@ import 'air-datepicker';
 
 
 function createCalendar(node){
-    let calendarBlock = document.getElementsByClassName('calendar')[0];
+    // let calendarBlock = document.getElementsByClassName('calendar')[0];
     let dateDropdownInputs = [];
     for( let i = 0; i < node.children.length; i++){
         if (node.children[i].classList.contains('js-calendar')){
@@ -33,8 +33,11 @@ function createCalendar(node){
         dateDropdownInputs[1].addEventListener('click', showCalendar.bind(null, calendarData));
     }
     createCalendarButtonsBlock("очистить",
-        "подтвердить", calendarData, dateDropdownInputs);
+        "применить", calendarData, dateDropdownInputs);
 }
+
+let calendarBlock = document.getElementsByClassName('calendar')[0];
+createCalendar(calendarBlock);
 
 function showCalendar(calendarData){
     calendarData.show();
@@ -68,6 +71,15 @@ function createCalendarButtonsBlock(clearButtonName, appendButtonName,
     calendarDomElement.append(calendarButtonsBlock);
 }
 
+let mounthsNames = new Map([
+    [ 0, 'янв'],[ 1, 'фев'],
+    [ 2, 'мар'],[ 3, 'апр'],
+    [ 4, 'май'],[ 5, 'июн'],
+    [ 6, 'июл'],[ 7, 'авг'],
+    [ 8, 'сен'],[ 9, 'окт'],
+    [ 10, 'ноб'],[ 11, 'дек']
+])
+
 function addButtonsHandlers(clearButton, appendButton,
                             calendarData, dateDropdownInputs){
     clearButton.addEventListener('click', function () {
@@ -78,8 +90,12 @@ function addButtonsHandlers(clearButton, appendButton,
     appendButton.addEventListener('click', function () {
         calendarData.hide();
         if(dateDropdownInputs.length == 1){
-            dateDropdownInputs[0].value= calendarData.selectedDates[0].toLocaleDateString()
-                + " - " + calendarData.selectedDates[1].toLocaleDateString();
+            // dateDropdownInputs[0].value= calendarData.selectedDates[0].toLocaleDateString()
+            //     + " - " + calendarData.selectedDates[1].toLocaleDateString();
+            dateDropdownInputs[0].value = calendarData.selectedDates[0].getDate() + " "
+                + mounthsNames.get(calendarData.selectedDates[0].getMonth()) + " - "
+                + calendarData.selectedDates[1].getDate() + " "
+                + mounthsNames.get(calendarData.selectedDates[1].getMonth())
         } else {
             dateDropdownInputs[0].value= calendarData.selectedDates[0].toLocaleDateString();
             dateDropdownInputs[1].value= calendarData.selectedDates[1].toLocaleDateString();
