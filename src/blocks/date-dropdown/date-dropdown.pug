@@ -1,0 +1,15 @@
+mixin date-dropdown(twoInputs=false, static=false)
+    .date-dropdown
+        if static
+            .js-calendar
+        else if twoInputs
+            label.date-dropdown__label.date-dropdown_small
+                input.js-calendar.date-dropdown__input
+                .date-dropdown__arrow expand_more
+            label.date-dropdown__label.date-dropdown_small
+                input.js-calendar.date-dropdown__input
+                .date-dropdown__arrow expand_more
+        else
+            label.date-dropdown__label
+                input.js-calendar.date-dropdown__input
+                .date-dropdown__arrow expand_more
