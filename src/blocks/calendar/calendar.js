@@ -1,15 +1,8 @@
 import 'air-datepicker';
 
 
-
 function createCalendar(node){
-    // let calendarBlock = document.getElementsByClassName('calendar')[0];
-    let dateDropdownInputs = [];
-    for( let i = 0; i < node.children.length; i++){
-        if (node.children[i].classList.contains('js-calendar')){
-            dateDropdownInputs.push(node.children[i]);
-        }
-    }
+    let dateDropdownInputs = node.querySelectorAll('.js-calendar');
 
     let calendar = $(dateDropdownInputs[0]).datepicker({
         // minDate: new Date(),
@@ -36,7 +29,7 @@ function createCalendar(node){
         "применить", calendarData, dateDropdownInputs);
 }
 
-let calendarBlock = document.getElementsByClassName('calendar')[0];
+let calendarBlock = document.getElementsByClassName('date-dropdown')[0];
 createCalendar(calendarBlock);
 
 function showCalendar(calendarData){
