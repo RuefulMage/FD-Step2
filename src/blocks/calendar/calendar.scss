@@ -10,7 +10,6 @@
     }
 
   &__buttons-wrapper{
-    box-sizing: border-box;
     height: 55px;
     display: flex;
     align-items: center;
@@ -26,11 +25,13 @@
   &__clear-button{
     text-transform: inherit;
     color: $dark-50;
+    outline: none;
   }
 
   &__append-button{
     text-transform: inherit;
     color: $purple;
+    outline: none;
   }
 }
 
