@@ -1,2 +1,7 @@
-mixin textfield(type, placeholder, name)
-    input.textfield(type=type, name=name, placeholder=placeholder)
+//TODO объединить стили для инпутов в миксин
+
+mixin textfield(type, placeholder, name, masked=false)
+    if masked
+        input.textfield.js-masked(type=type, name=name, placeholder=placeholder)
+    else
+        input.textfield(type=type, name=name, placeholder=placeholder)
