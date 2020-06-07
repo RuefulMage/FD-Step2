@@ -1,2 +1,27 @@
-.dropdown
-    button
+mixin dropdown(placeholder, items, expanded=false, withButtons=false, generalForms)
+    - let dropdownClasses = ['dropdown'];
+    - let dropdownClass = 'js-dropdown';
+    - let rotatedClass = '';
+    if withButtons
+        - dropdownClass = dropdownClass + '-with-buttons';
+    if expanded
+        - dropdownClasses.push('dropdown_expanded')
+        - rotatedClass = 'dropdown__expand-button_rotated';
+    - dropdownClasses.push(dropdownClass)
+    div(class=dropdownClasses data-placeholder=placeholder data-forms=generalForms)
+        .dropdown__field
+            p.dropdown__text
+            button.dropdown__expand-button(class=rotatedClass) expand_more
+        .dropdown__menu
+            each item in items
+                .dropdown__menu-item.js-dropdown-menu-item(data-id=item.id data-min-amount=item.minAmount data-max-amount=item.maxAmount data-forms=item.forms)
+                    span.dropdown__menu-item-name=item.itemName
+                    .dropdown__menu-item-controls
+                        button.dropdown__descrease.js-dropdown-descrease -
+                        span.dropdown__amount.js-dropdown-amount=item.startAmount
+                        button.dropdown__increase.js-dropdown-increase +
+
+            if withButtons
+                .dropdown__buttons-wrapper
+                    button.dropdown__clear-button.js-dropdown-clear-button очистить
+                    button.dropdown__apply-button.js-append-button применить

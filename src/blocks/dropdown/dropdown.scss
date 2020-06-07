@@ -1,0 +1,160 @@
+@import "../../assets/scss/colors.scss";
+
+
+.dropdown{
+
+  position: relative;
+  margin-bottom: 170px;
+
+  &__field {
+    box-sizing: border-box;
+    height: 44px;
+    border: 1px solid $dark-25;
+    width: 100%;
+    border-radius: 2px 2px 0 0;
+    display: flex;
+  }
+
+  &_expanded &__field{
+    border-color: $dark-50;
+    border-bottom: none;
+  }
+
+  &__text{
+    font-family: Montserrat, OpenSans, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    color: $dark-75;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+  }
+
+  &__expand-button {
+    height: 100%;
+    width: 44px;
+    flex-shrink: 0;
+    font-family: Material Icons;
+    font-size: 24px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $dark-75;
+    outline: none;
+    cursor: pointer;
+    user-select: none;
+
+    &_rotated{
+      transform: rotate(-180deg);
+    }
+
+  }
+
+
+  &__menu{
+    background: inherit;
+    z-index: 99999;
+    display: none;
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid $dark-50;
+    border-radius: 0 0 2px 2px;
+    padding-left: 15px;
+    padding-right: 7px;
+    padding-top: 7px;
+  }
+
+  &_expanded &__menu{
+    display: block;
+  }
+
+
+  &__menu-item{
+    margin-bottom: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__menu-item-name{
+    font-family: Montserrat, OpenSans, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $dark-100;
+  }
+  &__menu-item-controls{
+    display: flex;
+    align-items: center;
+  }
+  &__amount, &__descrease, &__increase{
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__descrease, &__increase {
+    border-radius: 100%;
+    box-sizing: border-box;
+    border: 1px solid $dark-25;
+    font-family: Montserrat, OpenSans, sans-serif;
+    font-size: 18px;
+    line-height: 22px;
+    color: $dark-50;
+    outline: none;
+    user-select: none;
+
+    &_disabled{
+      opacity: 0.25;
+      cursor: auto;
+    }
+  }
+
+
+  &__amount{
+    font-family: Montserrat, OpenSans, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $dark-100;
+  }
+
+
+
+  &__buttons-wrapper{
+    display: flex;
+    padding: 13px 0;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__clear-button, &__apply-button{
+    font-family: Montserrat, OpenSans, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    outline: none;
+  }
+
+  &__clear-button{
+    color: $dark-50;
+
+
+    &_hidden{
+      visibility: hidden;
+    }
+
+  }
+  &__apply-button{
+    color: $purple;
+  }
+}
+
