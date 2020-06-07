@@ -4,14 +4,13 @@ include ../toggle/toggle
 include ../form-button/form-button
 include ../link-button/link-button
 
-mixin registration-card(title)
+mixin registration-card(mainTitle)
     .registration-card
         .registration-card__container
             form.registration-card__form
-                h1.registration-card__title=title
-                
+                h1.registration-card__title=mainTitle
                 .registration-card__name-field
-                    +textfield("text", "Имя", "name")
+                    +textfield("text", "&hellip;", "name")
                 .registration-card__sername-field
                     +textfield("text", "Фамилия", "sername")
                 .registration-card__gender-choice
