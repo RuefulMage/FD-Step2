@@ -2,9 +2,7 @@
 
 .textfield {
   box-sizing: border-box;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: normal;
+  font-family: Montserrat, OpenSans, sans-serif;
   font-size: 14px;
   line-height: 18px;
   width: 100%;
@@ -21,7 +19,7 @@
     color: $dark-25;
   }
 
-  &:focus, &:hover{
+  &:focus, &:hover, &_hovered{
     border: 1px solid $dark-50;
   }
 

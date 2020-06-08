@@ -1,7 +1,10 @@
 //TODO объединить стили для инпутов в миксин
 
-mixin textfield(type, placeholder, name, masked=false)
+mixin textfield(type, placeholder, name, masked=false, hovered=false)
+    - let textfieldClasses = ['textfield']
     if masked
-        input.textfield.js-masked(type=type, name=name, placeholder=placeholder)
-    else
-        input.textfield(type=type, name=name, placeholder=placeholder)
+        - textfieldClasses.push('js-masked')
+    if hovered
+        - textfieldClasses.push('textfield_hovered')
+
+    input(class=textfieldClasses type=type, name=name, placeholder=placeholder)
