@@ -1,4 +1,5 @@
 include ../rate-button/rate-button
+include ../apartment-info/apartment-info
 
 mixin apartment-description-card(images, number, price, currency, rateButtonName, starAmount, reviewsAmount, lux=false)
     .apartment-description-card
@@ -14,15 +15,7 @@ mixin apartment-description-card(images, number, price, currency, rateButtonName
                     .apartment-description-card__indicator.js-slider-indicators
         .apartment-description-card__info
             .apartment-description-card__main-info
-                .apartment-description-card__number-wrapper
-                    span.apartment-description-card__number-symbol №&nbsp;
-                    span.apartment-description-card__number=number
-                    if lux
-                        span.apartment-description-card__lux &nbsp;люкс
-                .apartment-description-card__price-wrapper
-                    - let priceWithCurrency = price + currency;
-                    span.apartment-description-card__price=priceWithCurrency
-                    span.apartment-description-card__measure &nbsp;в сутки
+                +apartment-info(number, price, currency, false, lux)
             .apartment-description-card__quality
                 .apartment-description-card__rating
                     +rate-button(rateButtonName, starAmount, true)

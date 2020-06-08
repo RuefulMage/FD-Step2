@@ -95,55 +95,10 @@
   }
 
   &__main-info{
-    display: flex;
-    justify-content: space-between;
     height: 50%;
     width: 100%;
-    align-items: center;
     border-bottom: 1px solid $dark-10;
     padding-bottom: 12px;
-  }
-  &__number-wrapper{
-    display: flex;
-    align-items: baseline;
-  }
-  &__number-symbol {
-    font-family: Quicksand, OpenSans, sans-serif;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 17px;
-    color: $dark-100;
-  }
-  &__number {
-    font-family: Quicksand, OpenSans, sans-serif;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 17px;
-    color: $dark-100;
-  }
-  &__lux {
-    font-family: Montserrat, OpenSans, sans-serif;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    color: $purple;
-  }
-
-  &__price-wrapper{
-    display: flex;
-    font-family: Montserrat, OpenSans, sans-serif;
-    font-size: 14px;
-    line-height: 18px;
-    color: $dark-50;
-  }
-
-  &__price {
-    font-weight: bold;
-  }
-
-  &__measure{
-    font-size: 12px;
   }
 
   &__quality{
@@ -160,7 +115,6 @@
     align-items: center;
     flex-shrink: 0;
     flex-grow: 0;
-    //height: 100%;
   }
 
   &__reviews{
