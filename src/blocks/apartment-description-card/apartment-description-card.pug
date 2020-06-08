@@ -1,0 +1,31 @@
+include ../rate-button/rate-button
+
+mixin apartment-description-card(images, number, price, currency, rateButtonName, starAmount, reviewsAmount, lux=false)
+    .apartment-description-card
+        .apartment-description-card__images-wrapper.js-slider
+            each item in images
+                .apartment-description-card__image-list-item.js-slider-item
+                    img.apartment-description-card__image(src='./assets/images/' + item.path alt='')
+            .apartment-description-card__slider-buttons
+                button.apartment-description-card__prev.js-slider-button-prev expand_more
+                button.apartment-description-card__next.js-slider-button-next expand_more
+            .apartment-description-card__indicator-list
+                each item in images
+                    .apartment-description-card__indicator.js-slider-indicators
+        .apartment-description-card__info
+            .apartment-description-card__main-info
+                .apartment-description-card__number-wrapper
+                    span.apartment-description-card__number-symbol №&nbsp;
+                    span.apartment-description-card__number=number
+                    if lux
+                        span.apartment-description-card__lux &nbsp;люкс
+                .apartment-description-card__price-wrapper
+                    - let priceWithCurrency = price + currency;
+                    span.apartment-description-card__price=priceWithCurrency
+                    span.apartment-description-card__measure &nbsp;в сутки
+            .apartment-description-card__quality
+                .apartment-description-card__rating
+                    +rate-button(rateButtonName, starAmount, true)
+                .apartment-description-card__reviews
+                    .apartment-description-card__review-amount=reviewsAmount
+                    .apartment-description-card__review &nbsp;Отзывов
