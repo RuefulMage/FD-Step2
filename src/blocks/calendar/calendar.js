@@ -29,8 +29,8 @@ function createCalendar(node){
         "применить", calendarData, dateDropdownInputs);
 }
 
-let calendarBlock = document.getElementsByClassName('date-dropdown')[0];
-createCalendar(calendarBlock);
+// let calendarBlock = document.getElementsByClassName('date-dropdown-with-plugin')[0];
+// createCalendar(calendarBlock);
 
 function showCalendar(calendarData){
     calendarData.show();
@@ -94,4 +94,10 @@ function addButtonsHandlers(clearButton, appendButton,
             dateDropdownInputs[1].value= calendarData.selectedDates[1].toLocaleDateString();
         }
     })
+}
+
+let dateDropdownsList = document.getElementsByClassName('js-date-dropdown');
+
+for(let i = 0; i < dateDropdownsList.length; i++){
+    createCalendar(dateDropdownsList[i]);
 }
