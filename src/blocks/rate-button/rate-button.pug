@@ -1,5 +1,5 @@
 mixin rate-button(name, starAmount, disabled=false)
-    fieldset.rate-button
+    .rate-button
         each item in [1,2,3,4,5]
             if item == starAmount
                 input.rate-button__star(type="radio" name=name value=item checked disabled=disabled)
