@@ -5,6 +5,7 @@
   border-radius: 4px;
 
   &__images-wrapper{
+    background: none;
     box-sizing: border-box;
     position: relative;
     height: 152px;
@@ -26,7 +27,7 @@
 
     &_showing{
       opacity: 1;
-      z-index: -1;
+      z-index: 0;
     }
   }
   &__image{
@@ -62,6 +63,7 @@
   }
 
   &__indicator-list{
+    isolation: isolate;
     display: flex;
     justify-content: flex-end;
     padding-right: 15px;
