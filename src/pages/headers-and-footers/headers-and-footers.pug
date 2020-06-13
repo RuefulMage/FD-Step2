@@ -1,0 +1,63 @@
+include ../../blocks/logo/logo
+include ../../blocks/header/header
+include ../../blocks/footer/footer
+include ../../blocks/copyright/copyright
+include ../../blocks/footer-creative/footer-creative
+
+
+
+doctype html
+html(lang='en')
+    head
+        title Headers & Footers
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1, user-scalable=no')
+        link(href="./assets/css/app.css")
+    body
+        .headers-and-footers__wrapper
+
+            .headers-and-footers__logo
+                +logo()
+            .headers-and-footers__container
+
+                .headers-and-footers__item
+                    +header([{link:'#', text:'Home', current: true, dropdowned: false},
+                            {link:'#', text:'About Us', current: false, dropdowned: false},
+                            {link:'#', text:'Services', current: false, dropdowned: true},
+                            {link:'#', text:'Careers', current: false, dropdowned: false},
+                            {link:'#', text:'News', current: false, dropdowned: false},
+                            {link:'#', text:'Documentation', current: false, dropdowned: false}],
+                            'login', 'register',  true)
+
+
+                .headers-and-footers__item
+                    +header([{link: '#', text: 'Home', current: true, dropdowned: false},
+                            {link: '#', text: 'About Us', current: false, dropdowned: false},
+                            {link: '#', text: 'Services', current: false, dropdowned: true},
+                            {link: '#', text: 'Careers', current: false, dropdowned: false},
+                            {link: '#', text: 'News', current: false, dropdowned: false},
+                            {link: '#', text: 'Documentation', current: false, dropdowned: false}],
+                            'login', 'register',  true, true, 'Cosmin Negoita')
+
+
+                .headers-and-footers__item
+                    +footer('Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.', [
+                        {title: 'Navigation', links:[{link: '#', text:'About Us'}, {link: '#', text:'News'}, {link: '#', text:'Support'}, {link: '#', text:'Products'}]},
+                        {title: 'About us', links:[{link: '#', text:'Who we are'}, {link: '#', text:'Our team'}, {link: '#', text:'Careers'}, {link: '#', text:'Investors'}]},
+                        {title: 'Support', links:[{link: '#', text:'Documentation'}, {link: '#', text:'Community'}, {link: '#', text:'Get in Touch'}]},
+                    ], 'Subscribe to our newsletter', 'Receive our latest news and promotions in your inbox!')
+
+                    +copyright([{icon:'', link:'#'},
+                        {icon:'', link:'#'},
+                        {icon:'', link:'#'}])
+
+                .headers-and-footers__item
+                    +footer-creative('Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.', [{icon: '', link: '#'},
+                        {icon: '', link: '#'},
+                        {icon: '', link: '#'}])
+
+
+
+
+
+                        
