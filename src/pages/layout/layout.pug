@@ -1,0 +1,48 @@
+include ../../blocks/header/header.pug
+include ../../blocks/footer/footer.pug
+
+//TODO вынести стили для background-image в отдельный миксин
+doctype html
+html(lang='en')
+    head
+        title Main
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1, user-scalable=no')
+        link(href="./assets/css/app.css")
+    body
+        block header
+            +header([{link: '#', text: 'О нас', current: false, dropdowned: false},
+                {link: '#', text: 'Услуги', current: false, dropdowned: true},
+                {link: '#', text: 'Ввкансии', current: false, dropdowned: false},
+                {link: '#', text: 'Новости', current: false, dropdowned: false},
+                {link: '#', text: 'Соглашения', current: false, dropdowned: true}],
+                'войти', 'зарегистрироваться',  false)
+
+
+        block content
+
+        block footer
+            +footer('Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»', [
+                {title: 'Навигация',
+                    links: [{link: '#', text: 'О нас'}, {link: '#', text: 'Новости'}, {
+                        link: '#',
+                        text: 'Служба поддержки'
+                    }, {link: '#', text: 'Услуги'}]
+                },
+                {title: 'О нас',
+                    links: [{link: '#', text: 'О сервисе'}, {link: '#', text: 'Наша команда'}, {
+                        link: '#',
+                        text: 'Вакансии'
+                    }, {link: '#', text: 'Инвесторы'}]
+                },
+                {title: 'Служба поддержки',
+                    links: [{link: '#', text: 'Соглашения'}, {link: '#', text: 'Сообщества'}, {
+                        link: '#',
+                        text: 'Связь с нами'
+                    }]
+                },
+            ], 'Подписка', 'Получайте специальные предложения и новости сервиса')
+
+            +copyright([{icon: '', link: '#'},
+                {icon: '', link: '#'},
+                {icon: '', link: '#'}])
