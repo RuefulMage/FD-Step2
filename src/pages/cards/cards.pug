@@ -1,0 +1,58 @@
+include ../../blocks/logo/logo
+include ../../blocks/find-apartment-card/find-apartment-card
+include ../../blocks/apartment-booking-card/apartment-booking-card
+include ../../blocks/calendar/calendar
+include ../../blocks/registration-card/registration-card
+include ../../blocks/signin-card/signin-card
+include ../../blocks/apartment-description-card/apartment-description-card
+
+doctype html
+html(lang='en')
+    head
+        title Cards
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1, user-scalable=no')
+        link(href="./assets/css/app.css")
+    body
+        .cards__wrapper
+
+            .cards__logo
+                +logo()
+
+            .cards__container
+
+                .cards__column.cards__col-1
+
+                    .cards__item
+                        +find-apartment-card('Найдём номера под ваши пожелания', ['прибытие','выезд'], 'гости',
+                            'подобрать номер')
+
+                    .cards__item
+                        +registration-card('Регистрация аккаунта')
+
+
+                .cards__column.cards__col-2
+
+
+                    .cards__item
+                        +apartment-booking-card('888', '9 990', '₽', true, ['прибытие','выезд'], 'гости',
+                            '9 990₽ х 4 суток', '39 960₽', 'Сбор за услуги: скидка 2 179₽', '0₽',
+                            'Сбор за дополнительные услуги',  '300₽', '38 081₽', ['Sum was computed by calculator',
+                            'This is for the smiles, that was given to you'], 'забронировать')
+
+                    .cards__item
+                        +signin-card()
+
+
+                .cards__column.cards__col-3
+
+
+                    .cards__item
+                        +calendar()
+
+
+                    .cards__item.cards__item_width-small
+                        +apartment-description-card([{path: 'apartment-lux.png'},{path: 'apartment-lux.png'},{path: 'apartment-lux.png'}, {path: 'apartment-lux.png'}], '888', '9 990', '₽', 'card-rate-lux', '5', '145', true)
+
+                    .cards__item.cards__item_width-small
+                        +apartment-description-card([{path: 'apartment.png'},{path: 'apartment.png'},{path: 'apartment.png'}, {path: 'apartment.png'}], '888', '9 990', '₽', 'card-rate-lux', '5', '145')
