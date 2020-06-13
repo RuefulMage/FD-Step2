@@ -1,0 +1,156 @@
+extends ../layout/layout
+
+block content
+    include ../../blocks/date-dropdown/date-dropdown
+    include ../../blocks/dropdown/dropdown
+    include ../../blocks/range-slider/range-slider
+    include ../../blocks/checkbox/checkbox
+    include ../../blocks/rich-checkbox/rich-checkbox
+    include ../../blocks/expandable-checkbox-list/expandable-checkbox-list
+    include ../../blocks/apartment-description-card/apartment-description-card
+    include ../../blocks/pagination/pagination
+
+
+    .search
+        .search__container
+            .search__filter-column
+
+                .search__item
+                    .search__item-label
+                        h3.search__item-header Даты пребывания в отеле
+                    +date-dropdown()
+
+                .search__item.search__item_margin-large
+                    .search__item-label
+                        h3.search__item-header Гости
+                    +dropdown('Сколько гостей', [
+                        {
+                            id: 'adults',
+                            minAmount: '0',
+                            maxAmount: '100',
+                            forms: 'взрослый,взрослых,взрослых',
+                            itemName: 'взрослые',
+                            startAmount: '3'
+                        },
+                        {
+                            id: 'children',
+                            minAmount: '0',
+                            maxAmount: '100',
+                            forms: 'ребенок,ребенка,ребят',
+                            itemName: 'дети',
+                            startAmount: '0'
+                        },
+                        {
+                            id: 'baby',
+                            minAmount: '0',
+                            maxAmount: '100',
+                            forms: 'младенец,младенца,младенцев',
+                            itemName: 'младенцы',
+                            startAmount: '0'
+                        }
+                    ], false, true, 'гость,гостя,гостей')
+
+                .search__item.search__item_margin-large
+                    .search__subitem
+                        +range-slider('диапазон цены')
+                    .search__subitem
+                        p.search__text Стоимость за сутки пребывания в номере
+
+
+                .search__item.search__item_width-small.search__item_margin-large
+                    .search__item-label.search__item-label_margin-large
+                        h3.search__item-header Checkbox Buttons
+                    .search__subitem
+                        +checkbox('Можно курить')
+                    .search__subitem
+                        +checkbox('Можно с питомцами', false, true)
+                    .search__subitem
+                        +checkbox('Можно пригласить гостей (до 10 человек)', false, true)
+
+
+
+                .search__item.search__item_margin-large
+                    .search__item-label.search__item-label_margin-large
+                        h3.search__item-header Доступность
+                    .search__subitem
+                        +rich-checkbox('Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')
+                    .search__subitem
+                        +rich-checkbox('Помощник для инвалидов', 'На 1 этаже вас встретит специалист и проводит до номера.')
+
+
+                .search__item
+                    .search__item-label
+                        h3.search__item-header удобства номера
+                    +dropdown('Сколько гостей', [
+                        {
+                            id: 'bedrooms',
+                            minAmount: '0',
+                            maxAmount: '100',
+                            forms: 'спальня,спальни,спален',
+                            itemName: 'спальни',
+                            startAmount: '2'
+                        },
+                        {
+                            id: 'beds',
+                            minAmount: '0',
+                            maxAmount: '100',
+                            forms: 'кровать,кровати,кроватей',
+                            itemName: 'кровати',
+                            startAmount: '2'
+                        },
+                        {
+                            id: 'bathrooms',
+                            minAmount: '0',
+                            maxAmount: '100',
+                            forms: 'ванная комната,ванные комнаты,ванных комнат',
+                            itemName: 'ванные комнаты',
+                            startAmount: '0'
+                        }
+                    ])
+
+                .search__item
+                    +expandable-checkbox-list('дополнительные удобства', [
+                        {text: 'Завтрак', checked: false},
+                        {text: 'Письменный стол', checked: true},
+                        {text: 'Стул для кормления', checked: true},
+                        {text: 'Кроватка', checked: true},
+                        {text: 'Телевизор', checked: false},
+                        {text: 'Шампунь', checked: false}
+                    ])
+
+
+
+
+            .search__result
+
+                .search__results-header Номера, которые мы для вас подобрали
+
+                .search__results-list
+
+                    .search__result-item
+                        +apartment-description-card([{path: 'apartment1.png'}, {path: 'apartment.png'}, {path: 'apartment2.png'}, {path: 'apartment3.png'}], '888', '9 990', '₽', 'card-rate-1', '5', '145', true)
+                    .search__result-item
+                        +apartment-description-card([{path: 'apartment.png'}, {path: 'apartment1.png'}, {path: 'apartment2.png'}, {path: 'apartment3.png'}], '840', '9 900', '₽', 'card-rate-2', '4', '65', false)
+                    .search__result-item
+                        +apartment-description-card([{path: 'apartment-card-3.png'}, {path: 'apartment1.png'}, {path: 'apartment2.png'}, {path: 'apartment3.png'}], '980', '8 500', '₽', 'card-rate-3', '3', '35', true)
+                    .search__result-item
+                        +apartment-description-card([{path: 'apartment-card-4.png'}, {path: 'apartment-card-3.png'}, {path: 'apartment2.png'}, {path: 'apartment3.png'}], '856', '7 300', '₽', 'card-rate-4', '5', '19', false)
+                    .search__result-item
+                        +apartment-description-card([{path: 'apartment-card-5.png'}, {path: 'apartment-card-4.png'}, {path: 'apartment-card-3.png'}, {path: 'apartment3.png'}], '740', '6 000', '₽', 'card-rate-5', '4', '44', false)
+                    .search__result-item
+                        +apartment-description-card([{path: 'apartment-card-6.png'}, {path: 'apartment-card-5.png'}, {path: 'apartment-card-4.png'}, {path: 'apartment-card-3.png'}], '982', '5 800', '₽', 'card-rate-6', '3', '56', false)
+                    .search__result-item
+                        +apartment-description-card([{path: 'apartment-card-7.png'}, {path: 'apartment-card-6.png'}, {path: 'apartment-card-5.png'}, {path: 'apartment-card-4.png'}], '678', '5 500', '₽', 'card-rate-7', '5', '45', false)
+                    .search__result-item
+                        +apartment-description-card([{path: 'apartment-card-8.png'}, {path: 'apartment-card-7.png'}, {path: 'apartment-card-6.png'}, {path: 'apartment-card-5.png'}], '450', '5 300', '₽', 'card-rate-8', '4', '39', false)
+                    .search__result-item
+                        +apartment-description-card([{path: 'apartment-card-9.png'}, {path: 'apartment-card-8.png'}, {path: 'apartment-card-7.png'}, {path: 'apartment-card-6.png'}], '350', '5 000', '₽', 'card-rate-9', '3', '77', false)
+                    .search__result-item
+                        +apartment-description-card([{path: 'apartment-card-10.png'}, {path: 'apartment-card-9.png'}, {path: 'apartment-card-8.png'}, {path: 'apartment-card-7.png'}], '666', '5 000', '₽', 'card-rate-10', '5', '25', false)
+                    .search__result-item
+                        +apartment-description-card([{path: 'apartment-card-11.png'}, {path: 'apartment-card-10.png'}, {path: 'apartment-card-9.png'}, {path: 'apartment-card-8.png'}], '444', '5 000', '₽', 'card-rate-11', '3', '15', false)
+                    .search__result-item
+                        +apartment-description-card([{path: 'apartment-card-12.png'}, {path: 'apartment-card-11.png'}, {path: 'apartment-card-10.png'}, {path: 'apartment-card-9.png'}], '352', '5 000', '₽', 'card-rate-12', '3', '55', false)
+                .search__pagination
+                    +pagination('1', '15', '#', '1 – 12 из 100+ вариантов аренды')
+
