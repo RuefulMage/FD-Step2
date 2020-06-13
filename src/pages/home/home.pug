@@ -1,0 +1,10 @@
+extends ../layout/layout
+
+block content
+    include ../../blocks/find-apartment-card/find-apartment-card
+    .home
+        .home__container
+            .home__card
+                +find-apartment-card('Найдём номера под ваши пожелания', ['прибытие', 'выезд'], 'гости',
+                    'подобрать номер')
+            p.home__text Лучшие номера для вашей работы, отдыха и просто вдохновения
