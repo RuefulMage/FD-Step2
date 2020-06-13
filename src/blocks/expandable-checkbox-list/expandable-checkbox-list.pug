@@ -1,11 +1,21 @@
 include ../checkbox/checkbox
 
-mixin expandable-checkbox-list(title, itemsList) 
+mixin expandable-checkbox-list(title, itemsList, expanded=false)
 	.expandable-checkbox-list
 		button.expandable-checkbox-list__button
 			.expandable-checkbox-list__title=title
-			.expandable-checkbox-list__arrow expand_more
-		ul.expandable-checkbox-list__list
-			each item in itemsList
-				li.expandable-checkbox-list__list-item
-					+checkbox(item.text)
+			if expanded
+				.expandable-checkbox-list__arrow.expandable-checkbox-list__arrow_rotated expand_more
+			else
+				.expandable-checkbox-list__arrow expand_more
+		if expanded
+			ul.expandable-checkbox-list__list.expandable-checkbox-list__list_expanded
+				each item in itemsList
+					li.expandable-checkbox-list__list-item
+						+checkbox(item.text, false, item.checked)
+
+		else
+			ul.expandable-checkbox-list__list
+				each item in itemsList
+					li.expandable-checkbox-list__list-item
+						+checkbox(item.text, false, item.checked)

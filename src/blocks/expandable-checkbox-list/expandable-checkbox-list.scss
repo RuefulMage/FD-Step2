@@ -7,6 +7,9 @@
 		margin-bottom: 3px;
 		outline: none;
 		user-select: none;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
 	}
 
 	&__title{
@@ -17,7 +20,7 @@
 		line-height: 15px;
 		text-transform: uppercase;
 		color: $dark-100;
-		margin-right: 30px;
+		//margin-right: 30px;
 	}
 	&__arrow{
 		font-family: Material Icons;
@@ -36,6 +39,10 @@
 	}
 	&__list{
 		display: none;
+
+		&_expanded{
+			display: block;
+		}
 	}
 	&__list-item{
 		margin-bottom: 10px;
