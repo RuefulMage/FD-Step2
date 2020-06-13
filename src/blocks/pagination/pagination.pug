@@ -1,6 +1,10 @@
-mixin pagination(currentPage, pageAmount, link)
+mixin pagination(currentPage, pageAmount, link, description)
+
+    //TODO вынести описание из блока или сделтаь адекватное выравнивание
     - let n = 1;
-    .content_detail__pagination.pagination(current-page=currentPage)
-        while n <= pageAmount
-            a(page-number= n href=link + n class="pagination__item pagination__page")=n++
-        a(page-number= "+1" href="#!+1" class="pagination__item pagination__last") arrow_forward
+    .pagination(current-page=currentPage)
+        .pagination__pages
+            while n <= pageAmount
+                a(page-number= n href=link + n class="pagination__item pagination__page")=n++
+            a(page-number= "+1" href="#!+1" class="pagination__item pagination__last") arrow_forward
+        .pagination__description=description

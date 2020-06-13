@@ -2,7 +2,17 @@
 @import "../../assets/scss/sizes.scss";
 
 .pagination {
-  display: flex;
+  &__pages{
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  &__description{
+    font-family: Montserrat, OpenSans, sans-serif;
+    font-size: 14px;
+    color: $dark-75;
+    padding-left: 6px;
+  }
 
   &__item {
     height: 40px;
@@ -21,10 +31,11 @@
   }
 
   &__page{
+    font-family: Montserrat, OpenSans, sans-serif;
+    font-weight: bold;
     font-size: 12px;
     text-transform: uppercase;
     color: $dark-50;
-    font-weight: bold;
 
   }
 
