@@ -16,8 +16,7 @@
 
   &__textfield{
     border: none;
-    //width: 223px;
-    width: 83%;
+    width: 100%;
     user-select: none;
     color: $dark-75;
     outline: none;
@@ -37,7 +36,8 @@
   &__button{
     display: flex;
     //width: 44px;
-    width: 17%;
+    height: 100%;
+    width: 44px;
     font-family: Material Icons;
     font-style: normal;
     font-weight: normal;
@@ -45,6 +45,7 @@
     line-height: 24px;
     background: $gradient;
     justify-content: center;
+    align-items: center;
     border-radius: inherit;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
