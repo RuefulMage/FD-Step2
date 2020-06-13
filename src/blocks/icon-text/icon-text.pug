@@ -1,5 +1,8 @@
-mixin icon-text(icon, title, description)
-    .icon-text
+mixin icon-text(icon, title, description, bordered=false)
+    - let iconTextClasses = ['icon-text']
+    if bordered
+        - iconTextClasses.push('icon-text_bordered')
+    div(class=iconTextClasses)
         .icon-text__icon=icon
         .icon-text__text
             .icon-text__title=title
