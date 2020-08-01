@@ -1,7 +1,0 @@
-mixin logo(colored=false)
-    - let classes = ['logo']
-    - let image = "logo-gray.svg"
-    if colored
-        - classes.push('logo_colored')
-        - image = "logo-colored.svg"
-    img(class=classes src="../../assets/images/" + image)

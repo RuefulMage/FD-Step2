@@ -1,6 +1,0 @@
-mixin bullet(text, style, withPadding=false)
-    - let classes = ['bullet']
-    - classes.push("bullet_style_" + style)
-    if withPadding
-        - classes.push("bullet_with-padding")
-    li(class=classes)=text

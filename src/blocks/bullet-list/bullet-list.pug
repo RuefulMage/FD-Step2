@@ -1,8 +1,0 @@
-include ../bullet/bullet
-
-mixin bullet-list(bulletList)
-    ul.bullet-list
-        each bullet in bulletList
-            +bullet(bullet.text, bullet.style, bullet.withPadding)
-        else
-            li There are no values
