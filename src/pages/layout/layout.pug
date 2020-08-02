@@ -5,9 +5,11 @@ include ../../blocks/footer/footer.pug
 doctype html
 html(lang='en')
     head
-        title Main
         meta(charset='utf-8')
-        meta(name='viewport' content='width=device-width, initial-scale=1, user-scalable=no')
+        meta(name="viewport" content="width=device-width, initial-scale=1, user-scalable=no")
+
+        block page-meta
+
         link(href="./assets/css/app.css")
     body
         block header
