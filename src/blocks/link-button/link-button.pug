@@ -1,4 +1,4 @@
-mixin link-button(text, link, filled=false, large=false, disabled = false)
+mixin link-button({text, link, filled=false, large=false, disabled = false})
     - let content_classes = ['link-button__content']
     - let wrapper_classes = ['link-button']
     if filled
@@ -6,6 +6,6 @@ mixin link-button(text, link, filled=false, large=false, disabled = false)
     if disabled
         - wrapper_classes.push('link-button_disabled')
     if large
-        - wrapper_classes.push('link-button_large')
+        - content_classes.push('link-button__content_large')
     div(class=wrapper_classes)
         a(class=content_classes)=text
