@@ -4,6 +4,7 @@
   display: flex;
   align-items: flex-start;
   user-select: none;
+
   &__button{
     flex-shrink: 0;
     position: relative;
@@ -47,9 +48,7 @@
 
   &__text{
     padding-left: 10px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
+    font-family: Montserrat, OpenSans, sans-serif;
     font-size: 14px;
     line-height: 18px;
     color: $dark-75;
