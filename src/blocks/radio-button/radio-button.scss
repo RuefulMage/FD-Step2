@@ -3,12 +3,13 @@
 .radio-button{
   display: flex;
   align-items: flex-start;
+
   &__button{
     --opacity: 0;
     flex-shrink: 0;
-    position: relative;
     width: 20px;
     height: 20px;
+    position: relative;
     border-radius: 100%;
     border: 1px solid $dark-25;
     outline: none;
@@ -24,7 +25,6 @@
     }
 
     &:after{
-      align-self: center;
       opacity: var(--opacity, 0);
       content: '';
       width: 12px;
@@ -39,21 +39,18 @@
     &:checked{
       --opacity: 1;
       border-color: $purple;
-      color: $dark-75;
     }
 
 
   }
 
   &__text{
-    //vertical-align: text-top;
     padding-left: 10px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
+    font-family: Montserrat, OpenSans, sans-serif;
     font-size: 14px;
     line-height: 18px;
     color: $dark-50;
+    user-select: none;
   }
 
   &__button:checked + &__text{
