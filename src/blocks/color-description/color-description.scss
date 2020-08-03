@@ -2,13 +2,12 @@
 
 .color-description {
   display: flex;
-  //height: 70px;
-  //width: 270px;
   align-items: center;
 
   &__color {
-    width: 70px;
-    height: 70px;
+    max-width: 70px;
+    width: 100%;
+    min-height: 70px;
     border-radius: 6px;
 
     &_dark-shade-100{
@@ -49,17 +48,12 @@
   }
 
   &__name{
-    font-family: Quicksand;
-    font-weight: bold;
-    font-size: 19px;
-    letter-spacing: normal;
+    margin-bottom: 15px;
   }
 
   &__code{
-
-    font-family: Quicksand;
-    //font-weight: bold;
+    font-family: Quicksand, OpenSans, sans-serif;
     font-size: 19px;
-    letter-spacing: normal;
   }
+
 }
