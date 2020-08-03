@@ -1,19 +1,14 @@
 @import "../../assets/scss/colors.scss";
 
 .rate-button{
-  margin: 0;
-  padding: 0;
-  border: none;
   display: flex;
 
   &__star{
-    margin: 0;
-    padding: 0;
     outline: none;
 
     &:after{
       content: "star";
-      font-family: Material Icons;
+      font-family: "Material Icons";
       font-size: 24px;
       line-height: 20px;
       display: flex;

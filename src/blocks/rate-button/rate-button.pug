@@ -1,5 +1,5 @@
-mixin rate-button(name, starAmount, disabled=false)
-    .rate-button
+mixin rate-button(name, starAmount, link, disabled=false)
+    form.rate-button(method="" action=link)
         each item in [1,2,3,4,5]
             if item == starAmount
                 input.rate-button__star(type="radio" name=name value=item checked disabled=disabled)
