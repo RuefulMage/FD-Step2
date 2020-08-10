@@ -20,12 +20,13 @@
   &:hover{
     background:$gradient-semitransparent;
   }
+
   &__arrow{
     position: absolute;
     font-family: 'Material Icons';
     text-transform: none;
     font-size: 24px;
-    line-height: 24px;
+    font-weight: normal;
     top: 10px;
     right: 10px;
   }
