@@ -2,9 +2,9 @@ mixin pagination(currentPage, pageAmount, link, description)
 
     //TODO вынести описание из блока или сделтаь адекватное выравнивание
     - let n = 1;
-    .pagination(current-page=currentPage)
+    .pagination.js-pagination(data-current-page=currentPage)
         .pagination__pages
             while n <= pageAmount
-                a(page-number= n href=link + n class="pagination__item pagination__page")=n++
-            a(page-number= "+1" href="#!+1" class="pagination__item pagination__last") arrow_forward
+                a(data-page-number= n href=link + n class="pagination__item js-pagination__item pagination__page")=n++
+            a(data-page-number= "+1" href=link + "next" class="pagination__item js-pagination__item pagination__last") arrow_forward
         .pagination__description=description

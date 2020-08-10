@@ -8,19 +8,17 @@
   }
 
   &__description{
-    font-family: Montserrat, OpenSans, sans-serif;
-    font-size: 14px;
     color: $dark-75;
-    padding-left: 6px;
+    text-align: center;
   }
 
   &__item {
-    height: 40px;
-    width: 40px;
-    border-radius: 100%;
     display: none;
     align-items: center;
     justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
 
 
     &:last-child,
@@ -31,7 +29,6 @@
   }
 
   &__page{
-    font-family: Montserrat, OpenSans, sans-serif;
     font-weight: bold;
     font-size: 12px;
     text-transform: uppercase;
@@ -39,24 +36,21 @@
 
   }
 
-  &:not([current-page="1"]) &__item:nth-child(1) {
+  &:not([data-current-page="1"]) &__item:nth-child(1) {
     display: flex;
   }
 
   &__last{
     font-family: 'Material Icons';
     font-size: 24px;
-    line-height: 20px;
     color: white;
-    height: 40px;
-    width: 40px;
     background: $green;
   }
 
 }
 
 @for $i from 1 through $max-page {
-  .pagination[current-page="#{$i}"] {
+  .pagination[data-current-page="#{$i}"] {
     // 3 before
     .pagination__item:nth-child(#{$i - 3}):not(:first-child) {
       display: flex;
@@ -64,9 +58,7 @@
       color: transparent;
       &:after {
         content: '...';
-        font-family: Montserrat, OpenSans, sans-serif;
         color: $dark-50;
-        font-size: 12px;
       }
     }
     // 2 before
