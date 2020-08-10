@@ -1,4 +1,4 @@
-let checkboxListButton = document.getElementsByClassName("expandable-checkbox-list__button");
+let checkboxListButton = document.getElementsByClassName("js-expandable-checkbox-list__button");
 let i;
 
 for (i = 0; i < checkboxListButton.length; i++) {

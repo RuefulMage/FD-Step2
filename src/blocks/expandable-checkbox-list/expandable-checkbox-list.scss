@@ -4,33 +4,24 @@
 	&__button{
 		display: flex;
 		align-items: center;
-		margin-bottom: 3px;
+		justify-content: space-between;
+		width: 100%;
+		margin-bottom: 5px;
+		padding: 8px 0;
 		outline: none;
 		user-select: none;
-		width: 100%;
-		display: flex;
-		justify-content: space-between;
 	}
 
 	&__title{
-		font-family: Montserrat, OpenSans, sans-serif;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 12px;
-		line-height: 15px;
 		text-transform: uppercase;
-		color: $dark-100;
-		//margin-right: 30px;
 	}
 	&__arrow{
-		font-family: Material Icons;
-		font-size: 24px;
-		line-height: 24px;
-		height: 44px;
-		width: 44px;
 		display: flex;
-		align-items: center;
 		justify-content: center;
+		width: 100%;
+		font-family: 'Material Icons';
+		font-size: 24px;
+		max-width: 44px;
 		color: $dark-50;
 
 		&_rotated{

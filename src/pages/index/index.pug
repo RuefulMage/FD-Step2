@@ -1,4 +1,4 @@
-include ../../blocks/pagination/pagination
+include ../../blocks/expandable-checkbox-list/expandable-checkbox-list
 
 doctype html
 html(lang='en')
@@ -11,7 +11,10 @@ html(lang='en')
         link(href="./assets/css/app.css")
     body
         .main__container
-            +pagination(5, 20, "link", "description")
+            +expandable-checkbox-list("expandable checkbox list", [{text: "Завтрак", checked: false}, {
+                text: "Письменный стол",
+                checked: true
+            }, {text: "Стул для кормления", checked: true}], true)
             //a(href='./pages/forms-elements/forms-elements.html') forms
             //a(href='./pages/colors-and-fonts/colors-and-fonts.html') colors and fonts
             //a(href='./pages/cards/cards.html') cards
