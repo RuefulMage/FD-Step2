@@ -1,16 +1,18 @@
-mixin dropdown(placeholder, items, expanded=false, withButtons=false, generalForms)
+mixin dropdown({placeholder, items, expanded=false, withButtons=false, generalForms})
     - let dropdownClasses = ['dropdown'];
-    - let dropdownClass = 'js-dropdown';
+    - let dropdownJSClass = 'js-dropdown';
     - let rotatedClass = '';
     if withButtons
-        - dropdownClass = dropdownClass + '-with-buttons';
+        - dropdownJSClass = dropdownJSClass + '-with-buttons';
     if expanded
-        - dropdownClasses.push('dropdown_expanded')
+        - dropdownClasses.push('dropdown_expanded');
         - rotatedClass = 'dropdown__expand-button_rotated';
-    - dropdownClasses.push(dropdownClass)
+    - dropdownClasses.push(dropdownJSClass)
+
+    
     div(class=dropdownClasses data-placeholder=placeholder data-forms=generalForms)
         .dropdown__field
-            p.dropdown__text
+            .dropdown__text
             button.dropdown__expand-button(class=rotatedClass) expand_more
         .dropdown__menu
             each item in items

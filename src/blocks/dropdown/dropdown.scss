@@ -7,11 +7,11 @@
 
   &__field {
     box-sizing: border-box;
-    height: 44px;
-    border: 1px solid $dark-25;
-    width: 100%;
-    border-radius: 2px 2px 0 0;
     display: flex;
+    width: 100%;
+    padding: 9px 0;
+    border: 1px solid $dark-25;
+    border-radius: 2px 2px 0 0;
   }
 
   &_expanded &__field{
@@ -20,30 +20,26 @@
   }
 
   &__text{
-    font-family: Montserrat, OpenSans, sans-serif;
-    font-size: 14px;
+    display: flex;
+    width: 100%;
+    padding-left: 15px;
     line-height: 24px;
     color: $dark-75;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding-left: 15px;
   }
 
   &__expand-button {
-    height: 100%;
-    width: 44px;
-    flex-shrink: 0;
-    font-family: Material Icons;
-    font-size: 24px;
-    line-height: 24px;
+    box-sizing: border-box;
     display: flex;
-    align-items: center;
     justify-content: center;
+    max-width: 44px;
+    width: 100%;
+
+    font-family: 'Material Icons';
+    font-size: 24px;
     color: $dark-50;
-    outline: none;
     cursor: pointer;
     user-select: none;
+    outline: none;
 
     &_rotated{
       transform: rotate(-180deg);
@@ -53,12 +49,13 @@
 
 
   &__menu{
-    background: white;
-    z-index: 99999;
-    display: none;
-    position: absolute;
-    width: 100%;
     box-sizing: border-box;
+    display: none;
+    width: 100%;
+    position: absolute;
+    z-index: 99999;
+
+    background: white;
     border: 1px solid $dark-50;
     border-radius: 0 0 2px 2px;
     padding-left: 15px;
@@ -79,7 +76,6 @@
   }
 
   &__menu-item-name{
-    font-family: Montserrat, OpenSans, sans-serif;
     font-weight: bold;
     font-size: 12px;
     line-height: 15px;
@@ -102,7 +98,6 @@
     border-radius: 100%;
     box-sizing: border-box;
     border: 1px solid $dark-25;
-    font-family: Montserrat, OpenSans, sans-serif;
     font-size: 18px;
     line-height: 22px;
     color: $dark-50;
@@ -117,11 +112,9 @@
 
 
   &__amount{
-    font-family: Montserrat, OpenSans, sans-serif;
     font-weight: bold;
     font-size: 12px;
     line-height: 15px;
-    text-transform: uppercase;
     color: $dark-100;
   }
 
@@ -131,11 +124,9 @@
     display: flex;
     padding: 13px 0;
     justify-content: space-between;
-    align-items: center;
   }
 
   &__clear-button, &__apply-button{
-    font-family: Montserrat, OpenSans, sans-serif;
     font-weight: bold;
     font-size: 12px;
     line-height: 15px;
@@ -146,6 +137,9 @@
   &__clear-button{
     color: $dark-50;
 
+    &:focus{
+      color: $dark-75;
+    }
 
     &_hidden{
       visibility: hidden;
@@ -154,6 +148,10 @@
   }
   &__apply-button{
     color: $purple;
+
+    &:focus{
+      color: purple;
+    }
   }
 }
 
