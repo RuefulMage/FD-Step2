@@ -10,18 +10,15 @@
 
   &__user-avatar{
     box-sizing: border-box;
-    width: 48px;
-    height: 48px;
+    max-width: 48px;
+    width: 100%;
     border: 2px solid white;
     box-shadow: 0 10px 20px $shadow;
-    border-radius: 32px;
+    border-radius: 100%;
   }
 
   &__user-info{
     padding-left: 10px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-size: 14px;
     line-height: 24px;
     color: $dark-75;
   }
@@ -38,10 +35,6 @@
 
   &__comment-text{
     padding-left: 14px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
     line-height: 24px;
     color: $dark-75;
   }
