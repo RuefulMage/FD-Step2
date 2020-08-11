@@ -3,23 +3,16 @@
 .icon-text{
   display: flex;
   &__icon {
+    display: flex;
     background: $gradient;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 48px;
-    height: 48px;
-    width: 48px;
     font-family: 'Material Icons';
-    line-height: 41px;
-    display: flex;
-    align-items: center;
+    font-size: 48px;
   }
 
   &__text{
     padding-left: 10px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-size: 14px;
     line-height: 24px;
     color: $dark-75;
   }
@@ -29,7 +22,6 @@
   }
 
   &__description{
-    font-weight: normal;
   }
 
   &_bordered{
