@@ -3,16 +3,14 @@
 .calendar {
 
   &__arrow {
-    font-family: Material Icons;
+    font-family: 'Material Icons';
     font-size: 24px;
-    line-height: 20px;
     color: $purple;
-    }
+  }
 
   &__buttons-wrapper{
-    height: 55px;
+    padding: 20px 0;
     display: flex;
-    align-items: center;
     justify-content: space-between;
 
     font-family: Montserrat, OpenSans, sans-serif;
@@ -26,12 +24,20 @@
     text-transform: inherit;
     color: $dark-50;
     outline: none;
+
+    &:focus{
+      color: $dark-75;
+    }
   }
 
   &__append-button{
     text-transform: inherit;
     color: $purple;
     outline: none;
+
+    &:focus{
+      color: purple;
+    }
   }
 }
 
@@ -51,11 +57,11 @@
     padding: 0;
     border: none;
     margin-bottom: 10px;
+
     &-title{
       font-family: Quicksand, OpenSans, sans-serif;
       font-weight: bold;
       font-size: 19px;
-      line-height: 24px;
       color: $dark-100;
     }
 
