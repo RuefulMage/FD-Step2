@@ -1,19 +1,19 @@
 mixin dropdown({placeholder, items, expanded=false, withButtons=false, generalForms})
     - let dropdownClasses = ['dropdown'];
     - let dropdownJSClass = 'js-dropdown';
-    - let rotatedClass = '';
+    - let expandButtonClasses = ['dropdown__expand-button', 'js-dropdown__expand-button'];
     if withButtons
         - dropdownJSClass = dropdownJSClass + '-with-buttons';
     if expanded
         - dropdownClasses.push('dropdown_expanded');
-        - rotatedClass = 'dropdown__expand-button_rotated';
-    - dropdownClasses.push(dropdownJSClass)
+        - expandButtonClasses.push('dropdown__expand-button_rotated');
+    - dropdownClasses.push(dropdownJSClass);
 
-    
+
     div(class=dropdownClasses data-placeholder=placeholder data-forms=generalForms)
         .dropdown__field
-            .dropdown__text
-            button.dropdown__expand-button(class=rotatedClass) expand_more
+            .dropdown__text.js-dropdown__text
+            button(class=expandButtonClasses) expand_more
         .dropdown__menu
             each item in items
                 .dropdown__menu-item.js-dropdown-menu-item(data-id=item.id data-min-amount=item.minAmount data-max-amount=item.maxAmount data-forms=item.forms)

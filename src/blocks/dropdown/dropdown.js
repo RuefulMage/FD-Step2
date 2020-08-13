@@ -1,219 +1,242 @@
-function createDropdown(element, setSelectionTextFunction, withButtons) {
-    let expandButton = element.querySelector('.dropdown__expand-button');
+function createDropdown(element, withButtons, textInInputIsTotalAmount) {
+    const expandButtonClass = 'js-dropdown__expand-button';
+    const dropdownExpandedClass = 'dropdown_expanded';
+    const expandButtonRotatedClass = 'dropdown__expand-button_rotated';
+    const menuItemClass = 'js-dropdown-menu-item';
+    const descreaseButtonClass = 'js-dropdown-descrease';
+    const descreaseButtonDisabledClass = 'dropdown__descrease_disabled';
+    const increaseButtonClass = 'js-dropdown-increase';
+    const increaseButtonDisabledClass = 'dropdown__increase_disabled';
+    const amountClass = 'js-dropdown-amount';
+    const clearButtonClass = 'js-dropdown-clear-button';
+    const appendButtonClass = 'js-append-button';
+    const inputTextClass = 'js-dropdown__text';
 
-    expandButton.addEventListener('click', function () {
-        if(element.classList.contains('dropdown_expanded')){
-            element.classList.remove('dropdown_expanded');
-            expandButton.classList.remove("dropdown__expand-button_rotated")
-        }else{
-            element.classList.add('dropdown_expanded');
-            expandButton.classList.add("dropdown__expand-button_rotated");
-        }
-    });
-    let generalForms = element.getAttribute('data-forms');
+    let generalForms = element.getAttribute('data-forms').split(',');
     let placeholder = element.getAttribute('data-placeholder');
-
-    let itemsArray = element.querySelectorAll('.js-dropdown-menu-item');
-
-    let items = new Map;
+    let itemsDomElementsArray = element.querySelectorAll('.' + menuItemClass);
+    let items = new Map();
     let totalAmount = 0;
+    let currentSetInputTextFunction;
 
+    // Присвоение нужной функции для изменения поле инпута
+    if(textInInputIsTotalAmount){
+        currentSetInputTextFunction = setSelectedTextByTotalAmount;
+    } else {
+        currentSetInputTextFunction = setSelectedText;
+    }
 
-    itemsArray.forEach(item => {
+    // Навешивание обработчика событий на конпку скрытия/раскрытия дропдауна
+    let expandButton = element.querySelector('.' + expandButtonClass);
+    expandButton.addEventListener('click', expandButtonClickHandler);
+
+    // Создание объектов items из массива DOM-элементов itemsDomElementsArray
+    itemsDomElementsArray.forEach(item => {
         let itemId = item.getAttribute('data-id');
         items.set(
             itemId,
             {
-                "forms": item.getAttribute('data-forms'),
-                "minAmount": item.getAttribute('data-min-amount'),
-                "maxAmount": item.getAttribute('data-max-amount'),
-                "amount": item.querySelector('.dropdown__amount').innerText,
+                'forms': item.getAttribute('data-forms').split(','),
+                'minAmount': +item.getAttribute('data-min-amount'),
+                'maxAmount': +item.getAttribute('data-max-amount'),
+                'amount': +item.querySelector('.' + amountClass).innerText,
             });
+
         let currentItem = items.get(itemId);
         totalAmount = totalAmount + +currentItem['amount'];
-        toggleDisabledButton(currentItem['amount'], currentItem['minAmount'], currentItem['maxAmount'], item);
-    });
-    if(withButtons){
-        if(withButtons){
-            toggleClearButtonVisibility(element, totalAmount);
-        }
-    }
+        toggleDisabledButton(+currentItem['amount'], currentItem['minAmount'], currentItem['maxAmount'], item);
 
-    setSelectionTextFunction(element, items, totalAmount, placeholder, generalForms );
-    itemsArray.forEach(item => {
-        let itemId = item.getAttribute('data-id');
-        let descreaseButton = item.querySelector('.js-dropdown-descrease');
-        descreaseButton.addEventListener('click', function () {
-            if(items.get(itemId)['amount'] != items.get(itemId)['minAmount']){
-                totalAmount = totalAmount - 1;
-                setAmount(element, itemId, item, items, items.get(itemId)['amount'] - 1, totalAmount, setSelectionTextFunction, placeholder, generalForms);
-                if(withButtons){
-                    toggleClearButtonVisibility(element, totalAmount);
-                }
-            }
-        });
+        // Навешивание обработчика на кнопку уменьшения
+        let descreaseButton = item.querySelector('.' + descreaseButtonClass);
+        descreaseButton.addEventListener('click', descreaseButtonClickHandler);
 
-        let increaseButton = item.querySelector('.js-dropdown-increase');
-        increaseButton.addEventListener('click', function () {
-            if(items.get(itemId)['amount'] != items.get(itemId)['maxAmount']){
-                totalAmount = +totalAmount + 1;
-                setAmount(element, itemId, item, items, +items.get(itemId)['amount'] + 1, totalAmount, setSelectionTextFunction, placeholder, generalForms);
-                if(withButtons){
-                    toggleClearButtonVisibility(element, totalAmount);
-                }
-            }
-        })
+        //Навешивание обработчика на кнопку увеличения
+        let increaseButton = item.querySelector('.' + increaseButtonClass);
+        increaseButton.addEventListener('click', increaseButtonClickHandler);
     });
 
 
+
+    // Создание и навешивание обработчиков на кнопки Очистить и Принять
     if(withButtons) {
-        let clearButton = element.querySelector('.js-dropdown-clear-button');
-        clearButton.addEventListener('click', function () {
-            if (totalAmount > 0) {
-                totalAmount = 0;
+        let clearButton = element.querySelector('.' + clearButtonClass);
+        clearButton.addEventListener('click', clearButtonClickHandler);
 
-                for (let key of items.keys()) {
-                    setAmount(element, key, element.querySelector('[data-id=' + key + ']'),
-                        items, 0, totalAmount, setSelectionTextFunction, placeholder, generalForms);
-                }
+        let applyButton = element.querySelector('.' + appendButtonClass);
+        applyButton.addEventListener('click', applyButtonClickHandler);
 
-                toggleClearButtonVisibility(element, totalAmount);
+    }
+
+    toggleClearButtonVisibility();
+    currentSetInputTextFunction();
+
+
+
+
+
+    
+    //Дальше идут вспомогательные функции
+    function applyButtonClickHandler() {
+        element.classList.remove(dropdownExpandedClass);
+        expandButton.classList.remove(expandButtonRotatedClass);
+    }
+
+
+    function clearButtonClickHandler() {
+        if (totalAmount > 0) {
+            totalAmount = 0;
+
+            for (let key of items.keys()) {
+                setAmount(key, element.querySelector('[data-id=' + key + ']'), 0);
             }
-        });
 
-        let applyButton = element.querySelector('.js-append-button');
-        applyButton.addEventListener('click', function () {
-            if (element.classList.contains('dropdown_expanded')) {
-                element.classList.remove('dropdown_expanded');
-                expandButton.classList.remove("dropdown__expand-button_rotated")
-            } else {
-                element.classList.add('dropdown_expanded');
-                expandButton.classList.add("dropdown__expand-button_rotated");
+            toggleClearButtonVisibility();
+        }
+    }
+
+
+    function expandButtonClickHandler(){
+        if(element.classList.contains(dropdownExpandedClass)){
+            element.classList.remove(dropdownExpandedClass);
+            expandButton.classList.remove(expandButtonRotatedClass);
+        }else{
+            element.classList.add(dropdownExpandedClass);
+            expandButton.classList.add(expandButtonRotatedClass);
+        }
+    }
+
+    function descreaseButtonClickHandler() {
+        let itemDOMElement = this.closest('.' + menuItemClass);
+        let itemId = itemDOMElement.getAttribute('data-id');
+        let item = items.get(itemId);
+        if(items.get(itemId)['amount'] !== item['minAmount']){
+            totalAmount = totalAmount - 1;
+            setAmount(itemId, itemDOMElement, item['amount'] - 1);
+            if(withButtons){
+                toggleClearButtonVisibility();
             }
-        });
-    }
-}
-
-function setSelectedTextByTotalAmount(element, items, totalAmount, placeholder, forms){
-    forms = forms.split(',');
-    let result = '';
-    if(totalAmount == 0){
-        result = placeholder;
-    } else {
-        result = totalAmount + ' ' + getProperWordForm(totalAmount, forms);
+        }
     }
 
-    element.querySelector('.dropdown__text').innerText = result;
-}
-
-
-
-function setAmount(element, itemId, item, items, amount, totalAmount, setSelectionTextFunction, placeholder, forms) {
-    items.get(itemId)['amount'] = amount;
-    item.querySelector('.dropdown__amount').innerText = items.get(itemId)['amount'];
-    setSelectionTextFunction(element, items, totalAmount, placeholder, forms);
-    toggleDisabledButton(items.get(itemId)['amount'],
-        items.get(itemId)['minAmount'], items.get(itemId)['maxAmount'], item);
-}
-
-
-function toggleDisabledButton(amount, minAmount, maxAmount, item) {
-    let descreaseButton = item.querySelector('.js-dropdown-descrease');
-    let increaseButton = item.querySelector('.js-dropdown-increase');
-    if(amount == minAmount && !descreaseButton.classList.contains('dropdown__descrease_disabled')){
-        descreaseButton.classList.add('dropdown__descrease_disabled');
-    }
-    else if(amount != minAmount && descreaseButton.classList.contains('dropdown__descrease_disabled')){
-        descreaseButton.classList.remove('dropdown__descrease_disabled');
+    function increaseButtonClickHandler() {
+        let itemDOMElement = this.closest('.' + menuItemClass);
+        let itemId = itemDOMElement.getAttribute('data-id');
+        let item = items.get(itemId);
+        if(items.get(itemId)['amount'] !== item['maxAmount']){
+            totalAmount = +totalAmount + 1;
+            setAmount(itemId, itemDOMElement, +item['amount'] + 1);
+            if(withButtons){
+                toggleClearButtonVisibility();
+            }
+        }
     }
 
-    if(amount == maxAmount && !increaseButton.classList.contains('dropdown__increase_disabled')){
-        increaseButton.classList.add('dropdown__increase_disabled');
-    }
-    else if(amount != maxAmount && increaseButton.classList.contains('dropdown__increase_disabled')){
-        increaseButton.classList.remove('dropdown__increase_disabled');
-    }
-}
 
-function setSelectedText(element, items, totalAmount, placeholder) {
-    let result = '';
-    let flag = false;
-    for (let item of items.keys()) {
-        if (result !== '' && items.get(item)['amount'] != 0) {
-            result += ', ';
+
+    // Проверяет кнопки элемента и делает их полупрозрачными, если текущее значение является граничным
+    function toggleDisabledButton(amount, minAmount, maxAmount, item) {
+        let descreaseButton = item.querySelector('.' + descreaseButtonClass);
+        let increaseButton = item.querySelector('.' + increaseButtonClass);
+        if (amount === minAmount) {
+            descreaseButton.classList.add(descreaseButtonDisabledClass);
+        } else if (amount !== minAmount && descreaseButton.classList.contains(descreaseButtonDisabledClass)) {
+            descreaseButton.classList.remove(descreaseButtonDisabledClass);
         }
 
-        if (items.get(item)['amount'] == 0) {
-            flag = true;
+        if (amount === maxAmount) {
+            increaseButton.classList.add(increaseButtonDisabledClass);
+        } else if (amount !== maxAmount && increaseButton.classList.contains(increaseButtonDisabledClass)) {
+            increaseButton.classList.remove(increaseButtonDisabledClass);
+        }
+    }
+
+    // Функция, которая считает общее кол-во элементов и вставляет строку с общим количеством в поле инпута
+    function setSelectedTextByTotalAmount() {
+        console.log(generalForms);
+        // generalForms = generalForms.split(',');
+        let result = '';
+        if (totalAmount === 0) {
+            result = placeholder;
         } else {
-            let forms = items.get(item)['forms'].split(",");
-            result += items.get(item)['amount'] + ' ' + getProperWordForm(items.get(item)['amount'], forms);
+            result = totalAmount + ' ' + getProperWordForm(totalAmount, generalForms);
+        }
+
+        element.querySelector('.' + inputTextClass).innerText = result;
+    }
+
+
+    // Функция, которая генерирует строку с количеством каждого элемента отдельно и вставляет ее в поле инпута
+    function setSelectedText() {
+        let result = '';
+        let flag = false;
+        for (let item of items.keys()) {
+            if (result !== '' && items.get(item)['amount'] !== 0) {
+                result += ', ';
+            }
+
+            if (items.get(item)['amount'] === 0) {
+                flag = true;
+            } else {
+                let forms = items.get(item)['forms'];
+                result += items.get(item)['amount'] + ' ' + getProperWordForm(items.get(item)['amount'], forms);
+            }
+        }
+
+        if (flag === true && totalAmount > 0) {
+            result += '...';
+        }
+        if (totalAmount === 0) {
+            result = placeholder;
+        }
+
+        element.querySelector('.' + inputTextClass).innerText = result;
+    }
+
+    // Функция, которая по количеству объектов, возвращает нужное слово из массива, т.е. в нужном падеже
+    function getProperWordForm(number, forms) {
+        let result = '';
+        number = number % 100;
+        if (number >= 11 && number <= 19) {
+            result = forms[2];
+        } else {
+            number = number % 10;
+            switch (number) {
+                case(1):
+                    result = forms[0];
+                    break;
+                case(2):
+                case(3):
+                case(4):
+                    result = forms[1];
+                    break;
+                default:
+                    result = forms[2];
+            }
+        }
+
+        return result;
+    }
+
+
+    //Изменяет текущее кол-во элемента на новую
+    function setAmount(itemId, item, amount) {
+        items.get(itemId)['amount'] = amount;
+        item.querySelector('.' + amountClass).innerText = items.get(itemId)['amount'];
+        currentSetInputTextFunction();
+        toggleDisabledButton(+items.get(itemId)['amount'],
+            +items.get(itemId)['minAmount'], +items.get(itemId)['maxAmount'], item);
+    }
+
+    // Если кол-во выбранных элементов == 0, то кнопка Очистить должна быть скрытой
+    function toggleClearButtonVisibility() {
+        let clearButton = element.querySelector('.' + clearButtonClass);
+        if (clearButton.classList.contains('dropdown__clear-button_hidden') && totalAmount !== 0) {
+            clearButton.classList.remove('dropdown__clear-button_hidden');
+        } else if (!clearButton.classList.contains('dropdown__clear-button_hidden') && totalAmount === 0) {
+            clearButton.classList.add('dropdown__clear-button_hidden');
         }
     }
 
-    if (flag === true && totalAmount > 0) {
-        result += '...';
-    }
-    if (totalAmount == 0){
-        result = placeholder;
-    }
-
-    element.querySelector('.dropdown__text').innerText = result;
 }
 
-function getProperWordForm(number, forms) {
-    let result = '';
-    number = number % 100;
-    if (number >= 11 && number <= 19) {
-        result = forms[2];
-    } else {
-        number = number % 10;
-        switch (number) {
-            case(1):
-                result = forms[0];
-                break;
-            case(2):
-            case(3):
-            case(4):
-                result = forms[1];
-                break;
-            default:
-                result = forms[2];
-        }
-    }
-
-    return result;
-}
-
-
-function toggleClearButtonVisibility(element, totalAmount){
-    let clearButton = element.querySelector('.js-dropdown-clear-button')
-    if(clearButton.classList.contains('dropdown__clear-button_hidden') && totalAmount != 0){
-        clearButton.classList.remove('dropdown__clear-button_hidden');
-    }
-    else if(!clearButton.classList.contains('dropdown__clear-button_hidden') && totalAmount == 0){
-        clearButton.classList.add('dropdown__clear-button_hidden');
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-let dropdownsWithButtonsList = document.getElementsByClassName('js-dropdown-with-buttons');
-for( let i = 0; i < dropdownsWithButtonsList.length; i++) {
-    createDropdown(dropdownsWithButtonsList[i], setSelectedTextByTotalAmount, true);
-}
-
-let dropdownsList = document.getElementsByClassName('js-dropdown');
-for( let i = 0; i < dropdownsList.length; i++) {
-    createDropdown(dropdownsList[i], setSelectedText, false);
-}
+export default createDropdown;
