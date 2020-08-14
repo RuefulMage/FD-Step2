@@ -1,7 +1,16 @@
-window.onload = function(){
-    let paginationPage = parseInt($('.js-pagination').attr('data-current-page'), 10);
-    $('.js-pagination__item').on('click', function(){
-        let go = $(this).attr('data-page-number');
+function hangUpListenerToPagination(paginationElement) {
+    const itemClass = 'js-pagination__item';
+
+    let paginationPage = parseInt(paginationElement.getAttribute('data-current-page'), 10);
+    let items = paginationElement.getElementsByClassName(itemClass);
+
+
+    for (let i = 0; i < items.length; i++) {
+        items[i].addEventListener('click', clickHandler);
+    }
+
+    function clickHandler() {
+        let go = this.getAttribute('data-page-number');
         if (go === '+1') {
             paginationPage++;
         } else if (go === '-1') {
@@ -9,6 +18,8 @@ window.onload = function(){
         }else{
             paginationPage = parseInt(go, 10);
         }
-        $('.js-pagination').attr('data-current-page', paginationPage);
-    });
-};
+        paginationElement.setAttribute('data-current-page', paginationPage)
+    }
+}
+
+export default hangUpListenerToPagination;
