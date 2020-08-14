@@ -1,16 +1,20 @@
-let checkboxListButton = document.getElementsByClassName("js-expandable-checkbox-list__button");
-let i;
+function hangUpListenerToExpandableList(checkboxListButton) {
+  const rotatedArrowClass = 'expandable-checkbox-list__arrow_rotated';
+  const expandedListClass = 'expandable-checkbox-list__list_expanded';
 
-for (i = 0; i < checkboxListButton.length; i++) {
-  checkboxListButton[i].addEventListener("click", function() {
+  checkboxListButton.addEventListener("click", clickHandler);
+
+  function clickHandler() {
     let checkboxList = this.nextElementSibling;
     let icon = this.lastChild;
-    if (checkboxList.style.display === "block") {
-      checkboxList.style.display = "none";
-      icon.classList.remove("expandable-checkbox-list__arrow_rotated");
+    if (checkboxList.classList.contains(expandedListClass)) {
+      checkboxList.classList.remove(expandedListClass);
+      icon.classList.remove(rotatedArrowClass);
     } else {
-      checkboxList.style.display = "block";
-      icon.classList.add("expandable-checkbox-list__arrow_rotated");
+      checkboxList.classList.add(expandedListClass);
+      icon.classList.add(rotatedArrowClass);
     }
-  });
+  }
 }
+
+export default hangUpListenerToExpandableList;
