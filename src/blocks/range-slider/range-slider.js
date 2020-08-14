@@ -1,25 +1,24 @@
 import noUiSlider from "nouislider";
 
-let slidersList = document.getElementsByClassName('range-slider__slider');
-let i;
-
-
-for(i=0; i < slidersList.length; i++){
-    let slider = slidersList[i];
-    noUiSlider.create(slider, {
-        start: [5000, 10000],
+function createRangeSlider(sliderElement, startValues, minValue, maxValue) {
+    noUiSlider.create(sliderElement, {
+        start: startValues,
         connect: true,
         range: {
-            'min': 500,
-            'max': 15000
+            'min': minValue,
+            'max': maxValue
         }
     });
 
-    let rangeInterval = slider.previousSibling.lastChild;
+    let rangeInterval = sliderElement.previousSibling.lastChild;
 
-    slider.noUiSlider.on('update', function (values, handle) {
+    sliderElement.noUiSlider.on('update', updateFunction);
+
+    function updateFunction(values, handle) {
         values = values.map(item => Math.round(item));
         rangeInterval.innerHTML = values[0] + "₽ - " + values[1] +"₽";
-    });
+    }
 
 }
+
+export default createRangeSlider;
