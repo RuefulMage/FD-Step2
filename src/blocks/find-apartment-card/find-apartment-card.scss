@@ -8,13 +8,11 @@
   border-radius: 4px;
 
   &__header {
-    font-family: Quicksand, OpenSans, sans-serif;
-    font-weight: bold;
-    font-size: 24px;
     line-height: 30px;
     color: $dark-100;
     margin-bottom: 20px;
   }
+
   &__date-dropdown{
     margin-bottom: 20px;
   }
@@ -24,10 +22,6 @@
   }
 
   &__guests-header{
-    font-family: Montserrat, OpenSans, sans-serif;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
     text-transform: uppercase;
     color: $dark-100;
     margin-bottom: 5px;

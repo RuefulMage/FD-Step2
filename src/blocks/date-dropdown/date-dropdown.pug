@@ -8,16 +8,16 @@ mixin date-dropdown(twoInputs=false, static=false, headers)
                 if headers != undefined
                     h3.date-dropdown__header=headers[0]
                 label.date-dropdown__label
-                    input.js-calendar.date-dropdown__input
+                    input.js-calendar.date-dropdown__input(type="text")
                     .date-dropdown__arrow expand_more
             .date-dropdown__input-wrapper.date-dropdown_small
-                if headers != undefined && headers.length > 1
+                if headers !== undefined && headers.length > 1
                     h3.date-dropdown__header=headers[1]
                 label.date-dropdown__label
-                    input.js-calendar.date-dropdown__input
+                    input.js-calendar.date-dropdown__input(type="text")
                     .date-dropdown__arrow expand_more
 
         else
             label.date-dropdown__label
-                input.js-calendar.date-dropdown__input
+                input.js-calendar.date-dropdown__input(type="text")
                 .date-dropdown__arrow expand_more
