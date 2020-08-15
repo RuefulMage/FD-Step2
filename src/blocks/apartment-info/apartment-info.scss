@@ -3,7 +3,6 @@
 .apartment-info{
   display: flex;
   justify-content: space-between;
-  height: 100%;
   width: 100%;
   align-items: baseline;
 
@@ -11,17 +10,16 @@
   &__number-wrapper{
     display: flex;
     align-items: baseline;
-  }
-  &__number-symbol {
     font-family: Quicksand, OpenSans, sans-serif;
     font-weight: bold;
+  }
+
+  &__number-symbol {
     font-size: 14px;
-    line-height: 17px;
     color: $dark-100;
   }
+
   &__number {
-    font-family: Quicksand, OpenSans, sans-serif;
-    font-weight: bold;
     font-size: 18px;
     color: $dark-100;
 
@@ -29,20 +27,17 @@
       font-size: 24px;
     }
   }
+
   &__lux {
     font-family: Montserrat, OpenSans, sans-serif;
-    font-weight: bold;
     font-size: 12px;
-    line-height: 15px;
     text-transform: uppercase;
     color: $purple;
   }
 
   &__price-wrapper{
     display: flex;
-    font-family: Montserrat, OpenSans, sans-serif;
-    font-size: 14px;
-    line-height: 18px;
+    align-items: baseline;
     color: $dark-50;
   }
 
