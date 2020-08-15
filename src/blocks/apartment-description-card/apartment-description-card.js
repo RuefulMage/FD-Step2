@@ -1,42 +1,48 @@
-
-
 function createImagesSlider(element) {
-    let items = element.querySelectorAll('.js-slider-item');
-    let indicators = element.querySelectorAll('.js-slider-indicators');
+    const sliderItemClass = 'js-slider-item';
+    const indicatorsClass = 'js-slider-indicators'
+    const currentImageClass = 'apartment-description-card__image-list-item_showing';
+    const currentIndicatorClass = 'apartment-description-card__indicator_current';
+    const prevButtonClass = 'js-slider-button-prev';
+    const nextButtonClass = 'js-slider-button-next';
+
+    let items = element.querySelectorAll('.' + sliderItemClass);
+    let indicators = element.querySelectorAll('.' + indicatorsClass);
     let currentId = 0;
-    items[currentId].classList.add('apartment-description-card__image-list-item_showing');
-    indicators[currentId].classList.add('apartment-description-card__indicator_current');
+    items[currentId].classList.add(currentImageClass);
+    indicators[currentId].classList.add(currentIndicatorClass);
 
-    let prevButton = element.querySelector('.js-slider-button-prev');
-    let nextButton = element.querySelector('.js-slider-button-next');
+    let prevButton = element.querySelector('.' + prevButtonClass);
+    let nextButton = element.querySelector('.' + nextButtonClass);
 
-    nextButton.addEventListener('click', function () {
-        items[currentId].classList.remove('apartment-description-card__image-list-item_showing');
-        indicators[currentId].classList.remove('apartment-description-card__indicator_current');
-        if(currentId == (items.length - 1)){
+    nextButton.addEventListener('click', nextButtonClickHandler);
+
+    prevButton.addEventListener('click', prevButtonClickHandler);
+
+    function nextButtonClickHandler() {
+        items[currentId].classList.remove(currentImageClass);
+        indicators[currentId].classList.remove(currentIndicatorClass);
+        if(currentId === (items.length - 1)){
             currentId = 0;
         } else {
             currentId ++;
         }
-        items[currentId].classList.add('apartment-description-card__image-list-item_showing');
-        indicators[currentId].classList.add('apartment-description-card__indicator_current');
-    });
+        items[currentId].classList.add(currentImageClass);
+        indicators[currentId].classList.add(currentIndicatorClass);
+    }
 
-    prevButton.addEventListener('click', function () {
-        items[currentId].classList.remove('apartment-description-card__image-list-item_showing');
-        indicators[currentId].classList.remove('apartment-description-card__indicator_current');
-        if(currentId == 0){
+
+    function prevButtonClickHandler() {
+        items[currentId].classList.remove(currentImageClass);
+        indicators[currentId].classList.remove(currentIndicatorClass);
+        if(currentId === 0){
             currentId = items.length - 1;
         } else {
             currentId --;
         }
-        items[currentId].classList.add('apartment-description-card__image-list-item_showing');
-        indicators[currentId].classList.add('apartment-description-card__indicator_current');
-    })
+        items[currentId].classList.add(currentImageClass);
+        indicators[currentId].classList.add(currentIndicatorClass);
+    }
 }
 
-let sliderList = document.getElementsByClassName('js-slider');
-
-for(let i = 0; i < sliderList.length; i++){
-    createImagesSlider(sliderList[i]);
-}
+export default createImagesSlider;

@@ -1,12 +1,12 @@
 include ../rate-button/rate-button
 include ../apartment-info/apartment-info
 
-mixin apartment-description-card(images, number, price, currency, rateButtonName, starAmount, reviewsAmount, lux=false)
+mixin apartment-description-card({images, number, price, currency, rateButtonName, starAmount, reviewsAmount, link, lux=false})
     .apartment-description-card
         .apartment-description-card__images-wrapper.js-slider
             each item in images
                 .apartment-description-card__image-list-item.js-slider-item
-                    img.apartment-description-card__image(src='../../assets/images/' + item.path alt='')
+                    img.apartment-description-card__image(src='../../assets/images/' + item alt='apartment photo')
             .apartment-description-card__slider-buttons
                 button.apartment-description-card__prev.js-slider-button-prev expand_more
                 button.apartment-description-card__next.js-slider-button-next expand_more
@@ -15,9 +15,9 @@ mixin apartment-description-card(images, number, price, currency, rateButtonName
                     .apartment-description-card__indicator.js-slider-indicators
         .apartment-description-card__info
             .apartment-description-card__main-info
-                +apartment-info(number, price, currency, false, lux)
+                +apartment-info({number: number, price: price, currency: currency, largeNumber: false, lux: lux})
             .apartment-description-card__quality
-                .apartment-description-card__rating
+                form.apartment-description-card__rating(method="POST" action=link)
                     +rate-button(rateButtonName, starAmount, true)
                 .apartment-description-card__reviews
                     .apartment-description-card__review-amount=reviewsAmount

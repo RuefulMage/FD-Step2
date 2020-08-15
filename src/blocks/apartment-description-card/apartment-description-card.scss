@@ -5,18 +5,18 @@
   border-radius: 4px;
 
   &__images-wrapper{
-    background: none;
     box-sizing: border-box;
-    position: relative;
-    height: 152px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
+    height: 152px;
     overflow: hidden;
     padding: 54px 0 15px 0;
     border-top-right-radius: inherit;
     border-top-left-radius: inherit;
   }
+
   &__image-list-item{
     position: absolute;
     left: 0;
@@ -30,7 +30,9 @@
       z-index: 0;
     }
   }
+
   &__image{
+    width: 100%;
   }
 
 
@@ -38,7 +40,6 @@
   &__slider-buttons{
     display: flex;
     justify-content: space-between;
-    height: 44px;
   }
 
   &__prev, &__next{
@@ -47,9 +48,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Material Icons;
+    font-family: 'Material Icons';
     font-size: 24px;
-    line-height: 24px;
     color: white;
     outline: none;
   }
@@ -90,39 +90,30 @@
   &__info{
     box-sizing: border-box;
     display: flex;
+    flex-direction: column;
     padding: 20px;
     padding-top: 24px;
-    flex-direction: column;
-    height: 100%;
   }
 
   &__main-info{
-    height: 50%;
-    width: 100%;
     border-bottom: 1px solid $dark-10;
     padding-bottom: 12px;
   }
 
   &__quality{
-    padding-top: 8px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    height: 50%;
-    width: 100%;
+    padding-top: 8px;
   }
 
   &__rating{
     display: flex;
     align-items: center;
-    flex-shrink: 0;
-    flex-grow: 0;
   }
 
   &__reviews{
     display: flex;
-    font-family: Montserrat, OpenSans, sans-serif;
-    font-size: 14px;
     line-height: 18px;
     color: $dark-50;
   }
