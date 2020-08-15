@@ -8,7 +8,7 @@
   border-radius: 4px;
 
   &__main-info{
-    margin-bottom: 20px;
+    margin-bottom: 23px;
   }
 
   &__date-dropdown{
@@ -20,10 +20,6 @@
   }
 
   &__guests-header{
-    font-family: Montserrat, OpenSans, sans-serif;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
     text-transform: uppercase;
     color: $dark-100;
     margin-bottom: 5px;
@@ -39,11 +35,10 @@
     justify-content: space-between;
     margin-bottom: 20px;
   }
+
   &__cheque-item{
     display: flex;
     justify-content: space-between;
-    font-family: Montserrat, OpenSans, sans-serif;
-    font-size: 14px;
     line-height: 18px;
     color: $dark-75;
     margin-bottom: 18px;
@@ -67,33 +62,27 @@
   }
 
   &__price-note{
-    width: 20px;
-    height: 20px;
     box-sizing: border-box;
-    border: 1px solid $dark-25;
-    border-radius: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: Montserrat, OpenSans, sans-serif;
+    position: relative;
+    width: 20px;
+    height: 20px;
+
+    border: 1px solid $dark-25;
+    border-radius: 100%;
     font-weight: bold;
     font-size: 12px;
-    line-height: 14px;
-    text-align: right;
     color: $dark-25;
-    position: relative;
 
 
     &-text{
+      display: none;
       position: absolute;
       top:20px;
       left: 20px;
-      display: none;
       border: 1px solid $dark-25;
-      background: #FFBA9C;
-      font-family: Montserrat, OpenSans, sans-serif;
-      font-size: 14px;
-      line-height: 18px;
       color: $dark-75;
       padding: 2px;
     }
@@ -117,9 +106,7 @@
     align-items: baseline;
   }
 
-  &__total-label{
-    width: auto;
-  }
+  &__total-label{}
 
   &__line{
     flex-grow: 1;
