@@ -15,7 +15,7 @@
 
 
   &:hover, &_disabled{
-    background:$gradient-semitransparent;
+    background: $gradient-semitransparent;
   }
   &_disabled{
     cursor: auto;
@@ -26,11 +26,9 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 100%;
     padding: 9px 0;
     border-radius: inherit;
     color: $purple;
-    font-family: Montserrat, OpenSans, sans-serif;
     font-size: 12px;
     font-weight: bold;
     text-transform: uppercase;

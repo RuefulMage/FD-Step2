@@ -8,4 +8,4 @@ mixin link-button({text, link, filled=false, large=false, disabled = false})
     if large
         - content_classes.push('link-button__content_large')
     div(class=wrapper_classes)
-        a(class=content_classes)=text
+        a(class=content_classes href=link)=text
