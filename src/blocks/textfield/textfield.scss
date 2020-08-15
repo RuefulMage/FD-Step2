@@ -5,9 +5,10 @@
   width: 100%;
   border: 1px solid $dark-25;
   border-radius: 4px;
-  padding: 13px 15px;
-  user-select: none;
+  padding: 12px 15px;
+  line-height: 18px;
   color: $dark-75;
+  user-select: none;
   outline: none;
 
   &::placeholder{
