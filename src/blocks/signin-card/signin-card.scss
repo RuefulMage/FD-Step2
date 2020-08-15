@@ -11,7 +11,7 @@
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
 
   &__title{
-    line-height: 30px;
+    line-height: 1.875rem;  //30px при базовом размере шрифта 16px
     color: $dark-100;
     margin-bottom: 20px;
   }

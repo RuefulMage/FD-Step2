@@ -15,22 +15,22 @@
   }
 
   &__number-symbol {
-    font-size: 14px;
+    font-size: 0.875rem; //14px при базовом размере шрифта 16px
     color: $dark-100;
   }
 
   &__number {
-    font-size: 18px;
+    font-size: 1.125rem; //18px при базовом размере шрифта 16px
     color: $dark-100;
 
     &_large{
-      font-size: 24px;
+      font-size: 1.5rem; //24px при базовом размере шрифта 16px
     }
   }
 
   &__lux {
     font-family: Montserrat, OpenSans, sans-serif;
-    font-size: 12px;
+    font-size: 0.75rem; //12px при базовом размере шрифта 16px
     text-transform: uppercase;
     color: $purple;
   }
@@ -46,7 +46,7 @@
   }
 
   &__measure{
-    font-size: 12px;
+    font-size: 0.75rem; //12px при базовом размере шрифта 16px
   }
 
 }

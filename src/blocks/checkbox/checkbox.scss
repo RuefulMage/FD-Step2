@@ -51,7 +51,7 @@
   &__text{
     padding-left: 10px;
     font-family: Montserrat, OpenSans, sans-serif;
-    line-height: 18px;
+    line-height: 1.125rem; //18px при базовом размере шрифта 16px
     color: $dark-50;
     user-select: none;
     cursor: pointer;

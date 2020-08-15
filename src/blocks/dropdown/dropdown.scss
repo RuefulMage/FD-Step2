@@ -23,7 +23,7 @@
     display: flex;
     width: 100%;
     padding-left: 15px;
-    line-height: 24px;
+    line-height: 1.5rem; //24px при базовом размере шрифта 16px
     color: $dark-75;
   }
 
@@ -35,7 +35,7 @@
     width: 100%;
 
     font-family: 'Material Icons';
-    font-size: 24px;
+    font-size: 1.5rem; //24px при базовом размере шрифта 16px
     color: $dark-50;
     cursor: pointer;
     user-select: none;
@@ -76,16 +76,14 @@
   }
 
   &__menu-item-name{
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
     text-transform: uppercase;
-    color: $dark-100;
   }
+
   &__menu-item-controls{
     display: flex;
     align-items: center;
   }
+
   &__amount, &__descrease, &__increase{
     height: 30px;
     width: 30px;
@@ -98,8 +96,8 @@
     border-radius: 100%;
     box-sizing: border-box;
     border: 1px solid $dark-25;
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 1.125rem; //18px при базовом размере шрифта 16px
+    line-height: 1.375rem; //22px при базовом размере шрифта 16px
     color: $dark-50;
     outline: none;
     user-select: none;
@@ -113,8 +111,8 @@
 
   &__amount{
     font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 0.75rem; //12px при базовом размере шрифта 16px
+    line-height: 1.9375rem; //15px при базовом размере шрифта 16px
     color: $dark-100;
   }
 
@@ -128,8 +126,8 @@
 
   &__clear-button, &__apply-button{
     font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 0.75rem; //12px при базовом размере шрифта 16px
+    line-height: 1.9375rem; //15px при базовом размере шрифта 16px
     text-transform: uppercase;
     outline: none;
   }

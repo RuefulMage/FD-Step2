@@ -7,7 +7,7 @@
   background: $dark-25;
   border-radius: 10px;
   height: 20px;
-  font-size: 10px;
+  font-size: 0.625rem; //10px при базовом размере шрифта 16px
   color: $dark-25;
   outline: none;
 
@@ -34,8 +34,6 @@
   }
 
   &__amount{
-    font-family: Montserrat, OpenSans, sans-serif;
-    line-height: 12px;
-    font-size: 10px;
+    line-height: 0.75rem; //12px при базовом размере шрифта 16px
   }
 }

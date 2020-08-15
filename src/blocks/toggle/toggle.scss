@@ -48,9 +48,6 @@
 
   &__text{
     padding-left: 10px;
-    font-family: Montserrat, OpenSans, sans-serif;
-    font-size: 14px;
-    line-height: 18px;
-    color: $dark-75;
+    line-height: 1.125rem; //18px при базовом размере шрифта 16px
   }
 }

@@ -39,7 +39,7 @@
   &__cheque-item{
     display: flex;
     justify-content: space-between;
-    line-height: 18px;
+    line-height: 1.125rem;  //18px при базовом размере шрифта 16px
     color: $dark-75;
     margin-bottom: 18px;
 
@@ -73,7 +73,7 @@
     border: 1px solid $dark-25;
     border-radius: 100%;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 0.75rem;  //12px при базовом размере шрифта 16px
     color: $dark-25;
 
 
@@ -101,7 +101,7 @@
     display: flex;
     font-family: Quicksand, OpenSans, sans-serif;
     font-weight: bold;
-    font-size: 19px;
+    font-size: 1.1875rem;  //19px при базовом размере шрифта 16px
     color: $dark-100;
     align-items: baseline;
   }

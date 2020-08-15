@@ -7,9 +7,8 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 23px;
-    font-family: Montserrat, OpenSans, sans-serif;
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 0.75rem; //12px при базовом размере шрифта 16px
+    line-height: 0.9375rem; //15px при базовом размере шрифта 16px
     text-transform: uppercase;
   }
 

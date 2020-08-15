@@ -8,12 +8,12 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: 'Material Icons';
-    font-size: 48px;
+    font-size: 3rem; //48px при базовом размере шрифта 16px
   }
 
   &__text{
     padding-left: 10px;
-    line-height: 24px;
+    line-height: 1.5rem; //24px при базовом размере шрифта 16px
     color: $dark-75;
   }
 

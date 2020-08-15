@@ -49,7 +49,7 @@
     justify-content: center;
     align-items: center;
     font-family: 'Material Icons';
-    font-size: 24px;
+    font-size: 1.5rem;  //24px при базовом размере шрифта 16px
     color: white;
     outline: none;
   }
@@ -114,7 +114,7 @@
 
   &__reviews{
     display: flex;
-    line-height: 18px;
+    line-height: 1.125rem;  //18px при базовом размере шрифта 16px
     color: $dark-50;
   }
 

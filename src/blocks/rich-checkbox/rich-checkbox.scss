@@ -4,9 +4,8 @@
 
   &__secondary-text{
     display: inline-block;
-    font-family: Montserrat, OpenSans, sans-serif;
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 0.75rem; //12px при базовом размере шрифта 16px
+    line-height: 0.875rem; //14px при базовом размере шрифта 16px
     color: $dark-50;
     padding-left: 30px;
     padding-top: 5px;

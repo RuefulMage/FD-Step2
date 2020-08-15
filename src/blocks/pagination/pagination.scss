@@ -30,7 +30,7 @@
 
   &__page{
     font-weight: bold;
-    font-size: 12px;
+    font-size: 0.75rem; //12px при базовом размере шрифта 16px
     text-transform: uppercase;
     color: $dark-50;
 
@@ -42,7 +42,7 @@
 
   &__last{
     font-family: 'Material Icons';
-    font-size: 24px;
+    font-size: 1.5rem; //24px при базовом размере шрифта 16px
     color: white;
     background: $green;
   }
@@ -95,7 +95,7 @@
       &:after {
         content: '...';
         color: $dark-50;
-        font-size: 12px;
+        font-size: 0.75rem; //12px при базовом размере шрифта 16px
       }
     }
   }
