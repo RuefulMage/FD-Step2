@@ -76,13 +76,15 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
 
     
     //Дальше идут вспомогательные функции
-    function applyButtonClickHandler() {
+    function applyButtonClickHandler(event) {
+        event.preventDefault();
         element.classList.remove(dropdownExpandedClass);
         expandButton.classList.remove(expandButtonRotatedClass);
     }
 
 
-    function clearButtonClickHandler() {
+    function clearButtonClickHandler(event) {
+        event.preventDefault();
         if (totalAmount > 0) {
             totalAmount = 0;
 
@@ -95,7 +97,8 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
     }
 
 
-    function expandButtonClickHandler(){
+    function expandButtonClickHandler(event){
+        event.preventDefault();
         if(element.classList.contains(dropdownExpandedClass)){
             element.classList.remove(dropdownExpandedClass);
             expandButton.classList.remove(expandButtonRotatedClass);
@@ -105,7 +108,8 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
         }
     }
 
-    function descreaseButtonClickHandler() {
+    function descreaseButtonClickHandler(event) {
+        event.preventDefault();
         let itemDOMElement = this.closest('.' + menuItemClass);
         let itemId = itemDOMElement.getAttribute('data-id');
         let item = items.get(itemId);
@@ -118,7 +122,8 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
         }
     }
 
-    function increaseButtonClickHandler() {
+    function increaseButtonClickHandler(event) {
+        event.preventDefault();
         let itemDOMElement = this.closest('.' + menuItemClass);
         let itemId = itemDOMElement.getAttribute('data-id');
         let item = items.get(itemId);
