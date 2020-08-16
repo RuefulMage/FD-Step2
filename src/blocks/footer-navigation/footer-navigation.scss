@@ -3,26 +3,21 @@
 .footer-navigation {
   display: flex;
   flex-direction: column;
+
   &__title {
-    font-family: Montserrat, OpenSans, sans-serif;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
     text-transform: uppercase;
-    color: $dark-100;
-    margin-bottom: 21px;
+    margin-bottom: 22px;
   }
+
   &__menu {
   }
 
   &__menu-item{
-    margin-bottom: 14px;
-    //height: 18px;
+    margin-bottom: 20px;
   }
 
   &__link {
-    font-family: Montserrat, OpenSans, sans-serif;
-    font-size: 14px;
     color: $dark-50;
+    line-height: 1.125rem; //18px при базовом размере шрифта 16px
   }
 }

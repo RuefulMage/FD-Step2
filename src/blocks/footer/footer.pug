@@ -3,21 +3,21 @@ include ../subscription-textfiled/subscription-textfield
 include ../footer-navigation/footer-navigation
 include ../copyright/copyright
 
-mixin footer(descriptionText, menu, subscriptionTitle, subscriptionDescription)
+mixin footer(descriptionText, menu, subscriptionTitle, subscriptionDescription, link)
 
-    .footer
+    footer.footer
         .footer__container
             .footer__company-desription
                 .footer__logo
                     +logo-with-text()
                 p.footer__description-text=descriptionText
-            .footer__menu
-                 each subMenu in menu
-                    .footer__submenu
-                        +footer-navigation(subMenu.title, subMenu.links)
-            .footer__subscription-wrapper
+            .footer__subscription-and-menu-wrapper
+                nav.footer__menu
+                     each subMenu in menu
+                        .footer__submenu
+                            +footer-navigation(subMenu.title, subMenu.links)
                 .footer__subsription-form
-                    .footer__subcription-form-title=subscriptionTitle
+                    h3.footer__subcription-form-title=subscriptionTitle
                     .footer__subcription-form-text=subscriptionDescription
                     .footer__subcription-form-field
-                        +subscription-textfield("Your email address", "Email", "#")
+                        +subscription-textfield("Your email address", "Email", "mock-address")
