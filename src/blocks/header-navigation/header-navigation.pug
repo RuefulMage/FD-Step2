@@ -1,3 +1,6 @@
+// links - массив объектов, содержащих link-ссылка, text-текст элемента меню,
+// current-является ли элемент выбранным, dropdowned-есть ли у элемента подменю
+
 mixin header-navigation(links, largeMargin=false)
     -let itemClasses = ["header-navigation__nav-item"]
     if largeMargin
@@ -9,12 +12,8 @@ mixin header-navigation(links, largeMargin=false)
             - let linkClasses = ["header-navigation__link"]
             if item.current
                 - linkClasses.push("header-navigation__link_current")
-
-
             if item.dropdowned
                 - linkClasses.push("header-navigation__link_dropdowned")
-                li.header-navigation__nav-item
-                    a(class=linkClasses href=item.link)=item.text
-            else
-                li(class=itemClasses)
-                    a(class=linkClasses href=item.link)=item.text
+
+            li.header-navigation__nav-item
+                a(class=linkClasses href=item.link)=item.text

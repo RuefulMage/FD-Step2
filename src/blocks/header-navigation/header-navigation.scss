@@ -3,37 +3,53 @@
 .header-navigation{
   display: flex;
   align-items: center;
+  width: 100%;
+  justify-content: space-between;
 
-
+  @media (max-width: 380px) {
+    flex-direction: column;
+  }
+  
   &__nav-item{
-    margin-right: 20px;
 
+    @media (max-width: 380px) {
+      width: 100%;
+      border-bottom: 1px solid $dark-75;
 
-    &_large-margin{
-      margin-right: 30px;
+      &:last-child{
+        border-bottom: none;
+      }
     }
   }
 
   &__link{
-    font-family: Montserrat, OpenSans, sans-serif;
-    font-size: 14px;
-    line-height: 17px;
+    display: inline-block;
+    width: 100%;
+    line-height: 1.0625rem;  //17px при базовом размере шрифта 16px
     color: $dark-50;
-
 
     &_dropdowned{
       display: flex;
+
       &:after{
         content: 'expand_more';
-        font-family: Material Icons;
-        font-size: 24px;
-        line-height: 17px;
+        font-family: 'Material Icons';
+        font-size: 1.5rem;  //24px при базовом размере шрифта 16px
       }
     }
 
     &_current{
       font-weight: bold;
       color: $dark-75;
+    }
+
+    @media (max-width: 380px) {
+      padding: 10px 0;
+      text-align: center;
+
+      &_dropdowned{
+        justify-content: center;
+      }
     }
   }
 }
