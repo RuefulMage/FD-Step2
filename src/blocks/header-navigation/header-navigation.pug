@@ -1,12 +1,7 @@
 // links - массив объектов, содержащих link-ссылка, text-текст элемента меню,
 // current-является ли элемент выбранным, dropdowned-есть ли у элемента подменю
 
-mixin header-navigation(links, largeMargin=false)
-    -let itemClasses = ["header-navigation__nav-item"]
-    if largeMargin
-        - itemClasses.push("header-navigation__nav-item_large-margin")
-
-
+mixin header-navigation(links)
     ul.header-navigation
          each item in links
             - let linkClasses = ["header-navigation__link"]
