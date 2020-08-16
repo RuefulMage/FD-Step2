@@ -1,9 +1,11 @@
 include ../social-net-icon/social-net-icon
 
-mixin copyright(socials)
+mixin copyright(text, socials)
     .copyright
         .copyright__container
-            .copyright__text Copyright © 2018 Toxin UI Kit. All rights reserved.
+            .copyright__logo
+                +logo-with-text()
+            .copyright__text=text
             .copyright__socials
                 each item in socials
                     .copyright__socials-item
