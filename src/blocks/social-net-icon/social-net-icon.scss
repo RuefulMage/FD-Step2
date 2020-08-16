@@ -3,12 +3,9 @@
 .social-net-icon{
   display: inline-block;
   width: 24px;
-  height: 24px;
   background: $gradient;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: "Font Awesome";
-  font-size: 24px;
-  line-height: 23px;
-
+  font-family: 'Font Awesome';
+  font-size: 1.5rem; //24px при базовом размере шрифта 16px
 }
