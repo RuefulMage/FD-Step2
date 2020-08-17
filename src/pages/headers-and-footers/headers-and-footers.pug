@@ -2,12 +2,11 @@ include ../../blocks/logo/logo
 include ../../blocks/header/header
 include ../../blocks/footer/footer
 include ../../blocks/copyright/copyright
-include ../../blocks/footer-creative/footer-creative
 
 
 
 doctype html
-html(lang='en')
+html(lang="en")
     head
         meta(charset="utf-8")
         meta(name="viewport" content="width=device-width, initial-scale=1, user-scalable=no")
@@ -23,43 +22,70 @@ html(lang='en')
             .headers-and-footers__container
 
                 .headers-and-footers__item
-                    +header([{link:'#', text:'Home', current: true, dropdowned: false},
-                            {link:'#', text:'About Us', current: false, dropdowned: false},
-                            {link:'#', text:'Services', current: false, dropdowned: true},
-                            {link:'#', text:'Careers', current: false, dropdowned: false},
-                            {link:'#', text:'News', current: false, dropdowned: false},
-                            {link:'#', text:'Documentation', current: false, dropdowned: false}],
-                            'login', 'register',  true)
+                    +header({
+                        links: [{link: "mock-address", text: "О нас", current: true, dropdowned: false},
+                            {link: "mock-address", text: "Услуги", current: false, dropdowned: true},
+                            {link: "mock-address", text: "Вакансии", current: false, dropdowned: false},
+                            {link: "mock-address", text: "Новости", current: false, dropdowned: false},
+                            {link: "mock-address", text: "Соглашения", current: false, dropdowned: true}],
+                        loginButtonText: "войти",
+                        registerButtonText: "зарегистрироваться"
+                    })
+
 
 
                 .headers-and-footers__item
-                    +header([{link: '#', text: 'Home', current: true, dropdowned: false},
-                            {link: '#', text: 'About Us', current: false, dropdowned: false},
-                            {link: '#', text: 'Services', current: false, dropdowned: true},
-                            {link: '#', text: 'Careers', current: false, dropdowned: false},
-                            {link: '#', text: 'News', current: false, dropdowned: false},
-                            {link: '#', text: 'Documentation', current: false, dropdowned: false}],
-                            'login', 'register',  true, true, 'Cosmin Negoita')
+                    +header({
+                        links: [{link: "mock-address", text: "О нас", current: true, dropdowned: false},
+                            {link: "mock-address", text: "Услуги", current: false, dropdowned: true},
+                            {link: "mock-address", text: "Вакансии", current: false, dropdowned: false},
+                            {link: "mock-address", text: "Новости", current: false, dropdowned: false},
+                            {link: "mock-address", text: "Соглашения", current: false, dropdowned: true}],
+                        loginButtonText: "войти",
+                        registerButtonText: "зарегистрироваться",
+                        authorized: true,
+                        username: "Юлий Цезарь"
+                    })
 
 
                 .headers-and-footers__item
-                    +footer('Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.', [
-                        {title: 'Navigation', links:[{link: '#', text:'About Us'}, {link: '#', text:'News'}, {link: '#', text:'Support'}, {link: '#', text:'Products'}]},
-                        {title: 'About us', links:[{link: '#', text:'Who we are'}, {link: '#', text:'Our team'}, {link: '#', text:'Careers'}, {link: '#', text:'Investors'}]},
-                        {title: 'Support', links:[{link: '#', text:'Documentation'}, {link: '#', text:'Community'}, {link: '#', text:'Get in Touch'}]},
-                    ], 'Subscribe to our newsletter', 'Receive our latest news and promotions in your inbox!')
+                    +footer({
+                        descriptionText: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»",
+                        menu: [{
+                            title: "навигация", links: [{link: "mock-address", text: "О нас"},
+                                {link: "mock-address", text: "Новости"}, {
+                                    link: "mock-address",
+                                    text: "Служба поддержки"
+                                }, {link: "mock-address", text: "Услуги"}]
+                        },
+                            {
+                                title: "о нас",
+                                links: [{link: "mock-address", text: "О сервисе"}, {
+                                    link: "mock-address",
+                                    text: "Наша команда"},
+                                    {link: "mock-address", text: "Вакансии"},
+                                    {link: "mock-address", text: "Инвесторы"}]
+                            },
+                            {
+                                title: "Служба поддержки",
+                                links: [{link: "mock-address", text: "Соглашения"}, {
+                                    link: "mock-address",
+                                    text: "Сообщества"
+                                }, {link: "mock-address", text: "Связь с нами"}]
+                            },
+                        ],
+                        subscriptionTitle: "Подписка",
+                        subscriptionDescription: "Получайте специальные предложения и новости сервиса",
+                        link: "mock-address"
+                    })
 
-                    +copyright([{icon:'', link:'#'},
-                        {icon:'', link:'#'},
-                        {icon:'', link:'#'}])
-
-                .headers-and-footers__item
-                    +footer-creative('Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.', [{icon: '', link: '#'},
-                        {icon: '', link: '#'},
-                        {icon: '', link: '#'}])
+                    +copyright("Copyright © 2018 Toxin отель. Все права зачищены.", [{icon: "", link: "mock-address"},
+                        {icon: "", link: "mock-address"},
+                        {icon: "", link: "mock-address"}])
 
 
+                .headers-and-footers__item.headers-and-footers__item_width_small
 
-
-
-                        
+                    +copyright("Copyright © 2018 Toxin отель. Все права зачищены.", [{icon: "", link: "mock-address"},
+                        {icon: "", link: "mock-address"},
+                        {icon: "", link: "mock-address"}])

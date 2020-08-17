@@ -8,7 +8,7 @@
 
   &__logo{
     padding-left: 30px;
-    margin-bottom: 72px ;
+    margin-bottom: 62px;
   }
 
   &__container{
@@ -19,6 +19,10 @@
     background: white;
     width: 100%;
     margin-bottom: 40px;
+
+    &_width_small{
+      max-width: 500px;
+    }
   }
 
 
