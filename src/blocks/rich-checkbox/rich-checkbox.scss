@@ -1,9 +1,11 @@
 @import "../../assets/scss/colors.scss";
 
 .rich-checkbox{
+  text-align: left;
 
   &__secondary-text{
     display: inline-block;
+    text-align: left;
     font-size: 0.75rem; //12px при базовом размере шрифта 16px
     line-height: 0.875rem; //14px при базовом размере шрифта 16px
     color: $dark-50;

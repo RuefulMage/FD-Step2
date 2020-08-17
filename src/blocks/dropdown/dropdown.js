@@ -12,7 +12,9 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
     const appendButtonClass = 'js-append-button';
     const inputTextClass = 'js-dropdown__text';
 
-    let generalForms = element.getAttribute('data-forms').split(',');
+    let generalForms = element.getAttribute('data-forms') || 'элемент, элемента, элементов';
+    generalForms = generalForms.split(',');
+
     let placeholder = element.getAttribute('data-placeholder');
     let itemsDomElementsArray = element.querySelectorAll('.' + menuItemClass);
     let items = new Map();
@@ -65,9 +67,9 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
         let applyButton = element.querySelector('.' + appendButtonClass);
         applyButton.addEventListener('click', applyButtonClickHandler);
 
-    }
+        toggleClearButtonVisibility();
 
-    toggleClearButtonVisibility();
+    }
     currentSetInputTextFunction();
 
 
@@ -157,8 +159,6 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
 
     // Функция, которая считает общее кол-во элементов и вставляет строку с общим количеством в поле инпута
     function setSelectedTextByTotalAmount() {
-        console.log(generalForms);
-        // generalForms = generalForms.split(',');
         let result = '';
         if (totalAmount === 0) {
             result = placeholder;
