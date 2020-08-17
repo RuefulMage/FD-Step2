@@ -3,8 +3,16 @@ include ../../blocks/color-description/color-description
 include ../../blocks/text-type/text-type
 
 doctype html
-html(lang='en')
+html(lang="en")
     head
+        link(rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png")
+        link(rel="mask-icon" href="../../assets/favicons/pinned-safari-icon.svg" color="purple")
+        link(rel="manifest" href="../../assets/favicons/site.webmanifest")
+        meta(name="msapplication-TileColor" content="#da532c")
+        meta(name="theme-color" content="#ffffff")
+
         meta(charset="utf-8")
         meta(name="viewport" content="width=device-width, initial-scale=1, user-scalable=no")
         meta(name="keywords" content="Colors, Fonts, Toxin")
@@ -23,40 +31,40 @@ html(lang='en')
                 .colors-and-fonts__column.colors-and-fonts__col-1
 
                     .colors-and-fonts__item
-                        +color-description('dark-shade-100', 'Dark Shade 100%', '#1F2041')
+                        +color-description("dark-shade-100", "Dark Shade 100%", "#1F2041")
 
                     .colors-and-fonts__item
-                        +color-description('dark-shade-75', 'Dark Shade 75%', '#1F2041')
+                        +color-description("dark-shade-75", "Dark Shade 75%", "#1F2041")
 
                     .colors-and-fonts__item
-                        +color-description('dark-shade-50', 'Dark Shade 50%', '#1F2041')
+                        +color-description("dark-shade-50", "Dark Shade 50%", "#1F2041")
 
                     .colors-and-fonts__item
-                        +color-description('dark-shade-25', 'Dark Shade 25%', '#1F2041')
+                        +color-description("dark-shade-25", "Dark Shade 25%", "#1F2041")
 
                     .colors-and-fonts__item
-                        +color-description('dark-shade-5', 'Dark Shade 5%', '#1F2041')
+                        +color-description("dark-shade-5", "Dark Shade 5%", "#1F2041")
 
                     .colors-and-fonts__item
-                        +color-description('purple', 'Purple', '#BC9CFF')
+                        +color-description("purple", "Purple", "#BC9CFF")
 
                     .colors-and-fonts__item
-                        +color-description('green', 'Green', '#6FCF97')
+                        +color-description("green", "Green", "#6FCF97")
 
                 .colors-and-fonts__column.colors-and-fonts__col-2
 
                     .colors-and-fonts__item.colors-and-fonts__item_margin-large.colors-and-fonts__item_width-400
-                        +text-type('H1', 'This one is the sub-section or widget title', 'large')
+                        +text-type("H1", "This one is the sub-section or widget title", "large")
 
 
                     .colors-and-fonts__item.colors-and-fonts__item_margin-large.colors-and-fonts__item_width-400
-                        +text-type('H2', 'Next one is the item title inside widgets', 'medium')
+                        +text-type("H2", "Next one is the item title inside widgets", "medium")
 
 
                     .colors-and-fonts__item.colors-and-fonts__item_margin-large.colors-and-fonts__item_width-400
-                        +text-type('H3', 'This is a label or CTA text', 'small')
+                        +text-type("H3", "This is a label or CTA text", "small")
 
 
                     .colors-and-fonts__item.colors-and-fonts__item_margin-large.colors-and-fonts__item_width-400
-                        +text-type('Body', 'This is the body text which is used for most of the design, like paragraphs, lists, etc.')
+                        +text-type("Body", "This is the body text which is used for most of the design, like paragraphs, lists, etc.")
 
