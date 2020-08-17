@@ -7,8 +7,16 @@ include ../../blocks/signin-card/signin-card
 include ../../blocks/apartment-description-card/apartment-description-card
 
 doctype html
-html(lang='en')
+html(lang="en")
     head
+        link(rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png")
+        link(rel="mask-icon" href="../../assets/favicons/pinned-safari-icon.svg" color="purple")
+        link(rel="manifest" href="../../assets/favicons/site.webmanifest")
+        meta(name="msapplication-TileColor" content="#da532c")
+        meta(name="theme-color" content="#ffffff")
+
         meta(charset="utf-8")
         meta(name="viewport" content="width=device-width, initial-scale=1, user-scalable=no")
         meta(name="keywords" content="Cards, Toxin")
@@ -26,35 +34,79 @@ html(lang='en')
                 .cards__column.cards__col-1
 
                     .cards__item
-                        +find-apartment-card('Найдём номера под ваши пожелания', ['прибытие','выезд'], 'гости',
-                            'подобрать номер')
+                        +find-apartment-card({
+                            header: "Найдём номера под ваши пожелания",
+                            dateDropdownHeaders: ["прибытие", "выезд"],
+                            dropdownHeader: "гости",
+                            buttonText: "подобрать номер",
+                            link: "mock-address"
+                        })
 
                     .cards__item
-                        +registration-card('Регистрация аккаунта')
-
+                        +registration-card("Регистрация аккаунта", "mock-address")
 
                 .cards__column.cards__col-2
 
 
-                    .cards__item
-                        +apartment-booking-card('888', '9 990', '₽', true, ['прибытие','выезд'], 'гости',
-                            '9 990₽ х 4 суток', '39 960₽', 'Сбор за услуги: скидка 2 179₽', '0₽',
-                            'Сбор за дополнительные услуги',  '300₽', '38 081₽', ['Sum was computed by calculator',
-                            'This is for the smiles, that was given to you'], 'забронировать')
+                            .cards__item
+                                +apartment-booking-card({
+                                    number: "888",
+                                    price: "9 990",
+                                    currency: "₽",
+                                    lux: true,
+                                    dateDropdownHeaders: ["прибытие", "выезд"],
+                                    dropdownHeader: "гости",
+                                    expression: "9 990₽ х 4 суток",
+                                    expressionResult: "39 960₽",
+                                    servicePriceLabel: "Сбор за услуги: скидка 2 179₽",
+                                    servicePrice: "0₽",
+                                    extraServiceLabel: "Сбор за дополнительные услуги",
+                                    extraServicePrice: "300₽",
+                                    totalPrice: "38 081₽",
+                                    noteTexts: ["Sum was computed by calculator",
+                                        "This is for the smiles, that was given to you"],
+                                    noteTexts: "забронировать",
+                                    link: "mock-address"
+                                })
 
-                    .cards__item
-                        +signin-card()
+                            .cards__item
+                                +signin-card()
 
 
                 .cards__column.cards__col-3
 
 
-                    .cards__item
-                        +calendar()
+                                .cards__item
+                                    +calendar("mock-address")
 
 
-                    .cards__item.cards__item_width-small
-                        +apartment-description-card([{path: 'apartment-lux.png'},{path: 'apartment-lux.png'},{path: 'apartment-lux.png'}, {path: 'apartment-lux.png'}], '888', '9 990', '₽', 'card-rate-lux', '5', '145', true)
+                                .cards__item.cards__item_width-small
+                                    +apartment-description-card({
+                                        images: [{path: "apartment-lux.png"},
+                                            {path: "apartment-lux.png"},
+                                            {path: "apartment-lux.png"},
+                                            {path: "apartment-lux.png"}],
+                                        number: "888",
+                                        price: "9 990",
+                                        currency: "₽",
+                                        rateButtonName: "card-rate-lux",
+                                        starAmount: 5,
+                                        reviewsAmount: "145",
+                                        lux: true,
+                                        link: "mock-address"
+                                    })
 
-                    .cards__item.cards__item_width-small
-                        +apartment-description-card([{path: 'apartment.png'},{path: 'apartment.png'},{path: 'apartment.png'}, {path: 'apartment.png'}], '888', '9 990', '₽', 'card-rate-lux', '5', '145')
+                                .cards__item.cards__item_width-small
+                                    +apartment-description-card({
+                                        images: [{path: "apartment.png"},
+                                            {path: "apartment.png"},
+                                            {path: "apartment.png"},
+                                            {path: "apartment.png"}],
+                                        number: "888",
+                                        price: "9 990",
+                                        currency: "₽",
+                                        rateButtonName: "card-rate-lux",
+                                        starAmount: 5,
+                                        reviewsAmount: "145",
+                                        link: "mock-address"
+                                    })

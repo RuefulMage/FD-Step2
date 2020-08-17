@@ -10,6 +10,13 @@
     padding-left: 30px;
     margin-bottom: 72px;
 
+    @media (max-width: 1160px) {
+      padding-left: 0;
+    }
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
   }
 
   &__container{
@@ -17,6 +24,12 @@
     display: flex;
     margin: 0 auto;
     justify-content: space-between;
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
 
@@ -26,8 +39,13 @@
   &__column{
     width: 100%;
   }
+
   &__col-1, &__col-2{
     max-width: 380px;
+
+    @media (max-width: 500px){
+      max-width: 100%;
+    }
   }
 
   &__col-1{}
@@ -40,7 +58,6 @@
 
 
   &__item{
-
     background: white;
     margin-bottom: 40px;
 
