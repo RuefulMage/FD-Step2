@@ -9,7 +9,7 @@
 
   &__logo{
     padding-left: 30px;
-    margin-bottom: 62px;
+    margin-bottom: 65px;
 
     @media (max-width: 1160px) {
       padding-left: 0;
@@ -66,6 +66,7 @@
   &__col-2{
     max-width: 711px;
     display: flex;
+    flex-wrap: wrap;
 
 
     @media (max-width: 768px) {
@@ -157,7 +158,6 @@
 
     &_margin-large{
       margin-bottom: 30px;
-
     }
 
     &:last-child{
@@ -169,11 +169,18 @@
     display: inline-block;
     margin-right: 20px;
 
+    &_width-big{
+      max-width: 99px;
+      width: 100%;
+    }
+
     &:last-child{
       margin-right: 0;
     }
 
+
     @media (max-width: 768px) {
+      max-width: 100%;
       width: 100%;
       text-align: center;
       margin-right: 0;
