@@ -1,6 +1,5 @@
 @import "../../assets/scss/colors";
 
-
 .forms-elements{
 
   &__wrapper{
@@ -11,6 +10,14 @@
   &__logo{
     padding-left: 30px;
     margin-bottom: 62px;
+
+    @media (max-width: 1160px) {
+      padding-left: 0;
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   &__container {
@@ -27,36 +34,63 @@
     display: flex;
     margin-bottom: 100px;
 
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
     &_margin-small{
       margin-bottom: 40px;
     }
   }
 
-  &__row-3 &__col-2,
-  &__row-4 &__col-2{
-    padding-top: 14px;
-  }
-
 
   &__column{
     width: 100%;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+    
   }
 
   &__col-1{
     max-width: 446px;
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+      text-align: center;
+    }
   }
 
   &__col-2{
     max-width: 711px;
     display: flex;
+
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+      text-align: center;
+    }
   }
 
   &__col-2-1{
     max-width: 389px;
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+      text-align: center;
+    }
   }
 
   &__col-2-2{
     max-width: 320px;
+
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+      text-align: center;
+    }
   }
 
   &__item{
@@ -78,10 +112,20 @@
 
     &_expanded{
       padding-bottom: 120px;
+
+      @media (max-width: 768px) {
+        padding-bottom: 180px;
+      }
     }
 
     &:last-child{
       margin-bottom: 0;
+    }
+
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+      text-align: center;
     }
   }
 
@@ -89,12 +133,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-
-    font-family: Montserrat, OpenSans, sans-serif;
-    font-size: 12px;
-    line-height: 15px;
     text-transform: uppercase;
-
     margin-bottom: 5px;
 
     &_margin-large{
@@ -108,6 +147,8 @@
   }
 
   &__item-state{
+    font-size: 0.75rem; //12px;
+    line-height: 0.9375; //15px;
     color: $dark-10;
   }
 
@@ -131,5 +172,21 @@
     &:last-child{
       margin-right: 0;
     }
+
+    @media (max-width: 768px) {
+      width: 100%;
+      text-align: center;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__pagination{
+    max-width: 241px;
+  }
+
+  &__row-3 &__col-2,
+  &__row-4 &__col-2{
+    padding-top: 14px;
   }
 }
