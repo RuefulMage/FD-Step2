@@ -7,6 +7,14 @@
   &__images-wrapper{
     display: flex;
     height: 485px;
+
+    @media (max-width: 900px){
+      height: 200px;
+    }
+
+    @media (max-width: 380px) {
+      display: none;
+    }
   }
   &__left-image{
     height: 100%;
@@ -17,12 +25,21 @@
     background-origin: padding-box;
     background-size: cover;
 
+
+    @media (max-width: 500px){
+      width: 100%;
+    }
+
   }
   &__right-images-wrapper{
     height: 100%;
     display: flex;
     flex-direction: column;
     width: 32%;
+
+    @media (max-width: 500px){
+      display: none;
+    }
   }
   &__right--top-image{
     height: 50%;
@@ -48,6 +65,11 @@
     width: 100%;
     margin: 0 auto;
     padding: 70px 0;
+
+    @media (max-width: 1100px){
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
 
@@ -67,18 +89,33 @@
     justify-content: space-between;
     margin-bottom: 30px;
     max-width: 710px;
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+      //align-items: center;
+    }
+  }
+
+  &__column-left, &__column-left{
+    width: 100%;
+
+    @media (max-width: 600px) {
+      max-width: 100%;
+    }
   }
 
   &__column-left{
     max-width: 290px;
     display: flex;
     flex-direction: column;
-    width: 100%;
   }
 
-  &__column-right{
+  &__column-left{
     max-width:  350px;
-    width: 100%;
+
+    @media (max-width: 600px) {
+      margin-bottom: 30px;
+    }
   }
 
   &__item{
@@ -116,26 +153,17 @@
   }
 
   &__item-header{
-    font-family: Quicksand, OpenSans, sans-serif;
-    font-weight: bold;
-    font-size: 19px;
-    line-height: 24px;
+    line-height: 1.5rem; //24px при базовом размере шрифта 16px
   }
 
 
   &__item-subheader{
-    font-family: Montserrat, OpenSans, sans-serif;
-    font-size: 14px;
-    line-height: 14px;
     color: $dark-50;
   }
 
 
   &__text{
-    font-family: Montserrat, OpenSans, sans-serif;
-    font-size: 14px;
-    line-height: 24px;
-    color: $dark-75;
+    line-height: 1.5rem; //24px при базовом размере шрифта 16px
   }
 
 }

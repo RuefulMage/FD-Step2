@@ -19,67 +19,95 @@ block content
             .room-details__right-images-wrapper
                 .room-details__right--top-image
                 .room-details__right-bottom-image
-        .room-details__info-wrapper
-            .room-details__info
+        main.room-details__info-wrapper
+            section.room-details__info
 
                 .room-details__row
                     .room-details__column-left
                         .room-details__item
-                                .room-details__item-label
-                                    h3.room-details__item-header Сведения о номере
-                                .room-details__subitem
-                                    +icon-text('insert_emoticon', 'Комфорт', 'Шумопоглощающие стены', true)
-                                .room-details__subitem
-                                    +icon-text('location_city', 'Удобство', 'Окно в каждой из спален', true)
-                                .room-details__subitem
-                                    +icon-text('whatshot', 'Уют', 'Номер оснащён камином')
+                            .room-details__item-label
+                                h2.room-details__item-header Сведения о номере
+                            .room-details__subitem
+                                +icon-text("insert_emoticon", "Комфорт", "Шумопоглощающие стены", true)
+                            .room-details__subitem
+                                +icon-text("location_city", "Удобство", "Окно в каждой из спален", true)
+                            .room-details__subitem
+                                +icon-text("whatshot", "Уют", "Номер оснащён камином")
 
                     .room-details__column-right
                         .room-details__item
                             .room-details__item-label
-                                h3.room-details__item-header Впечатления от номера
+                                h2.room-details__item-header Впечатления от номера
                             .room-details__subitem-inline
                                 +pie-chart({great: 130, bad: 0, good: 65, normal: 65})
                             .room-details__subitem-inline
                                 +bullet-list([
-                                    {text: 'Великолепно', style: 'great'},
-                                    {text: 'Хорошо', style: 'good'},
-                                    {text: 'Удовлетворительно', style: 'normal'},
-                                    {text: 'Разочарован', style: 'bad'}
+                                    {text: "Великолепно", style: "great"},
+                                    {text: "Хорошо", style: "good"},
+                                    {text: "Удовлетворительно", style: "normal"},
+                                    {text: "Разочарован", style: "bad"}
                                 ])
+
                 .room-details__row
                     .room-details__item
                         .room-details__item-label
-                            h3.room-details__item-header Отзывы посетителей номера
+                            h2.room-details__item-header Отзывы посетителей номера
                             span.room-details__item-subheader 2 отзыва
                         .room-details__subitem
-                            +comment('../../assets/images/comment-avatar-1.png','Мурад Сарафанов', '5 дней назад', 12, 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.' , true)
+                            +comment({
+                                avatarPath: "../../assets/images/comment-avatar-1.png",
+                                fullName: "Мурад Сарафанов",
+                                lastViewedTime: "5 дней назад",
+                                likeAmount: 12,
+                                commentText: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
+                                liked: true
+                            })
                         .room-details__subitem
-                            +comment('../../assets/images/comment-avatar-2.png','Патрисия Стёклышкова', 'Неделю назад', 2, 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент')
+                            +comment({
+                                avatarPath: "../../assets/images/comment-avatar-2.png",
+                                fullName: "Патрисия Стёклышкова",
+                                lastViewedTime: "Неделю назад",
+                                likeAmount: 2,
+                                commentText: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"
+                            })
 
                 .room-details__row
                     .room-details__column-left
                         .room-details__item
                             .room-details__item-label.room-details__item-label_padding-left
-                                h3.room-details__item-header Правила
+                                h2.room-details__item-header Правила
                             +bullet-list([
-                                {text: 'Нельзя с питомцами', style: 'default', withPadding: 'true'},
-                                {text: 'Без вечеринок и мероприятий', style: 'default', withPadding: 'true'},
-                                {text: 'Время прибытия — после 13:00, а выезд до 12:00', style: 'default'}
+                                {text: "Нельзя с питомцами", style: "default", withPadding: "true"},
+                                {text: "Без вечеринок и мероприятий", style: "default", withPadding: "true"},
+                                {text: "Время прибытия — после 13:00, а выезд до 12:00", style: "default"}
                             ])
 
                     .room-details__column-right
                         .room-details__item
                             .room-details__item-label
-                                h3.room-details__item-header Отмена
+                                h2.room-details__item-header Отмена
                             p.room-details__text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее
-                                    |чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+                                | чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 
 
 
 
-            .room-details__card
-                +apartment-booking-card('888', '9 990', '₽', true, ['прибытие', 'выезд'], 'гости',
-                    '9 990₽ х 4 суток', '39 960₽', 'Сбор за услуги: скидка 2 179₽', '0₽',
-                    'Сбор за дополнительные услуги',  '300₽', '38 081₽', ['Sum was computed by calculator',
-                    'This is for the smiles, that was given to you'], 'забронировать')
+            section.room-details__card
+                +apartment-booking-card({
+                    number: "888",
+                    price: "9 990",
+                    currency: "₽",
+                    lux: true,
+                    dateDropdownHeaders: ["прибытие", "выезд"],
+                    dropdownHeader: "гости",
+                    expression: "9 990₽ х 4 суток",
+                    expressionResult: "39 960₽",
+                    servicePriceLabel: "Сбор за услуги: скидка 2 179₽",
+                    servicePrice: "0₽",
+                    extraServiceLabel: "Сбор за дополнительные услуги",
+                    extraServicePrice: "300₽", totalPrice: "38 081₽",
+                    noteTexts: ["Sum was computed by calculator",
+                        "This is for the smiles, that was given to you"],
+                    buttonText: "забронировать",
+                    link: "mock-address"
+                })
