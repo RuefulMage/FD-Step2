@@ -9,6 +9,15 @@
   &__logo{
     padding-left: 30px;
     margin-bottom: 62px;
+
+
+    @media (max-width: 1160px) {
+      padding-left: 0;
+    }
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
   }
 
   &__container{
@@ -21,7 +30,8 @@
     margin-bottom: 40px;
 
     &_width_small{
-      max-width: 500px;
+      max-width: 768px;
+      margin: auto;
     }
   }
 

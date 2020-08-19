@@ -148,8 +148,8 @@
   }
 
   &__item-state{
-    font-size: 0.75rem; //12px;
-    line-height: 0.9375; //15px;
+    font-size: 0.75rem; //12px при базовом размере шрифта 16px
+    line-height: 0.9375; //15px при базовом размере шрифта 16px
     color: $dark-10;
   }
 

@@ -2,18 +2,29 @@ include ../../blocks/logo/logo
 include ../../blocks/header/header
 include ../../blocks/footer/footer
 include ../../blocks/copyright/copyright
+include ../../blocks/small-footer/small-footer
 
 
 
 doctype html
 html(lang="en")
     head
+        link(rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png")
+        link(rel='mask-icon' href='../../assets/favicons/pinned-safari-icon.svg' color='purple')
+        link(rel="manifest" href="../../assets/favicons/site.webmanifest")
+        meta(name="msapplication-TileColor" content="#da532c")
+        meta(name="theme-color" content="#ffffff")
+
         meta(charset="utf-8")
         meta(name="viewport" content="width=device-width, initial-scale=1, user-scalable=no")
         meta(name="keywords" content="Header, Footer, Toxin")
         meta(name="description" content="Toxin headers and footers demonstration page")
         title Headers & Footers
         link(href="./assets/css/app.css")
+        link(href="../../assets/css/app.css" rel="stylesheet")
+
     body
         .headers-and-footers__wrapper
 
@@ -27,7 +38,7 @@ html(lang="en")
                             {link: "mock-address", text: "Услуги", current: false, dropdowned: true},
                             {link: "mock-address", text: "Вакансии", current: false, dropdowned: false},
                             {link: "mock-address", text: "Новости", current: false, dropdowned: false},
-                            {link: "mock-address", text: "Соглашения", current: false, dropdowned: true}],
+                            {link: "mock-address", text: "Соглашения", curзrent: false, dropdowned: true}],
                         loginButtonText: "войти",
                         registerButtonText: "зарегистрироваться"
                     })
@@ -85,7 +96,7 @@ html(lang="en")
 
 
                 .headers-and-footers__item.headers-and-footers__item_width_small
-
-                    +copyright("Copyright © 2018 Toxin отель. Все права зачищены.", [{icon: "", link: "mock-address"},
+                    +small-footer("Copyright © 2018 Toxin отель. Все права зачищены.", [{icon: "", link: "mock-address"},
                         {icon: "", link: "mock-address"},
                         {icon: "", link: "mock-address"}])
+    script(src="../../assets/js/app.js" type="text/javascript")
