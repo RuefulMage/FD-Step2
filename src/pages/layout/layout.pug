@@ -3,48 +3,74 @@ include ../../blocks/footer/footer.pug
 
 //TODO вынести стили для background-image в отдельный миксин
 doctype html
-html(lang='en')
+html(lang="en")
     head
-        meta(charset='utf-8')
+        link(rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png")
+        link(rel='mask-icon' href='../../assets/favicons/pinned-safari-icon.svg' color='purple')
+        link(rel="manifest" href="../../assets/favicons/site.webmanifest")
+        meta(name="msapplication-TileColor" content="#da532c")
+        meta(name="theme-color" content="#ffffff")
+
+        meta(charset="utf-8")
         meta(name="viewport" content="width=device-width, initial-scale=1, user-scalable=no")
 
         block page-meta
 
         link(href="./assets/css/app.css")
+        link(href="../../assets/css/app.css" rel="stylesheet")
+
     body
         block header
-            +header([{link: '#', text: 'О нас', current: false, dropdowned: false},
-                {link: '#', text: 'Услуги', current: false, dropdowned: true},
-                {link: '#', text: 'Ввкансии', current: false, dropdowned: false},
-                {link: '#', text: 'Новости', current: false, dropdowned: false},
-                {link: '#', text: 'Соглашения', current: false, dropdowned: true}],
-                'войти', 'зарегистрироваться',  false)
+            +header({
+                links: [{link: "mock-address", text: "О нас", current: false, dropdowned: false},
+                    {link: "mock-address", text: "Услуги", current: false, dropdowned: true},
+                    {link: "mock-address", text: "Вакансии", current: false, dropdowned: false},
+                    {link: "mock-address", text: "Новости", current: false, dropdowned: false},
+                    {link: "mock-address", text: "Соглашения", current: false, dropdowned: true}],
+                loginButtonText: "войти",
+                registerButtonText: "зарегистрироваться",
+                authorized: false
+            })
 
 
         block content
 
         block footer
-            +footer('Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»', [
-                {title: 'Навигация',
-                    links: [{link: '#', text: 'О нас'}, {link: '#', text: 'Новости'}, {
-                        link: '#',
-                        text: 'Служба поддержки'
-                    }, {link: '#', text: 'Услуги'}]
-                },
-                {title: 'О нас',
-                    links: [{link: '#', text: 'О сервисе'}, {link: '#', text: 'Наша команда'}, {
-                        link: '#',
-                        text: 'Вакансии'
-                    }, {link: '#', text: 'Инвесторы'}]
-                },
-                {title: 'Служба поддержки',
-                    links: [{link: '#', text: 'Соглашения'}, {link: '#', text: 'Сообщества'}, {
-                        link: '#',
-                        text: 'Связь с нами'
-                    }]
-                },
-            ], 'Подписка', 'Получайте специальные предложения и новости сервиса')
+            +footer({
+                descriptionText: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»",
+                menu: [
+                    {
+                        title: "Навигация",
+                        links: [{link: "mock-address", text: "О нас"}, {link: "mock-address", text: "Новости"}, {
+                            link: "mock-address",
+                            text: "Служба поддержки"
+                        }, {link: "mock-address", text: "Услуги"}]
+                    },
+                    {
+                        title: "О нас",
+                        links: [{link: "mock-address", text: "О сервисе"}, {link: "mock-address", text: "Наша команда"}, {
+                            link: "mock-address",
+                            text: "Вакансии"
+                        }, {link: "mock-address", text: "Инвесторы"}]
+                    },
+                    {
+                        title: "Служба поддержки",
+                        links: [{link: "mock-address", text: "Соглашения"}, {link: "mock-address", text: "Сообщества"}, {
+                            link: "mock-address",
+                            text: "Связь с нами"
+                        }]
+                    },
+                ],
+                subscriptionTitle: "Подписка",
+                subscriptionDescription: "Получайте специальные предложения и новости сервиса",
+                link: "mock-address"
+            })
 
-            +copyright([{icon: '', link: '#'},
-                {icon: '', link: '#'},
-                {icon: '', link: '#'}])
+            +copyright("Copyright © 2018 Toxin отель. Все права зачищены.",
+                [{icon: "", link: "mock-address"},
+                {icon: "", link: "mock-address"},
+                {icon: "", link: "mock-address"}]
+            )
+        script(src="../../assets/js/app.js" type="text/javascript")

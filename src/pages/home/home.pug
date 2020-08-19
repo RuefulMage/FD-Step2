@@ -7,9 +7,14 @@ block page-meta
 
 block content
     include ../../blocks/find-apartment-card/find-apartment-card
-    .home
+    main.home
         .home__container
             .home__card
-                +find-apartment-card('Найдём номера под ваши пожелания', ['прибытие', 'выезд'], 'гости',
-                    'подобрать номер')
+                +find-apartment-card({
+                    header: "Найдём номера под ваши пожелания",
+                    dateDropdownHeaders: ["прибытие", "выезд"],
+                    dropdownHeader: "гости",
+                    buttonText: "подобрать номер",
+                    link: "mock-address"
+                })
             p.home__text Лучшие номера для вашей работы, отдыха и просто вдохновения
