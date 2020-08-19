@@ -1,0 +1,12 @@
+include ../social-net-icon/social-net-icon
+
+mixin small-footer(text, socials)
+    .small-footer
+        .small-footer__container
+            .small-footer__logo
+                +logo-with-text()
+            .small-footer__text=text
+            .small-footer__socials
+                each item in socials
+                    .small-footer__socials-item
+                        +social-net-icon(item.icon,item.link)
