@@ -1,23 +1,20 @@
 .sign-in {
   &__container {
-
     background-image: url('../../assets/images/background-image-1.png');
     background-repeat: no-repeat;
-    //background-attachment: fixed;
     background-position: center center;
     background-origin: padding-box;
     background-size: cover;
 
-    //background-image: url('../../assets/images/madara.jpg');
-    //padding: 28px 0;
-    height: 700px;
+    padding: 172px 0;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
   &__card {
-    flex-basis: 380px;
+    max-width: 380px;
+    width: 100%;
     background: white;
   }
 }
