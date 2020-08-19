@@ -11,17 +11,55 @@
     margin:  0 auto;
     padding-top: 30px;
     padding-bottom: 70px;
+    justify-content: center;
+
+    @media (max-width: 880px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__show-filter-button{
+    display: none;
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 30px;
+    border-bottom: 1px solid $dark-25;
+    border-top: 1px solid $dark-25;
+    outline: none;
+
+    @media (max-width: 880px) {
+      display: block;
+    }
   }
 
   &__filter-column{
     max-width: 326px;
     width: 100%;
+
+    &_hidden{
+      display: none;
+    }
+
+
+    @media (max-width: 880px) {
+      max-width: 100%;
+      margin-bottom: 50px;
+    }
   }
 
   &__result{
     max-width: 835px;
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 1160px) {
+      max-width: 560px;
+    }
+
+    @media (max-width: 560px) {
+      max-width: 270px;
+    }
   }
 
   &__results-list{
@@ -48,15 +86,15 @@
     &:last-child{
       margin-bottom: 0;
     }
+
+    @media (max-width: 880px) {
+      max-width: 100%;
+    }
   }
 
   &__item-label{
     display: flex;
-    font-family: Montserrat, OpenSans, sans-serif;
-    font-size: 12px;
-    line-height: 15px;
     text-transform: uppercase;
-
     margin-bottom: 5px;
 
     &_margin-large{
@@ -64,10 +102,7 @@
     }
   }
 
-  &__item-header{
-    font-weight: bold;
-    color: $dark-100;
-  }
+  &__item-header{}
 
 
   &__subitem{
@@ -79,17 +114,13 @@
   }
 
   &__text{
-    font-family: Montserrat, OpenSans, sans-serif;
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 0.75rem; //12px при базовом размере шрифта 16px
+    line-height: 0.875rem; //14px при базовом размере шрифта 16px
     color: $dark-50;
   }
 
   &__results-header{
-    font-family: Quicksand, OpenSans, sans-serif;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 30px;
+    line-height: 1.875rem; //30px при базовом размере шрифта 16px
     margin-bottom: 21px;
   }
 
@@ -100,7 +131,19 @@
     margin-bottom: 21px;
 
 
-    &:nth-child(3n){
+    @media (min-width: 1160px) {
+      &:nth-child(3n){
+        margin-right: 0;
+      }
+    }
+
+    @media (max-width: 1160px) {
+      &:nth-child(2n){
+        margin-right: 0;
+      }
+    }
+
+    @media (max-width: 560px) {
       margin-right: 0;
     }
   }
