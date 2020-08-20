@@ -1,16 +1,16 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
-.copyright{
+.copyright {
   box-sizing: border-box;
-  padding: 23px 0;
+  padding: 23px 20px;
   width: 100%;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
-  
+
   @media (max-width: 750px) {
     padding: 120px 0;
   }
 
-  &__container{
+  &__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,7 +23,7 @@
     }
   }
 
-  &__logo{
+  &__logo {
     display: none;
     margin-bottom: 20px;
 
@@ -32,22 +32,22 @@
     }
   }
 
-  &__text{
+  &__text {
     text-align: center;
 
     @media (max-width: 750px) {
       margin-bottom: 25px;
     }
   }
-  
-  &__socials{
+
+  &__socials {
     display: flex;
   }
 
-  &__socials-item{
+  &__socials-item {
     margin-right: 20px;
 
-    &:last-child{
+    &:last-child {
       margin-right: 0;
     }
   }

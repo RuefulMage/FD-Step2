@@ -1,9 +1,6 @@
-// links - массив объектов, содержащих link-ссылка, text-текст элемента меню,
-// current-является ли элемент выбранным, dropdowned-есть ли у элемента подменю
-
 mixin header-navigation(links)
     ul.header-navigation
-         each item in links
+        each item in links
             - let linkClasses = ["header-navigation__link"]
             if item.current
                 - linkClasses.push("header-navigation__link_current")

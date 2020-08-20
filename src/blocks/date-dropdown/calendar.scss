@@ -1,71 +1,72 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors';
 
-.calendar {
+.date-dropdown__calendar {
 
-  &__arrow {
+  &-arrow {
     font-family: 'Material Icons';
-    font-size: 1.5rem;  //24px при базовом размере шрифта 16px
+    font-size: 1.5rem; //24px при базовом размере шрифта 16px
     color: $purple;
   }
 
-  &__buttons-wrapper{
+  &-buttons-wrapper {
     padding: 20px 0;
     display: flex;
     justify-content: space-between;
 
     font-family: Montserrat, OpenSans, sans-serif;
     font-weight: bold;
-    font-size: 0.75rem;  //12px при базовом размере шрифта 16px
-    line-height: 0.9375rem;  //15px при базовом размере шрифта 16px
+    font-size: 0.75rem; //12px при базовом размере шрифта 16px
+    line-height: 0.9375rem; //15px при базовом размере шрифта 16px
     text-transform: uppercase;
   }
 
-  &__clear-button{
+  &-clear-button {
     text-transform: inherit;
     color: $dark-50;
     outline: none;
 
-    &:focus{
+    &:focus {
       color: $dark-75;
     }
   }
 
-  &__append-button{
+  &-append-button {
     text-transform: inherit;
     color: $purple;
     outline: none;
 
-    &:focus{
+    &:focus {
       color: purple;
     }
   }
 }
 
 
-.datepicker{
+// Переопределние стилей плагина
+.datepicker {
   width: 320px;
   box-sizing: border-box;
   padding: 0 19px;
   z-index: 99999;
 
-  &--pointer{
+  &--pointer {
     display: none;
   }
 
-  &--nav{
+  &--nav {
     height: 64px;
     padding: 0;
     border: none;
     margin-bottom: 10px;
 
-    &-title{
+    &-title {
       font-family: Quicksand, OpenSans, sans-serif;
       font-weight: bold;
-      font-size: 1.1875rem;  //19px при базовом размере шрифта 16px
+      font-size: 1.1875rem; //19px при базовом размере шрифта 16px
       color: $dark-100;
     }
 
-    &-action{
+    &-action {
       width: 24px;
     }
   }
@@ -74,21 +75,22 @@
     padding: 0;
   }
 
-  &--days-names{
+  &--days-names {
     margin: 0;
   }
 
   &--day-name, &--cell {
     font-family: Montserrat, OpenSans, sans-serif;
-    font-size: 0.75rem;  //12px при базовом размере шрифта 16px
-    line-height: 0.9375rem;  //15px при базовом размере шрифта 16px
+    font-size: 0.75rem; //12px при базовом размере шрифта 16px
+    line-height: 0.9375rem; //15px при базовом размере шрифта 16px
   }
-  &--day-name, &--cell-day{
+
+  &--day-name, &--cell-day {
     height: 40px;
     width: 40px;
   }
 
-  &--day-name{
+  &--day-name {
     font-weight: bold;
     text-transform: none;
     color: $purple;
@@ -96,29 +98,28 @@
 }
 
 
-
-
-.datepicker--cell{
+.datepicker--cell {
   color: $dark-50;
 
-  &.-current-{
+  &.-current- {
     color: white;
     font-weight: bold;
   }
 
-  &.-focus-{
+  &.-focus- {
     background: inherit;
   }
 
-  &.-selected-{
+  &.-selected- {
     border-radius: 22px;
     background: $gradient;
     position: relative;
-    &.-focus-{
+
+    &.-focus- {
       background: $gradient;
     }
 
-    &:after{
+    &:after {
       content: '';
       position: absolute;
       width: 100%;
@@ -130,27 +131,27 @@
 
   }
 
-  &.-range-from-{
-    &:after{
+  &.-range-from- {
+    &:after {
       border-bottom-left-radius: 22px;
       border-top-left-radius: 22px;
     }
   }
 
-  &.-range-to-{
-    &:after{
+  &.-range-to- {
+    &:after {
       border-bottom-right-radius: 22px;
       border-top-right-radius: 22px;
     }
   }
 
-  &.-in-range-{
+  &.-in-range- {
     background: $gradient-quarttransparent;
   }
 
 }
 
-.-current-{
+.-current- {
   color: white;
   background: $secondary-gradient;
   border-radius: 22px;

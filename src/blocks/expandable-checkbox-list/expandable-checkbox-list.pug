@@ -1,18 +1,18 @@
 include ../checkbox/checkbox
 
 mixin expandable-checkbox-list(title, itemsList, expanded=false)
-	- let listClasses = ['expandable-checkbox-list__list']
-	if expanded
-		- listClasses.push('expandable-checkbox-list__list_expanded');
-	.expandable-checkbox-list
-		button.expandable-checkbox-list__button.js-expandable-checkbox-list__button
-			h3.expandable-checkbox-list__title=title
-			if expanded
-				.expandable-checkbox-list__arrow.expandable-checkbox-list__arrow_rotated expand_more
-			else
-				.expandable-checkbox-list__arrow expand_more
+    - let listClasses = ["expandable-checkbox-list__list"]
+    if expanded
+        - listClasses.push("expandable-checkbox-list__list_expanded");
+    .expandable-checkbox-list
+        button.expandable-checkbox-list__button.js-expandable-checkbox-list__button
+            h3.expandable-checkbox-list__title=title
+            if expanded
+                .expandable-checkbox-list__arrow.expandable-checkbox-list__arrow_rotated expand_more
+            else
+                .expandable-checkbox-list__arrow expand_more
 
-		ul(class=listClasses)
-			each item in itemsList
-				li.expandable-checkbox-list__list-item
-					+checkbox(item.text, false, item.checked)
+        ul(class=listClasses)
+            each item in itemsList
+                li.expandable-checkbox-list__list-item
+                    +checkbox(item.text, false, item.checked)

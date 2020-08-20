@@ -1,7 +1,7 @@
 mixin checkbox(text, bold=false, checked=false)
     - let classes = ["checkbox__text"]
     if bold
-        - classes.push('checkbox__text_bold')
+        - classes.push("checkbox__text_bold")
     label.checkbox
         input.checkbox__button(type="checkbox", checked=checked)
         span(class=classes)=text

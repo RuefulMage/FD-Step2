@@ -1,31 +1,29 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
-.like-button{
+.like-button {
   box-sizing: border-box;
   min-width: 40px;
   padding: 1px;
   background: $dark-25;
   border-radius: 10px;
-  height: 20px;
   font-size: 0.625rem; //10px при базовом размере шрифта 16px
   color: $dark-25;
   outline: none;
 
-  &_colored{
+  &_colored {
     color: $purple;
     background: $gradient;
   }
 
-  &__content{
+  &__content {
     display: flex;
     background: white;
     align-items: center;
-    height: 100%;
-    width: 100%;
+    padding: 3px 0;
     border-radius: inherit;
   }
 
-  &__icon{
+  &__icon {
     font-family: 'Material Icons';
     width: 50%;
     display: flex;
@@ -33,7 +31,7 @@
     justify-content: center;
   }
 
-  &__amount{
+  &__amount {
     line-height: 0.75rem; //12px при базовом размере шрифта 16px
   }
 }

@@ -1,4 +1,4 @@
-import hangUpListenerToPagination from "./pagination";
+import hangUpListenerToPagination from './pagination';
 
 let paginations = document.getElementsByClassName('js-pagination');
 

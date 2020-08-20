@@ -16,7 +16,7 @@ block content
     include ../../blocks/pagination/pagination
 
 
-    .search
+    main.search
         .search__container
             button.search__show-filter-button.js-search__show-filter-button Фильтр
             form.search__filter-column.js-search__filter-column(method="POST" action="mock-address")
@@ -134,36 +134,156 @@ block content
 
 
 
-            .search__result
+            section.search__result
 
                 h1.search__results-header Номера, которые мы для вас подобрали
 
                 .search__results-list
 
                     .search__result-item
-                        +apartment-description-card({images: ["apartment1.png", "apartment.png", "apartment2.png", "apartment3.png"], number: "888", price: "9 990", currency: "₽", rateButtonName: "card-rate-1", starAmount: 5, reviewsAmount: "145", lux: true, link: "mock-address"})
+                        +apartment-description-card({
+                            images: ["apartment1.png", "apartment.png", "apartment2.png", "apartment3.png"],
+                            number: "888",
+                            price: "9 990",
+                            currency: "₽",
+                            rateButtonName: "card-rate-1",
+                            starAmount: 5,
+                            reviewsAmount: "145",
+                            lux: true,
+                            link: "mock-address"
+                        })
                     .search__result-item
-                        +apartment-description-card({images: ["apartment.png", "apartment1.png", "apartment2.png", "apartment3.png"], number: "840", price: "9 900", currency: "₽", rateButtonName: "card-rate-2", starAmount: 4, reviewsAmount: "65", lux: false, link: "mock-address"})
+                        +apartment-description-card({
+                            images: ["apartment.png", "apartment1.png", "apartment2.png", "apartment3.png"],
+                            number: "840",
+                            price: "9 900",
+                            currency: "₽",
+                            rateButtonName: "card-rate-2",
+                            starAmount: 4,
+                            reviewsAmount: "65",
+                            lux: false,
+                            link: "mock-address"
+                        })
                     .search__result-item
-                        +apartment-description-card({images: ["apartment-card-3.png", "apartment1.png", "apartment2.png", "apartment3.png"], number: "980", price: "8 500", currency: "₽", rateButtonName: "card-rate-3", starAmount: 3, reviewsAmount: "35", lux: true, link: "mock-address"})
+                        +apartment-description-card({
+                            images: ["apartment-card-3.png", "apartment1.png", "apartment2.png", "apartment3.png"],
+                            number: "980",
+                            price: "8 500",
+                            currency: "₽",
+                            rateButtonName: "card-rate-3",
+                            starAmount: 3,
+                            reviewsAmount: "35",
+                            lux: true,
+                            link: "mock-address"
+                        })
                     .search__result-item
-                        +apartment-description-card({images: ["apartment-card-4.png", "apartment-card-3.png", "apartment2.png", "apartment3.png"], number: "856", price: "7 300", currency: "₽", rateButtonName: "card-rate-4", starAmount: 5, reviewsAmount: "19", lux: false, link: "mock-address"})
+                        +apartment-description-card({
+                            images: ["apartment-card-4.png", "apartment-card-3.png", "apartment2.png", "apartment3.png"],
+                            number: "856",
+                            price: "7 300",
+                            currency: "₽",
+                            rateButtonName: "card-rate-4",
+                            starAmount: 5,
+                            reviewsAmount: "19",
+                            lux: false,
+                            link: "mock-address"
+                        })
                     .search__result-item
-                        +apartment-description-card({images: ["apartment-card-5.png", "apartment-card-4.png", "apartment-card-3.png", "apartment3.png"], number: "740", price: "6 000", currency: "₽", rateButtonName: "card-rate-5", starAmount: 4, reviewsAmount: "44", lux: false, link: "mock-address"})
+                        +apartment-description-card({
+                            images: ["apartment-card-5.png", "apartment-card-4.png", "apartment-card-3.png", "apartment3.png"],
+                            number: "740",
+                            price: "6 000",
+                            currency: "₽",
+                            rateButtonName: "card-rate-5",
+                            starAmount: 4,
+                            reviewsAmount: "44",
+                            lux: false,
+                            link: "mock-address"
+                        })
                     .search__result-item
-                        +apartment-description-card({images: ["apartment-card-6.png", "apartment-card-5.png", "apartment-card-4.png", "apartment-card-3.png"], number: "982", price: "5 800", currency: "₽", rateButtonName: "card-rate-6", starAmount: 3, reviewsAmount: "56", lux: false, link: "mock-address"})
+                        +apartment-description-card({
+                            images: ["apartment-card-6.png", "apartment-card-5.png", "apartment-card-4.png", "apartment-card-3.png"],
+                            number: "982",
+                            price: "5 800",
+                            currency: "₽",
+                            rateButtonName: "card-rate-6",
+                            starAmount: 3,
+                            reviewsAmount: "56",
+                            lux: false,
+                            link: "mock-address"
+                        })
                     .search__result-item
-                        +apartment-description-card({images: ["apartment-card-7.png", "apartment-card-6.png", "apartment-card-5.png", "apartment-card-4.png"], number: "678", price: "5 500", currency: "₽", rateButtonName: "card-rate-7", starAmount: 5, reviewsAmount: "45", lux: false, link: "mock-address"})
+                        +apartment-description-card({
+                            images: ["apartment-card-7.png", "apartment-card-6.png", "apartment-card-5.png", "apartment-card-4.png"],
+                            number: "678",
+                            price: "5 500",
+                            currency: "₽",
+                            rateButtonName: "card-rate-7",
+                            starAmount: 5,
+                            reviewsAmount: "45",
+                            lux: false,
+                            link: "mock-address"
+                        })
                     .search__result-item
-                        +apartment-description-card({images: ["apartment-card-8.png", "apartment-card-7.png", "apartment-card-6.png", "apartment-card-5.png"], number: "450", price: "5 300", currency: "₽", rateButtonName: "card-rate-8", starAmount: 4, reviewsAmount: "39", lux: false, link: "mock-address"})
+                        +apartment-description-card({
+                            images: ["apartment-card-8.png", "apartment-card-7.png", "apartment-card-6.png", "apartment-card-5.png"],
+                            number: "450",
+                            price: "5 300",
+                            currency: "₽",
+                            rateButtonName: "card-rate-8",
+                            starAmount: 4,
+                            reviewsAmount: "39",
+                            lux: false,
+                            link: "mock-address"
+                        })
                     .search__result-item
-                        +apartment-description-card({images: ["apartment-card-9.png", "apartment-card-8.png", "apartment-card-7.png", "apartment-card-6.png"], number: "350", price: "5 000", currency: "₽", rateButtonName: "card-rate-9", starAmount: 3, reviewsAmount: "77", lux: false, link: "mock-address"})
+                        +apartment-description-card({
+                            images: ["apartment-card-9.png", "apartment-card-8.png", "apartment-card-7.png", "apartment-card-6.png"],
+                            number: "350",
+                            price: "5 000",
+                            currency: "₽",
+                            rateButtonName: "card-rate-9",
+                            starAmount: 3,
+                            reviewsAmount: "77",
+                            lux: false,
+                            link: "mock-address"
+                        })
                     .search__result-item
-                        +apartment-description-card({images: ["apartment-card-10.png", "apartment-card-9.png", "apartment-card-8.png", "apartment-card-7.png"], number: "666", price: "5 000", currency: "₽", rateButtonName: "card-rate-10", starAmount: 5, reviewsAmount: "25", lux: false, link: "mock-address"})
+                        +apartment-description-card({
+                            images: ["apartment-card-10.png", "apartment-card-9.png", "apartment-card-8.png", "apartment-card-7.png"],
+                            number: "666",
+                            price: "5 000",
+                            currency: "₽",
+                            rateButtonName: "card-rate-10",
+                            starAmount: 5,
+                            reviewsAmount: "25",
+                            lux: false,
+                            link: "mock-address"
+                        })
                     .search__result-item
-                        +apartment-description-card({images: ["apartment-card-11.png", "apartment-card-10.png", "apartment-card-9.png", "apartment-card-8.png"], number: "444", price: "5 000", currency: "₽", rateButtonName: "card-rate-11", starAmount: 3, reviewsAmount: "15", lux: false, link: "mock-address"})
+                        +apartment-description-card({
+                            images: ["apartment-card-11.png", "apartment-card-10.png", "apartment-card-9.png", "apartment-card-8.png"],
+                            number: "444",
+                            price: "5 000",
+                            currency: "₽",
+                            rateButtonName: "card-rate-11",
+                            starAmount: 3,
+                            reviewsAmount: "15",
+                            lux: false,
+                            link: "mock-address"
+                        })
                     .search__result-item
-                        +apartment-description-card({images: ["apartment-card-12.png", "apartment-card-11.png", "apartment-card-10.png", "apartment-card-9.png"], number: "352", price: "5 000", currency: "₽", rateButtonName: "card-rate-12", starAmount: 3, reviewsAmount: "55", lux: false, link: "mock-address"})
+                        +apartment-description-card({
+                            images: ["apartment-card-12.png", "apartment-card-11.png", "apartment-card-10.png", "apartment-card-9.png"],
+                            number: "352",
+                            price: "5 000",
+                            currency: "₽",
+                            rateButtonName: "card-rate-12",
+                            starAmount: 3,
+                            reviewsAmount: "55",
+                            lux: false,
+                            link: "mock-address"
+                        })
                 .search__pagination
                     +pagination("1", "15", "mock-address", "1 – 12 из 100+ вариантов аренды")
 

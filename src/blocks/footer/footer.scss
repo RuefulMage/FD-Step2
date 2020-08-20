@@ -1,18 +1,18 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
-.footer{
-  box-sizing: border-box;
-  width: 100%;
-  padding: 100px 0;
-  box-shadow: 0 1px 0 rgba(31, 32, 65, 0.1);
+.footer {
+  &__wrapper {
+    box-sizing: border-box;
+    padding: 100px 20px;
+    box-shadow: 0 1px 0 rgba(31, 32, 65, 0.1);
 
-  @media (max-width: 750px) {
-    display: none;
+    @media (max-width: 750px) {
+      display: none;
+    }
   }
 
   &__container {
     display: flex;
-    justify-content: space-between;
     align-items: flex-start;
     max-width: 1160px;
     margin: 0 auto;
@@ -24,7 +24,7 @@
     }
   }
 
-  &__company-desription{
+  &__company-desription {
     max-width: 260px;
 
     @media (max-width: 900px) {
@@ -32,21 +32,22 @@
     }
   }
 
-  &__logo{
+  &__logo {
     margin-bottom: 17px;
   }
 
-  &__description-text{
-    line-height: 1.5rem;  //24px при базовом размере шрифта 16px
+  &__description-text {
+    line-height: 1.5rem; //24px при базовом размере шрифта 16px
   }
 
-  &__subscription-and-menu-wrapper{
+  &__subscription-and-menu-wrapper {
     display: flex;
     justify-content: flex-end;
     flex-grow: 1;
+    padding-top: 2px;
   }
 
-  &__menu{
+  &__menu {
     display: flex;
     flex-grow: 1;
     justify-content: flex-end;
@@ -56,28 +57,26 @@
     }
   }
 
-  &__submenu{
+  &__submenu {
     max-width: 200px;
     width: 100%;
   }
 
 
-  &__subsription-form{
+  &__subsription-form {
     display: flex;
     flex-direction: column;
     max-width: 260px;
     width: 100%;
   }
 
-  &__subcription-form-title{
+  &__subcription-form-title {
     text-transform: uppercase;
     margin-bottom: 21px;
   }
 
-  &__subcription-form-text{
-    line-height: 1.5rem;  //24px при базовом размере шрифта 16px
+  &__subcription-form-text {
+    line-height: 1.5rem; //24px при базовом размере шрифта 16px
     margin-bottom: 20px;
   }
-
-  &__subcription-form-field{}
 }

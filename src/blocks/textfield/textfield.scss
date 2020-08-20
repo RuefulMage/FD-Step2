@@ -1,4 +1,4 @@
-@import "../../assets/scss/colors";
+@import '../../assets/scss/colors';
 
 .textfield {
   box-sizing: border-box;
@@ -6,20 +6,19 @@
   border: 1px solid $dark-25;
   border-radius: 4px;
   padding: 12px 15px;
-  line-height: 1.125rem; //18px при базовом размере шрифта 16px
   color: $dark-75;
   user-select: none;
   outline: none;
 
-  &::placeholder{
+  &::placeholder {
     color: $dark-25;
   }
 
-  &:focus, &:hover, &_hovered{
+  &:focus, &:hover, &_hovered {
     border: 1px solid $dark-50;
   }
 
-  &:focus::placeholder, &:hover::placeholder, &_hovered::placeholder{
+  &:focus::placeholder, &:hover::placeholder, &_hovered::placeholder {
     color: $dark-75;
   }
 }

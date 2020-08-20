@@ -10,9 +10,9 @@ mixin registration-card(mainTitle, link)
             h1.registration-card__title=mainTitle
             form.registration-card__form(method="POST" action=link)
                 .registration-card__name-field
-                    +textfield({type:"text", placeholder:"Имя", name:"name"})
+                    +textfield({type: "text", placeholder: "Имя", name: "name"})
                 .registration-card__sername-field
-                    +textfield({type:"text", placeholder:"Фамилия", name:"sername"})
+                    +textfield({type: "text", placeholder: "Фамилия", name: "sername"})
                 .registration-card__gender-choice
                     .registration-card__choice-variant
                         +radio-button("Мужчина", "gender", "Мужчина")
@@ -20,12 +20,12 @@ mixin registration-card(mainTitle, link)
                         +radio-button("Женщина", "gender", "Женщина")
                 h3.registration-card__subtitle дата рождения
                 .registration-card__birth-date-field
-                    +textfield({type:"text", placeholder:"ДД.ММ.ГГГГ", name:"birth-date", masked:true})
+                    +textfield({type: "text", placeholder: "ДД.ММ.ГГГГ", name: "birth-date", masked: true})
                 h3.registration-card__subtitle данные для входа в сервис
                 .registration-card__email-field
-                    +textfield({type:"email", placeholder:"Email", name:"email"})
+                    +textfield({type: "email", placeholder: "Email", name: "email"})
                 .registration-card__password-field
-                    +textfield({type:"password", placeholder:"Пароль", name:"password"})
+                    +textfield({type: "password", placeholder: "Пароль", name: "password"})
                 .registration-card__spetial-offer
                     +toggle("true", "spetial-offer", "Получать спецпредложения")
                 .registration-card__button
@@ -33,4 +33,4 @@ mixin registration-card(mainTitle, link)
             .registration-card__have-account
                 .registration-card__have-account-text Уже есть аккаунт на Toxin
                 .registration-card__have-account-button
-                    +link-button({text:"войти", link:"mock-addres", large: true})
+                    +link-button({text: "войти", link: "mock-address", large: true})

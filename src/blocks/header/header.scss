@@ -1,12 +1,12 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
-.header{
+.header {
   box-sizing: border-box;
   width: 100%;
-  padding: 15px 0;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  padding: 15px 20px;
 
-  &__container{
+  &__container {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -14,7 +14,7 @@
     margin: auto;
   }
 
-  &__logo{
+  &__logo {
     cursor: pointer;
 
 
@@ -23,7 +23,7 @@
     }
   }
 
-  &__menu{
+  &__menu {
     justify-content: flex-end;
     display: flex;
     flex-grow: 1;
@@ -39,13 +39,17 @@
     }
   }
 
-  &__navigation{
+  &__navigation {
     max-width: 447px;
     width: 100%;
     margin-right: 20px;
+
+    @media (max-width: 700px){
+      margin-right: 0;
+    }
   }
 
-  &__buttons{
+  &__buttons {
     display: flex;
     flex-grow: 1;
     max-width: 303px;
@@ -63,7 +67,7 @@
 
   }
 
-  &__username{
+  &__username {
     color: $dark-50;
     padding-left: 20px;
     border-left: 1px solid rgba(31, 32, 65, 0.1);
@@ -74,7 +78,7 @@
     }
   }
 
-  &__signin-button{
+  &__signin-button {
     margin-right: 20px;
     max-width: 87px;
     width: 100%;
@@ -87,7 +91,7 @@
     }
   }
 
-  &__register-button{
+  &__register-button {
     max-width: 196px;
     width: 100%;
 

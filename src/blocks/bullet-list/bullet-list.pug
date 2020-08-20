@@ -3,6 +3,6 @@ include ../bullet/bullet
 mixin bullet-list(bulletList)
     ul.bullet-list
         each bullet in bulletList
-            +bullet(bullet.text, bullet.withPadding, bullet.style)
+            +bullet(bullet.text, bullet.withPadding, bullet.style, bullet.smallIndent)
         else
             li There are no values

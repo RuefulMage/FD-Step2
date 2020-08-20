@@ -1,11 +1,21 @@
+include ../bullet-list/bullet-list
+
 mixin pie-chart(values)
-    .pie-chart.js-pie-chart(data-values=values)
-        .pie-chart__first-half.js-pie-chart__first-half
-            .pie-chart__great.js-pie-chart__great
-            .pie-chart__bad.js-pie-chart__bad
-        .pie-chart__second-half.js-pie-chart__second-half
-            .pie-chart__normal.js-pie-chart__normal
-            .pie-chart__good.js-pie-chart__good
-        .pie-chart__center
-            .pie-chart__sum.js-pie-chart__sum
-            .pie-chart__sum-label голосов
+    .pie-chart
+        .pie-chart__chart.js-pie-chart(data-values=values)
+            .pie-chart__first-half.js-pie-chart__first-half
+                .pie-chart__great.js-pie-chart__great
+                .pie-chart__bad.js-pie-chart__bad
+            .pie-chart__second-half.js-pie-chart__second-half
+                .pie-chart__normal.js-pie-chart__normal
+                .pie-chart__good.js-pie-chart__good
+            .pie-chart__center
+                .pie-chart__sum.js-pie-chart__sum
+                .pie-chart__sum-label голосов
+        .pie-chart__bullets
+            +bullet-list([
+                {text: "Великолепно", style: "great", smallIndent: true},
+                {text: "Хорошо", style: "good", smallIndent: true},
+                {text: "Удовлетворительно", style: "normal", smallIndent: true},
+                {text: "Разочарован", style: "bad", smallIndent: true}
+            ])

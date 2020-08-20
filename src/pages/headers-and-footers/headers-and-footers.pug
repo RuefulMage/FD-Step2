@@ -12,7 +12,7 @@ html(lang="en")
         link(rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png")
         link(rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png")
         link(rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png")
-        link(rel='mask-icon' href='../../assets/favicons/pinned-safari-icon.svg' color='purple')
+        link(rel="mask-icon" href="../../assets/favicons/pinned-safari-icon.svg" color="purple")
         link(rel="manifest" href="../../assets/favicons/site.webmanifest")
         meta(name="msapplication-TileColor" content="#da532c")
         meta(name="theme-color" content="#ffffff")
@@ -73,7 +73,8 @@ html(lang="en")
                                 title: "о нас",
                                 links: [{link: "mock-address", text: "О сервисе"}, {
                                     link: "mock-address",
-                                    text: "Наша команда"},
+                                    text: "Наша команда"
+                                },
                                     {link: "mock-address", text: "Вакансии"},
                                     {link: "mock-address", text: "Инвесторы"}]
                             },
@@ -90,13 +91,10 @@ html(lang="en")
                         link: "mock-address"
                     })
 
-                    +copyright("Copyright © 2018 Toxin отель. Все права зачищены.", [{icon: "", link: "mock-address"},
-                        {icon: "", link: "mock-address"},
-                        {icon: "", link: "mock-address"}])
-
-
                 .headers-and-footers__item.headers-and-footers__item_width_small
-                    +small-footer("Copyright © 2018 Toxin отель. Все права зачищены.", [{icon: "", link: "mock-address"},
-                        {icon: "", link: "mock-address"},
-                        {icon: "", link: "mock-address"}])
-    script(src="../../assets/js/app.js" type="text/javascript")
+                    +small-footer("Copyright © 2018 Toxin отель. Все права зачищены.", [{
+                        icon: "",
+                        link: "https://twitter.com/"
+                    },
+                        {icon: "", link: "https://www.facebook.com/"},
+                        {icon: "", link: "https://www.instagram.com/"}])

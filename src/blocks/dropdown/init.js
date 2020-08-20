@@ -1,4 +1,4 @@
-import createDropdown from "./dropdown";
+import createDropdown from './dropdown';
 
 let dropdownsWithButtonsList = document.getElementsByClassName('js-dropdown-with-buttons');
 for( let i = 0; i < dropdownsWithButtonsList.length; i++) {

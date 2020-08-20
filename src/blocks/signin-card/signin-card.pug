@@ -7,9 +7,9 @@ mixin signin-card(link)
         h1.signin-card__title Войти
         form.signin-card__form(method="POST" action=link)
             .signin-card__item
-                +textfield({type:"email", placeholder:"Email", name:"email"})
+                +textfield({type: "email", placeholder: "Email", name: "email"})
             .signin-card__item
-                +textfield({type:"password", placeholder: "Пароль", name: "password"})
+                +textfield({type: "password", placeholder: "Пароль", name: "password"})
             .signin-card__button-wrapper
                 +form-button("Войти")
         .signin-card__no-accaunt-wrapper

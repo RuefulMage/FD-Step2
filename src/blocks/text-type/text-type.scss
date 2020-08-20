@@ -1,37 +1,37 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
-.text-type{
+.text-type {
   display: flex;
 
-  &__name{
+  &__name {
     color: $dark-25;
     text-align: right;
     line-height: 1.5rem; //24px при базовом размере шрифта 16px
     width: 10%;
 
-    &_font_large{
+    &_font_large {
       font-size: 1.5rem; //24px при базовом размере шрифта 16px
       line-height: 1.8125rem; //29px при базовом размере шрифта 16px
     }
 
-    &_font_medium{
+    &_font_medium {
       font-size: 1.1875rem; //19px при базовом размере шрифта 16px
       line-height: 1.4375rem; //23px при базовом размере шрифта 16px
     }
 
-    &_font_small{
+    &_font_small {
       font-size: 0.75rem; //12px при базовом размере шрифта 16px
-      line-height: 0.9375rem;  //15px при базовом размере шрифта 16px
+      line-height: 0.9375rem; //15px при базовом размере шрифта 16px
     }
   }
 
-  &__text{
+  &__text {
     padding-left: 30px;
     line-height: 1.5rem; //24px при базовом размере шрифта 16px
     width: 90%;
 
 
-    &_font_large{
+    &_font_large {
       font-size: 1.5rem; //24px при базовом размере шрифта 16px
       line-height: 1.875rem; //30px при базовом размере шрифта 16px
       color: $dark-100;
@@ -39,7 +39,7 @@
       font-weight: bold;
     }
 
-    &_font_medium{
+    &_font_medium {
       font-size: 1.1875rem; //19px при базовом размере шрифта 16px
       line-height: 1.5rem; //24px при базовом размере шрифта 16px
       color: $dark-100;
@@ -47,7 +47,7 @@
       font-weight: bold;
     }
 
-    &_font_small{
+    &_font_small {
       font-size: 0.75rem; //12px при базовом размере шрифта 16px
       line-height: 1rem; //16px при базовом размере шрифта 16px
       text-transform: uppercase;

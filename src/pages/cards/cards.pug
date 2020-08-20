@@ -1,7 +1,7 @@
 include ../../blocks/logo/logo
 include ../../blocks/find-apartment-card/find-apartment-card
 include ../../blocks/apartment-booking-card/apartment-booking-card
-include ../../blocks/calendar/calendar
+include ../../blocks/date-dropdown/date-dropdown
 include ../../blocks/registration-card/registration-card
 include ../../blocks/signin-card/signin-card
 include ../../blocks/apartment-description-card/apartment-description-card
@@ -24,7 +24,7 @@ html(lang="en")
         title Cards
         link(href="./assets/css/app.css")
         //link(href="../../assets/css/app.css")
-        link(href="../../assets/css/app.css" rel="stylesheet")
+        //link(href="../../assets/css/app.css" rel="stylesheet")
 
     body
         .cards__wrapper
@@ -32,7 +32,7 @@ html(lang="en")
             .cards__logo
                 +logo()
 
-            .cards__container
+            main.cards__container
 
                 .cards__column.cards__col-1
 
@@ -51,66 +51,65 @@ html(lang="en")
                 .cards__column.cards__col-2
 
 
-                            .cards__item
-                                +apartment-booking-card({
-                                    number: "888",
-                                    price: "9 990",
-                                    currency: "₽",
-                                    lux: true,
-                                    dateDropdownHeaders: ["прибытие", "выезд"],
-                                    dropdownHeader: "гости",
-                                    expression: "9 990₽ х 4 суток",
-                                    expressionResult: "39 960₽",
-                                    servicePriceLabel: "Сбор за услуги: скидка 2 179₽",
-                                    servicePrice: "0₽",
-                                    extraServiceLabel: "Сбор за дополнительные услуги",
-                                    extraServicePrice: "300₽",
-                                    totalPrice: "38 081₽",
-                                    noteTexts: ["Sum was computed by calculator",
-                                        "This is for the smiles, that was given to you"],
-                                    noteTexts: "забронировать",
-                                    link: "mock-address"
-                                })
+                    .cards__item
+                        +apartment-booking-card({
+                            number: "888",
+                            price: "9 990",
+                            currency: "₽",
+                            lux: true,
+                            dateDropdownHeaders: ["прибытие", "выезд"],
+                            dropdownHeader: "гости",
+                            expression: "9 990₽ х 4 суток",
+                            expressionResult: "39 960₽",
+                            servicePriceLabel: "Сбор за услуги: скидка 2 179₽",
+                            servicePrice: "0₽",
+                            extraServiceLabel: "Сбор за дополнительные услуги",
+                            extraServicePrice: "300₽",
+                            totalPrice: "38 081₽",
+                            noteTexts: ["Sum was computed by calculator",
+                                "This is for the smiles, that was given to you"],
+                            buttonText: "забронировать",
+                            link: "mock-address"
+                        })
 
-                            .cards__item
-                                +signin-card()
+                    .cards__item
+                        +signin-card()
 
 
                 .cards__column.cards__col-3
 
 
-                                .cards__item
-                                    +calendar("mock-address")
+                    .cards__item
+                        //+calendar("mock-address")
+                        +date-dropdown(false, true)
 
+                    .cards__item.cards__item_width-small
+                        +apartment-description-card({
+                            images: ["apartment-lux.png",
+                                "apartment-lux.png",
+                                "apartment-lux.png",
+                                "apartment-lux.png"],
+                            number: "888",
+                            price: "9 990",
+                            currency: "₽",
+                            rateButtonName: "card-rate-lux",
+                            starAmount: 5,
+                            reviewsAmount: "145",
+                            lux: true,
+                            link: "mock-address"
+                        })
 
-                                .cards__item.cards__item_width-small
-                                    +apartment-description-card({
-                                        images: [{path: "apartment-lux.png"},
-                                            {path: "apartment-lux.png"},
-                                            {path: "apartment-lux.png"},
-                                            {path: "apartment-lux.png"}],
-                                        number: "888",
-                                        price: "9 990",
-                                        currency: "₽",
-                                        rateButtonName: "card-rate-lux",
-                                        starAmount: 5,
-                                        reviewsAmount: "145",
-                                        lux: true,
-                                        link: "mock-address"
-                                    })
-
-                                .cards__item.cards__item_width-small
-                                    +apartment-description-card({
-                                        images: [{path: "apartment.png"},
-                                            {path: "apartment.png"},
-                                            {path: "apartment.png"},
-                                            {path: "apartment.png"}],
-                                        number: "888",
-                                        price: "9 990",
-                                        currency: "₽",
-                                        rateButtonName: "card-rate-lux",
-                                        starAmount: 5,
-                                        reviewsAmount: "145",
-                                        link: "mock-address"
-                                    })
-    script(src="../../assets/js/app.js" type="text/javascript")
+                    .cards__item.cards__item_width-small
+                        +apartment-description-card({
+                            images: ["apartment.png",
+                                "apartment.png",
+                                "apartment.png",
+                                "apartment.png"],
+                            number: "840",
+                            price: "9 990",
+                            currency: "₽",
+                            rateButtonName: "card-rate-lux",
+                            starAmount: 5,
+                            reviewsAmount: "65",
+                            link: "mock-address"
+                        })

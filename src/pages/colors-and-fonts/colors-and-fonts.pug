@@ -27,9 +27,9 @@ html(lang="en")
             .colors-and-fonts__logo
                 +logo()
 
-            .colors-and-fonts__container
+            main.colors-and-fonts__container
 
-                .colors-and-fonts__column.colors-and-fonts__col-1
+                section.colors-and-fonts__column.colors-and-fonts__col-1
 
                     .colors-and-fonts__item
                         +color-description("dark-shade-100", "Dark Shade 100%", "#1F2041")
@@ -52,7 +52,7 @@ html(lang="en")
                     .colors-and-fonts__item
                         +color-description("green", "Green", "#6FCF97")
 
-                .colors-and-fonts__column.colors-and-fonts__col-2
+                section.colors-and-fonts__column.colors-and-fonts__col-2
 
                     .colors-and-fonts__item.colors-and-fonts__item_margin-large.colors-and-fonts__item_width-400
                         +text-type("H1", "This one is the sub-section or widget title", "large")
@@ -69,4 +69,3 @@ html(lang="en")
                     .colors-and-fonts__item.colors-and-fonts__item_margin-large.colors-and-fonts__item_width-400
                         +text-type("Body", "This is the body text which is used for most of the design, like paragraphs, lists, etc.")
 
-    script(src="../../assets/js/app.js" type="text/javascript")

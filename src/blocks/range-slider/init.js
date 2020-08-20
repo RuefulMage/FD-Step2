@@ -1,4 +1,4 @@
-import createRangeSlider from "./range-slider";
+import createRangeSlider from './range-slider';
 
 let slidersList = document.getElementsByClassName('range-slider__slider');
 

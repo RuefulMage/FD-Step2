@@ -1,85 +1,75 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
-.registration-card{
+.registration-card {
   box-sizing: border-box;
   padding: 40px 30px 30px 30px;
-  display: flex;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
 
-  &__container{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  &__title{
+  &__title {
     line-height: 1.875rem; //30px при базовом размере шрифта 16px
-    color: $dark-100;
     margin-bottom: 20px;
   }
 
-  &__name-field{
+  &__name-field {
     margin-bottom: 10px;
   }
 
-  &__sername-field{
+  &__sername-field {
     margin-bottom: 10px;
   }
 
-  &__gender-choice{
+  &__gender-choice {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 24px;
   }
 
-  &__choice-variant{
+  &__choice-variant {
     margin-right: 20px;
 
-    &:last-child{
+    &:last-child {
       margin-right: 0;
     }
   }
 
-  &__subtitle{
+  &__subtitle {
     text-transform: uppercase;
     margin-bottom: 5px;
   }
 
-  &__birth-date-field{
+  &__birth-date-field {
     margin-bottom: 20px;
   }
 
-  &__email-field{
+  &__email-field {
     margin-bottom: 10px;
   }
 
-  &__password-field{
+  &__password-field {
     margin-bottom: 10px;
   }
 
-  &__spetial-offer{
+  &__spetial-offer {
     margin-bottom: 24px;
   }
 
-  &__button{
+  &__button {
     margin-bottom: 30px;
   }
 
-  &__have-account{
+  &__have-account {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
   }
 
-  &__have-account-text{
+  &__have-account-text {
     display: flex;
     align-items: center;
-    text-align: center;
   }
 
-  &__have-account-button{
+  &__have-account-button {
     max-width: 99px;
     width: 100%;
   }
-
 }

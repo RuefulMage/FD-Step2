@@ -18,6 +18,7 @@ import './pages/sign-in/sign-in.scss';
 import './pages/room-details/room-details.scss'
 import './pages/search/search.scss';
 import './pages/home/home.scss';
+import './pages/layout/layout.scss';
 
 
 import './blocks/header/header.scss';
@@ -26,7 +27,7 @@ import './blocks/footer/footer.scss';
 import './blocks/footer-navigation/footer-navigation.scss';
 import './blocks/copyright/copyright.scss';
 import './blocks/textfield/textfield.scss';
-import './blocks/footer-creative/footer-creative.scss';
+import './blocks/small-footer/small-footer.scss';
 
 import './blocks/dropdown/dropdown.scss';
 import './blocks/date-dropdown/date-dropdown.scss';
@@ -50,7 +51,7 @@ import './blocks/comment/comment.scss';
 import './blocks/logo/logo.scss';
 import './blocks/color-description/color-description.scss';
 import './blocks/text-type/text-type.scss';
-import './blocks/calendar/calendar.scss';
+import './blocks/date-dropdown/calendar.scss';
 import './blocks/logo-with-text/logo-with-text.scss';
 import './blocks/social-net-icon/social-net-icon.scss';
 import './blocks/pie-chart/pie-chart.scss';
@@ -63,13 +64,19 @@ import './blocks/signin-card/signin-card.scss';
 import './blocks/apartment-description-card/apartment-description-card.scss';
 
 
-import './blocks/dropdown/dropdown';
+import './blocks/dropdown/init'
 import './blocks/textfield/textfield';
-import './blocks/date-dropdown/date-dropdown';
-import './blocks/expandable-checkbox-list/expandable-checkbox-list';
-import './blocks/range-slider/range-slider';
-import './blocks/like-button/like-button';
-import './blocks/pagination/pagination';
-import './blocks/calendar/calendar';
-import './blocks/apartment-description-card/apartment-description-card'
-import './blocks/pie-chart/pie-chart';
+import './blocks/date-dropdown/init';
+import './blocks/expandable-checkbox-list/init.js';
+import './blocks/range-slider/init';
+import './blocks/like-button/init';
+import './blocks/pagination/init';
+import './blocks/dropdown/init';
+import './blocks/apartment-description-card/init'
+import './pages/search/search';
+
+import './blocks/pie-chart/init';
+
+import './pages/search/search';
+
+import './assets/favicons/favicons';

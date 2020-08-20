@@ -1,6 +1,6 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
-.bullet{
+.bullet {
   padding-left: 20px;
   position: relative;
   line-height: 1.5rem; //24px при базовом размере шрифта 16px
@@ -8,9 +8,8 @@
   text-align: left;
 
 
-  &:before{
+  &:before {
     content: '';
-    display: inline-block;
     width: 10px;
     height: 10px;
     position: absolute;
@@ -20,24 +19,28 @@
     background-color: $dark-25;
   }
 
-  &_style_great:before{
+  &_style_great:before {
     background: $great;
   }
 
-  &_style_good:before{
+  &_style_good:before {
     background: $good;
   }
 
-  &_style_normal:before{
+  &_style_normal:before {
     background: $gradient;
   }
 
-  &_style_bad:before{
+  &_style_bad:before {
     background: $bad;
   }
 
 
-  &_with-padding{
+  &_with-padding {
     padding-bottom: 10px;
+  }
+
+  &_small-indent {
+    padding-left: 15px;
   }
 }

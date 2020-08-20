@@ -1,44 +1,42 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
-.header-navigation{
+.header-navigation {
   display: flex;
-  align-items: center;
-  width: 100%;
   justify-content: space-between;
 
   @media (max-width: 380px) {
     flex-direction: column;
   }
-  
-  &__nav-item{
+
+  &__nav-item {
 
     @media (max-width: 380px) {
       width: 100%;
       border-bottom: 1px solid $dark-75;
 
-      &:last-child{
+      &:last-child {
         border-bottom: none;
       }
     }
   }
 
-  &__link{
+  &__link {
     display: inline-block;
     width: 100%;
-    line-height: 1.0625rem;  //17px при базовом размере шрифта 16px
+    line-height: 1.0625rem; //17px при базовом размере шрифта 16px
     color: $dark-50;
 
-    &_dropdowned{
+    &_dropdowned {
       display: flex;
 
-      &:after{
+      &:after {
         content: 'expand_more';
         font-family: 'Material Icons';
-        font-size: 1.5rem;  //24px при базовом размере шрифта 16px
+        font-size: 1.5rem; //24px при базовом размере шрифта 16px
       }
     }
 
-    &_current{
+    &_current {
       font-weight: bold;
       color: $dark-75;
     }
@@ -47,7 +45,7 @@
       padding: 10px 0;
       text-align: center;
 
-      &_dropdowned{
+      &_dropdowned {
         justify-content: center;
       }
     }

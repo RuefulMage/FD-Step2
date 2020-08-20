@@ -1,13 +1,12 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
-.apartment-info{
+.apartment-info {
   display: flex;
   justify-content: space-between;
-  width: 100%;
   align-items: baseline;
 
 
-  &__number-wrapper{
+  &__number-wrapper {
     display: flex;
     align-items: baseline;
     font-family: Quicksand, OpenSans, sans-serif;
@@ -15,15 +14,15 @@
   }
 
   &__number-symbol {
-    font-size: 0.875rem; //14px при базовом размере шрифта 16px
     color: $dark-100;
   }
 
   &__number {
-    font-size: 1.125rem; //18px при базовом размере шрифта 16px
+    font-size: 1.1875rem; //19px при базовом размере шрифта 16px
     color: $dark-100;
 
-    &_large{
+    &_large {
+      line-height: 1.875rem; //30px при базовом размере шрифта 16px
       font-size: 1.5rem; //24px при базовом размере шрифта 16px
     }
   }
@@ -35,9 +34,7 @@
     color: $purple;
   }
 
-  &__price-wrapper{
-    display: flex;
-    align-items: baseline;
+  &__price-wrapper {
     color: $dark-50;
   }
 
@@ -45,7 +42,7 @@
     font-weight: bold;
   }
 
-  &__measure{
+  &__measure {
     font-size: 0.75rem; //12px при базовом размере шрифта 16px
   }
 

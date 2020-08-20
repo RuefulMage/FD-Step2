@@ -1,18 +1,23 @@
-.registration{
+.registration {
 
-  &__container{
+  &__container {
     background-image: url('../../assets/images/background-image-1.png');
     background-repeat: no-repeat;
     background-position: center center;
     background-origin: padding-box;
     background-size: cover;
 
-    padding: 28px 0;
     display: flex;
     justify-content: center;
+    padding: 19px 0 19px 5px;
+
+    @media (max-width: 1190px) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
   }
 
-  &__card{
+  &__card {
     background: white;
     max-width: 380px;
     width: 100%;

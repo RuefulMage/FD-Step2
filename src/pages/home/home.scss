@@ -1,38 +1,43 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
-.home{
+.home {
   background-image: url('../../assets/images/home-background.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-origin: padding-box;
   background-size: cover;
   padding-top: 70px;
-  padding-bottom: 18px;
+  padding-bottom: 22px;
 
-  &__container{
+  &__container {
     display: flex;
     flex-direction: column;
     max-width: 1160px;
     margin: 0 auto;
 
-    @media (max-width: 1024px){
+    @media (max-width: 1190px){
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+
+    @media (max-width: 1024px) {
       align-items: center;
     }
   }
 
-  &__card{
+  &__card {
     max-width: 380px;
     background: white;
-    margin-bottom: 320px;
+    margin-bottom: 315px;
   }
 
-  &__text{
+  &__text {
     line-height: 1.5rem; //24px при базовом размере шрифта 16px
     text-align: right;
     max-width: 260px;
     align-self: flex-end;
 
-    @media (max-width: 1024px){
+    @media (max-width: 1024px) {
       align-self: center;
       max-width: 100%;
       text-align: center;

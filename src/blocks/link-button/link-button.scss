@@ -1,9 +1,6 @@
 @import '../../assets/scss/colors.scss';
 
-.link-button{
-  display: flex;
-  text-align: center;
-  box-sizing: border-box;
+.link-button {
   padding: 2px;
   border-radius: 22px;
   background: $gradient;
@@ -11,18 +8,18 @@
   cursor: pointer;
 
 
-  &:hover, &_disabled{
+  &:hover, &_disabled {
     background: $gradient-semitransparent;
   }
-  &_disabled{
+
+  &_disabled {
     cursor: auto;
     pointer-events: none;
   }
 
-  &__content{
+  &__content {
     display: flex;
     justify-content: center;
-    width: 100%;
     padding: 9px 0;
     border-radius: inherit;
     color: $purple;
@@ -31,16 +28,13 @@
     text-transform: uppercase;
     background: white;
 
-    &_filled{
+    &_filled {
       background: transparent;
       color: white;
-
     }
 
-    &_large{
+    &_large {
       padding: 14px 0;
     }
-
   }
-
 }

@@ -4,7 +4,7 @@ include ../form-button/form-button
 include ../dropdown/dropdown
 
 mixin apartment-booking-card({number, price, currency, lux=false, dateDropdownHeaders, dropdownHeader, expression, expressionResult, servicePriceLabel, servicePrice, extraServiceLabel,  extraServicePrice, totalPrice, noteTexts, buttonText, link})
-    form.apartment-booking-card
+    form.apartment-booking-card(method="POST" action=link)
         .apartment-booking-card__main-info
             +apartment-info({number: number, price: price, currency: currency, largeNumber: true, lux: lux})
         .apartment-booking-card__date-dropdown
@@ -13,32 +13,32 @@ mixin apartment-booking-card({number, price, currency, lux=false, dateDropdownHe
             h3.apartment-booking-card__guests-header=dropdownHeader
             .apartment-booking-card__guests-dropdown
                 +dropdown({
-                    placeholder: 'Сколько гостей', items: [
+                    placeholder: "Сколько гостей", items: [
                         {
-                            id: 'adults',
-                            minAmount: '0',
-                            maxAmount: '100',
-                            forms: 'взрослый,взрослых,взрослых',
-                            itemName: 'взрослые',
-                            startAmount: '0'
+                            id: "adults",
+                            minAmount: "0",
+                            maxAmount: "100",
+                            forms: "взрослый,взрослых,взрослых",
+                            itemName: "взрослые",
+                            startAmount: "0"
                         },
                         {
-                            id: 'children',
-                            minAmount: '0',
-                            maxAmount: '100',
-                            forms: 'ребенок,ребенка,ребят',
-                            itemName: 'дети',
-                            startAmount: '0'
+                            id: "children",
+                            minAmount: "0",
+                            maxAmount: "100",
+                            forms: "ребенок,ребенка,ребят",
+                            itemName: "дети",
+                            startAmount: "0"
                         },
                         {
-                            id: 'baby',
-                            minAmount: '0',
-                            maxAmount: '100',
-                            forms: 'младенец,младенца,младенцев',
-                            itemName: 'младенцы',
-                            startAmount: '0'
+                            id: "baby",
+                            minAmount: "0",
+                            maxAmount: "100",
+                            forms: "младенец,младенца,младенцев",
+                            itemName: "младенцы",
+                            startAmount: "0"
                         }
-                    ], expanded: false, withButtons: true, generalForms: 'гость,гостя,гостей'
+                    ], expanded: false, withButtons: true, generalForms: "гость,гостя,гостей"
                 })
         .apartment-booking-card__cheque.js-cheque
             .apartment-booking-card__cheque-item

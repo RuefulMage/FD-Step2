@@ -1,34 +1,31 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
 
-.dropdown{
+.dropdown {
 
   position: relative;
 
   &__field {
     box-sizing: border-box;
     display: flex;
-    width: 100%;
     padding: 9px 0;
     border: 1px solid $dark-25;
     border-radius: 2px 2px 0 0;
   }
 
-  &_expanded &__field{
+  &_expanded &__field {
     border-color: $dark-50;
     border-bottom: none;
   }
 
-  &__text{
+  &__text {
     display: flex;
     width: 100%;
     padding-left: 15px;
     line-height: 1.5rem; //24px при базовом размере шрифта 16px
-    color: $dark-75;
   }
 
   &__expand-button {
-    box-sizing: border-box;
     display: flex;
     justify-content: center;
     max-width: 44px;
@@ -41,14 +38,14 @@
     user-select: none;
     outline: none;
 
-    &_rotated{
+    &_rotated {
       transform: rotate(-180deg);
     }
 
   }
 
 
-  &__menu{
+  &__menu {
     box-sizing: border-box;
     display: none;
     width: 100%;
@@ -58,33 +55,33 @@
     background: white;
     border: 1px solid $dark-50;
     border-radius: 0 0 2px 2px;
-    padding-left: 15px;
+    padding-left: 14px;
     padding-right: 7px;
-    padding-top: 7px;
+    padding-top: 4px;
   }
 
-  &_expanded &__menu{
+  &_expanded &__menu {
     display: block;
   }
 
 
-  &__menu-item{
+  &__menu-item {
     margin-bottom: 7px;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  &__menu-item-name{
+  &__menu-item-name {
     text-transform: uppercase;
   }
 
-  &__menu-item-controls{
+  &__menu-item-controls {
     display: flex;
     align-items: center;
   }
 
-  &__amount, &__descrease, &__increase{
+  &__amount, &__descrease, &__increase {
     height: 30px;
     width: 30px;
     display: flex;
@@ -97,19 +94,18 @@
     box-sizing: border-box;
     border: 1px solid $dark-25;
     font-size: 1.125rem; //18px при базовом размере шрифта 16px
-    line-height: 1.375rem; //22px при базовом размере шрифта 16px
     color: $dark-50;
     outline: none;
     user-select: none;
 
-    &_disabled{
+    &_disabled {
       opacity: 0.25;
       cursor: auto;
     }
   }
 
 
-  &__amount{
+  &__amount {
     font-weight: bold;
     font-size: 0.75rem; //12px при базовом размере шрифта 16px
     line-height: 1.9375rem; //15px при базовом размере шрифта 16px
@@ -117,14 +113,13 @@
   }
 
 
-
-  &__buttons-wrapper{
+  &__buttons-wrapper {
     display: flex;
     padding: 13px 0;
     justify-content: space-between;
   }
 
-  &__clear-button, &__apply-button{
+  &__clear-button, &__apply-button {
     font-weight: bold;
     font-size: 0.75rem; //12px при базовом размере шрифта 16px
     line-height: 0.9375rem; //15px при базовом размере шрифта 16px
@@ -132,22 +127,23 @@
     outline: none;
   }
 
-  &__clear-button{
+  &__clear-button {
     color: $dark-50;
 
-    &:focus{
+    &:focus {
       color: $dark-75;
     }
 
-    &_hidden{
+    &_hidden {
       visibility: hidden;
     }
 
   }
-  &__apply-button{
+
+  &__apply-button {
     color: $purple;
 
-    &:focus{
+    &:focus {
       color: purple;
     }
   }

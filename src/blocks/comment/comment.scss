@@ -1,14 +1,14 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
-.comment-box{
+.comment-box {
   display: flex;
   flex-direction: column;
 
-  &__user-container{
+  &__user-container {
     display: flex;
   }
 
-  &__user-avatar{
+  &__user-avatar {
     box-sizing: border-box;
     max-width: 48px;
     width: 100%;
@@ -17,25 +17,24 @@
     border-radius: 100%;
   }
 
-  &__user-info{
+  &__user-info {
     padding-left: 10px;
     line-height: 1.5rem; //24px при базовом размере шрифта 16px
-    color: $dark-75;
   }
 
-  &__username{
+  &__username {
     font-weight: bold;
   }
 
-  &__comment{
+  &__comment {
     display: flex;
+    align-items: baseline;
     padding-top: 10px;
     padding-left: 4px;
   }
 
-  &__comment-text{
+  &__comment-text {
     padding-left: 14px;
     line-height: 1.5rem; //24px при базовом размере шрифта 16px
-    color: $dark-75;
   }
 }

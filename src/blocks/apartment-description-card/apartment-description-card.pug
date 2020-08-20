@@ -2,11 +2,11 @@ include ../rate-button/rate-button
 include ../apartment-info/apartment-info
 
 mixin apartment-description-card({images, number, price, currency, rateButtonName, starAmount, reviewsAmount, link, lux=false})
-    .apartment-description-card
+    article.apartment-description-card
         .apartment-description-card__images-wrapper.js-slider
             each item in images
                 .apartment-description-card__image-list-item.js-slider-item
-                    img.apartment-description-card__image(src='../../assets/images/' + item alt='apartment photo')
+                    img.apartment-description-card__image(src="../../assets/images/" + item alt="apartment photo")
             .apartment-description-card__slider-buttons
                 button.apartment-description-card__prev.js-slider-button-prev expand_more
                 button.apartment-description-card__next.js-slider-button-next expand_more

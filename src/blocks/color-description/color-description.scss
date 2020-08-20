@@ -1,4 +1,4 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
 .color-description {
   display: flex;
@@ -10,50 +10,45 @@
     min-height: 70px;
     border-radius: 6px;
 
-    &_dark-shade-100{
+    &_dark-shade-100 {
       background-color: $dark-100;
     }
 
-    &_dark-shade-75{
+    &_dark-shade-75 {
       background-color: $dark-75;
     }
 
-    &_dark-shade-50{
+    &_dark-shade-50 {
       background-color: $dark-50;
     }
 
-    &_dark-shade-25{
+    &_dark-shade-25 {
       background-color: $dark-25;
     }
 
-    &_dark-shade-5{
+    &_dark-shade-5 {
       background-color: $dark-5;
     }
 
-    &_purple{
+    &_purple {
       background-color: $purple;
     }
 
-    &_green{
+    &_green {
       background-color: $green;
     }
   }
 
-  &__description{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+  &__description {
     padding-left: 40px;
   }
 
-  &__name{
+  &__name {
     margin-bottom: 15px;
   }
 
-  &__code{
+  &__code {
     font-family: Quicksand, OpenSans, sans-serif;
     font-size: 1.1875rem; //19px при базовом размере шрифта 16px
   }
-
 }

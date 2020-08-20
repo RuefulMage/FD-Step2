@@ -1,13 +1,13 @@
-@import "../../assets/scss/colors.scss";
-@import "../../assets/scss/sizes.scss";
+@import '../../assets/scss/colors.scss';
+@import '../../assets/scss/sizes.scss';
 
 .pagination {
-  &__pages{
+  &__pages {
     display: flex;
     margin-bottom: 10px;
   }
 
-  &__description{
+  &__description {
     color: $dark-75;
     text-align: center;
   }
@@ -28,7 +28,7 @@
     }
   }
 
-  &__page{
+  &__page {
     font-weight: bold;
     font-size: 0.75rem; //12px при базовом размере шрифта 16px
     text-transform: uppercase;
@@ -36,11 +36,11 @@
 
   }
 
-  &:not([data-current-page="1"]) &__item:nth-child(1) {
+  &:not([data-current-page='1']) &__item:nth-child(1) {
     display: flex;
   }
 
-  &__last{
+  &__last {
     font-family: 'Material Icons';
     font-size: 1.5rem; //24px при базовом размере шрифта 16px
     color: white;
@@ -50,48 +50,56 @@
 }
 
 @for $i from 1 through $max-page {
-  .pagination[data-current-page="#{$i}"] {
+  .pagination[data-current-page='#{$i}'] {
     // 3 before
     .pagination__item:nth-child(#{$i - 3}):not(:first-child) {
       display: flex;
       pointer-events: none;
       color: transparent;
+
       &:after {
         content: '...';
         color: $dark-50;
       }
     }
+
     // 2 before
-    .pagination__item:nth-child(#{$i - 2}){
+    .pagination__item:nth-child(#{$i - 2}) {
       display: flex;
     }
+
     // before
-    .pagination__item:nth-child(#{$i - 1}){
+    .pagination__item:nth-child(#{$i - 1}) {
       display: flex;
     }
+
     // active
     .pagination__item:nth-child(#{$i}) {
-      background:$gradient;
+      background: $gradient;
       color: #fff;
       display: flex;
 
-      +.pagination__item:last-child {
+      + .pagination__item:last-child {
         display: none;
       }
     }
+
     // next
     .pagination__item:nth-child(#{$i + 1}):not(:last-child) {
       display: flex;
     }
+
     // 2 next
     .pagination__item:nth-child(#{$i + 2}):not(:last-child) {
       display: flex;
     }
+
     // 3 next
     .pagination__item:nth-child(#{$i + 3}):not(:last-child):not(:nth-last-child(2)) {
       display: flex;
       pointer-events: none;
       color: transparent;
+
       &:after {
         content: '...';
         color: $dark-50;

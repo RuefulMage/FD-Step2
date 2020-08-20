@@ -42,6 +42,8 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
                 'minAmount': +item.getAttribute('data-min-amount'),
                 'maxAmount': +item.getAttribute('data-max-amount'),
                 'amount': +item.querySelector('.' + amountClass).innerText,
+                'descreaseButton': item.querySelector('.' + descreaseButtonClass),
+                'increaseButton': item.querySelector('.' + increaseButtonClass)
             });
 
         let currentItem = items.get(itemId);
@@ -144,15 +146,22 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
     function toggleDisabledButton(amount, minAmount, maxAmount, item) {
         let descreaseButton = item.querySelector('.' + descreaseButtonClass);
         let increaseButton = item.querySelector('.' + increaseButtonClass);
+
+        let isDisabledClassShouldBeDeleted = amount !== minAmount
+            && descreaseButton.classList.contains(descreaseButtonDisabledClass);
+
         if (amount === minAmount) {
             descreaseButton.classList.add(descreaseButtonDisabledClass);
-        } else if (amount !== minAmount && descreaseButton.classList.contains(descreaseButtonDisabledClass)) {
+        } else if (isDisabledClassShouldBeDeleted) {
             descreaseButton.classList.remove(descreaseButtonDisabledClass);
         }
 
+        isDisabledClassShouldBeDeleted = amount !== maxAmount
+            && increaseButton.classList.contains(increaseButtonDisabledClass);
+
         if (amount === maxAmount) {
             increaseButton.classList.add(increaseButtonDisabledClass);
-        } else if (amount !== maxAmount && increaseButton.classList.contains(increaseButtonDisabledClass)) {
+        } else if (isDisabledClassShouldBeDeleted) {
             increaseButton.classList.remove(increaseButtonDisabledClass);
         }
     }
@@ -175,7 +184,10 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
         let result = '';
         let flag = false;
         for (let item of items.keys()) {
-            if (result !== '' && items.get(item)['amount'] !== 0) {
+            let isCommaNeeded = result !== ''
+                && items.get(item)['amount'] !== 0;
+
+            if (isCommaNeeded) {
                 result += ', ';
             }
 
@@ -187,7 +199,9 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
             }
         }
 
-        if (flag === true && totalAmount > 0) {
+        let isThreeDotsNeeded = flag === true && totalAmount > 0;
+
+        if (isThreeDotsNeeded) {
             result += '...';
         }
         if (totalAmount === 0) {
@@ -235,9 +249,16 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
     // Если кол-во выбранных элементов == 0, то кнопка Очистить должна быть скрытой
     function toggleClearButtonVisibility() {
         let clearButton = element.querySelector('.' + clearButtonClass);
-        if (clearButton.classList.contains('dropdown__clear-button_hidden') && totalAmount !== 0) {
+
+        let isDisabledClassShouldDeleted = clearButton.classList.contains('dropdown__clear-button_hidden')
+            && totalAmount !== 0;
+
+        let isDisabledClassShouldAdded = !clearButton.classList.contains('dropdown__clear-button_hidden')
+            && totalAmount === 0;
+
+        if (isDisabledClassShouldDeleted) {
             clearButton.classList.remove('dropdown__clear-button_hidden');
-        } else if (!clearButton.classList.contains('dropdown__clear-button_hidden') && totalAmount === 0) {
+        } else if (isDisabledClassShouldAdded) {
             clearButton.classList.add('dropdown__clear-button_hidden');
         }
     }

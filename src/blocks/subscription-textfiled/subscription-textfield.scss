@@ -1,39 +1,38 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
-.subscription-textfield{
+.subscription-textfield {
   display: flex;
   box-sizing: border-box;
-  width: 100%;
   padding: 9px 0;
   border: 1px solid $dark-25;
   border-radius: 4px;
 
-  &:focus, &:hover{
+  &:focus, &:hover {
     border: 1px solid $dark-50;
   }
 
 
-  &__textfield{
+  &__textfield {
     width: 100%;
     padding-left: 14px;
     border: none;
     border-radius: inherit;
     color: $dark-75;
-    user-select: none;
     outline: none;
 
-    &::placeholder{
+    &::placeholder {
       color: $dark-25;
     }
   }
 
-  &__button{
+  &__button {
     display: flex;
     justify-content: center;
     max-width: 44px;
     width: 100%;
     font-family: 'Material Icons';
-    font-size: 24px;
+    font-size: 1.5rem; //24px при базовом размере шрифта 16px
+    outline: none;
     background: $gradient;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

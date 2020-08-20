@@ -1,9 +1,8 @@
 @import '../../assets/scss/colors.scss';
 
-.range-slider{
-  width: 100%;
+.range-slider {
 
-  &__result-container{
+  &__result-container {
     display: flex;
     justify-content: space-between;
     margin-bottom: 23px;
@@ -12,41 +11,39 @@
     text-transform: uppercase;
   }
 
-  &__result-label{
+  &__result-label {
     font-weight: bold;
     color: $dark-100;
   }
 
-  &__result{
+  &__result {
     text-align: right;
     color: $dark-50;
   }
 
-  &__slider{
+  &__slider {
     height: 6px;
   }
 }
 
 
-
-
 // Переопределение свойств плагина
-.noUi-target{
+.noUi-target {
   box-sizing: border-box;
   border: 1px solid $dark-25;
   border-radius: 3px;
 }
 
-.noUi-connects{
+.noUi-connects {
   height: 6px;
   top: -1px;
 }
 
-.noUi-connect{
+.noUi-connect {
   background: $secondary-gradient;
 }
 
-.noUi-horizontal .noUi-handle{
+.noUi-horizontal .noUi-handle {
   box-sizing: border-box;
   height: 16px;
   width: 16px;
@@ -57,7 +54,7 @@
   box-shadow: none;
   outline: none;
 
-  &:after, &:before{
+  &:after, &:before {
     display: none;
   }
 }

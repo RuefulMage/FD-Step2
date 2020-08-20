@@ -1,67 +1,59 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
-.apartment-booking-card{
+.apartment-booking-card {
   box-sizing: border-box;
   padding: 40px 30px 30px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 
-  &__main-info{
-    margin-bottom: 23px;
+  &__main-info {
+    margin-bottom: 21px;
   }
 
-  &__date-dropdown{
+  &__date-dropdown {
     margin-bottom: 20px;
   }
 
-  &__guests{
-    margin-bottom: 20px;
+  &__guests {
+    margin-bottom: 18px;
   }
 
-  &__guests-header{
+  &__guests-header {
     text-transform: uppercase;
-    color: $dark-100;
     margin-bottom: 5px;
   }
 
-  &__guests-dropdown{}
-
-
-
-  &__cheque{
+  &__cheque {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 20px;
   }
 
-  &__cheque-item{
+  &__cheque-item {
     display: flex;
     justify-content: space-between;
-    line-height: 1.125rem;  //18px при базовом размере шрифта 16px
-    color: $dark-75;
-    margin-bottom: 18px;
+    line-height: 1.5rem; //24px при базовом размере шрифта 16px
+    margin-bottom: 10px;
 
-    &:nth-last-child(2){
-      margin-bottom: 30px;
+    &:nth-last-child(2) {
+      margin-bottom: 36px;
+      line-height: 1.125rem; //18px при базовом размере шрифта 16px
     }
   }
 
-  &__price-info{
-    display: flex;
-    align-items: flex-start;
-
-  }
-
   &__price-label {
-    display: flex;
-
     margin-right: 5px;
     flex-basis: 214px;
   }
 
-  &__price-note{
+  &__price-info {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__price-note {
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -73,45 +65,35 @@
     border: 1px solid $dark-25;
     border-radius: 100%;
     font-weight: bold;
-    font-size: 0.75rem;  //12px при базовом размере шрифта 16px
+    font-size: 0.75rem; //12px при базовом размере шрифта 16px
     color: $dark-25;
 
 
-    &-text{
+    &-text {
       display: none;
       position: absolute;
-      top:20px;
+      top: 20px;
       left: 20px;
       border: 1px solid $dark-25;
-      color: $dark-75;
       padding: 2px;
     }
 
-    &:hover &-text{
+    &:hover &-text {
       display: block;
     }
   }
 
-
-
-
-  &__result{}
-
-  &__total{
+  &__total {
     display: flex;
     font-family: Quicksand, OpenSans, sans-serif;
     font-weight: bold;
-    font-size: 1.1875rem;  //19px при базовом размере шрифта 16px
+    font-size: 1.1875rem; //19px при базовом размере шрифта 16px
     color: $dark-100;
     align-items: baseline;
   }
 
-  &__total-label{}
-
-  &__line{
+  &__line {
     flex-grow: 1;
     border-bottom: 0.5px dashed $dark-25;
   }
-
-  &__total-sum{}
 }

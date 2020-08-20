@@ -1,7 +1,7 @@
 mixin footer-navigation(title, links)
-        .footer-navigation
-            h3.footer-navigation__title=title
-            ul.footer-navigation__menu
-            each item in links
-                li.footer-navigation__menu-item
-                    a.footer-navigation__link(href=item.link)=item.text
+    .footer-navigation
+        h3.footer-navigation__title=title
+        ul.footer-navigation__menu
+        each item in links
+            li.footer-navigation__menu-item
+                a.footer-navigation__link(href=item.link)=item.text

@@ -6,10 +6,14 @@
     background-origin: padding-box;
     background-size: cover;
 
-    padding: 172px 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    padding: 172px 0;
+
+    @media (max-width: 1190px) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
   }
 
   &__card {

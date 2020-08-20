@@ -1,7 +1,8 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
-.icon-text{
+.icon-text {
   display: flex;
+
   &__icon {
     display: flex;
     background: $gradient;
@@ -11,20 +12,20 @@
     font-size: 3rem; //48px при базовом размере шрифта 16px
   }
 
-  &__text{
+  &__text {
     padding-left: 10px;
     line-height: 1.5rem; //24px при базовом размере шрифта 16px
     color: $dark-75;
   }
 
-  &__title{
+  &__title {
     font-weight: bold;
   }
 
-  &__description{
+  &__description {
   }
 
-  &_bordered{
+  &_bordered {
     border-bottom: 1px solid $dark-10;
     padding-bottom: 20px;
   }
