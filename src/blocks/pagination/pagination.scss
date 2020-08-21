@@ -1,5 +1,6 @@
 @import '../../assets/scss/colors.scss';
-@import '../../assets/scss/sizes.scss';
+
+$max-page: 100;
 
 .pagination {
   &__pages {

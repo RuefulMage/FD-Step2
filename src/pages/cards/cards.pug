@@ -22,8 +22,6 @@ html(lang="en")
         meta(name="keywords" content="Cards, Toxin")
         meta(name="description" content="Toxin cards demonstration page")
         title Cards
-        link(href="./assets/css/app.css")
-        //link(href="../../assets/css/app.css" rel="stylesheet")
 
     body
         .cards__wrapper
@@ -79,15 +77,14 @@ html(lang="en")
 
 
                     .cards__item
-                        //+calendar("mock-address")
                         +date-dropdown(false, true)
 
                     .cards__item.cards__item_width-small
                         +apartment-description-card({
-                            images: ["apartment-lux.png",
-                                "apartment-lux.png",
-                                "apartment-lux.png",
-                                "apartment-lux.png"],
+                            images: ["apartment-photo-1.jpg",
+                                "apartment-photo-2.jpg",
+                                "apartment-photo-3.jpg",
+                                "apartment-photo-4.jpg"],
                             number: "888",
                             price: "9 990",
                             currency: "₽",
@@ -100,10 +97,10 @@ html(lang="en")
 
                     .cards__item.cards__item_width-small
                         +apartment-description-card({
-                            images: ["apartment.png",
-                                "apartment.png",
-                                "apartment.png",
-                                "apartment.png"],
+                            images: ["apartment-photo-2.jpg",
+                                "apartment-photo-3.jpg",
+                                "apartment-photo-4.jpg",
+                                "apartment-photo-5.jpg"],
                             number: "840",
                             price: "9 990",
                             currency: "₽",
