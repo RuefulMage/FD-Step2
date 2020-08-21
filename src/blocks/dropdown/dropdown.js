@@ -3,8 +3,8 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
     const dropdownExpandedClass = 'dropdown_expanded';
     const expandButtonRotatedClass = 'dropdown__expand-button_rotated';
     const menuItemClass = 'js-dropdown-menu-item';
-    const descreaseButtonClass = 'js-dropdown-descrease';
-    const descreaseButtonDisabledClass = 'dropdown__descrease_disabled';
+    const decreaseButtonClass = 'js-dropdown-decrease';
+    const decreaseButtonDisabledClass = 'dropdown__decrease_disabled';
     const increaseButtonClass = 'js-dropdown-increase';
     const increaseButtonDisabledClass = 'dropdown__increase_disabled';
     const amountClass = 'js-dropdown-amount';
@@ -47,7 +47,7 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
                 'maxAmount': +itemElement.getAttribute('data-max-amount'),
                 'amount': +itemElement.querySelector('.' + amountClass).innerText,
                 'amountContainsElement': itemElement.querySelector('.' + amountClass),
-                'descreaseButton': itemElement.querySelector('.' + descreaseButtonClass),
+                'decreaseButton': itemElement.querySelector('.' + decreaseButtonClass),
                 'increaseButton': itemElement.querySelector('.' + increaseButtonClass)
             });
 
@@ -56,8 +56,8 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
         toggleDisabledButton(+currentItem['amount'], currentItem['minAmount'], currentItem['maxAmount'], currentItem);
 
         // Навешивание обработчика на кнопку уменьшения
-        let descreaseButton = items.get(itemId).descreaseButton;
-        descreaseButton.addEventListener('click', descreaseButtonClickHandler);
+        let decreaseButton = items.get(itemId).decreaseButton;
+        decreaseButton.addEventListener('click', decreaseButtonClickHandler);
 
         //Навешивание обработчика на кнопку увеличения
         let increaseButton = items.get(itemId).increaseButton;
@@ -117,7 +117,7 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
         }
     }
 
-    function descreaseButtonClickHandler(event) {
+    function decreaseButtonClickHandler(event) {
         event.preventDefault();
         let itemDOMElement = this.closest('.' + menuItemClass);
         let itemId = itemDOMElement.getAttribute('data-id');
@@ -149,16 +149,16 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
 
     // Проверяет кнопки элемента и делает их полупрозрачными, если текущее значение является граничным
     function toggleDisabledButton(amount, minAmount, maxAmount, item) {
-        let descreaseButton = item.descreaseButton;
+        let decreaseButton = item.decreaseButton;
         let increaseButton = item.increaseButton;
 
         let isDisabledClassShouldBeDeleted = amount !== minAmount
-            && descreaseButton.classList.contains(descreaseButtonDisabledClass);
+            && decreaseButton.classList.contains(decreaseButtonDisabledClass);
 
         if (amount === minAmount) {
-            descreaseButton.classList.add(descreaseButtonDisabledClass);
+            decreaseButton.classList.add(decreaseButtonDisabledClass);
         } else if (isDisabledClassShouldBeDeleted) {
-            descreaseButton.classList.remove(descreaseButtonDisabledClass);
+            decreaseButton.classList.remove(decreaseButtonDisabledClass);
         }
 
         isDisabledClassShouldBeDeleted = amount !== maxAmount

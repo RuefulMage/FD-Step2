@@ -81,7 +81,7 @@
     align-items: center;
   }
 
-  &__amount, &__descrease, &__increase {
+  &__amount, &__decrease, &__increase {
     height: 30px;
     width: 30px;
     display: flex;
@@ -89,7 +89,7 @@
     justify-content: center;
   }
 
-  &__descrease, &__increase {
+  &__decrease, &__increase {
     border-radius: 100%;
     box-sizing: border-box;
     border: 1px solid $dark-25;

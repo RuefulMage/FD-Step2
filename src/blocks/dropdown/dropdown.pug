@@ -1,3 +1,4 @@
+// items - массив объектов {id, minAmount, maxAmount, forms(формы слова), itemName, startAmount}
 mixin dropdown({placeholder, items, expanded=false, withButtons=false, generalForms})
     - let dropdownClasses = ["dropdown"];
     - let dropdownJSClass = "js-dropdown";
@@ -19,7 +20,7 @@ mixin dropdown({placeholder, items, expanded=false, withButtons=false, generalFo
                 .dropdown__menu-item.js-dropdown-menu-item(data-id=item.id data-min-amount=item.minAmount data-max-amount=item.maxAmount data-forms=item.forms)
                     h3.dropdown__menu-item-name=item.itemName
                     .dropdown__menu-item-controls
-                        button.dropdown__descrease.js-dropdown-descrease -
+                        button.dropdown__decrease.js-dropdown-decrease -
                         span.dropdown__amount.js-dropdown-amount=item.startAmount
                         button.dropdown__increase.js-dropdown-increase +
 

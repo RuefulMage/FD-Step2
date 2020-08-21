@@ -1,5 +1,6 @@
 include ../checkbox/checkbox
 
+// itemsList - массив объектов {text, checked}
 mixin expandable-checkbox-list(title, itemsList, expanded=false)
     - let listClasses = ["expandable-checkbox-list__list"]
     if expanded

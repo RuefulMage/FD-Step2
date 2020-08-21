@@ -1,7 +1,7 @@
 import hangUpListenerToPagination from './pagination';
 
-let paginations = document.getElementsByClassName('js-pagination');
+let paginationList = document.getElementsByClassName('js-pagination');
 
-for (let i = 0; i < paginations.length; i++) {
-    hangUpListenerToPagination(paginations[i]);
+for (let i = 0; i < paginationList.length; i++) {
+    hangUpListenerToPagination(paginationList[i]);
 }

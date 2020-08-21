@@ -75,7 +75,7 @@ function createCalendar(node){
     }
 
 
-    let mounthsNames = new Map([
+    let monthsNames = new Map([
         [ 0, 'янв'],[ 1, 'фев'],
         [ 2, 'мар'],[ 3, 'апр'],
         [ 4, 'май'],[ 5, 'июн'],
@@ -94,11 +94,11 @@ function createCalendar(node){
 
         appendButton.addEventListener('click', function () {
             calendarData.hide();
-            if(dateDropdownInputs.length == 1){
+            if(dateDropdownInputs.length === 1){
                 dateDropdownInputs[0].value = calendarData.selectedDates[0].getDate() + ' '
-                    + mounthsNames.get(calendarData.selectedDates[0].getMonth()) + ' - '
+                    + monthsNames.get(calendarData.selectedDates[0].getMonth()) + ' - '
                     + calendarData.selectedDates[1].getDate() + ' '
-                    + mounthsNames.get(calendarData.selectedDates[1].getMonth())
+                    + monthsNames.get(calendarData.selectedDates[1].getMonth())
             } else {
                 dateDropdownInputs[0].value= calendarData.selectedDates[0].toLocaleDateString();
                 dateDropdownInputs[1].value= calendarData.selectedDates[1].toLocaleDateString();

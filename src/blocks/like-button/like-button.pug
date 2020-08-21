@@ -1,11 +1,11 @@
 mixin like-button(value, name, likeAmount, liked=false)
     if liked
-        button.like-button.like-button_colored(name=name)
+        button.like-button.js-like-button.like-button_colored(name=name)
             .like-button__content
                 .like-button__icon favorite
                 .like-button__amount=likeAmount
     else
-        button.like-button(name=name)
+        button.like-button.js-like-button(name=name)
             .like-button__content
                 .like-button__icon favorite_border
                 .like-button__amount=likeAmount

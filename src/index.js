@@ -1,8 +1,10 @@
-import 'nouislider/distribute/nouislider.css';
 import './assets/scss/fonts.scss';
 import './assets/scss/style-delete.scss';
 import './assets/scss/colors.scss';
 import './assets/scss/common.scss';
+import './assets/favicons/favicons';
+
+import 'nouislider/distribute/nouislider.css';
 import 'air-datepicker/src/sass/datepicker.scss';
 import 'air-datepicker/src/sass/navigation.scss';
 import 'air-datepicker/src/sass/cell.scss';
@@ -73,10 +75,6 @@ import './blocks/like-button/init';
 import './blocks/pagination/init';
 import './blocks/dropdown/init';
 import './blocks/apartment-description-card/init'
-import './pages/search/search';
-
 import './blocks/pie-chart/init';
 
 import './pages/search/search';
-
-import './assets/favicons/favicons';
