@@ -20,6 +20,10 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
     let items = new Map();
     let totalAmount = 0;
     let currentSetInputTextFunction;
+    let inputField = element.querySelector('.' + inputTextClass);
+
+    let clearButton;
+    let applyButton;
 
     // Присвоение нужной функции для изменения поле инпута
     if(textInInputIsTotalAmount){
@@ -33,29 +37,30 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
     expandButton.addEventListener('click', expandButtonClickHandler);
 
     // Создание объектов items из массива DOM-элементов itemsDomElementsArray
-    itemsDomElementsArray.forEach(item => {
-        let itemId = item.getAttribute('data-id');
+    itemsDomElementsArray.forEach(itemElement => {
+        let itemId = itemElement.getAttribute('data-id');
         items.set(
             itemId,
             {
-                'forms': item.getAttribute('data-forms').split(','),
-                'minAmount': +item.getAttribute('data-min-amount'),
-                'maxAmount': +item.getAttribute('data-max-amount'),
-                'amount': +item.querySelector('.' + amountClass).innerText,
-                'descreaseButton': item.querySelector('.' + descreaseButtonClass),
-                'increaseButton': item.querySelector('.' + increaseButtonClass)
+                'forms': itemElement.getAttribute('data-forms').split(','),
+                'minAmount': +itemElement.getAttribute('data-min-amount'),
+                'maxAmount': +itemElement.getAttribute('data-max-amount'),
+                'amount': +itemElement.querySelector('.' + amountClass).innerText,
+                'amountContainsElement': itemElement.querySelector('.' + amountClass),
+                'descreaseButton': itemElement.querySelector('.' + descreaseButtonClass),
+                'increaseButton': itemElement.querySelector('.' + increaseButtonClass)
             });
 
         let currentItem = items.get(itemId);
         totalAmount = totalAmount + +currentItem['amount'];
-        toggleDisabledButton(+currentItem['amount'], currentItem['minAmount'], currentItem['maxAmount'], item);
+        toggleDisabledButton(+currentItem['amount'], currentItem['minAmount'], currentItem['maxAmount'], currentItem);
 
         // Навешивание обработчика на кнопку уменьшения
-        let descreaseButton = item.querySelector('.' + descreaseButtonClass);
+        let descreaseButton = items.get(itemId).descreaseButton;
         descreaseButton.addEventListener('click', descreaseButtonClickHandler);
 
         //Навешивание обработчика на кнопку увеличения
-        let increaseButton = item.querySelector('.' + increaseButtonClass);
+        let increaseButton = items.get(itemId).increaseButton;
         increaseButton.addEventListener('click', increaseButtonClickHandler);
     });
 
@@ -63,10 +68,10 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
 
     // Создание и навешивание обработчиков на кнопки Очистить и Принять
     if(withButtons) {
-        let clearButton = element.querySelector('.' + clearButtonClass);
+        clearButton = element.querySelector('.' + clearButtonClass);
         clearButton.addEventListener('click', clearButtonClickHandler);
 
-        let applyButton = element.querySelector('.' + appendButtonClass);
+        applyButton = element.querySelector('.' + appendButtonClass);
         applyButton.addEventListener('click', applyButtonClickHandler);
 
         toggleClearButtonVisibility();
@@ -93,7 +98,7 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
             totalAmount = 0;
 
             for (let key of items.keys()) {
-                setAmount(key, element.querySelector('[data-id=' + key + ']'), 0);
+                setAmount(key, 0);
             }
 
             toggleClearButtonVisibility();
@@ -119,7 +124,7 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
         let item = items.get(itemId);
         if(items.get(itemId)['amount'] !== item['minAmount']){
             totalAmount = totalAmount - 1;
-            setAmount(itemId, itemDOMElement, item['amount'] - 1);
+            setAmount(itemId, item['amount'] - 1);
             if(withButtons){
                 toggleClearButtonVisibility();
             }
@@ -133,7 +138,7 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
         let item = items.get(itemId);
         if(items.get(itemId)['amount'] !== item['maxAmount']){
             totalAmount = +totalAmount + 1;
-            setAmount(itemId, itemDOMElement, +item['amount'] + 1);
+            setAmount(itemId, +item['amount'] + 1);
             if(withButtons){
                 toggleClearButtonVisibility();
             }
@@ -144,8 +149,8 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
 
     // Проверяет кнопки элемента и делает их полупрозрачными, если текущее значение является граничным
     function toggleDisabledButton(amount, minAmount, maxAmount, item) {
-        let descreaseButton = item.querySelector('.' + descreaseButtonClass);
-        let increaseButton = item.querySelector('.' + increaseButtonClass);
+        let descreaseButton = item.descreaseButton;
+        let increaseButton = item.increaseButton;
 
         let isDisabledClassShouldBeDeleted = amount !== minAmount
             && descreaseButton.classList.contains(descreaseButtonDisabledClass);
@@ -175,7 +180,7 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
             result = totalAmount + ' ' + getProperWordForm(totalAmount, generalForms);
         }
 
-        element.querySelector('.' + inputTextClass).innerText = result;
+        inputField.innerText = result;
     }
 
 
@@ -208,7 +213,7 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
             result = placeholder;
         }
 
-        element.querySelector('.' + inputTextClass).innerText = result;
+        inputField.innerText = result;
     }
 
     // Функция, которая по количеству объектов, возвращает нужное слово из массива, т.е. в нужном падеже
@@ -238,17 +243,17 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
 
 
     //Изменяет текущее кол-во элемента на новую
-    function setAmount(itemId, item, amount) {
-        items.get(itemId)['amount'] = amount;
-        item.querySelector('.' + amountClass).innerText = items.get(itemId)['amount'];
+    function setAmount(itemId, amount) {
+        let item = items.get(itemId);
+        item['amount'] = amount;
+        item['amountContainsElement'].innerText = items.get(itemId)['amount'];
         currentSetInputTextFunction();
         toggleDisabledButton(+items.get(itemId)['amount'],
-            +items.get(itemId)['minAmount'], +items.get(itemId)['maxAmount'], item);
+            +items.get(itemId)['minAmount'], +items.get(itemId)['maxAmount'], items.get(itemId));
     }
 
     // Если кол-во выбранных элементов == 0, то кнопка Очистить должна быть скрытой
     function toggleClearButtonVisibility() {
-        let clearButton = element.querySelector('.' + clearButtonClass);
 
         let isDisabledClassShouldDeleted = clearButton.classList.contains('dropdown__clear-button_hidden')
             && totalAmount !== 0;
