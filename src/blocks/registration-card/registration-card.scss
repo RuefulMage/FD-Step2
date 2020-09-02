@@ -4,6 +4,7 @@
   box-sizing: border-box;
   padding: 40px 30px 30px 30px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 
   &__title {
     line-height: 1.875rem; //30px при базовом размере шрифта 16px
