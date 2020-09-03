@@ -19,6 +19,8 @@
     border-radius: inherit;
     color: $dark-75;
     outline: none;
+    font-family: Montserrat, OpenSans, sans-serif;
+    font-size: 0.875rem; //14px при базовом размере шрифта 16px
 
     &::placeholder {
       color: $dark-25;

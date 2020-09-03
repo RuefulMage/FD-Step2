@@ -52,6 +52,8 @@
     border: none;
     border-radius: inherit;
 
+    font-family: Montserrat, OpenSans, sans-serif;
+    font-size: 0.875rem; //14px при базовом размере шрифта 16px
     line-height: 1.5rem; //24px при базовом размере шрифта 16px
     color: $dark-75;
     cursor: pointer;
