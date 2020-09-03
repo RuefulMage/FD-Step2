@@ -15,7 +15,6 @@
 
   &_expanded &__field {
     border-color: $dark-50;
-    border-bottom: none;
   }
 
   &__text {
@@ -54,10 +53,11 @@
     display: none;
     width: 100%;
     position: absolute;
-    z-index: 99999;
+    z-index: 1;
 
     background: white;
     border: 1px solid $dark-50;
+    border-top: none;
     border-radius: 0 0 2px 2px;
     padding-left: 14px;
     padding-right: 7px;
