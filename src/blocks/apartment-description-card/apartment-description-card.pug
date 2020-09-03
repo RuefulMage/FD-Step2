@@ -8,8 +8,10 @@ mixin apartment-description-card({images, number, price, currency, rateButtonNam
                 .apartment-description-card__image-list-item.js-slider-item
                     img.apartment-description-card__image(src="../../assets/images/" + item alt="apartment photo")
             .apartment-description-card__slider-buttons
-                button.apartment-description-card__prev.js-slider-button-prev expand_more
-                button.apartment-description-card__next.js-slider-button-next expand_more
+                .apartment-description-card__prev-wrapper
+                    button.apartment-description-card__slider-button.js-slider-button-prev expand_more
+                .apartment-description-card__next-wrapper
+                    button.apartment-description-card__slider-button.js-slider-button-next expand_more
             .apartment-description-card__indicator-list
                 each item in images
                     .apartment-description-card__indicator.js-slider-indicators
