@@ -27,6 +27,10 @@
     border: 1px solid $dark-25;
     outline: none;
 
+    &:focus{
+      box-shadow: 0 0 5px $dark-50;
+    }
+
     @media (max-width: 880px) {
       display: block;
     }

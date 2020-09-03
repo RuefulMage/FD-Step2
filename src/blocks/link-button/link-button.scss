@@ -6,9 +6,9 @@
   background: $gradient;
   user-select: none;
   cursor: pointer;
+  outline: none;
 
-
-  &:hover, &_disabled {
+  &:focus, &:hover, &_disabled {
     background: $gradient-semitransparent;
   }
 

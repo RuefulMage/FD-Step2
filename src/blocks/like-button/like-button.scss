@@ -10,6 +10,10 @@
   color: $dark-25;
   outline: none;
 
+  &:focus{
+    box-shadow: 0 0 2px $dark-50;
+  }
+
   &_colored {
     color: $purple;
     background: $gradient;

@@ -66,6 +66,10 @@
     color: white;
     outline: none;
     transform: rotate(90deg);
+
+    &:focus{
+      font-weight: bold;
+    }
   }
 
   &__indicator-list {

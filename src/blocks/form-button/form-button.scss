@@ -13,7 +13,7 @@
   outline: none;
   user-select: none;
 
-  &:hover {
+  &:focus, &:hover {
     background: $gradient-semitransparent;
   }
 

@@ -38,6 +38,10 @@
     user-select: none;
     outline: none;
 
+    &:focus{
+      font-weight: bold;
+    }
+
     &_rotated {
       transform: rotate(-180deg);
     }
@@ -97,6 +101,10 @@
     color: $dark-50;
     outline: none;
     user-select: none;
+
+    &:focus{
+      font-weight: bold;
+    }
 
     &_disabled {
       opacity: 0.25;

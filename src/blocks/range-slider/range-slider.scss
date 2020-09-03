@@ -54,6 +54,10 @@
   box-shadow: none;
   outline: none;
 
+  &:focus{
+    box-shadow: 0 0 5px $dark-50;
+  }
+
   &:after, &:before {
     display: none;
   }
