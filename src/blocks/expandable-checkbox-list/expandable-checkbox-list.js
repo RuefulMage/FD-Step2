@@ -2,9 +2,10 @@ function hangUpListenerToExpandableList(checkboxListButton) {
   const rotatedArrowClass = 'expandable-checkbox-list__arrow_rotated';
   const expandedListClass = 'expandable-checkbox-list__list_expanded';
 
-  checkboxListButton.addEventListener('click', clickHandler);
+  checkboxListButton.addEventListener('click', handleClick);
 
-  function clickHandler() {
+  function handleClick(event) {
+    event.preventDefault();
     let checkboxList = this.nextElementSibling;
     let icon = this.lastChild;
     if (checkboxList.classList.contains(expandedListClass)) {
