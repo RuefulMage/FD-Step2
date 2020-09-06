@@ -15,11 +15,11 @@ function createImagesSlider(element) {
     let prevButton = element.querySelector('.' + prevButtonClass);
     let nextButton = element.querySelector('.' + nextButtonClass);
 
-    nextButton.addEventListener('click', nextButtonClickHandler);
+    nextButton.addEventListener('click', handleNextButtonClick);
 
-    prevButton.addEventListener('click', prevButtonClickHandler);
+    prevButton.addEventListener('click', handlePrevButtonClick);
 
-    function nextButtonClickHandler() {
+    function handleNextButtonClick() {
         items[currentId].classList.remove(currentImageClass);
         indicators[currentId].classList.remove(currentIndicatorClass);
         if(currentId === (items.length - 1)){
@@ -32,7 +32,7 @@ function createImagesSlider(element) {
     }
 
 
-    function prevButtonClickHandler() {
+    function handlePrevButtonClick() {
         items[currentId].classList.remove(currentImageClass);
         indicators[currentId].classList.remove(currentIndicatorClass);
         if(currentId === 0){
@@ -40,6 +40,24 @@ function createImagesSlider(element) {
         } else {
             currentId --;
         }
+        items[currentId].classList.add(currentImageClass);
+        indicators[currentId].classList.add(currentIndicatorClass);
+    }
+
+    indicators.forEach(item => {
+        item.addEventListener('click', handleIndicatorClick);
+    })
+
+    function handleIndicatorClick(event) {
+        let indicator = event.currentTarget;
+        items[currentId].classList.remove(currentImageClass);
+        indicators[currentId].classList.remove(currentIndicatorClass);
+
+        indicators.forEach((item, index) => {
+            if(item === indicator){
+                currentId = index;
+            }
+        });
         items[currentId].classList.add(currentImageClass);
         indicators[currentId].classList.add(currentIndicatorClass);
     }
