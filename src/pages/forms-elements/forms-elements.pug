@@ -55,7 +55,12 @@ html(lang="en")
                             .forms-elements__item-label
                                 h3.forms-elements__item-header text field
                                 span.forms-elements__item-state hover / focus
-                            +textfield({type: "email", placeholder: "This is pretty awesome", name: "hovered-textfield", hovered: true})
+                            +textfield({
+                                type: "email",
+                                placeholder: "This is pretty awesome",
+                                name: "hovered-textfield",
+                                hovered: true
+                            })
 
                         .forms-elements__item
                             .forms-elements__item-label
@@ -102,12 +107,16 @@ html(lang="en")
                             })
 
                         .forms-elements__item.forms-elements__item_margin-large
-                            +date-dropdown(true, false, ["date dropdown", "date dropdown"])
+                            +date-dropdown({
+                                twoInputs: true,
+                                headers: ["date dropdown", "date dropdown"],
+                                startDateInterval: "2019-08-23"
+                            })
 
                         .forms-elements__item.forms-elements__item_width-small.forms-elements__item_margin-large
                             .forms-elements__item-label
                                 h3.forms-elements__item-header filter date dropdown
-                            +date-dropdown()
+                            +date-dropdown({startDateInterval: "2019-08-19, 2019-08-23"})
 
                         .forms-elements__item.forms-elements__item_width-small.forms-elements__item_margin-large
                             .forms-elements__item-label

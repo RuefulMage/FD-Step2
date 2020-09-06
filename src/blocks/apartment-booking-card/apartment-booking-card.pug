@@ -8,7 +8,7 @@ mixin apartment-booking-card({number, price, currency, lux=false, dateDropdownHe
         .apartment-booking-card__main-info
             +apartment-info({number: number, price: price, currency: currency, largeNumber: true, lux: lux})
         .apartment-booking-card__date-dropdown
-            +date-dropdown(true, false, dateDropdownHeaders)
+            +date-dropdown({twoInputs: true, headers: dateDropdownHeaders, startDateInterval: "2019-08-19, 2019-08-23"})
         .apartment-booking-card__guests
             h3.apartment-booking-card__guests-header=dropdownHeader
             .apartment-booking-card__guests-dropdown
