@@ -142,17 +142,17 @@ function createCalendar(node){
 
 
     // Извлекаем из HTML стартовый интервал и задаем его календарю
-    const startDateInterval = node.getAttribute('data-start-interval');
+    let startDateInterval = node.getAttribute('data-start-interval');
     let isStartIntervalDefined = (startDateInterval !== null && startDateInterval !== undefined);
 
     if( isStartIntervalDefined ){
-        const startDateInterval = startDateInterval.split(',');
+        startDateInterval = startDateInterval.split(',');
 
         startDateInterval.map(item => {
             let date = new Date(item);
             let isDateDefined = (date !== null && date !== undefined);
             if( isDateDefined){
-                calendarData.selectDate(item);
+                calendarData.selectDate(date);
             }
         });
     }
