@@ -32,6 +32,7 @@
   box-sizing: border-box;
   border: 1px solid $dark-25;
   border-radius: 3px;
+  cursor: pointer;
 }
 
 .noUi-connects {
@@ -53,6 +54,7 @@
   right: -8px;
   box-shadow: none;
   outline: none;
+  cursor: pointer;
 
   &:focus{
     box-shadow: 0 0 5px $dark-50;

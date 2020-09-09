@@ -67,7 +67,7 @@
     font-weight: bold;
     font-size: 0.75rem; //12px при базовом размере шрифта 16px
     color: $dark-25;
-
+    cursor: pointer;
 
     &-text {
       display: none;
@@ -76,6 +76,7 @@
       left: 20px;
       border: 1px solid $dark-25;
       padding: 2px;
+      background: white;
     }
 
     &:hover &-text {

@@ -14,6 +14,7 @@
   &__circle{
     fill: none;
     stroke-width: 4px;
+    cursor: pointer;
 
     &_hovered{
       stroke-width: 6px;
@@ -82,6 +83,10 @@
     font-family: Montserrat, OpenSans, sans-serif;
     font-size: 12px;
     text-transform: uppercase;
+  }
+
+  &__list-item{
+    cursor: pointer;
   }
 
 }

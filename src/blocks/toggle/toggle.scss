@@ -11,6 +11,7 @@
     border-radius: 10px;
     border: 1px solid $dark-25;
     outline: none;
+    cursor: pointer;
 
     &:hover {
       &:not(checked) {
@@ -47,5 +48,6 @@
   &__text {
     padding-left: 10px;
     line-height: 1.125rem; //18px при базовом размере шрифта 16px
+    cursor: pointer;
   }
 }
