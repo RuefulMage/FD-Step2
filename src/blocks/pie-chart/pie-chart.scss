@@ -1,81 +1,87 @@
 @import '../../assets/scss/colors.scss';
 
-
 .pie-chart {
+  max-width: 311px;
   display: flex;
+  justify-content: space-between;
   align-items: flex-end;
+  flex-wrap: wrap;
 
-  &__chart{
-    height: 120px;
-    width: 120px;
-    display: flex;
-    justify-content: space-between;
-    overflow: hidden;
-    border-radius: 100%;
+  &__chart-wrapper{
     position: relative;
-    margin-right: 30px;
   }
 
-  &__first-half {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  &__circle{
+    fill: none;
+    stroke-width: 4px;
+
+    &_hovered{
+      stroke-width: 6px;
+    }
   }
 
   &__great {
-    background: $great;
+    stroke: url(#great-gradient-color);
   }
 
   &__bad {
-    background: $bad;
+    stroke: url(#bad-gradient-color);
   }
 
-
-  &__second-half {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  &__good{
+    stroke: url(#good-gradient-color);
   }
 
   &__normal {
-    background: $gradient;
+    stroke: url(#normal-gradient-color);
   }
 
-  &__good {
-    background: $good;
-  }
-
-
-  &__center {
-    content: '';
-    position: absolute;
-    top: 4px;
-    left: 4px;
+  &__votes{
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    height: 112px;
-    width: 112px;
-    border-radius: 100%;
-    background: white;
+    align-items: center;
+    position: absolute;
+    top: 40px;
+    left: 30px;
+
+    color: $dark-100;
+    font-weight: bold;
+
+    &_great{
+      background: $great;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &_bad{
+      background: $bad;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &_good{
+      background: $good;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &_normal{
+      background: $gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
 
-  &__sum {
+  &__votes-amount{
     font-family: Quicksand, OpenSans, sans-serif;
-    font-weight: bold;
-    font-size: 1.5rem; //24px при базовом размере шрифта 16px
-    line-height: 1.875rem; //30px при базовом размере шрифта 16px
-    color: $purple;
+    font-size: 24px;
+    margin-bottom: 5px;
   }
 
-  &__sum-label {
-    font-weight: bold;
+  &__sign{
+    font-family: Montserrat, OpenSans, sans-serif;
     font-size: 12px;
-    text-align: center;
     text-transform: uppercase;
-
-    color: $purple;
   }
 
 }
