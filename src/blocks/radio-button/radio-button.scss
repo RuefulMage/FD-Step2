@@ -2,7 +2,6 @@
 
 .radio-button {
   display: flex;
-  cursor: pointer;
 
   &__button {
     --opacity: 0;
@@ -14,6 +13,8 @@
     border-radius: 100%;
     border: 1px solid $dark-25;
     outline: none;
+    cursor: pointer;
+
 
     &:hover {
       &:not(checked) {
@@ -52,6 +53,7 @@
     line-height: 1.125rem; //18px при базовом размере шрифта 16px
     color: $dark-50;
     user-select: none;
+    cursor: pointer;
   }
 
   &__button:checked + &__text {
