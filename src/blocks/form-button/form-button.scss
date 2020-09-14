@@ -2,8 +2,9 @@
 
 .form-button {
   position: relative;
+  max-width: 400px;
   width: 100%;
-  padding: 16px 0;
+  padding: 16px 16px;
   background: $gradient;
   border-radius: 22px;
   text-transform: uppercase;
