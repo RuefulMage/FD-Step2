@@ -1,32 +1,32 @@
-@import '../../assets/scss/colors.scss';
+@import "../../assets/scss/colors.scss";
 
 .apartment-description-card {
-  box-shadow: 0 10px 20px $dark-5;
   border-radius: 4px;
+  box-shadow: 0 10px 20px $dark-5;
 
   &__images-wrapper {
-    box-sizing: border-box;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: relative;
+    box-sizing: border-box;
     height: 152px;
     overflow: hidden;
-    border-top-right-radius: inherit;
     border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
   }
 
   &__image-list-item {
     position: absolute;
-    left: 0;
     top: 0;
+    left: 0;
+    z-index: -2;
     width: 100%;
     opacity: 0;
-    z-index: -2;
 
     &_showing {
-      opacity: 1;
       z-index: 0;
+      opacity: 1;
     }
   }
 
@@ -40,34 +40,35 @@
     height: 100%;
   }
 
-  &__images-wrapper:hover &__slider-buttons{
+  &__images-wrapper:hover &__slider-buttons {
     display: flex;
   }
 
-  &__prev-wrapper, &__next-wrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 44px;
+  &__prev-wrapper,
+  &__next-wrapper {
     z-index: 1;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    background: linear-gradient(90deg, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
   }
 
   &__prev-wrapper{
   }
 
-  &__next-wrapper{
+  &__next-wrapper {
     transform: matrix(-1, 0, 0, 1, 0, 0);
   }
 
   &__slider-button {
-    font-family: 'Material Icons';
-    font-size: 1.5rem; //24px при базовом размере шрифта 16px
     color: white;
+    font-size: 1.5rem; //24px при базовом размере шрифта 16px
+    font-family: "Material Icons";
     outline: none;
     transform: rotate(90deg);
 
-    &:focus{
+    &:focus {
       font-weight: bold;
     }
   }
@@ -81,14 +82,14 @@
   }
 
   &__indicator {
+    z-index: 1;
     box-sizing: border-box;
     width: 8px;
     height: 8px;
+    margin-right: 4px;
     border: 1px solid white;
     border-radius: 100%;
-    margin-right: 4px;
     cursor: pointer;
-    z-index: 1;
 
     &:last-child {
       margin-right: 0;
@@ -101,21 +102,21 @@
 
 
   &__info {
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
     padding: 24px 20px 20px;
   }
 
   &__main-info {
-    border-bottom: 1px solid $dark-10;
     padding-bottom: 12px;
+    border-bottom: 1px solid $dark-10;
   }
 
   &__quality {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding-top: 8px;
   }
 

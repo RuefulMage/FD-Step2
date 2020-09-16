@@ -1,24 +1,25 @@
 .sign-in {
+
   &__container {
-    background-image: url('./images/sign-in-background.jpg');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-origin: padding-box;
-    background-size: cover;
 
     display: flex;
     justify-content: center;
     padding: 172px 0;
+    background-image: url("./images/sign-in-background.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-origin: padding-box;
 
     @media (max-width: 1190px) {
-      padding-left: 30px;
       padding-right: 30px;
+      padding-left: 30px;
     }
   }
 
   &__card {
-    max-width: 380px;
     width: 100%;
+    max-width: 380px;
     background: white;
     border-radius: 4px;
   }

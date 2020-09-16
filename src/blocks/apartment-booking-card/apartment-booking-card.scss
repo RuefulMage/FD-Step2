@@ -1,11 +1,11 @@
-@import '../../assets/scss/colors.scss';
+@import "../../assets/scss/colors.scss";
 
 .apartment-booking-card {
   box-sizing: border-box;
   padding: 40px 30px 30px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, .12);
   border-radius: 4px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, .2);
 
   &__main-info {
     margin-bottom: 21px;
@@ -20,8 +20,8 @@
   }
 
   &__guests-header {
-    text-transform: uppercase;
     margin-bottom: 5px;
+    text-transform: uppercase;
   }
 
   &__cheque {
@@ -34,8 +34,8 @@
   &__cheque-item {
     display: flex;
     justify-content: space-between;
-    line-height: 1.5rem; //24px при базовом размере шрифта 16px
     margin-bottom: 10px;
+    line-height: 1.5rem; //24px при базовом размере шрифта 16px
 
     &:nth-last-child(2) {
       margin-bottom: 36px;
@@ -44,8 +44,8 @@
   }
 
   &__price-label {
-    margin-right: 5px;
     flex-basis: 214px;
+    margin-right: 5px;
   }
 
   &__price-info {
@@ -54,29 +54,28 @@
   }
 
   &__price-note {
-    box-sizing: border-box;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    box-sizing: border-box;
     width: 20px;
     height: 20px;
-
+    color: $dark-25;
+    font-weight: bold;
+    font-size: .75rem; //12px при базовом размере шрифта 16px
     border: 1px solid $dark-25;
     border-radius: 100%;
-    font-weight: bold;
-    font-size: 0.75rem; //12px при базовом размере шрифта 16px
-    color: $dark-25;
     cursor: pointer;
 
     &-text {
-      display: none;
       position: absolute;
       top: 20px;
       left: 20px;
-      border: 1px solid $dark-25;
+      display: none;
       padding: 2px;
       background: white;
+      border: 1px solid $dark-25;
     }
 
     &:hover &-text {
@@ -86,15 +85,15 @@
 
   &__total {
     display: flex;
-    font-family: Quicksand, OpenSans, sans-serif;
+    align-items: baseline;
+    color: $dark-100;
     font-weight: bold;
     font-size: 1.1875rem; //19px при базовом размере шрифта 16px
-    color: $dark-100;
-    align-items: baseline;
+    font-family: Quicksand, OpenSans, sans-serif;
   }
 
   &__line {
     flex-grow: 1;
-    border-bottom: 0.5px dashed $dark-25;
+    border-bottom: .5px dashed $dark-25;
   }
 }

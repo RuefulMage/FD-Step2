@@ -1,22 +1,22 @@
-@import '../../assets/scss/colors.scss';
+@import "../../assets/scss/colors.scss";
 
 .radio-button {
   display: flex;
 
   &__button {
     --opacity: 0;
-
+    position: relative;
     flex-shrink: 0;
     width: 20px;
     height: 20px;
-    position: relative;
-    border-radius: 100%;
     border: 1px solid $dark-25;
+    border-radius: 100%;
     outline: none;
     cursor: pointer;
 
 
     &:hover {
+
       &:not(checked) {
         border-color: $purple;
       }
@@ -27,16 +27,15 @@
     }
 
     &:after {
-      opacity: var(--opacity, 0);
-
-      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
       width: 12px;
       height: 12px;
-      left: 3px;
-      top: 3px;
-      border-radius: 100%;
       background: $gradient;
-      position: absolute;
+      border-radius: 100%;
+      opacity: var(--opacity, 0);
+      content: "";
     }
 
     &:checked {
@@ -50,10 +49,10 @@
 
   &__text {
     padding-left: 10px;
-    line-height: 1.125rem; //18px при базовом размере шрифта 16px
     color: $dark-50;
-    user-select: none;
+    line-height: 1.125rem; //18px при базовом размере шрифта 16px
     cursor: pointer;
+    user-select: none;
   }
 
   &__button:checked + &__text {

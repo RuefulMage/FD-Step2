@@ -1,12 +1,12 @@
-@import '../../assets/scss/colors.scss';
+@import "../../assets/scss/colors.scss";
 
 .color-description {
   display: flex;
   align-items: center;
 
   &__color {
-    max-width: 70px;
     width: 100%;
+    max-width: 70px;
     min-height: 70px;
     border-radius: 6px;
 
@@ -48,7 +48,7 @@
   }
 
   &__code {
-    font-family: Quicksand, OpenSans, sans-serif;
     font-size: 1.1875rem; //19px при базовом размере шрифта 16px
+    font-family: Quicksand, OpenSans, sans-serif;
   }
 }

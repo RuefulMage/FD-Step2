@@ -1,16 +1,16 @@
-@import '../../assets/scss/colors.scss';
+@import "../../assets/scss/colors.scss";
 
 .signin-card {
   box-sizing: border-box;
   width: 100%;
   padding: 40px 30px 30px 30px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, .12);
   border-radius: 4px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 25px rgba(0, 0, 0, .2);
 
   &__title {
-    line-height: 1.875rem; //30px при базовом размере шрифта 16px
     margin-bottom: 20px;
+    line-height: 1.875rem; //30px при базовом размере шрифта 16px
   }
 
   &__form {
@@ -29,13 +29,13 @@
 
   &__no-accaunt-wrapper {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
   }
 
   &__sign-in-button-wrapper {
-    max-width: 99px;
     width: 100%;
+    max-width: 99px;
   }
 }

@@ -1,12 +1,12 @@
-@import '../../assets/scss/colors.scss';
+@import "../../assets/scss/colors.scss";
 
-.index{
+.index {
 
-  &__container{
+  &__container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 
     padding: 50px;
 
@@ -15,15 +15,14 @@
     }
   }
 
-  &__block{
+  &__block {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
-    max-width: 500px;
+    justify-content: space-around;
     width: 100%;
+    max-width: 500px;
     height: 500px;
-
     border: 3px solid $purple;
     border-radius: 20px;
 
@@ -33,7 +32,7 @@
 
   }
 
-  &__item{
+  &__item {
     margin-bottom: 20px;
     font-size: 2rem;
     text-align: center;

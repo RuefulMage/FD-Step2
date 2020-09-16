@@ -1,4 +1,4 @@
-@import '../../assets/scss/colors.scss';
+@import "../../assets/scss/colors.scss";
 
 .rate-button {
   display: flex;
@@ -7,20 +7,21 @@
     outline: none;
 
     &:after {
-      content: 'star';
-      font-family: 'Material Icons';
       font-size: 1.5rem; //24px при базовом размере шрифта 16px
+      font-family: "Material Icons";
       line-height: 1.25rem; //20px при базовом размере шрифта 16px
       background: $gradient;
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      user-select: none;
       cursor: pointer;
+      content: "star";
+      user-select: none;
+      -webkit-text-fill-color: transparent;
     }
 
     &:checked ~ & {
+
       &:after {
-        content: 'star_border';
+        content: "star_border";
       }
     }
   }

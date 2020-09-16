@@ -1,10 +1,11 @@
-@import '../../assets/scss/colors.scss';
+@import "../../assets/scss/colors.scss";
 
 .footer {
+
   &__wrapper {
     box-sizing: border-box;
     padding: 100px 20px;
-    box-shadow: 0 1px 0 rgba(31, 32, 65, 0.1);
+    box-shadow: 0 1px 0 rgba(31, 32, 65, .1);
 
     @media (max-width: 750px) {
       display: none;
@@ -42,8 +43,8 @@
 
   &__subscription-and-menu-wrapper {
     display: flex;
-    justify-content: flex-end;
     flex-grow: 1;
+    justify-content: flex-end;
     padding-top: 2px;
   }
 
@@ -58,25 +59,25 @@
   }
 
   &__submenu {
-    max-width: 200px;
     width: 100%;
+    max-width: 200px;
   }
 
 
   &__subsription-form {
     display: flex;
     flex-direction: column;
-    max-width: 260px;
     width: 100%;
+    max-width: 260px;
   }
 
   &__subcription-form-title {
-    text-transform: uppercase;
     margin-bottom: 21px;
+    text-transform: uppercase;
   }
 
   &__subcription-form-text {
-    line-height: 1.5rem; //24px при базовом размере шрифта 16px
     margin-bottom: 20px;
+    line-height: 1.5rem; //24px при базовом размере шрифта 16px
   }
 }

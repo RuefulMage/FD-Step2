@@ -1,22 +1,22 @@
-@import '../../assets/scss/colors.scss';
+@import "../../assets/scss/colors.scss";
 
 .pie-chart {
-  max-width: 311px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
   flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  max-width: 311px;
 
-  &__chart-wrapper{
+  &__chart-wrapper {
     position: relative;
   }
 
-  &__circle{
+  &__circle {
+    cursor: pointer;
     fill: none;
     stroke-width: 4px;
-    cursor: pointer;
 
-    &_hovered{
+    &_hovered {
       stroke-width: 6px;
     }
   }
@@ -29,7 +29,7 @@
     stroke: url(#bad-gradient-color);
   }
 
-  &__good{
+  &__good {
     stroke: url(#good-gradient-color);
   }
 
@@ -37,55 +37,54 @@
     stroke: url(#normal-gradient-color);
   }
 
-  &__votes{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  &__votes {
     position: absolute;
     top: 40px;
     left: 30px;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: $dark-100;
     font-weight: bold;
 
-    &_great{
+    &_great {
       background: $great;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    &_bad{
+    &_bad {
       background: $bad;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    &_good{
+    &_good {
       background: $good;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    &_normal{
+    &_normal {
       background: $gradient;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
   }
 
-  &__votes-amount{
-    font-family: Quicksand, OpenSans, sans-serif;
-    font-size: 24px;
+  &__votes-amount {
     margin-bottom: 5px;
+    font-size: 24px;
+    font-family: Quicksand, OpenSans, sans-serif;
   }
 
-  &__sign{
-    font-family: Montserrat, OpenSans, sans-serif;
+  &__sign {
     font-size: 12px;
+    font-family: Montserrat, OpenSans, sans-serif;
     text-transform: uppercase;
   }
 
-  &__list-item{
+  &__list-item {
     cursor: pointer;
   }
 

@@ -1,16 +1,16 @@
-@import '../../assets/scss/colors.scss';
+@import "../../assets/scss/colors.scss";
 
 .like-button {
   box-sizing: border-box;
   min-width: 40px;
   padding: 1px;
+  color: $dark-25;
+  font-size: .625rem; //10px при базовом размере шрифта 16px
   background: $dark-25;
   border-radius: 10px;
-  font-size: 0.625rem; //10px при базовом размере шрифта 16px
-  color: $dark-25;
   outline: none;
 
-  &:focus{
+  &:focus {
     box-shadow: 0 0 2px $dark-50;
   }
 
@@ -21,21 +21,21 @@
 
   &__content {
     display: flex;
-    background: white;
     align-items: center;
     padding: 3px 0;
+    background: white;
     border-radius: inherit;
   }
 
   &__icon {
-    font-family: 'Material Icons';
-    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 50%;
+    font-family: "Material Icons";
   }
 
   &__amount {
-    line-height: 0.75rem; //12px при базовом размере шрифта 16px
+    line-height: .75rem; //12px при базовом размере шрифта 16px
   }
 }

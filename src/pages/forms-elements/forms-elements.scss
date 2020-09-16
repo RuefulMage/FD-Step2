@@ -1,4 +1,4 @@
-@import '../../assets/scss/colors';
+@import "../../assets/scss/colors";
 
 .forms-elements {
 
@@ -8,8 +8,8 @@
   }
 
   &__logo {
-    padding-left: 30px;
     margin-bottom: 65px;
+    padding-left: 30px;
 
     @media (max-width: 768px) {
       display: none;
@@ -22,8 +22,8 @@
     margin: 0 auto;
 
     @media (max-width: 1190px) {
-      padding-left: 30px;
       padding-right: 30px;
+      padding-left: 30px;
     }
   }
 
@@ -53,8 +53,8 @@
 
     @media (max-width: 1160px) {
       max-width: 320px;
-      text-align: center;
       margin-bottom: 40px;
+      text-align: center;
     }
 
     @media (max-width: 768px) {
@@ -71,8 +71,8 @@
   }
 
   &__col-2 {
-    max-width: 711px;
     display: flex;
+    max-width: 711px;
 
     @media (max-width: 1160px) {
       flex-direction: column;
@@ -88,8 +88,14 @@
   }
 
   &__item {
-    margin-bottom: 20px;
     max-width: 320px;
+    margin-bottom: 20px;
+
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+      text-align: center;
+    }
 
     &_width-small {
       max-width: 266px;
@@ -115,20 +121,14 @@
     &:last-child {
       margin-bottom: 0;
     }
-
-
-    @media (max-width: 768px) {
-      max-width: 100%;
-      text-align: center;
-    }
   }
 
   &__item-label {
     display: flex;
-    justify-content: space-between;
     align-items: flex-start;
-    text-transform: uppercase;
+    justify-content: space-between;
     margin-bottom: 5px;
+    text-transform: uppercase;
 
     &_margin-large {
       margin-bottom: 16px;
@@ -136,14 +136,14 @@
   }
 
   &__item-header {
-    font-weight: bold;
     color: $dark-100;
+    font-weight: bold;
   }
 
   &__item-state {
-    font-size: 0.75rem; //12px при базовом размере шрифта 16px
-    line-height: 0.9375; //15px при базовом размере шрифта 16px
     color: $dark-50;
+    font-size: .75rem; //12px при базовом размере шрифта 16px
+    line-height: .9375; //15px при базовом размере шрифта 16px
   }
 
   &__subitem {
@@ -162,21 +162,21 @@
     display: inline-block;
     margin-right: 20px;
 
-    &_width-big {
-      max-width: 99px;
+
+    @media (max-width: 768px) {
       width: 100%;
+      max-width: 100%;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+
+    &_width-big {
+      width: 100%;
+      max-width: 99px;
     }
 
     &:last-child {
       margin-right: 0;
-    }
-
-
-    @media (max-width: 768px) {
-      max-width: 100%;
-      width: 100%;
-      margin-right: 0;
-      margin-bottom: 10px;
     }
   }
 

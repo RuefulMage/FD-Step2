@@ -1,4 +1,4 @@
-@import '../../assets/scss/colors.scss';
+@import "../../assets/scss/colors.scss";
 
 .header-navigation {
   display: flex;
@@ -9,13 +9,12 @@
   }
 
   &__nav-item {
-
     @media (max-width: 380px) {
       width: 100%;
       border-bottom: 1px solid $dark-75;
 
       &:last-child {
-        border-bottom: none;
+        border-bottom: 0;
       }
     }
   }
@@ -23,23 +22,8 @@
   &__link {
     display: inline-block;
     width: 100%;
-    line-height: 1.0625rem; //17px при базовом размере шрифта 16px
     color: $dark-50;
-
-    &_dropdowned {
-      display: flex;
-
-      &:after {
-        content: 'expand_more';
-        font-family: 'Material Icons';
-        font-size: 1.5rem; //24px при базовом размере шрифта 16px
-      }
-    }
-
-    &_current {
-      font-weight: bold;
-      color: $dark-75;
-    }
+    line-height: 1.0625rem; //17px при базовом размере шрифта 16px
 
     @media (max-width: 380px) {
       padding: 10px 0;
@@ -48,6 +32,21 @@
       &_dropdowned {
         justify-content: center;
       }
+    }
+
+    &_dropdowned {
+      display: flex;
+
+      &:after {
+        font-size: 1.5rem; //24px при базовом размере шрифта 16px
+        font-family: "Material Icons";
+        content: "expand_more";
+      }
+    }
+
+    &_current {
+      color: $dark-75;
+      font-weight: bold;
     }
   }
 }

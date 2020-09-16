@@ -1,28 +1,28 @@
-@import '../../assets/scss/colors';
+@import "../../assets/scss/colors";
 
 .date-dropdown__calendar {
 
   &-arrow {
-    font-family: 'Material Icons';
-    font-size: 1.5rem; //24px при базовом размере шрифта 16px
     color: $purple;
+    font-size: 1.5rem; //24px при базовом размере шрифта 16px
+    font-family: "Material Icons";
   }
 
   &-buttons-wrapper {
-    padding: 20px 0;
     display: flex;
     justify-content: space-between;
+    padding: 20px 0;
+    font-weight: bold;
+    font-size: .75rem; //12px при базовом размере шрифта 16px
 
     font-family: Montserrat, OpenSans, sans-serif;
-    font-weight: bold;
-    font-size: 0.75rem; //12px при базовом размере шрифта 16px
-    line-height: 0.9375rem; //15px при базовом размере шрифта 16px
+    line-height: .9375rem; //15px при базовом размере шрифта 16px
     text-transform: uppercase;
   }
 
   &-clear-button {
-    text-transform: inherit;
     color: $dark-50;
+    text-transform: inherit;
     outline: none;
 
     &:focus {
@@ -31,8 +31,8 @@
   }
 
   &-append-button {
-    text-transform: inherit;
     color: $purple;
+    text-transform: inherit;
     outline: none;
 
     &:focus {
@@ -44,11 +44,11 @@
 
 // Переопределние стилей плагина
 .datepicker {
-  width: 320px;
+  z-index: 99999;
   box-sizing: border-box;
+  width: 320px;
   padding: 0 19px;
   border-radius: 4px;
-  z-index: 99999;
 
   &--pointer {
     display: none;
@@ -56,15 +56,15 @@
 
   &--nav {
     height: 64px;
-    padding: 0;
-    border: none;
     margin-bottom: 10px;
+    padding: 0;
+    border: 0;
 
     &-title {
-      font-family: Quicksand, OpenSans, sans-serif;
+      color: $dark-100;
       font-weight: bold;
       font-size: 1.1875rem; //19px при базовом размере шрифта 16px
-      color: $dark-100;
+      font-family: Quicksand, OpenSans, sans-serif;
     }
 
     &-action {
@@ -80,21 +80,23 @@
     margin: 0;
   }
 
-  &--day-name, &--cell {
+  &--day-name,
+  &--cell {
+    font-size: .75rem; //12px при базовом размере шрифта 16px
     font-family: Montserrat, OpenSans, sans-serif;
-    font-size: 0.75rem; //12px при базовом размере шрифта 16px
-    line-height: 0.9375rem; //15px при базовом размере шрифта 16px
+    line-height: .9375rem; //15px при базовом размере шрифта 16px
   }
 
-  &--day-name, &--cell-day {
-    height: 40px;
+  &--day-name,
+  &--cell-day {
     width: 40px;
+    height: 40px;
   }
 
   &--day-name {
+    color: $purple;
     font-weight: bold;
     text-transform: none;
-    color: $purple;
   }
 }
 
@@ -112,37 +114,39 @@
   }
 
   &.-selected- {
-    border-radius: 22px;
-    background: $gradient;
     position: relative;
+    background: $gradient;
+    border-radius: 22px;
 
     &.-focus- {
       background: $gradient;
     }
 
     &:after {
-      content: '';
       position: absolute;
+      z-index: -1;
       width: 100%;
       height: 100%;
       background: $gradient;
-      opacity: 0.25;
-      z-index: -1;
+      opacity: .25;
+      content: "";
     }
 
   }
 
   &.-range-from- {
+
     &:after {
-      border-bottom-left-radius: 22px;
       border-top-left-radius: 22px;
+      border-bottom-left-radius: 22px;
     }
   }
 
   &.-range-to- {
+
     &:after {
-      border-bottom-right-radius: 22px;
       border-top-right-radius: 22px;
+      border-bottom-right-radius: 22px;
     }
   }
 

@@ -1,4 +1,4 @@
-@import '../../assets/scss/colors.scss';
+@import "../../assets/scss/colors.scss";
 
 .range-slider {
 
@@ -6,19 +6,19 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 23px;
-    font-size: 0.75rem; //12px при базовом размере шрифта 16px
-    line-height: 0.9375rem; //15px при базовом размере шрифта 16px
+    font-size: .75rem; //12px при базовом размере шрифта 16px
+    line-height: .9375rem; //15px при базовом размере шрифта 16px
     text-transform: uppercase;
   }
 
   &__result-label {
-    font-weight: bold;
     color: $dark-100;
+    font-weight: bold;
   }
 
   &__result {
-    text-align: right;
     color: $dark-50;
+    text-align: right;
   }
 
   &__slider {
@@ -36,8 +36,8 @@
 }
 
 .noUi-connects {
-  height: 6px;
   top: -1px;
+  height: 6px;
 }
 
 .noUi-connect {
@@ -45,22 +45,23 @@
 }
 
 .noUi-horizontal .noUi-handle {
+  right: -8px;
   box-sizing: border-box;
-  height: 16px;
   width: 16px;
+  height: 16px;
   background: $secondary-gradient;
   border: 2px solid white;
   border-radius: 100%;
-  right: -8px;
-  box-shadow: none;
   outline: none;
+  box-shadow: none;
   cursor: pointer;
 
-  &:focus{
+  &:focus {
     box-shadow: 0 0 5px $dark-50;
   }
 
-  &:after, &:before {
+  &:after,
+  &:before {
     display: none;
   }
 }

@@ -1,6 +1,7 @@
-@import '../../assets/scss/colors.scss';
+@import "../../assets/scss/colors.scss";
 
 .expandable-checkbox-list {
+
   &__button {
     display: flex;
     align-items: center;
@@ -11,7 +12,7 @@
     outline: none;
     user-select: none;
 
-    &:focus{
+    &:focus {
       font-weight: bold;
     }
   }
@@ -24,10 +25,10 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    font-family: 'Material Icons';
-    font-size: 1.5rem; //24px при базовом размере шрифта 16px
     max-width: 44px;
     color: $dark-50;
+    font-size: 1.5rem; //24px при базовом размере шрифта 16px
+    font-family: "Material Icons";
 
     &_rotated {
       transform: rotate(-180deg);

@@ -1,14 +1,14 @@
 .headers-and-footers {
 
   &__wrapper {
-    background: #F4F4F6;
     padding-top: 30px;
     padding-bottom: 140px;
+    background: #F4F4F6;
   }
 
   &__logo {
-    padding-left: 30px;
     margin-bottom: 62px;
+    padding-left: 30px;
 
 
     @media (max-width: 1190px) {
@@ -21,9 +21,9 @@
   }
 
   &__item {
-    background: white;
     width: 100%;
     margin-bottom: 40px;
+    background: white;
 
     &_width_small {
       max-width: 768px;

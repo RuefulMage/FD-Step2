@@ -1,4 +1,4 @@
-@import '../../assets/scss/colors.scss';
+@import "../../assets/scss/colors.scss";
 
 .room-details {
 
@@ -18,13 +18,13 @@
   }
 
   &__left-image {
-    height: 100%;
     width: 68%;
-    background-image: url('images/room-photo-1.jpg');
+    height: 100%;
+    background-image: url("images/room-photo-1.jpg");
     background-repeat: no-repeat;
     background-position: center center;
-    background-origin: padding-box;
     background-size: cover;
+    background-origin: padding-box;
 
 
     @media (max-width: 500px) {
@@ -34,10 +34,10 @@
   }
 
   &__right-images-wrapper {
-    height: 100%;
     display: flex;
     flex-direction: column;
     width: 32%;
+    height: 100%;
 
     @media (max-width: 500px) {
       display: none;
@@ -46,8 +46,7 @@
 
   &__right--top-image {
     height: 50%;
-
-    background-image: url('images/room-photo-3.jpg');
+    background-image: url("images/room-photo-3.jpg");
     background-repeat: no-repeat;
     background-position: center center;
 
@@ -55,7 +54,7 @@
 
   &__right-bottom-image {
     height: 50%;
-    background-image: url('images/room-photo-2.jpg');
+    background-image: url("images/room-photo-2.jpg");
     background-repeat: no-repeat;
     background-position: center center;
   }
@@ -92,19 +91,20 @@
   &__row {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 33px;
     max-width: 710px;
-
-    &:last-child{
-      margin-bottom: 0;
-    }
+    margin-bottom: 33px;
 
     @media (max-width: 600px) {
       flex-direction: column;
     }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
-  &__column-left, &__column-right {
+  &__column-left,
+  &__column-right {
     width: 100%;
 
     @media (max-width: 600px) {
@@ -115,9 +115,9 @@
   }
 
   &__column-left {
-    max-width: 290px;
     display: flex;
     flex-direction: column;
+    max-width: 290px;
   }
 
   &__column-right {
@@ -130,8 +130,8 @@
 
   &__item-label {
     display: flex;
-    justify-content: space-between;
     align-items: baseline;
+    justify-content: space-between;
     margin-bottom: 20px;
 
     &_padding-left {

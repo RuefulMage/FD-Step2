@@ -1,15 +1,17 @@
-@import '../../assets/scss/colors.scss';
+@import "../../assets/scss/colors.scss";
 
 .link-button {
-  padding: 2px;
-  border-radius: 22px;
-  background: $gradient;
-  user-select: none;
-  cursor: pointer;
-  outline: none;
   max-width: 200px;
+  padding: 2px;
+  background: $gradient;
+  border-radius: 22px;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
 
-  &:focus, &:hover, &_disabled {
+  &:focus,
+  &:hover,
+  &_disabled {
     background: $gradient-semitransparent;
   }
 
@@ -22,16 +24,16 @@
     display: flex;
     justify-content: center;
     padding: 9px 9px;
-    border-radius: inherit;
     color: $purple;
-    font-size: 0.75rem; //12px при базовом размере шрифта 16px
     font-weight: bold;
+    font-size: .75rem; //12px при базовом размере шрифта 16px
     text-transform: uppercase;
     background: white;
+    border-radius: inherit;
 
     &_filled {
-      background: transparent;
       color: white;
+      background: transparent;
     }
 
     &_large {

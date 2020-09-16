@@ -1,17 +1,17 @@
-@import '../../assets/scss/colors.scss';
+@import "../../assets/scss/colors.scss";
 
 .small-footer {
   box-sizing: border-box;
   width: 100%;
-  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
   padding: 120px 0;
+  box-shadow: 0 10px 20px rgba(31, 32, 65, .05);
 
 
   &__container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     max-width: 1160px;
     margin: auto;
   }
@@ -21,9 +21,9 @@
   }
 
   &__text {
-    text-align: center;
 
     margin-bottom: 25px;
+    text-align: center;
   }
 
   &__socials {

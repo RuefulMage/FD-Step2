@@ -1,4 +1,4 @@
-@import '../../assets/scss/colors.scss';
+@import "../../assets/scss/colors.scss";
 
 .subscription-textfield {
   display: flex;
@@ -7,7 +7,8 @@
   border: 1px solid $dark-25;
   border-radius: 4px;
 
-  &:focus, &:hover {
+  &:focus,
+  &:hover {
     border: 1px solid $dark-50;
   }
 
@@ -15,12 +16,12 @@
   &__textfield {
     width: 100%;
     padding-left: 14px;
-    border: none;
-    border-radius: inherit;
     color: $dark-75;
-    outline: none;
+    font-size: .875rem; //14px при базовом размере шрифта 16px
     font-family: Montserrat, OpenSans, sans-serif;
-    font-size: 0.875rem; //14px при базовом размере шрифта 16px
+    border: 0;
+    border-radius: inherit;
+    outline: none;
 
     &::placeholder {
       color: $dark-25;
@@ -30,16 +31,16 @@
   &__button {
     display: flex;
     justify-content: center;
-    max-width: 44px;
     width: 100%;
-    font-family: 'Material Icons';
+    max-width: 44px;
     font-size: 1.5rem; //24px при базовом размере шрифта 16px
-    outline: none;
+    font-family: "Material Icons";
     background: $gradient;
     -webkit-background-clip: text;
+    outline: none;
     -webkit-text-fill-color: transparent;
 
-    &:focus{
+    &:focus {
       font-weight: bold;
     }
   }

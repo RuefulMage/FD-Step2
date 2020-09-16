@@ -1,8 +1,9 @@
-@import '../../assets/scss/colors.scss';
+@import "../../assets/scss/colors.scss";
 
 $max-page: 100;
 
 .pagination {
+
   &__pages {
     display: flex;
     margin-bottom: 10px;
@@ -17,8 +18,8 @@ $max-page: 100;
     display: none;
     align-items: center;
     justify-content: center;
-    height: 40px;
     width: 40px;
+    height: 40px;
     border-radius: 100%;
 
 
@@ -30,21 +31,21 @@ $max-page: 100;
   }
 
   &__page {
-    font-weight: bold;
-    font-size: 0.75rem; //12px при базовом размере шрифта 16px
-    text-transform: uppercase;
     color: $dark-50;
+    font-weight: bold;
+    font-size: .75rem; //12px при базовом размере шрифта 16px
+    text-transform: uppercase;
 
   }
 
-  &:not([data-current-page='1']) &__item:nth-child(1) {
+  &:not([data-current-page="1"]) &__item:nth-child(1) {
     display: flex;
   }
 
   &__last {
-    font-family: 'Material Icons';
-    font-size: 1.5rem; //24px при базовом размере шрифта 16px
     color: white;
+    font-size: 1.5rem; //24px при базовом размере шрифта 16px
+    font-family: "Material Icons";
     background: $secondary-gradient;
   }
 
@@ -55,12 +56,12 @@ $max-page: 100;
     // 3 before
     .pagination__item:nth-child(#{$i - 3}):not(:first-child) {
       display: flex;
-      pointer-events: none;
       color: transparent;
+      pointer-events: none;
 
       &:after {
-        content: '...';
         color: $dark-50;
+        content: "...";
       }
     }
 
@@ -76,9 +77,9 @@ $max-page: 100;
 
     // active
     .pagination__item:nth-child(#{$i}) {
-      background: $gradient;
-      color: #fff;
       display: flex;
+      color: #fff;
+      background: $gradient;
 
       + .pagination__item:last-child {
         display: none;
@@ -98,13 +99,13 @@ $max-page: 100;
     // 3 next
     .pagination__item:nth-child(#{$i + 3}):not(:last-child):not(:nth-last-child(2)) {
       display: flex;
-      pointer-events: none;
       color: transparent;
+      pointer-events: none;
 
       &:after {
-        content: '...';
         color: $dark-50;
-        font-size: 0.75rem; //12px при базовом размере шрифта 16px
+        font-size: .75rem; //12px при базовом размере шрифта 16px
+        content: "...";
       }
     }
   }

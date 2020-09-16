@@ -1,26 +1,30 @@
-@import '../../assets/scss/colors';
+@import "../../assets/scss/colors";
 
 .textfield {
   box-sizing: border-box;
   width: 100%;
-  border: 1px solid $dark-25;
-  border-radius: 4px;
   padding: 12px 15px;
   color: $dark-75;
-  user-select: none;
-  outline: none;
+  font-size: .875rem; //14px при базовом размере шрифта 16px
   font-family: Montserrat, OpenSans, sans-serif;
-  font-size: 0.875rem; //14px при базовом размере шрифта 16px
+  border: 1px solid $dark-25;
+  border-radius: 4px;
+  outline: none;
+  user-select: none;
 
   &::placeholder {
     color: $dark-25;
   }
 
-  &:focus, &:hover, &_hovered {
+  &:focus,
+  &:hover,
+  &_hovered {
     border: 1px solid $dark-50;
   }
 
-  &:focus::placeholder, &:hover::placeholder, &_hovered::placeholder {
+  &:focus::placeholder,
+  &:hover::placeholder,
+  &_hovered::placeholder {
     color: $dark-75;
   }
 }

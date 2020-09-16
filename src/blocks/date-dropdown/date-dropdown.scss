@@ -1,38 +1,38 @@
-@import '../../assets/scss/colors.scss';
+@import "../../assets/scss/colors.scss";
 
 .date-dropdown {
   display: flex;
 
 
   &__header {
-    text-transform: uppercase;
-    color: $dark-100;
     margin-bottom: 6px;
+    color: $dark-100;
+    text-transform: uppercase;
   }
 
   &__label {
     position: relative;
-    box-sizing: border-box;
     display: flex;
+    box-sizing: border-box;
     width: 100%;
     padding: 9px 0;
+    padding-right: 44px;
     border: 1px solid $dark-25;
     border-radius: 4px;
-    padding-right: 44px;
 
     &:after {
-      content: 'expand_more';
       position: absolute;
       right: 0;
-      box-sizing: border-box;
       display: flex;
       justify-content: center;
+      box-sizing: border-box;
       width: 44px;
-
-      font-family: 'Material Icons';
-      font-size: 1.5rem; //24px при базовом размере шрифта 16px
       color: $dark-50;
+      font-size: 1.5rem; //24px при базовом размере шрифта 16px
+
+      font-family: "Material Icons";
       cursor: pointer;
+      content: "expand_more";
       user-select: none;
     }
   }
@@ -49,14 +49,14 @@
     box-sizing: border-box;
     width: 100%;
     padding-left: 15px;
-    border: none;
-    border-radius: inherit;
+    color: $dark-75;
+    font-size: .875rem; //14px при базовом размере шрифта 16px
 
     font-family: Montserrat, OpenSans, sans-serif;
-    font-size: 0.875rem; //14px при базовом размере шрифта 16px
     line-height: 1.5rem; //24px при базовом размере шрифта 16px
-    color: $dark-75;
-    cursor: pointer;
+    border: 0;
+    border-radius: inherit;
     outline: none;
+    cursor: pointer;
   }
 }

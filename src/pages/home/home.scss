@@ -1,13 +1,13 @@
-@import '../../assets/scss/colors.scss';
+@import "../../assets/scss/colors.scss";
 
 .home {
-  background-image: url('./images/home-background.jpg');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-origin: padding-box;
-  background-size: cover;
   padding-top: 70px;
   padding-bottom: 22px;
+  background-image: url("./images/home-background.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-origin: padding-box;
 
   &__container {
     display: flex;
@@ -15,7 +15,7 @@
     max-width: 1160px;
     margin: 0 auto;
 
-    @media (max-width: 1190px){
+    @media (max-width: 1190px) {
       padding-right: 30px;
       padding-left: 30px;
     }
@@ -27,16 +27,16 @@
 
   &__card {
     max-width: 380px;
-    background: white;
     margin-bottom: 315px;
+    background: white;
     border-radius: 4px;
   }
 
   &__text {
+    align-self: flex-end;
+    max-width: 260px;
     line-height: 1.5rem; //24px при базовом размере шрифта 16px
     text-align: right;
-    max-width: 260px;
-    align-self: flex-end;
 
     @media (max-width: 1024px) {
       align-self: center;

@@ -1,16 +1,16 @@
-@import '../../assets/scss/colors.scss';
+@import "../../assets/scss/colors.scss";
 
 .apartment-info {
   display: flex;
-  justify-content: space-between;
   align-items: baseline;
+  justify-content: space-between;
 
 
   &__number-wrapper {
     display: flex;
     align-items: baseline;
-    font-family: Quicksand, OpenSans, sans-serif;
     font-weight: bold;
+    font-family: Quicksand, OpenSans, sans-serif;
   }
 
   &__number-symbol {
@@ -18,20 +18,20 @@
   }
 
   &__number {
-    font-size: 1.1875rem; //19px при базовом размере шрифта 16px
     color: $dark-100;
+    font-size: 1.1875rem; //19px при базовом размере шрифта 16px
 
     &_large {
-      line-height: 1.875rem; //30px при базовом размере шрифта 16px
       font-size: 1.5rem; //24px при базовом размере шрифта 16px
+      line-height: 1.875rem; //30px при базовом размере шрифта 16px
     }
   }
 
   &__lux {
-    font-family: Montserrat, OpenSans, sans-serif;
-    font-size: 0.75rem; //12px при базовом размере шрифта 16px
-    text-transform: uppercase;
     color: $purple;
+    font-size: .75rem; //12px при базовом размере шрифта 16px
+    font-family: Montserrat, OpenSans, sans-serif;
+    text-transform: uppercase;
   }
 
   &__price-wrapper {
@@ -43,7 +43,7 @@
   }
 
   &__measure {
-    font-size: 0.75rem; //12px при базовом размере шрифта 16px
+    font-size: .75rem; //12px при базовом размере шрифта 16px
   }
 
 }
