@@ -8,7 +8,9 @@
     "build": "webpack --config webpackConfigs/webpack.build.conf.js",
     "deploy": "gh-pages -d dist",
     "stylelint": "stylelint '**/*{.css,.scss}'",
-    "stylelint:fix": "stylelint '**/*{.css,.scss}' --fix"
+    "stylelint:fix": "stylelint '**/*{.css,.scss}' --fix",
+    "eslint": "eslint src/**/*.js",
+    "eslint:fix": "eslint src/**/*.js --fix"
   },
   "repository": {
     "type": "git",
@@ -33,6 +35,13 @@
     "css-loader": "^3.4.2",
     "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.10",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-fsd": "^1.0.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.0.0",
     "file-loader": "^6.0.0",
     "gh-pages": "^3.1.0",
     "html-webpack-plugin": "^4.2.0",
