@@ -17,11 +17,10 @@ import './pages/cards/cards.scss';
 import './pages/headers-and-footers/headers-and-footers.scss';
 import './pages/registration/registration.scss';
 import './pages/sign-in/sign-in.scss';
-import './pages/room-details/room-details.scss'
+import './pages/room-details/room-details.scss';
 import './pages/search/search.scss';
 import './pages/home/home.scss';
 import './pages/layout/layout.scss';
-
 
 import './blocks/header/header.scss';
 import './blocks/header-navigation/header-navigation.scss';
@@ -65,16 +64,15 @@ import './blocks/registration-card/registration-card.scss';
 import './blocks/signin-card/signin-card.scss';
 import './blocks/apartment-description-card/apartment-description-card.scss';
 
-
-import './blocks/dropdown/init'
+import './blocks/dropdown/init';
 import './blocks/textfield/textfield';
 import './blocks/date-dropdown/init';
-import './blocks/expandable-checkbox-list/init.js';
+import './blocks/expandable-checkbox-list/init';
 import './blocks/range-slider/init';
 import './blocks/like-button/init';
 import './blocks/pagination/init';
-import './blocks/dropdown/init';
-import './blocks/apartment-description-card/init'
+
+import './blocks/apartment-description-card/init';
 import './blocks/pie-chart/init';
 
 import './pages/search/search';

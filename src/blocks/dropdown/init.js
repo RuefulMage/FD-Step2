@@ -1,11 +1,11 @@
 import createDropdown from './dropdown';
 
-let dropdownsWithButtonsList = document.getElementsByClassName('js-dropdown-with-buttons');
-for( let i = 0; i < dropdownsWithButtonsList.length; i++) {
-    createDropdown(dropdownsWithButtonsList[i] ,true, true);
+const dropdownsWithButtonsList = document.getElementsByClassName('js-dropdown-with-buttons');
+for (let i = 0; i < dropdownsWithButtonsList.length; i += 1) {
+  createDropdown(dropdownsWithButtonsList[i], true, true);
 }
 
-let dropdownsList = document.getElementsByClassName('js-dropdown');
-for( let i = 0; i < dropdownsList.length; i++) {
-    createDropdown(dropdownsList[i],false, false);
+const dropdownsList = document.getElementsByClassName('js-dropdown');
+for (let i = 0; i < dropdownsList.length; i += 1) {
+  createDropdown(dropdownsList[i], false, false);
 }

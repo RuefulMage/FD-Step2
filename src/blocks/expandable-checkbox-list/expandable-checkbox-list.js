@@ -6,8 +6,8 @@ function hangUpListenerToExpandableList(checkboxListButton) {
 
   function handleClick(event) {
     event.preventDefault();
-    let checkboxList = this.nextElementSibling;
-    let icon = this.lastChild;
+    const checkboxList = this.nextElementSibling;
+    const icon = this.lastChild;
     if (checkboxList.classList.contains(expandedListClass)) {
       checkboxList.classList.remove(expandedListClass);
       icon.classList.remove(rotatedArrowClass);

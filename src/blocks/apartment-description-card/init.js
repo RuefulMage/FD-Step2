@@ -1,7 +1,7 @@
-import createImagesSlider from "./apartment-description-card";
+import createImagesSlider from './apartment-description-card';
 
-let sliderList = document.getElementsByClassName('js-slider');
+const sliderList = document.getElementsByClassName('js-slider');
 
-for(let i = 0; i < sliderList.length; i++){
-    createImagesSlider(sliderList[i]);
+for (let i = 0; i < sliderList.length; i += 1) {
+  createImagesSlider(sliderList[i]);
 }
