@@ -1,11 +1,12 @@
 mixin like-button(value, name, likeAmount, liked=false)
+    - let icon = "favorite_border"
+    - let buttonClasses = ["like-button", "js-like-button"]
+
     if liked
-        button.like-button.js-like-button.like-button_colored(name=name)
-            .like-button__content
-                .like-button__icon favorite
-                .like-button__amount=likeAmount
-    else
-        button.like-button.js-like-button(name=name)
-            .like-button__content
-                .like-button__icon favorite_border
-                .like-button__amount=likeAmount
+        - icon = "favorite"
+        - buttonClasses.push("like-button_colored")
+
+    button(class=buttonClasses name=name)
+        .like-button__content
+            .like-button__icon=icon
+            .like-button__amount=likeAmount

@@ -1,11 +1,11 @@
 mixin apartment-info({number, price, currency, largeNumber=false, lux=false})
+    - let number_classes = ["apartment-info__number"]
+    if largeNumber
+        - number_classes.push("apartment-info__number_large")
     .apartment-info
         .apartment-info__number-wrapper
             span.apartment-info__number-symbol №&nbsp;
-            if largeNumber
-                span.apartment-info__number.apartment-info__number_large=number
-            else
-                span.apartment-info__number=number
+            span(class=number_classes)=number
             if lux
                 span.apartment-info__lux &nbsp;люкс
         .apartment-info__price-wrapper
