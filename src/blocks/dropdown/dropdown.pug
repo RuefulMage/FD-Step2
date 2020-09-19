@@ -17,14 +17,14 @@ mixin dropdown({placeholder, items, expanded=false, withButtons=false, generalFo
             button(class=expandButtonClasses) expand_more
         .dropdown__menu
             each item in items
-                .dropdown__menu-item.js-dropdown-menu-item(data-id=item.id data-min-amount=item.minAmount data-max-amount=item.maxAmount data-forms=item.forms)
+                .dropdown__menu-item.js-dropdown__menu-item(data-id=item.id data-min-amount=item.minAmount data-max-amount=item.maxAmount data-forms=item.forms)
                     h3.dropdown__menu-item-name=item.itemName
                     .dropdown__menu-item-controls
-                        button.dropdown__decrease.js-dropdown-decrease -
-                        span.dropdown__amount.js-dropdown-amount=item.startAmount
-                        button.dropdown__increase.js-dropdown-increase +
+                        button.dropdown__decrease.js-dropdown__decrease -
+                        span.dropdown__amount.js-dropdown__amount=item.startAmount
+                        button.dropdown__increase.js-dropdown__increase +
 
             if withButtons
                 .dropdown__buttons-wrapper
-                    button.dropdown__clear-button.js-dropdown-clear-button очистить
-                    button.dropdown__apply-button.js-append-button применить
+                    button.dropdown__clear-button.js-dropdown__clear-button очистить
+                    button.dropdown__apply-button.js-dropdown__apply-button применить

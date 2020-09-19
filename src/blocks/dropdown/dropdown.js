@@ -2,14 +2,14 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
   const expandButtonClass = 'js-dropdown__expand-button';
   const dropdownExpandedClass = 'dropdown_expanded';
   const expandButtonRotatedClass = 'dropdown__expand-button_rotated';
-  const menuItemClass = 'js-dropdown-menu-item';
-  const decreaseButtonClass = 'js-dropdown-decrease';
+  const menuItemClass = 'js-dropdown__menu-item';
+  const decreaseButtonClass = 'js-dropdown__decrease';
   const decreaseButtonDisabledClass = 'dropdown__decrease_disabled';
-  const increaseButtonClass = 'js-dropdown-increase';
+  const increaseButtonClass = 'js-dropdown__increase';
   const increaseButtonDisabledClass = 'dropdown__increase_disabled';
-  const amountClass = 'js-dropdown-amount';
-  const clearButtonClass = 'js-dropdown-clear-button';
-  const appendButtonClass = 'js-append-button';
+  const amountClass = 'js-dropdown__amount';
+  const clearButtonClass = 'js-dropdown__clear-button';
+  const appendButtonClass = 'js-dropdown__apply-button';
   const inputTextClass = 'js-dropdown__text';
 
   let generalForms = element.getAttribute('data-forms') || 'элемент, элемента, элементов';

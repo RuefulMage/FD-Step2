@@ -3,9 +3,9 @@ include ../apartment-info/apartment-info
 
 mixin apartment-description-card({images, number, price, currency, rateButtonName, starAmount, reviewsAmount, link, lux=false})
     article.apartment-description-card
-        .apartment-description-card__images-wrapper.js-slider
+        .apartment-description-card__slider.js-apartment-description-card__slider
             each item in images
-                .apartment-description-card__image-list-item.js-slider-item
+                .apartment-description-card__slider-item.js-apartment-description-card__slider-item
                     img.apartment-description-card__image(src="../../assets/images/" + item alt="apartment photo")
             .apartment-description-card__slider-buttons
                 .apartment-description-card__prev-wrapper
@@ -14,7 +14,7 @@ mixin apartment-description-card({images, number, price, currency, rateButtonNam
                     button.apartment-description-card__slider-button.js-slider-button-next expand_more
             .apartment-description-card__indicator-list
                 each item in images
-                    .apartment-description-card__indicator.js-slider-indicators
+                    .apartment-description-card__indicator.js-apartment-description-card__indicator
         .apartment-description-card__info
             .apartment-description-card__main-info
                 +apartment-info({number: number, price: price, currency: currency, largeNumber: false, lux: lux})

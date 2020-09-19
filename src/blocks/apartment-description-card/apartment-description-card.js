@@ -1,7 +1,7 @@
 function createImagesSlider(element) {
-  const sliderItemClass = 'js-slider-item';
-  const indicatorsClass = 'js-slider-indicators';
-  const currentImageClass = 'apartment-description-card__image-list-item_showing';
+  const sliderItemClass = 'js-apartment-description-card__slider-item';
+  const indicatorsClass = 'js-apartment-description-card__indicator';
+  const currentImageClass = 'apartment-description-card__slider-item_showing';
   const currentIndicatorClass = 'apartment-description-card__indicator_current';
   const prevButtonClass = 'js-slider-button-prev';
   const nextButtonClass = 'js-slider-button-next';

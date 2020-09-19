@@ -4,7 +4,7 @@
   border-radius: 4px;
   box-shadow: 0 10px 20px $dark-5;
 
-  &__images-wrapper {
+  &__slider {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -16,7 +16,7 @@
     border-top-right-radius: inherit;
   }
 
-  &__image-list-item {
+  &__slider-item {
     position: absolute;
     top: 0;
     left: 0;
@@ -40,7 +40,7 @@
     height: 100%;
   }
 
-  &__images-wrapper:hover &__slider-buttons {
+  &__slider:hover &__slider-buttons {
     display: flex;
   }
 

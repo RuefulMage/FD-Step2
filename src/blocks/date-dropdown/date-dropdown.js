@@ -12,7 +12,7 @@ function createCalendar(node) {
 
   // инициализация плагина
   const calendarData = $(dateDropdownInputs[0]).datepicker({
-    multipleDatesSeparator: 'defaultSingleInputString - ',
+    multipleDatesSeparator: ' - ',
     range: true,
     prevHtml: '<div class="date-dropdown__calendar-arrow">arrow_back</div>',
     nextHtml: '<div class="date-dropdown__calendar-arrow">arrow_forward</div>',
