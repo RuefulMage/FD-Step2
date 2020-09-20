@@ -1,6 +1,7 @@
-mixin range-slider(text)
+mixin range-slider({text, startLowValue, startHighValue, minValue, maxValue})
     .range-slider
         .range-slider__result-container
             .range-slider__result-label=text
             .range-slider__result
-        .range-slider__slider.js-range-slider__slider
+        .range-slider__slider.js-range-slider__slider(data-start-low-value=startLowValue,
+            data-start-high-value=startHighValue, data-min-value=minValue, data-max-value=maxValue)
