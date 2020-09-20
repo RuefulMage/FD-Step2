@@ -177,7 +177,13 @@ html(lang="en")
                         .forms-elements__column.forms-elements__col-2-2
 
                             .forms-elements__item.forms-elements__item_margin-large.forms-elements__item_width-small
-                                +range-slider("Range Slider")
+                                +range-slider({
+                                    text: "Range Slider",
+                                    startLowValue: 5000,
+                                    startHighValue: 10000,
+                                    minValue: 500,
+                                    maxValue: 15000
+                                })
 
                             .forms-elements__item.forms-elements__item_margin-large
                                 .forms-elements__item-label.forms-elements__item-label_margin-large

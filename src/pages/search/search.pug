@@ -62,7 +62,13 @@ block content
 
                 .search__item.search__item_margin-large
                     .search__subitem
-                        +range-slider("диапазон цены")
+                        +range-slider({
+                            text: "диапазон цены",
+                            startLowValue: 5000,
+                            startHighValue: 10000,
+                            minValue: 500,
+                            maxValue: 15000
+                        })
                     .search__subitem
                         p.search__text Стоимость за сутки пребывания в номере
 
