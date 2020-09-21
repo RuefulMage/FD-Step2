@@ -5,7 +5,7 @@ function createPieChart(chartElement) {
   const votesWrapperClass = 'js-pie-chart__votes';
   const votesElementClass = 'js-pie-chart__votes-amount';
 
-  const bulletClass = 'js-pie-chart__bullet';
+  const bulletClass = 'js-pie-chart__list-item';
   const votesModifierBasis = 'pie-chart__votes_';
 
   const totalAmount = +chartElement.getAttribute('data-amount');

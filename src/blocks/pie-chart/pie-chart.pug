@@ -32,5 +32,5 @@ mixin pie-chart(totalAmount, sectors)
         ul.pie-chart__list
 
             each item in sectors
-                .pie-chart__list-item.js-pie-chart__bullet
+                .pie-chart__list-item.js-pie-chart__list-item
                     +bullet(item.text, false, item.style, true)
