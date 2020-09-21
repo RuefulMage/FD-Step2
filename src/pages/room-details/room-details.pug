@@ -13,6 +13,11 @@ block content
     include ../../blocks/apartment-booking-card/apartment-booking-card
     include ../../blocks/dropdown/dropdown
 
+    -
+        let path = require('path');
+        let fs = require('fs');
+        let pieChartData = JSON.parse(fs.readFileSync(path.normalize("src/pages/room-details/data.json")));
+
     .room-details
         .room-details__images-wrapper
             .room-details__left-image
@@ -38,28 +43,7 @@ block content
                         .room-details__item
                             .room-details__item-label
                                 h2.room-details__item-header Впечатления от номера
-                            +pie-chart(1040, [
-                                {
-                                    "text": "Великолепно",
-                                    "style": "great",
-                                    "amount": 520
-                                },
-                                {
-                                    "text": "Хорошо",
-                                    "style": "good",
-                                    "amount": 260
-                                },
-                                {
-                                    "text": "Удовлетворительно",
-                                    "style": "normal",
-                                    "amount": 260
-                                },
-                                {
-                                    "text": "Разочарован",
-                                    "style": "bad",
-                                    "amount": 0
-                                }
-                            ])
+                            +pie-chart(pieChartData.totalAmount, pieChartData.sectors)
 
 
                 .room-details__row

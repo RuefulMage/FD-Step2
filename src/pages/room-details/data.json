@@ -1,0 +1,25 @@
+{
+  "totalAmount": 1040,
+  "sectors":  [
+    {
+      "text": "Великолепно",
+      "style": "great",
+      "amount": 520
+    },
+    {
+      "text": "Хорошо",
+      "style": "good",
+      "amount": 260
+    },
+    {
+      "text": "Удовлетворительно",
+      "style": "normal",
+      "amount": 260
+    },
+    {
+      "text": "Разочарован",
+      "style": "bad",
+      "amount": 0
+    }
+  ]
+}
