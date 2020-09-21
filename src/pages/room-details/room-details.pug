@@ -38,7 +38,29 @@ block content
                         .room-details__item
                             .room-details__item-label
                                 h2.room-details__item-header Впечатления от номера
-                            +pie-chart({great: 520, bad: 0, good: 260, normal: 260})
+                            +pie-chart(1040, [
+                                {
+                                    "text": "Великолепно",
+                                    "style": "great",
+                                    "amount": 520
+                                },
+                                {
+                                    "text": "Хорошо",
+                                    "style": "good",
+                                    "amount": 260
+                                },
+                                {
+                                    "text": "Удовлетворительно",
+                                    "style": "normal",
+                                    "amount": 260
+                                },
+                                {
+                                    "text": "Разочарован",
+                                    "style": "bad",
+                                    "amount": 0
+                                }
+                            ])
+
 
                 .room-details__row
                     .room-details__item

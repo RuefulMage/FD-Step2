@@ -11,6 +11,10 @@
     position: relative;
   }
 
+  &__chart {
+    transform: rotate(90deg);
+  }
+
   &__circle {
     cursor: pointer;
     fill: none;
@@ -19,22 +23,6 @@
     &_hovered {
       stroke-width: 6px;
     }
-  }
-
-  &__great {
-    stroke: url(#great-gradient-color);
-  }
-
-  &__bad {
-    stroke: url(#bad-gradient-color);
-  }
-
-  &__good {
-    stroke: url(#good-gradient-color);
-  }
-
-  &__normal {
-    stroke: url(#normal-gradient-color);
   }
 
   &__votes {
@@ -47,26 +35,27 @@
     color: $dark-100;
     font-weight: bold;
 
-    &_great {
+    &_1 {
       background: $great;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    &_bad {
-      background: $bad;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
 
-    &_good {
+    &_2 {
       background: $good;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    &_normal {
+    &_3 {
       background: $gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &_4 {
+      background: $bad;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }

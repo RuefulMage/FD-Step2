@@ -1,37 +1,36 @@
 include ../bullet/bullet
 
-// values - объект {great, good, normal, bad}(каждое свойство - кол-во оценок с таким статусом)
-mixin pie-chart(values)
-    .pie-chart.js-pie-chart(data-values=values)
+// sectors - массив объектов вида {text, style, amount}
+mixin pie-chart(totalAmount, sectors)
+    .pie-chart.js-pie-chart(data-amount=totalAmount)
         .pie-chart__chart-wrapper
             svg.pie-chart__chart(width="122" height="122")
                 // градиенты для диаграммы
-                linearGradient(id="great-gradient-color" x1="0%" y1="0%" x2="0%" y2="100%")
+                linearGradient(id="gradient-color-1" x1="0%" y1="0%" x2="0%" y2="100%")
                     stop(offset="0%" stop-color="#FFE39C")
                     stop(offset="100%" stop-color="#FFBA9C")
-                linearGradient(id="good-gradient-color" x1="0%" y1="0%" x2="0%" y2="100%")
+                linearGradient(id="gradient-color-2" x1="0%" y1="0%" x2="0%" y2="100%")
                     stop(offset="0%" stop-color="#6FCF97")
                     stop(offset="100%" stop-color="#66D2EA")
-                linearGradient(id="normal-gradient-color" x1="0%" y1="0%" x2="0%" y2="100%")
+                linearGradient(id="gradient-color-3" x1="0%" y1="0%" x2="0%" y2="100%")
                     stop(offset="0%" stop-color="#BC9CFF")
                     stop(offset="100%" stop-color="#8BA4F9")
-                linearGradient(id="bad-gradient-color" x1="0%" y1="0%" x2="0%" y2="100%")
+                linearGradient(id="gradient-color-4" x1="0%" y1="0%" x2="0%" y2="100%")
                     stop(offset="0%" stop-color="#919191")
                     stop(offset="100%" stop-color="#3D4975")
 
-                circle.pie-chart__circle.pie-chart__great.js-pie-chart__great(r="58" cx="61" cy="61")
-                circle.pie-chart__circle.pie-chart__bad.js-pie-chart__bad(r="58" cx="61" cy="61")
-                circle.pie-chart__circle.pie-chart__good.js-pie-chart__good(r="58" cx="61" cy="61")
-                circle.pie-chart__circle.pie-chart__normal.js-pie-chart__normal(r="58" cx="61" cy="61")
+                - let sectorIndex = 0
+                each item in sectors
+                    - let itemClasses = ["pie-chart__circle", "pie-chart__" + item.style, "js-pie-chart__circle"]
+                    circle(class=itemClasses data-amount=item.amount r="58"
+                        cx="61" cy="61" stroke="url(#gradient-color-" + ((sectorIndex % 4) + 1) + ")")
+                    - sectorIndex += 1
+
             .pie-chart__votes.js-pie-chart__votes
-                .pie-chart__votes-amount.js-pie-chart__votes-amount 260
+                .pie-chart__votes-amount.js-pie-chart__votes-amount
                 .pie-chart__sign голосов
         ul.pie-chart__list
-            .pie-chart__list-item.js-pie-chart__great
-                +bullet("Великолепно", false, "great", true)
-            .pie-chart__list-item.js-pie-chart__good
-                +bullet("Хорошо", false, "good", true)
-            .pie-chart__list-item.js-pie-chart__normal
-                +bullet("Удовлетворительно", false, "normal", true)
-            .pie-chart__list-item.js-pie-chart__bad
-                +bullet("Разочарован", false, "bad", true)
+
+            each item in sectors
+                .pie-chart__list-item.js-pie-chart__bullet
+                    +bullet(item.text, false, item.style, true)

@@ -1,10 +1,10 @@
 import noUiSlider from 'nouislider';
 
 function createRangeSlider(sliderElement) {
-  let startValues = [+sliderElement.getAttribute('data-start-low-value'),
+  const startValues = [+sliderElement.getAttribute('data-start-low-value'),
     +sliderElement.getAttribute('data-start-high-value')];
-  let minValue = +sliderElement.getAttribute('data-min-value');
-  let maxValue = +sliderElement.getAttribute('data-max-value');
+  const minValue = +sliderElement.getAttribute('data-min-value');
+  const maxValue = +sliderElement.getAttribute('data-max-value');
 
   noUiSlider.create(sliderElement, {
     start: startValues,

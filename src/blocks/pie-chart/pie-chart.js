@@ -1,46 +1,37 @@
 function createPieChart(chartElement) {
-  const greatSectorElementClass = 'js-pie-chart__great';
-  const badSectorElementClass = 'js-pie-chart__bad';
-  const goodSectorElementClass = 'js-pie-chart__good';
-  const normalSectorElementClass = 'js-pie-chart__normal';
+  const sectorClass = 'js-pie-chart__circle';
   const sectorHoveredModifier = 'pie-chart__circle_hovered';
 
   const votesWrapperClass = 'js-pie-chart__votes';
   const votesElementClass = 'js-pie-chart__votes-amount';
 
-  const greatVotesAmountModifier = 'pie-chart__votes_great';
-  const badVotesAmountModifier = 'pie-chart__votes_bad';
-  const goodVotesAmountModifier = 'pie-chart__votes_good';
-  const normalVotesAmountModifier = 'pie-chart__votes_normal';
+  const bulletClass = 'js-pie-chart__bullet';
+  const votesModifierBasis = 'pie-chart__votes_';
 
-  const values = JSON.parse(chartElement.getAttribute('data-values'));
-  const {
-    great, bad, normal, good,
-  } = values;
-
-  const totalAmount = great + bad + normal + good;
-  const greatPercent = (great / totalAmount) * 100;
-  const badPercent = (bad / totalAmount) * 100;
-  const normalPercent = (normal / totalAmount) * 100;
-  const goodPercent = (good / totalAmount) * 100;
-
-  const greatSectorElements = chartElement.querySelectorAll(`.${greatSectorElementClass}`);
-  const badSectorElements = chartElement.querySelectorAll(`.${badSectorElementClass}`);
-  const goodSectorElements = chartElement.querySelectorAll(`.${goodSectorElementClass}`);
-  const normalSectorElements = chartElement.querySelectorAll(`.${normalSectorElementClass}`);
+  const totalAmount = +chartElement.getAttribute('data-amount');
 
   const votesAmountElement = chartElement.querySelector(`.${votesElementClass}`);
   const votesAmountWrapper = chartElement.querySelector(`.${votesWrapperClass}`);
 
-  setSectorPosition(goodSectorElements[0], goodPercent, 0);
-  setSectorPosition(normalSectorElements[0], normalPercent, normalPercent);
-  setSectorPosition(greatSectorElements[0], greatPercent, normalPercent + greatPercent);
-  setSectorPosition(badSectorElements[0], badPercent, 100);
+  votesAmountElement.innerText = totalAmount;
 
-  hangUpMouseEventListeners(greatSectorElements, great, greatVotesAmountModifier);
-  hangUpMouseEventListeners(badSectorElements, bad, badVotesAmountModifier);
-  hangUpMouseEventListeners(normalSectorElements, normal, normalVotesAmountModifier);
-  hangUpMouseEventListeners(goodSectorElements, good, goodVotesAmountModifier);
+  const sectors = chartElement.querySelectorAll(`.${sectorClass}`);
+  const bullets = chartElement.querySelectorAll(`.${bulletClass}`);
+
+  let offset = 0;
+  sectors.forEach((sector, index) => {
+    const amount = +sector.getAttribute('data-amount');
+    const sectorPercent = (amount / totalAmount) * 100;
+    if (index !== 0) {
+      offset += sectorPercent;
+    }
+    setSectorPosition(sector, sectorPercent, offset);
+
+    const bullet = bullets[index];
+
+    hangUpMouseEventListeners([sector, bullet], amount,
+      `${votesModifierBasis + ((index % 4) + 1)}`);
+  });
 
   function setSectorPosition(element, percent, offsetPercent) {
     const pi = 22 / 7;
