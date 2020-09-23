@@ -2,6 +2,7 @@
 
 .checkbox {
   display: flex;
+  width: fit-content;
 
   &__button {
     --opacity: 0;
