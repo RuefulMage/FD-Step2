@@ -1,13 +1,13 @@
 @import "../../assets/scss/colors.scss";
 
 .link-button {
-  max-width: 200px;
   padding: 2px;
   background: $gradient;
   border-radius: 22px;
   outline: none;
   cursor: pointer;
   user-select: none;
+  width: max-content;
 
   &:focus,
   &:hover,
@@ -20,10 +20,11 @@
     pointer-events: none;
   }
 
+
   &__content {
     display: flex;
     justify-content: center;
-    padding: 9px 9px;
+    padding: 9px 18px;
     color: $purple;
     font-weight: bold;
     font-size: .75rem; //12px при базовом размере шрифта 16px
@@ -37,7 +38,7 @@
     }
 
     &_large {
-      padding: 14px 14px;
+      padding: 13px 18px;
     }
   }
 }
