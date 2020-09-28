@@ -1,13 +1,13 @@
 @import "../../assets/scss/colors.scss";
 
 .link-button {
+  width: max-content;
   padding: 2px;
   background: $gradient;
   border-radius: 22px;
   outline: none;
   cursor: pointer;
   user-select: none;
-  width: max-content;
 
   &:focus,
   &:hover,

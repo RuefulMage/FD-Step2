@@ -8,8 +8,9 @@
 
   &__container {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     max-width: 1160px;
     margin: auto;
   }
@@ -23,29 +24,20 @@
     }
   }
 
-  &__menu {
-    display: flex;
-    flex-grow: 1;
-    align-items: center;
-    justify-content: flex-end;
-
+  &__navigation {
+    margin-right: 20px;
+    margin-left: auto;
 
     @media (max-width: 900px) {
-      justify-content: center;
+      margin-left: 0;
     }
-
-    @media (max-width: 700px) {
-      flex-direction: column;
-    }
-  }
-
-  &__navigation {
-    width: 100%;
-    max-width: 447px;
-    margin-right: 20px;
 
     @media (max-width: 700px) {
       margin-right: 0;
+    }
+
+    @media (max-width: 380px) {
+      flex-grow: 1;
     }
   }
 
@@ -87,7 +79,6 @@
   }
 
   &__register-button {
-
     @media (max-width: 300px) {
       padding-top: 10px;
     }

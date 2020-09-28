@@ -8,9 +8,9 @@ mixin header({links, loginButtonText, registerButtonText, authorized=false, user
         .header__container
             .header__logo
                 +logo-with-text
-            nav.header__menu
-                .header__navigation
+            nav.header__navigation
                     +header-navigation(links, largeMargin)
+            .header__auth
                 if authorized
                     .header__username= username
                 else
