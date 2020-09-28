@@ -1,3 +1,6 @@
-mixin form-button(text)
-    button.form-button=text
+mixin form-button(text, isWidthUnlimited=true)
+    - let buttonClasses = ["form-button"]
+    if isWidthUnlimited
+        - buttonClasses.push("form-button_width-unlimited")
+    button(class=buttonClasses)=text
         .form-button__arrow arrow_forward

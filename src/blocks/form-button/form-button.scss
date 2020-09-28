@@ -2,9 +2,8 @@
 
 .form-button {
   position: relative;
-  width: 100%;
-  max-width: 400px;
   padding: 16px 16px;
+  padding-right: 40px;
   color: white;
   font-weight: bold;
   font-size: .75rem; //12px при базовом размере шрифта 16px
@@ -13,6 +12,11 @@
   border-radius: 22px;
   outline: none;
   user-select: none;
+
+  &_width-unlimited{
+    width: 100%;
+    padding-right: 16px;
+  }
 
   &:focus,
   &:hover {
