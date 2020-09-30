@@ -1,9 +1,10 @@
-include ../bullet/bullet
-
-// bulletList - массив объектов {text, withPadding, style, smallIndent}
+// bulletList - массив объектов {text, withPadding}
 mixin bullet-list(bulletList)
     ul.bullet-list
         each bullet in bulletList
-            +bullet(bullet.text, bullet.withPadding, bullet.style, bullet.smallIndent)
+            -  let classes = ["bullet-list__bullet"]
+            if bullet.withPadding
+                - classes.push("bullet-list__bullet_with-paddings")
+            li(class=classes)=bullet.text
         else
             li There are no values

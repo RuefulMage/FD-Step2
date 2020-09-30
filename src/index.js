@@ -47,7 +47,6 @@ import './blocks/form-button/form-button.scss';
 import './blocks/pagination/pagination.scss';
 import './blocks/rich-checkbox/rich-checkbox.scss';
 import './blocks/bullet-list/bullet-list.scss';
-import './blocks/bullet/bullet.scss';
 import './blocks/comment/comment.scss';
 import './blocks/logo/logo.scss';
 import './blocks/color-description/color-description.scss';

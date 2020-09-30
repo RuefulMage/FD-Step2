@@ -26,7 +26,6 @@ block content
                 .room-details__right-bottom-image
         main.room-details__info-wrapper
             section.room-details__info
-
                 .room-details__row
                     .room-details__column-left
                         .room-details__item
@@ -38,14 +37,11 @@ block content
                                 +icon-text("location_city", "Удобство", "Окно в каждой из спален", true)
                             .room-details__subitem
                                 +icon-text("whatshot", "Уют", "Номер оснащён камином")
-
                     .room-details__column-right
                         .room-details__item
                             .room-details__item-label
                                 h2.room-details__item-header Впечатления от номера
                             +pie-chart(pieChartData.totalAmount, pieChartData.sectors)
-
-
                 .room-details__row
                     .room-details__item
                         .room-details__item-label
@@ -86,9 +82,6 @@ block content
                                 h2.room-details__item-header Отмена
                             p.room-details__text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее
                                 | чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
-
-
-
 
             section.room-details__card
                 +apartment-booking-card({

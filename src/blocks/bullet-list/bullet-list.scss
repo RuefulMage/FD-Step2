@@ -2,4 +2,28 @@
 
 .bullet-list {
 
+  &__bullet {
+    position: relative;
+    padding-left: 20px;
+    color: $dark-75;
+    line-height: 1.5rem; //24px при базовом размере шрифта 16px
+    text-align: left;
+
+
+    &:before {
+      position: absolute;
+      top: 7px;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      background-color: $dark-25;
+      border-radius: 100%;
+      content: "";
+    }
+
+    &_with-paddings {
+      padding-bottom: 10px;
+    }
+
+  }
 }
