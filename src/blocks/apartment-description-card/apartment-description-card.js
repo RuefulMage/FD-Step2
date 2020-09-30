@@ -3,8 +3,8 @@ function createImagesSlider(element) {
   const indicatorsClass = 'js-apartment-description-card__indicator';
   const currentImageClass = 'apartment-description-card__slider-item_showing';
   const currentIndicatorClass = 'apartment-description-card__indicator_current';
-  const prevButtonClass = 'js-slider-button-prev';
-  const nextButtonClass = 'js-slider-button-next';
+  const prevButtonClass = 'js-apartment-description-card__prev-button';
+  const nextButtonClass = 'js-apartment-description-card__next-button';
 
   const items = element.querySelectorAll(`.${sliderItemClass}`);
   const indicators = element.querySelectorAll(`.${indicatorsClass}`);

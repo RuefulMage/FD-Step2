@@ -1,3 +1,3 @@
 import 'jquery-mask-plugin';
 
-$('.js-masked').mask('00.00.0000');
+$('.js-textfield_masked').mask('00.00.0000');

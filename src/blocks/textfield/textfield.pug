@@ -1,7 +1,8 @@
 mixin textfield({type, placeholder, name, masked = false, hovered = false})
     - let textfieldClasses = ["textfield"]
     if masked
-        - textfieldClasses.push("js-masked")
+        - textfieldClasses.push("textfield_masked")
+        - textfieldClasses.push("js-textfield_masked")
     if hovered
         - textfieldClasses.push("textfield_hovered")
 

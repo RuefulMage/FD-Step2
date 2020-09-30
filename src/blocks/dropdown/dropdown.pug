@@ -4,7 +4,8 @@ mixin dropdown({placeholder, items, expanded=false, withButtons=false, generalFo
     - let dropdownJSClass = "js-dropdown";
     - let expandButtonClasses = ["dropdown__expand-button", "js-dropdown__expand-button"];
     if withButtons
-        - dropdownJSClass = dropdownJSClass + "-with-buttons";
+        - dropdownJSClass = dropdownJSClass + "_with-buttons";
+        - dropdownClasses.push("dropdown_with-buttons")
     if expanded
         - dropdownClasses.push("dropdown_expanded");
         - expandButtonClasses.push("dropdown__expand-button_rotated");
