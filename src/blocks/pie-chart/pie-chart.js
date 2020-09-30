@@ -1,12 +1,12 @@
 function createPieChart(chartElement) {
   const sectorClass = 'js-pie-chart__circle';
   const sectorHoveredModifier = 'pie-chart__circle_hovered';
+  const gradientIdBasis = 'gradient-color-';
 
   const votesWrapperClass = 'js-pie-chart__votes';
   const votesElementClass = 'js-pie-chart__votes-amount';
 
   const bulletClass = 'js-pie-chart__list-item';
-  const votesModifierBasis = 'pie-chart__votes_';
 
   const totalAmount = +chartElement.getAttribute('data-amount');
 
@@ -29,8 +29,12 @@ function createPieChart(chartElement) {
 
     const bullet = bullets[index];
 
-    hangUpMouseEventListeners([sector, bullet], amount,
-      `${votesModifierBasis + ((index % 4) + 1)}`);
+    const gradientElement = document.querySelector(`#${gradientIdBasis + (index + 1)}`);
+    const startColor = gradientElement.children[0].getAttribute('stop-color');
+    const endColor = gradientElement.children[1].getAttribute('stop-color');
+
+    hangUpMouseEventListeners([sector, bullet], amount, startColor, endColor);
+    addColorToBullet(bullet, startColor, endColor);
   });
 
   function setSectorPosition(element, percent, offsetPercent) {
@@ -52,23 +56,30 @@ function createPieChart(chartElement) {
     element.setAttribute('stroke-dashoffset', offsetLength);
   }
 
-  function hangUpMouseEventListeners(elements, amount, amountElementModifier) {
+  function hangUpMouseEventListeners(elements, amount, startColor, endColor) {
     const sector = elements[0];
 
     function handleMouseOver() {
       sector.classList.add(sectorHoveredModifier);
       votesAmountElement.innerText = amount;
-      votesAmountWrapper.classList.add(amountElementModifier);
+      votesAmountWrapper.style.background = `linear-gradient(${startColor}, ${endColor})`;
+      votesAmountWrapper.style.webkitBackgroundClip = 'text';
+      votesAmountWrapper.style.webkitTextFillColor = 'transparent';
     }
 
     function handleMouseOut() {
       sector.classList.remove(sectorHoveredModifier);
       votesAmountElement.innerText = totalAmount;
-      votesAmountWrapper.classList.remove(amountElementModifier);
+      votesAmountWrapper.style = '';
     }
 
     elements.forEach((item) => item.addEventListener('mouseover', handleMouseOver));
     elements.forEach((item) => item.addEventListener('mouseout', handleMouseOut));
+  }
+
+  function addColorToBullet(bullet, startColor, endColor) {
+    const bulletPointer = bullet.children[0];
+    bulletPointer.style.background = `linear-gradient(${startColor}, ${endColor})`;
   }
 }
 

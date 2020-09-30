@@ -4,22 +4,30 @@
     {
       "text": "Великолепно",
       "style": "great",
-      "amount": 520
+      "amount": 520,
+      "startGradient": "#FFE39C",
+      "endGradient": "#FFBA9C"
     },
     {
       "text": "Хорошо",
       "style": "good",
-      "amount": 260
+      "amount": 260,
+      "startGradient": "#6FCF97",
+      "endGradient": "#66D2EA"
     },
     {
       "text": "Удовлетворительно",
       "style": "normal",
-      "amount": 260
+      "amount": 260,
+      "startGradient": "#BC9CFF",
+      "endGradient": "#8BA4F9"
     },
     {
       "text": "Разочарован",
       "style": "bad",
-      "amount": 0
+      "amount": 0,
+      "startGradient": "#919191",
+      "endGradient": "#3D4975"
     }
   ]
 }

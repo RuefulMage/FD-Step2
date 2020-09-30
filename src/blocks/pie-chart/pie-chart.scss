@@ -34,31 +34,6 @@
     align-items: center;
     color: $dark-100;
     font-weight: bold;
-
-    &_1 {
-      background: $great;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-
-    &_2 {
-      background: $good;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    &_3 {
-      background: $gradient;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    &_4 {
-      background: $bad;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
   }
 
   &__votes-amount {
@@ -74,7 +49,23 @@
   }
 
   &__list-item {
+    position: relative;
+    padding-left: 15px;
+    color: $dark-75;
+    line-height: 1.5rem; //24px при базовом размере шрифта 16px
+    text-align: left;
     cursor: pointer;
+
+    &-point {
+      position: absolute;
+      top: 7px;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      background-color: $dark-100;
+      border-radius: 100%;
+      content: "";
+    }
   }
 
 }
