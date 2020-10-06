@@ -2,7 +2,7 @@
 
 .registration-card {
   box-sizing: border-box;
-  padding: 40px 30px 30px 30px;
+  padding: 40px 30px 20px;
   border: 1px solid rgba(0, 0, 0, .12);
   border-radius: 4px;
   box-shadow: 0 0 25px rgba(0, 0, 0, .2);
@@ -23,11 +23,12 @@
   &__gender-choice {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 24px;
+    margin-bottom: 14px;
   }
 
   &__choice-variant {
     margin-right: 20px;
+    margin-bottom: 10px;
 
     &:last-child {
       margin-right: 0;
@@ -68,10 +69,12 @@
   &__have-account-text {
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
   }
 
   &__have-account-button {
     width: 100%;
     max-width: 99px;
+    margin-bottom: 10px;
   }
 }

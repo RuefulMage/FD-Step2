@@ -4,7 +4,7 @@
 
   &__wrapper {
     box-sizing: border-box;
-    padding: 100px 20px;
+    padding: 100px 20px 80px;
     box-shadow: 0 1px 0 rgba(31, 32, 65, .1);
 
     @media (max-width: 750px) {
@@ -19,7 +19,7 @@
     margin: 0 auto;
 
 
-    @media (max-width: 900px) {
+    @media (max-width: 990px) {
       flex-direction: column;
       align-items: center;
     }
@@ -27,8 +27,9 @@
 
   &__company-desription {
     max-width: 260px;
+    margin-right: 10px;
 
-    @media (max-width: 900px) {
+    @media (max-width: 990px) {
       margin-bottom: 20px;
     }
   }
@@ -52,8 +53,9 @@
     display: flex;
     flex-grow: 1;
     justify-content: flex-end;
+    flex-wrap: wrap;
 
-    @media (max-width: 900px) {
+    @media (max-width: 990px) {
       display: none;
     }
   }
@@ -61,6 +63,7 @@
   &__submenu {
     width: 100%;
     max-width: 200px;
+    margin-bottom: 20px;
   }
 
 
