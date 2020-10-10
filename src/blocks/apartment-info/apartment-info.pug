@@ -10,5 +10,5 @@ mixin apartment-info({number, price, currency, largeNumber=false, lux=false})
                 span.apartment-info__lux &nbsp;люкс
         .apartment-info__price-wrapper
             - let priceWithCurrency = price + currency;
-            span.apartment-info__price=priceWithCurrency
+            span.apartment-info__price !{priceWithCurrency}
             span.apartment-info__measure &nbsp;в сутки

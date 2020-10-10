@@ -26,7 +26,7 @@ function createRangeSlider(sliderElement) {
         outputValue = outputValue.toString();
         const borderIndex = outputValue.length - 3;
 
-        outputValue = `${outputValue.slice(0, borderIndex)} ${outputValue.slice(borderIndex)}`;
+        outputValue = `${outputValue.slice(0, borderIndex)}&nbsp;${outputValue.slice(borderIndex)}`;
       }
 
       return outputValue;

@@ -16,8 +16,8 @@
   }
 
   &__logo {
-    cursor: pointer;
     margin-right: 20px;
+    cursor: pointer;
 
 
     @media (max-width: 900px) {
@@ -30,9 +30,9 @@
     margin-left: auto;
 
     @media (max-width: 900px) {
-      margin-left: 0;
-      margin-bottom: 10px;
       margin-top: 10px;
+      margin-bottom: 10px;
+      margin-left: 0;
     }
 
     @media (max-width: 700px) {

@@ -52,8 +52,8 @@
   &__menu {
     display: flex;
     flex-grow: 1;
-    justify-content: flex-end;
     flex-wrap: wrap;
+    justify-content: flex-end;
 
     @media (max-width: 990px) {
       display: none;

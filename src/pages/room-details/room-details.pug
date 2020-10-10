@@ -16,8 +16,8 @@ block content
     -
         let path = require('path');
         let fs = require('fs');
-        let pieChartData = JSON.parse(fs.readFileSync(path.normalize("src/pages/room-details/data.json")));
-
+        let pieChartData = JSON.parse(fs.readFileSync(path.normalize("src/pages/room-details/pie-chart-data.json")));
+        let bookingCardData = JSON.parse(fs.readFileSync(path.normalize("src/pages/room-details/booking-card-data.json")))
     .room-details
         .room-details__images-wrapper
             .room-details__left-image
@@ -84,21 +84,4 @@ block content
                                 | чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 
             section.room-details__card
-                +apartment-booking-card({
-                    number: "888",
-                    price: "9 990",
-                    currency: "₽",
-                    lux: true,
-                    dateDropdownHeaders: ["прибытие", "выезд"],
-                    dropdownHeader: "гости",
-                    expression: "9 990₽ х 4 суток",
-                    expressionResult: "39 960₽",
-                    servicePriceLabel: "Сбор за услуги: скидка 2 179₽",
-                    servicePrice: "0₽",
-                    extraServiceLabel: "Сбор за дополнительные услуги",
-                    extraServicePrice: "300₽", totalPrice: "38 081₽",
-                    noteTexts: ["Sum was computed by calculator",
-                        "This is for the smiles, that was given to you"],
-                    buttonText: "забронировать",
-                    link: "mock-address"
-                })
+                +apartment-booking-card(bookingCardData)
