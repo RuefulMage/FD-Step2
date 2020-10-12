@@ -20,6 +20,14 @@
     border: 1px solid $dark-25;
     border-radius: 4px;
 
+    @media (max-width: 400px) {
+      padding-right: 24px;
+    }
+
+    @media (max-width: 350px) {
+      padding-left: 0;
+    }
+
     &:after {
       position: absolute;
       right: 0;
@@ -34,11 +42,19 @@
       cursor: pointer;
       content: "expand_more";
       user-select: none;
+
+      @media (max-width: 400px) {
+        width: auto;
+      }
     }
   }
 
   &__input-wrapper_small {
     margin-right: 20px;
+
+    @media (max-width: 350px) {
+      margin-right: 5px;
+    }
 
     &:last-child {
       margin-right: 0;
@@ -58,5 +74,9 @@
     border-radius: inherit;
     outline: none;
     cursor: pointer;
+    
+    @media (max-width: 350px) {
+      padding-left: 9px;
+    }
   }
 }

@@ -2,15 +2,19 @@
 
 .apartment-info {
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
-
 
   &__number-wrapper {
     display: flex;
     align-items: baseline;
     font-weight: bold;
     font-family: Quicksand, OpenSans, sans-serif;
+
+    @media (max-width: 350px) {
+      margin-right: 5px;
+    }
   }
 
   &__number-symbol {

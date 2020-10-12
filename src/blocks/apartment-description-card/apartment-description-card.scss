@@ -115,6 +115,7 @@
 
   &__quality {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     padding-top: 8px;
@@ -123,6 +124,10 @@
   &__rating {
     display: flex;
     align-items: center;
+
+    @media (max-width: 350px) {
+      margin-right: 10px;
+    }
   }
 
   &__reviews {
