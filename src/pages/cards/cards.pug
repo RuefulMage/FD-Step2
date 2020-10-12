@@ -6,6 +6,12 @@ include ../../blocks/registration-card/registration-card
 include ../../blocks/signin-card/signin-card
 include ../../blocks/apartment-description-card/apartment-description-card
 
+
+-
+    let path = require('path');
+    let fs = require('fs');
+    let bookingCardData = JSON.parse(fs.readFileSync(path.normalize("src/pages/cards/booking-card-data.json")))
+
 doctype html
 html(lang="en")
     head
@@ -49,25 +55,7 @@ html(lang="en")
 
 
                     .cards__item
-                        +apartment-booking-card({
-                            number: "888",
-                            price: "9 990",
-                            currency: "₽",
-                            lux: true,
-                            dateDropdownHeaders: ["прибытие", "выезд"],
-                            dropdownHeader: "гости",
-                            expression: "9 990₽ х 4 суток",
-                            expressionResult: "39 960₽",
-                            servicePriceLabel: "Сбор за услуги: скидка 2 179₽",
-                            servicePrice: "0₽",
-                            extraServiceLabel: "Сбор за дополнительные услуги",
-                            extraServicePrice: "300₽",
-                            totalPrice: "38 081₽",
-                            noteTexts: ["Sum was computed by calculator",
-                                "This is for the smiles, that was given to you"],
-                            buttonText: "забронировать",
-                            link: "mock-address"
-                        })
+                        +apartment-booking-card(bookingCardData)
 
                     .cards__item
                         +signin-card()
@@ -86,7 +74,7 @@ html(lang="en")
                                 "apartment-photo-3.jpg",
                                 "apartment-photo-4.jpg"],
                             number: "888",
-                            price: "9 990",
+                            price: "9&nbsp;990",
                             currency: "₽",
                             rateButtonName: "card-rate-lux",
                             starAmount: 5,
@@ -102,7 +90,7 @@ html(lang="en")
                                 "apartment-photo-4.jpg",
                                 "apartment-photo-5.jpg"],
                             number: "840",
-                            price: "9 990",
+                            price: "9&nbsp;990",
                             currency: "₽",
                             rateButtonName: "card-rate-lux",
                             starAmount: 5,

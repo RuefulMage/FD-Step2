@@ -1,0 +1,24 @@
+{
+  "number": "888",
+  "price": "9&nbsp;990",
+  "currency": "₽",
+  "lux": true,
+  "dateDropdownHeaders": [
+    "прибытие",
+    "выезд"
+  ],
+  "dropdownHeader": "гости",
+  "expression": "9&nbsp;990₽ х 4 суток",
+  "expressionResult": "39&nbsp;960₽",
+  "servicePriceLabel": "Сбор за услуги: скидка 2&nbsp;179₽",
+  "servicePrice": "0₽",
+  "extraServiceLabel": "Сбор за дополнительные услуги",
+  "extraServicePrice": "300₽",
+  "totalPrice": "38&nbsp;081₽",
+  "noteTexts": [
+    "Sum was computed by calculator",
+    "This is for the smiles, that was given to you"
+  ],
+  "buttonText": "забронировать",
+  "link": "mock-address"
+}
