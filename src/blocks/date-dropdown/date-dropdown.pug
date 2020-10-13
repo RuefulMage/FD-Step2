@@ -2,19 +2,19 @@ mixin date-dropdown({twoInputs=false, static=false, headers, startDateInterval})
     // startDateInterval - строка вида ГГГГ-ММ-ДД, ГГГГ-ММ-ДД
     .date-dropdown.js-date-dropdown(data-start-interval=startDateInterval)
         if static
-            .js-calendar
+            .date-dropdown__input.date-dropdown__input_static.js-date-dropdown__input
 
         else if twoInputs
             .date-dropdown__input-wrapper.date-dropdown__input-wrapper_small
                 if headers !== undefined
                     h3.date-dropdown__header=headers[0]
                 label.date-dropdown__label
-                    input.js-calendar.date-dropdown__input(type="text" readonly)
+                    input.date-dropdown__input.js-date-dropdown__input(type="text" readonly)
             .date-dropdown__input-wrapper.date-dropdown__input-wrapper_small
                 if headers !== undefined && headers.length > 1
                     h3.date-dropdown__header=headers[1]
                 label.date-dropdown__label
-                    input.js-calendar.date-dropdown__input(type="text" readonly)
+                    input.date-dropdown__input.js-date-dropdown__input(type="text" readonly)
 
         else
             label.date-dropdown__label

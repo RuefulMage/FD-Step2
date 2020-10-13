@@ -1,9 +1,8 @@
 import 'air-datepicker';
 
-function createCalendar(node) {
+function createCalendar(node, calendarClass) {
   const defaultInputString = 'ДД.ММ.ГГГГ';
   const defaultSingleInputString = 'дд месяц';
-  const calendarClass = 'js-calendar';
   const clearButtonClass = 'date-dropdown__calendar-clear-button';
   const appendButtonClass = 'date-dropdown__calendar-append-button';
   const buttonsWrapperClass = 'date-dropdown__calendar-buttons-wrapper';

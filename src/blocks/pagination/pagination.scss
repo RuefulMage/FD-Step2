@@ -23,6 +23,13 @@ $max-page: 100;
     border-radius: 100%;
 
 
+    &_last {
+      color: white;
+      font-size: 1.5rem; //24px при базовом размере шрифта 16px
+      font-family: "Material Icons";
+      background: $secondary-gradient;
+    }
+
     &:last-child,
     &:nth-child(2),
     &:nth-last-child(2) {
@@ -40,13 +47,6 @@ $max-page: 100;
 
   &:not([data-current-page="1"]) &__item:nth-child(1) {
     display: flex;
-  }
-
-  &__last {
-    color: white;
-    font-size: 1.5rem; //24px при базовом размере шрифта 16px
-    font-family: "Material Icons";
-    background: $secondary-gradient;
   }
 
 }

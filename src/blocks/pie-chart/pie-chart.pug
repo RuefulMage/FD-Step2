@@ -1,4 +1,4 @@
-// sectors - массив объектов вида {text, style, amount}
+// sectors - массив объектов вида {text, amount}
 mixin pie-chart(totalAmount, sectors)
     .pie-chart.js-pie-chart(data-amount=totalAmount)
         .pie-chart__chart-wrapper
@@ -13,7 +13,7 @@ mixin pie-chart(totalAmount, sectors)
 
                 - let sectorIndex = 1
                 each item in sectors
-                    - let itemClasses = ["pie-chart__circle", "pie-chart__" + item.style, "js-pie-chart__circle"]
+                    - let itemClasses = ["pie-chart__circle", "js-pie-chart__circle"]
                     circle(class=itemClasses data-amount=item.amount r="58"
                         cx="61" cy="61" stroke="url(#gradient-color-" + sectorIndex + ")")
                     - sectorIndex += 1
