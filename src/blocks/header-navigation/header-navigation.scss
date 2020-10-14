@@ -5,14 +5,15 @@
   flex-wrap: wrap;
   justify-content: center;
 
-  @media (max-width: 380px) {
+  @media (max-width: 700px) {
     flex-direction: column;
+    width: 100%;
   }
 
   &__nav-item {
     margin-right: 20px;
 
-    @media (max-width: 380px) {
+    @media (max-width: 700px) {
       width: 100%;
       margin-right: 0;
       border-bottom: 1px solid $dark-75;
@@ -33,7 +34,7 @@
     color: $dark-50;
     line-height: 1.0625rem; //17px при базовом размере шрифта 16px
 
-    @media (max-width: 380px) {
+    @media (max-width: 700px) {
       padding: 10px 0;
       text-align: center;
 

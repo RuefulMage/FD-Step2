@@ -74,4 +74,6 @@ import './blocks/pagination/init';
 import './blocks/apartment-description-card/init';
 import './blocks/pie-chart/init';
 
+import './blocks/header/init';
+
 import './pages/search/search';
