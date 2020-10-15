@@ -26,14 +26,14 @@ block content
             button.search__show-filter-button.js-search__show-filter-button Фильтр
             form.search__filter-column.js-search__filter-column(method="POST" action="mock-address")
 
-                .search__item
-                    .search__item-label
-                        h3.search__item-header Даты пребывания в отеле
+                .search__stay-in-hotel-dates
+                    .search__filter-item-label
+                        h3.search__filter-item-name Даты пребывания в отеле
                     +date-dropdown({startDateInterval: "2019-08-19, 2019-08-23"})
 
-                .search__item.search__item_margin-large
-                    .search__item-label
-                        h3.search__item-header Гости
+                .search__guests
+                    .search__filter-item-label
+                        h3.search__filter-item-name Гости
                     +dropdown({
                         placeholder: "Сколько гостей",
                         items: [{
@@ -65,8 +65,8 @@ block content
                         generalForms: "гость,гостя,гостей"
                     })
 
-                .search__item.search__item_margin-large
-                    .search__subitem
+                .search__price-range
+                    .search__price-range-slider
                         +range-slider({
                             text: "диапазон цены",
                             startLowValue: 5000,
@@ -74,34 +74,33 @@ block content
                             minValue: 500,
                             maxValue: 15000
                         })
-                    .search__subitem
-                        p.search__text Стоимость за сутки пребывания в номере
+                    p.search__price-range-description Стоимость за сутки пребывания в номере
 
 
-                .search__item.search__item_width-small.search__item_margin-large
-                    .search__item-label.search__item-label_margin-large
-                        h3.search__item-header Checkbox Buttons
-                    .search__subitem
+                .search__permisions-list
+                    .search__filter-item-label.search__filter-item-label_margin-large
+                        h3.search__filter-item-name Правила дома
+                    .search__permision
                         +checkbox("Можно курить")
-                    .search__subitem
+                    .search__permision
                         +checkbox("Можно с питомцами", false, true)
-                    .search__subitem
+                    .search__permision
                         +checkbox("Можно пригласить гостей (до 10 человек)", false, true)
 
 
 
-                .search__item.search__item_margin-large
-                    .search__item-label.search__item-label_margin-large
-                        h3.search__item-header Доступность
-                    .search__subitem
+                .search__accessibility
+                    .search__filter-item-label.search__filter-item-label_margin-large
+                        h3.search__filter-item-name Доступность
+                    .search__accessibility-item
                         +rich-checkbox("Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
-                    .search__subitem
+                    .search__accessibility-item
                         +rich-checkbox("Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.")
 
 
-                .search__item
-                    .search__item-label
-                        h3.search__item-header удобства номера
+                .search__facilities
+                    .search__filter-item-label
+                        h3.search__filter-item-name удобства номера
                     +dropdown({
                         placeholder: "Сколько гостей",
                         items: [
@@ -132,7 +131,7 @@ block content
                         ]
                     })
 
-                .search__item
+                .search__extra-facilities
                     +expandable-checkbox-list("дополнительные удобства", [
                         {text: "Завтрак", checked: false},
                         {text: "Письменный стол", checked: true},

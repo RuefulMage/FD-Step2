@@ -17,7 +17,7 @@
     }
   }
 
-  &__left-image {
+  &__main-image {
     width: 68%;
     height: 100%;
     background-image: url("images/room-photo-1.jpg");
@@ -33,7 +33,7 @@
 
   }
 
-  &__right-images-wrapper {
+  &__subimages-wrapper {
     display: flex;
     flex-direction: column;
     width: 32%;
@@ -44,19 +44,18 @@
     }
   }
 
-  &__right--top-image {
+  &__subimage {
     height: 50%;
-    background-image: url("images/room-photo-3.jpg");
     background-repeat: no-repeat;
     background-position: center center;
 
-  }
+    &:first-child {
+      background-image: url("images/room-photo-3.jpg");
+    }
 
-  &__right-bottom-image {
-    height: 50%;
-    background-image: url("images/room-photo-2.jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
+    &:last-child {
+      background-image: url("images/room-photo-2.jpg");
+    }
   }
 
 
@@ -111,25 +110,29 @@
     }
   }
 
-  &__column-left,
-  &__column-right {
+  &__advantages-list,
+  &__rules,
+  &__impressions,
+  &__cancellation {
     width: 100%;
 
     @media (max-width: 600px) {
       max-width: 100%;
       margin-bottom: 30px;
-
     }
   }
 
-  &__column-left {
+  &__advantages-list,
+  &__rules {
     display: flex;
     flex-direction: column;
     max-width: 290px;
     margin-right: 20px;
   }
 
-  &__column-right {
+
+  &__impressions,
+  &__cancellation {
     max-width: 350px;
 
     @media (max-width: 600px) {
@@ -137,7 +140,16 @@
     }
   }
 
-  &__item-label {
+  &__advantage,
+  &__comment {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__content-block-label {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
@@ -148,24 +160,14 @@
     }
   }
 
-  &__item-header {
+  &__content-block-name {
     line-height: 1.5rem; //24px при базовом размере шрифта 16px
   }
 
 
-  &__item-subheader {
+  &__content-block-amount {
     color: $dark-50;
   }
-
-  &__subitem {
-    margin-bottom: 20px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-  }
-
 
   &__text {
     line-height: 1.5rem; //24px при базовом размере шрифта 16px

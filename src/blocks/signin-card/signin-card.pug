@@ -6,9 +6,9 @@ mixin signin-card(link)
     .signin-card
         h1.signin-card__title Войти
         form.signin-card__form(method="POST" action=link)
-            .signin-card__item
+            .signin-card__email-field
                 +textfield({type: "email", placeholder: "Email", name: "email"})
-            .signin-card__item
+            .signin-card__password-field
                 +textfield({type: "password", placeholder: "Пароль", name: "password"})
             .signin-card__button-wrapper
                 +form-button("Войти")

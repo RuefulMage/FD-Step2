@@ -51,6 +51,64 @@
     }
   }
 
+  &__stay-in-hotel-dates,
+  &__guests,
+  &__price-range,
+  &__permisions-list,
+  &__accessibility,
+  &__facilities,
+  &__extra-facilities {
+    max-width: 266px;
+    margin-bottom: 19px;
+
+    @media (max-width: 880px) {
+      max-width: 100%;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__permisions-list {
+    max-width: 222px;
+  }
+
+  &__guests,
+  &__price-range,
+  &__permisions-list,
+  &__accessibility {
+    margin-bottom: 30px;
+  }
+
+  &__filter-item-label {
+    display: flex;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+
+    &_margin-large {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__price-range-slider,
+  &__permision,
+  &__accessibility-item {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__price-range-description {
+    color: $dark-50;
+    font-size: .75rem; //12px при базовом размере шрифта 16px
+    line-height: 1.25rem; //20px при базовом размере шрифта 16px
+  }
+
+
+
   &__result {
     display: flex;
     flex-direction: column;
@@ -65,67 +123,17 @@
     }
   }
 
+  &__results-header {
+    margin-bottom: 20px;
+    line-height: 1.875rem; //30px при базовом размере шрифта 16px
+  }
+
   &__results-list {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 25px;
   }
 
-
-  &__item {
-    max-width: 266px;
-    margin-bottom: 19px;
-
-    @media (max-width: 880px) {
-      max-width: 100%;
-    }
-
-
-    &_width-small {
-      max-width: 222px;
-    }
-
-    &_margin-large {
-      margin-bottom: 30px;
-    }
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  &__item-label {
-    display: flex;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-
-    &_margin-large {
-      margin-bottom: 16px;
-    }
-  }
-
-  &__item-header {
-  }
-
-
-  &__subitem {
-    margin-bottom: 10px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  &__text {
-    color: $dark-50;
-    font-size: .75rem; //12px при базовом размере шрифта 16px
-    line-height: 1.25rem; //20px при базовом размере шрифта 16px
-  }
-
-  &__results-header {
-    margin-bottom: 20px;
-    line-height: 1.875rem; //30px при базовом размере шрифта 16px
-  }
 
   &__result-item {
     width: 100%;

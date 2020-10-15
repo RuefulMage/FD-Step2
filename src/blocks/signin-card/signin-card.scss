@@ -21,13 +21,12 @@
     margin-bottom: 30px;
   }
 
-  &__item {
+  &__email-field {
     margin-bottom: 10px;
+  }
 
-    &:nth-last-child(2) {
-      margin-bottom: 20px;
-    }
-
+  &__password-field {
+    margin-bottom: 20px;
   }
 
 
