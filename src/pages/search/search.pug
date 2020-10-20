@@ -149,31 +149,11 @@ block content
                 h1.search__results-header Номера, которые мы для вас подобрали
 
                 .search__results-list
-
-                    .search__result-item
-                        +apartment-description-card(descriptionCardsData[0])
-                    .search__result-item
-                        +apartment-description-card(descriptionCardsData[1])
-                    .search__result-item
-                        +apartment-description-card(descriptionCardsData[2])
-                    .search__result-item
-                        +apartment-description-card(descriptionCardsData[3])
-                    .search__result-item
-                        +apartment-description-card(descriptionCardsData[4])
-                    .search__result-item
-                        +apartment-description-card(descriptionCardsData[5])
-                    .search__result-item
-                        +apartment-description-card(descriptionCardsData[6])
-                    .search__result-item
-                        +apartment-description-card(descriptionCardsData[7])
-                    .search__result-item
-                        +apartment-description-card(descriptionCardsData[8])
-                    .search__result-item
-                        +apartment-description-card(descriptionCardsData[9])
-                    .search__result-item
-                        +apartment-description-card(descriptionCardsData[10])
-                    .search__result-item
-                        +apartment-description-card(descriptionCardsData[11])
+                    - let i = 0;
+                    each card in descriptionCardsData
+                        .search__result-item
+                            +apartment-description-card(descriptionCardsData[i])
+                            - i += 1;
                 .search__pagination
                     +pagination("1", "15", "mock-address", "1 – 12 из 100+ вариантов аренды")
 
