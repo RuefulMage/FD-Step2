@@ -3,6 +3,6 @@ mixin pagination(currentPage, pageAmount, link, description)
     .pagination.js-pagination(data-current-page=currentPage)
         .pagination__pages
             while pageNumber <= pageAmount
-                a(data-page-number= pageNumber href=link + pageNumber class="pagination__item js-pagination__item pagination__page")=pageNumber++
+                a(data-page-number= pageNumber href=link + pageNumber class="pagination__item js-pagination__item pagination__item_page")=pageNumber++
             a(data-page-number= "+1" href=link + "next" class="pagination__item js-pagination__item pagination__item_last") arrow_forward
         .pagination__description=description

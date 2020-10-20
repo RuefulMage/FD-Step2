@@ -30,19 +30,19 @@ $max-page: 100;
       background: $secondary-gradient;
     }
 
+    &_page{
+
+      color: $dark-50;
+      font-weight: bold;
+      font-size: .75rem; //12px при базовом размере шрифта 16px
+      text-transform: uppercase;
+    }
+
     &:last-child,
     &:nth-child(2),
     &:nth-last-child(2) {
       display: flex;
     }
-  }
-
-  &__page {
-    color: $dark-50;
-    font-weight: bold;
-    font-size: .75rem; //12px при базовом размере шрифта 16px
-    text-transform: uppercase;
-
   }
 
   &:not([data-current-page="1"]) &__item:nth-child(1) {
