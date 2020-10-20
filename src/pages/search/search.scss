@@ -8,8 +8,7 @@
     justify-content: center;
     max-width: 1160px;
     margin: 0 auto;
-    padding-top: 30px;
-    padding-bottom: 80px;
+    padding: 30px 20px 80px;
 
     @media (max-width: 880px) {
       flex-direction: column;
