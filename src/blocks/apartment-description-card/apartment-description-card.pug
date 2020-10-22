@@ -6,7 +6,7 @@ mixin apartment-description-card({images, number, price, currency, rateButtonNam
         .apartment-description-card__slider.js-apartment-description-card__slider
             each item in images
                 .apartment-description-card__slider-item.js-apartment-description-card__slider-item
-                    img.apartment-description-card__image(src="../../assets/images/" + item alt="apartment photo")
+                    img.apartment-description-card__image(src=require("./images/" + item) alt="apartment photo")
             .apartment-description-card__slider-buttons
                 .apartment-description-card__prev-wrapper
                     -

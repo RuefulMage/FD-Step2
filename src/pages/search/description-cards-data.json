@@ -99,7 +99,7 @@
     "link": "mock-address"
   },
   {
-    "images": ["apartment-photo-10.jpg", "apartment-photo-11.jpg", "apartment-photo-12.jpg", "apartment-photo-13.jpg"],
+    "images": ["apartment-photo-10.jpg", "apartment-photo-11.jpg", "apartment-photo-12.jpg", "apartment-photo-1.jpg"],
     "number": "666",
     "price": "5&nbsp;000",
     "currency": "₽",
