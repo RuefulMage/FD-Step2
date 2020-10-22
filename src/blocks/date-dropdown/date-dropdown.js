@@ -9,7 +9,6 @@ function createCalendar(node, calendarClass) {
 
   const dateDropdownInputs = node.querySelectorAll(`.${calendarClass}`);
 
-  // инициализация плагина
   const calendarData = $(dateDropdownInputs[0]).datepicker({
     multipleDatesSeparator: ' - ',
     range: true,
@@ -27,28 +26,23 @@ function createCalendar(node, calendarClass) {
     },
   }).data('datepicker');
 
-  // Навешивание на инпут обработчик события click
   if (dateDropdownInputs.length === 2) {
     dateDropdownInputs[1].addEventListener('click', showCalendar);
   }
 
-  // Создание кнопок применить и очистить и навешивание на них обработчиков событий
   createCalendarButtonsBlock('очистить',
     'применить', calendarData, dateDropdownInputs);
 
-  // Ф-я, показывающая календарь
   function showCalendar() {
     calendarData.show();
   }
 
-  // Функция, очищающая все инпуты, привязанные к календарю
   function clearInputs() {
     for (let i = 0; i < dateDropdownInputs.length; i += 1) {
       dateDropdownInputs[i].value = '';
     }
   }
 
-  // Функция, создающая DOM-элементы кнопок и добавляющая их в документ
   function createCalendarButtonsBlock(clearButtonName, appendButtonName) {
     const clearButton = document.createElement('button');
     clearButton.innerText = clearButtonName;
@@ -79,7 +73,6 @@ function createCalendar(node, calendarClass) {
     [10, 'ноб'], [11, 'дек'],
   ]);
 
-  // Функция, навешивающая обработчики событий на кнопки очистить и применить
   function addButtonsHandlers(clearButton, appendButton) {
     clearButton.addEventListener('click', handleClearButtonClick);
     appendButton.addEventListener('click', handleAppendButtonClick);
@@ -95,7 +88,6 @@ function createCalendar(node, calendarClass) {
     setInputsValues();
   }
 
-  // Изменяет содержимое инпутов на выбранные даты
   function setInputsValues() {
     if (dateDropdownInputs.length === 1) {
       let startDate = calendarData.selectedDates[0];
@@ -132,7 +124,6 @@ function createCalendar(node, calendarClass) {
     }
   }
 
-  // Извлекаем из HTML стартовый интервал и задаем его календарю
   let startDateInterval = node.getAttribute('data-start-interval');
   const isStartIntervalDefined = (startDateInterval !== null && startDateInterval !== undefined);
 

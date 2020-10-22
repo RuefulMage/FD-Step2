@@ -25,18 +25,15 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
   let clearButton;
   let applyButton;
 
-  // Присвоение нужной функции для изменения поле инпута
   if (textInInputIsTotalAmount) {
     currentSetInputTextFunction = setSelectedTextByTotalAmount;
   } else {
     currentSetInputTextFunction = setSelectedText;
   }
 
-  // Навешивание обработчика событий на конпку скрытия/раскрытия дропдауна
   const expandButton = element.querySelector(`.${expandButtonClass}`);
   expandButton.addEventListener('click', expandButtonClickHandler);
 
-  // Создание объектов items из массива DOM-элементов itemsDomElementsArray
   itemsDomElementsArray.forEach((itemElement) => {
     const itemId = itemElement.getAttribute('data-id');
     items.set(
@@ -57,16 +54,13 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
     toggleDisabledButton(+currentItem.amount,
       currentItem.minAmount, currentItem.maxAmount, currentItem);
 
-    // Навешивание обработчика на кнопку уменьшения
     const { decreaseButton } = items.get(itemId);
     decreaseButton.addEventListener('click', decreaseButtonClickHandler);
 
-    // Навешивание обработчика на кнопку увеличения
     const { increaseButton } = items.get(itemId);
     increaseButton.addEventListener('click', increaseButtonClickHandler);
   });
 
-  // Создание и навешивание обработчиков на кнопки Очистить и Принять
   if (withButtons) {
     clearButton = element.querySelector(`.${clearButtonClass}`);
     clearButton.addEventListener('click', clearButtonClickHandler);
@@ -78,7 +72,6 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
   }
   currentSetInputTextFunction();
 
-  // Дальше идут вспомогательные функции
   function applyButtonClickHandler(event) {
     event.preventDefault();
     element.classList.remove(dropdownExpandedClass);
@@ -137,7 +130,6 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
     }
   }
 
-  // Проверяет кнопки элемента и делает их полупрозрачными, если текущее значение является граничным
   function toggleDisabledButton(amount, minAmount, maxAmount, item) {
     const { decreaseButton } = item;
     const { increaseButton } = item;
@@ -161,8 +153,6 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
     }
   }
 
-  // Функция, которая считает общее кол-во элементов и
-  // вставляет строку с общим количеством в поле инпута
   function setSelectedTextByTotalAmount() {
     let result = '';
     if (totalAmount === 0) {
@@ -174,8 +164,6 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
     inputField.innerText = result;
   }
 
-  // Функция, которая генерирует строку с количеством
-  // каждого элемента отдельно и вставляет ее в поле инпута
   function setSelectedText() {
     let result = '';
     let flag = false;
@@ -207,8 +195,6 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
     inputField.innerText = result;
   }
 
-  // Функция, которая по количеству объектов,
-  // возвращает нужное слово из массива, т.е. в нужном падеже
   function getProperWordForm(number, forms) {
     let result = '';
     let residue = number % 100;
@@ -233,7 +219,6 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
     return result;
   }
 
-  // Изменяет текущее кол-во элемента на новую
   function setAmount(itemId, amount) {
     const item = items.get(itemId);
     item.amount = amount;
@@ -243,7 +228,6 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
       +items.get(itemId).minAmount, +items.get(itemId).maxAmount, items.get(itemId));
   }
 
-  // Если кол-во выбранных элементов == 0, то кнопка Очистить должна быть скрытой
   function toggleClearButtonVisibility() {
     const isDisabledClassShouldDeleted = clearButton.classList.contains('dropdown__clear-button_hidden')
             && totalAmount !== 0;
