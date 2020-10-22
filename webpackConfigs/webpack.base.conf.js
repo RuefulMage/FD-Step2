@@ -3,7 +3,7 @@ const fs = require('fs');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 const webpack = require('webpack');
 const PATHS = {
@@ -25,17 +25,16 @@ module.exports = {
     output: {
         filename: `${PATHS.assets}js/[name].js`,
         path: PATHS.dist,
-        publicPath: '/'
     },
     module: {
         rules: [
             {
-            test: /\.js$/,
-            loader: 'babel-loader',
-            exclude: '/node_modules/'
-        },
+                test: /\.js$/,
+                loader: 'babel-loader',
+                exclude: '/node_modules/'
+            },
             {
-                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
                 loader: 'file-loader',
                 options: {
                     name: '[name]/[name].[ext]',
@@ -44,16 +43,30 @@ module.exports = {
                 }
             },
             {
-                test: /\.(jpg|png|svg)(\?v=\d+\.\d+\.\d+)?$/,
-                exclude: [
-                    path.resolve(__dirname, 'src/assets/fonts')
-                ],
+                test: /\.(jpg|png)(\?v=\d+\.\d+\.\d+)?$/,
                 loader: 'file-loader',
                 options: {
+                    esModule: false,
                     name: '[name].[ext]',
-                    outputPath: `${PATHS.assets}images`,
-                    publicPath: '../images'
+                    outputPath: `../../assets/images`,
                 }
+            },
+            {
+                test: /\.svg$/,
+                loader: "file-loader",
+                options: {
+                    esModule: false,
+                    name: "[name].[ext]",
+                    outputPath: (url, resourcePath, context) => {
+                        const relativePath = path.relative(context, resourcePath);
+                        let pathParts = relativePath.split("/");
+                        let lastFolder = pathParts[pathParts.length - 2];
+                        if (/\/fonts\//.test(relativePath)) {
+                            return `assets/fonts/${lastFolder}/${url}`;
+                        }
+                        return `../../assets/images/${url}`;
+                    },
+                },
             },
             {
                 test: /\.pug$/,
