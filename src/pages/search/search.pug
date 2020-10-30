@@ -149,11 +149,9 @@ block content
                 h1.search__results-header Номера, которые мы для вас подобрали
 
                 .search__results-list
-                    - let i = 0;
                     each card in descriptionCardsData
                         .search__result-item
-                            +apartment-description-card(descriptionCardsData[i])
-                            - i += 1;
+                            +apartment-description-card(card)
                 .search__pagination
                     +pagination("1", "15", "mock-address", "1 – 12 из 100+ вариантов аренды")
 
