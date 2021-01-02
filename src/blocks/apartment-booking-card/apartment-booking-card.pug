@@ -47,14 +47,12 @@ mixin apartment-booking-card({number, price, currency, lux=false, dateDropdownHe
             .apartment-booking-card__cheque-item
                 .apartment-booking-card__price-info
                     .apartment-booking-card__price-label !{servicePriceLabel}
-                    .apartment-booking-card__price-note i
-                        .apartment-booking-card__price-note-text=noteTexts[0]
+                    .apartment-booking-card__price-note(title=noteTexts[0]) i
                 .apartment-booking-card__result !{servicePrice}
             .apartment-booking-card__cheque-item
                 .apartment-booking-card__price-info
                     .apartment-booking-card__price-label=extraServiceLabel
-                    .apartment-booking-card__price-note i
-                        .apartment-booking-card__price-note-text=noteTexts[1]
+                    .apartment-booking-card__price-note(title=noteTexts[1]) i
                 .apartment-booking-card__result !{extraServicePrice}
             .apartment-booking-card__total
                 .apartment-booking-card__total-label Итого

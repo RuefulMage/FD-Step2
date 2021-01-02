@@ -81,16 +81,6 @@
       display: none;
     }
 
-    &-text {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      display: none;
-      padding: 2px;
-      background: white;
-      border: 1px solid $dark-25;
-    }
-
     &:hover &-text {
       display: block;
     }
