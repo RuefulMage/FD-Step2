@@ -2,19 +2,13 @@ function createPieChart(chartElement) {
   const sectorClass = 'js-pie-chart__circle';
   const sectorHoveredModifier = 'pie-chart__circle_hovered';
   const gradientIdBasis = 'gradient-color-';
-
   const votesWrapperClass = 'js-pie-chart__votes';
   const votesElementClass = 'js-pie-chart__votes-amount';
-
   const bulletClass = 'js-pie-chart__list-item';
-
   const totalAmount = +chartElement.getAttribute('data-amount');
-
   const votesAmountElement = chartElement.querySelector(`.${votesElementClass}`);
   const votesAmountWrapper = chartElement.querySelector(`.${votesWrapperClass}`);
-
   votesAmountElement.innerText = totalAmount;
-
   const sectors = chartElement.querySelectorAll(`.${sectorClass}`);
   const bullets = chartElement.querySelectorAll(`.${bulletClass}`);
 
@@ -26,13 +20,10 @@ function createPieChart(chartElement) {
       offset += sectorPercent;
     }
     setSectorPosition(sector, sectorPercent, offset);
-
     const bullet = bullets[index];
-
     const gradientElement = document.querySelector(`#${gradientIdBasis + (index + 1)}`);
     const startColor = gradientElement.children[0].getAttribute('stop-color');
     const endColor = gradientElement.children[1].getAttribute('stop-color');
-
     hangUpMouseEventListeners([sector, bullet], amount, startColor, endColor);
     addColorToBullet(bullet, startColor, endColor);
   });
@@ -41,11 +32,9 @@ function createPieChart(chartElement) {
     const pi = 22 / 7;
     const radius = element.getAttribute('r');
     const circumference = 2 * pi * radius;
-
     let sectionLength = circumference * (percent / 100);
     let restLength = circumference * ((100 - percent) / 100);
     const offsetLength = circumference * (offsetPercent / 100) - 1;
-
     if (sectionLength !== 0) {
       sectionLength -= 2;
     }

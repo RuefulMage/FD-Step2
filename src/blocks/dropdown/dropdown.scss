@@ -1,8 +1,6 @@
 @import "../../assets/scss/colors.scss";
 
-
 .dropdown {
-
   position: relative;
 
   &__field {
@@ -31,7 +29,6 @@
     max-width: 44px;
     color: $dark-50;
     font-size: 1.5rem; //24px при базовом размере шрифта 16px
-
     font-family: "Material Icons";
     outline: none;
     cursor: pointer;
@@ -44,9 +41,7 @@
     &_rotated {
       transform: rotate(-180deg);
     }
-
   }
-
 
   &__menu {
     position: absolute;
@@ -66,7 +61,6 @@
   &_expanded &__menu {
     display: block;
   }
-
 
   &__menu-item {
     display: flex;
@@ -114,14 +108,12 @@
     }
   }
 
-
   &__amount {
     color: $dark-100;
     font-weight: bold;
     font-size: .75rem; //12px при базовом размере шрифта 16px
     line-height: 1.9375rem; //15px при базовом размере шрифта 16px
   }
-
 
   &__buttons-wrapper {
     display: flex;
@@ -148,7 +140,6 @@
     &_hidden {
       visibility: hidden;
     }
-
   }
 
   &__apply-button {
@@ -159,4 +150,3 @@
     }
   }
 }
-

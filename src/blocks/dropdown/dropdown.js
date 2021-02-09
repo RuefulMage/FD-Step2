@@ -14,7 +14,6 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
 
   let generalForms = element.getAttribute('data-forms') || 'элемент, элемента, элементов';
   generalForms = generalForms.split(',');
-
   const placeholder = element.getAttribute('data-placeholder');
   const itemsDomElementsArray = element.querySelectorAll(`.${menuItemClass}`);
   const items = new Map();
@@ -24,7 +23,6 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
 
   let clearButton;
   let applyButton;
-
   if (textInInputIsTotalAmount) {
     currentSetInputTextFunction = setSelectedTextByTotalAmount;
   } else {
@@ -33,7 +31,6 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
 
   const expandButton = element.querySelector(`.${expandButtonClass}`);
   expandButton.addEventListener('click', expandButtonClickHandler);
-
   itemsDomElementsArray.forEach((itemElement) => {
     const itemId = itemElement.getAttribute('data-id');
     items.set(
@@ -53,10 +50,8 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
     totalAmount += +currentItem.amount;
     toggleDisabledButton(+currentItem.amount,
       currentItem.minAmount, currentItem.maxAmount, currentItem);
-
     const { decreaseButton } = items.get(itemId);
     decreaseButton.addEventListener('click', decreaseButtonClickHandler);
-
     const { increaseButton } = items.get(itemId);
     increaseButton.addEventListener('click', increaseButtonClickHandler);
   });
@@ -64,10 +59,8 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
   if (withButtons) {
     clearButton = element.querySelector(`.${clearButtonClass}`);
     clearButton.addEventListener('click', clearButtonClickHandler);
-
     applyButton = element.querySelector(`.${appendButtonClass}`);
     applyButton.addEventListener('click', applyButtonClickHandler);
-
     toggleClearButtonVisibility();
   }
   currentSetInputTextFunction();
@@ -82,11 +75,9 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
     event.preventDefault();
     if (totalAmount > 0) {
       totalAmount = 0;
-
       Array.from(items.keys()).forEach((key) => {
         setAmount(key, 0);
       });
-
       toggleClearButtonVisibility();
     }
   }
@@ -133,19 +124,15 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
   function toggleDisabledButton(amount, minAmount, maxAmount, item) {
     const { decreaseButton } = item;
     const { increaseButton } = item;
-
     let isDisabledClassShouldBeDeleted = amount !== minAmount
             && decreaseButton.classList.contains(decreaseButtonDisabledClass);
-
     if (amount === minAmount) {
       decreaseButton.classList.add(decreaseButtonDisabledClass);
     } else if (isDisabledClassShouldBeDeleted) {
       decreaseButton.classList.remove(decreaseButtonDisabledClass);
     }
-
     isDisabledClassShouldBeDeleted = amount !== maxAmount
             && increaseButton.classList.contains(increaseButtonDisabledClass);
-
     if (amount === maxAmount) {
       increaseButton.classList.add(increaseButtonDisabledClass);
     } else if (isDisabledClassShouldBeDeleted) {
@@ -160,7 +147,6 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
     } else {
       result = `${totalAmount} ${getProperWordForm(totalAmount, generalForms)}`;
     }
-
     inputField.innerText = result;
   }
 
@@ -170,11 +156,9 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
     Array.from(items.keys()).forEach((key) => {
       const isCommaNeeded = result !== ''
           && items.get(key).amount !== 0;
-
       if (isCommaNeeded) {
         result += ', ';
       }
-
       if (items.get(key).amount === 0) {
         flag = true;
       } else {
@@ -182,16 +166,13 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
         result += `${items.get(key).amount} ${getProperWordForm(items.get(key).amount, forms)}`;
       }
     });
-
     const isThreeDotsNeeded = flag === true && totalAmount > 0;
-
     if (isThreeDotsNeeded) {
       result += '...';
     }
     if (totalAmount === 0) {
       result = placeholder;
     }
-
     inputField.innerText = result;
   }
 
@@ -215,7 +196,6 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
           result = forms[2];
       }
     }
-
     return result;
   }
 
@@ -231,10 +211,8 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
   function toggleClearButtonVisibility() {
     const isDisabledClassShouldDeleted = clearButton.classList.contains('dropdown__clear-button_hidden')
             && totalAmount !== 0;
-
     const isDisabledClassShouldAdded = !clearButton.classList.contains('dropdown__clear-button_hidden')
             && totalAmount === 0;
-
     if (isDisabledClassShouldDeleted) {
       clearButton.classList.remove('dropdown__clear-button_hidden');
     } else if (isDisabledClassShouldAdded) {

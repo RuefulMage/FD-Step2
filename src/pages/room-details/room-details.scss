@@ -1,7 +1,6 @@
 @import "../../assets/scss/colors.scss";
 
 .room-details {
-
   border-bottom: 1px solid $dark-25;
 
   &__images-wrapper {
@@ -26,11 +25,9 @@
     background-size: cover;
     background-origin: padding-box;
 
-
     @media (max-width: 500px) {
       width: 100%;
     }
-
   }
 
   &__subimages-wrapper {
@@ -58,7 +55,6 @@
     }
   }
 
-
   &__info-wrapper {
     display: flex;
     justify-content: space-between;
@@ -77,7 +73,6 @@
     }
   }
 
-
   &__info {
     max-width: 775px;
     margin-right: 20px;
@@ -90,7 +85,6 @@
   &__card {
     max-width: 380px;
   }
-
 
   &__row {
     display: flex;
@@ -134,7 +128,6 @@
     margin-right: 20px;
   }
 
-
   &__impressions,
   &__cancellation {
     max-width: 350px;
@@ -168,7 +161,6 @@
     line-height: 1.5rem; //24px при базовом размере шрифта 16px
   }
 
-
   &__content-block-amount {
     color: $dark-50;
   }
@@ -176,5 +168,4 @@
   &__text {
     line-height: 1.5rem; //24px при базовом размере шрифта 16px
   }
-
 }

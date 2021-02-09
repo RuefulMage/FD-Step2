@@ -6,7 +6,6 @@ function createCalendar(node, calendarClass) {
   const clearButtonClass = 'date-dropdown__calendar-clear-button';
   const appendButtonClass = 'date-dropdown__calendar-append-button';
   const buttonsWrapperClass = 'date-dropdown__calendar-buttons-wrapper';
-
   const dateDropdownInputs = node.querySelectorAll(`.${calendarClass}`);
 
   const calendarData = $(dateDropdownInputs[0]).datepicker({
@@ -25,11 +24,9 @@ function createCalendar(node, calendarClass) {
       days: 'MM yyyy',
     },
   }).data('datepicker');
-
   if (dateDropdownInputs.length === 2) {
     dateDropdownInputs[1].addEventListener('click', showCalendar);
   }
-
   createCalendarButtonsBlock('очистить',
     'применить', calendarData, dateDropdownInputs);
 
@@ -47,19 +44,15 @@ function createCalendar(node, calendarClass) {
     const clearButton = document.createElement('button');
     clearButton.innerText = clearButtonName;
     clearButton.classList.add(clearButtonClass);
-
     const appendButton = document.createElement('button');
     appendButton.innerText = appendButtonName;
     appendButton.classList.add(appendButtonClass);
-
     addButtonsHandlers(clearButton, appendButton, calendarData,
       dateDropdownInputs);
-
     const calendarButtonsBlock = document.createElement('div');
     calendarButtonsBlock.classList.add(buttonsWrapperClass);
     calendarButtonsBlock.append(clearButton);
     calendarButtonsBlock.append(appendButton);
-
     const calendarDomElement = calendarData.$datepicker;
     calendarDomElement.append(calendarButtonsBlock);
   }
@@ -98,7 +91,6 @@ function createCalendar(node, calendarClass) {
       } else {
         startDate = defaultSingleInputString;
       }
-
       let endDate = calendarData.selectedDates[1];
       const isEndDateDefined = (endDate !== null && endDate !== undefined);
       if (isEndDateDefined) {
@@ -126,10 +118,8 @@ function createCalendar(node, calendarClass) {
 
   let startDateInterval = node.getAttribute('data-start-interval');
   const isStartIntervalDefined = (startDateInterval !== null && startDateInterval !== undefined);
-
   if (isStartIntervalDefined) {
     startDateInterval = startDateInterval.split(',');
-
     startDateInterval.forEach((item) => {
       const date = new Date(item);
       const isDateDefined = (date !== null && date !== undefined);
@@ -138,7 +128,6 @@ function createCalendar(node, calendarClass) {
       }
     });
   }
-
   setInputsValues();
 }
 

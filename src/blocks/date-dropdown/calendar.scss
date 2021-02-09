@@ -14,7 +14,6 @@
     padding: 20px 0;
     font-weight: bold;
     font-size: .75rem; //12px при базовом размере шрифта 16px
-
     font-family: Montserrat, OpenSans, sans-serif;
     line-height: .9375rem; //15px при базовом размере шрифта 16px
     text-transform: uppercase;
@@ -40,7 +39,6 @@
     }
   }
 }
-
 
 // Переопределние стилей плагина
 .datepicker {
@@ -100,7 +98,6 @@
   }
 }
 
-
 .datepicker--cell {
   color: $dark-50;
 
@@ -131,7 +128,6 @@
       opacity: .25;
       content: "";
     }
-
   }
 
   &.-range-from- {
@@ -153,7 +149,6 @@
   &.-in-range- {
     background: $gradient-quarttransparent;
   }
-
 }
 
 .-current- {

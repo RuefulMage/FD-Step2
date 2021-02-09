@@ -1,25 +1,24 @@
 include ../logo-with-text/logo-with-text
 include ../link-button/link-button
 include ../header-navigation/header-navigation
-
 mixin header({links, loginButtonText, registerButtonText, authorized=false, username})
-    header.header.js-header
-        .header__container
-            .header__logo-and-burger-wrapper
-                .header__logo
-                    +logo-with-text
-                .header__burger.js-header__burger
-                    .header__burger-element
-                    .header__burger-element
-                    .header__burger-element
-            nav.header__navigation.js-header__navigation
-                    +header-navigation(links, largeMargin)
-            .header__auth.js-header__auth
-                if authorized
-                    .header__username= username
-                else
-                    .header__buttons
-                        .header__signin-button
-                            +link-button({text: loginButtonText, link: "mock-address"})
-                        .header__register-button
-                            +link-button({text: registerButtonText, link: "mock-address", filled: true})
+  header.header.js-header
+    .header__container
+      .header__logo-and-burger-wrapper
+        .header__logo
+          +logo-with-text
+        .header__burger.js-header__burger
+          .header__burger-element
+          .header__burger-element
+          .header__burger-element
+      nav.header__navigation.js-header__navigation
+        +header-navigation(links, largeMargin)
+      .header__auth.js-header__auth
+        if authorized
+          .header__username= username
+        else
+          .header__buttons
+            .header__signin-button
+              +link-button({text: loginButtonText, link: "mock-address"})
+            .header__register-button
+              +link-button({text: registerButtonText, link: "mock-address", filled: true})

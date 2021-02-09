@@ -5,7 +5,6 @@ function createRangeSlider(sliderElement) {
     +sliderElement.getAttribute('data-start-high-value')];
   const minValue = +sliderElement.getAttribute('data-min-value');
   const maxValue = +sliderElement.getAttribute('data-max-value');
-
   noUiSlider.create(sliderElement, {
     start: startValues,
     connect: true,
@@ -14,9 +13,7 @@ function createRangeSlider(sliderElement) {
       max: maxValue,
     },
   });
-
   const rangeInterval = sliderElement.previousSibling.lastChild;
-
   sliderElement.noUiSlider.on('update', updateFunction);
 
   function updateFunction(values) {
@@ -25,10 +22,8 @@ function createRangeSlider(sliderElement) {
       if (outputValue >= 1000) {
         outputValue = outputValue.toString();
         const borderIndex = outputValue.length - 3;
-
         outputValue = `${outputValue.slice(0, borderIndex)}&nbsp;${outputValue.slice(borderIndex)}`;
       }
-
       return outputValue;
     });
     rangeInterval.innerHTML = `${resultValues[0]}₽ - ${resultValues[1]}₽`;

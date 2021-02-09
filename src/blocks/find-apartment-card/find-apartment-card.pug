@@ -3,41 +3,41 @@ include ../dropdown/dropdown
 include ../form-button/form-button
 
 mixin find-apartment-card({header, dateDropdownHeaders, dropdownHeader, buttonText, link})
-    .find-apartment-card
-        h1.find-apartment-card__header=header
-        form.find-apartment-card__form(method="POST" action=link)
-            .find-apartment-card__date-dropdown
-                +date-dropdown({twoInputs: true, headers: dateDropdownHeaders})
-            .find-apartment-card__guests
-                h3.find-apartment-card__guests-header=dropdownHeader
-                .find-apartment-card__guests-dropdown
-                    +dropdown({
-                        placeholder: "Сколько гостей", items: [
-                            {
-                                id: "adults",
-                                minAmount: "0",
-                                maxAmount: "100",
-                                forms: "взрослый,взрослых,взрослых",
-                                itemName: "взрослые",
-                                startAmount: "0"
-                            },
-                            {
-                                id: "children",
-                                minAmount: "0",
-                                maxAmount: "100",
-                                forms: "ребенок,ребенка,ребят",
-                                itemName: "дети",
-                                startAmount: "0"
-                            },
-                            {
-                                id: "baby",
-                                minAmount: "0",
-                                maxAmount: "100",
-                                forms: "младенец,младенца,младенцев",
-                                itemName: "младенцы",
-                                startAmount: "0"
-                            }
-                        ], expanded: false, withButtons: true, generalForms: "гость,гостя,гостей"
-                    })
-            .find-apartment-card__button
-                +form-button(buttonText)
+  .find-apartment-card
+    h1.find-apartment-card__header=header
+    form.find-apartment-card__form(method="POST" action=link)
+      .find-apartment-card__date-dropdown
+        +date-dropdown({twoInputs: true, headers: dateDropdownHeaders})
+      .find-apartment-card__guests
+        h3.find-apartment-card__guests-header=dropdownHeader
+        .find-apartment-card__guests-dropdown
+          +dropdown({
+            placeholder: "Сколько гостей", items: [
+              {
+                id: "adults",
+                minAmount: "0",
+                maxAmount: "100",
+                forms: "взрослый,взрослых,взрослых",
+                itemName: "взрослые",
+                startAmount: "0"
+              },
+              {
+                id: "children",
+                minAmount: "0",
+                maxAmount: "100",
+                forms: "ребенок,ребенка,ребят",
+                itemName: "дети",
+                startAmount: "0"
+              },
+              {
+                id: "baby",
+                minAmount: "0",
+                maxAmount: "100",
+                forms: "младенец,младенца,младенцев",
+                itemName: "младенцы",
+                startAmount: "0"
+              }
+            ], expanded: false, withButtons: true, generalForms: "гость,гостя,гостей"
+          })
+      .find-apartment-card__button
+        +form-button(buttonText)

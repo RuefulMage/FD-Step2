@@ -22,7 +22,6 @@ $max-page: 100;
     height: 40px;
     border-radius: 100%;
 
-
     &_last {
       color: white;
       font-size: 1.5rem; //24px при базовом размере шрифта 16px
@@ -31,7 +30,6 @@ $max-page: 100;
     }
 
     &_page {
-
       color: $dark-50;
       font-weight: bold;
       font-size: .75rem; //12px при базовом размере шрифта 16px
@@ -48,7 +46,6 @@ $max-page: 100;
   &:not([data-current-page="1"]) &__item:nth-child(1) {
     display: flex;
   }
-
 }
 
 @for $i from 1 through $max-page {

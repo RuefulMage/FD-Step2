@@ -9,7 +9,6 @@
     line-height: 1.5rem; //24px при базовом размере шрифта 16px
     text-align: left;
 
-
     &:before {
       position: absolute;
       top: 7px;
@@ -24,6 +23,5 @@
     &_with-paddings {
       padding-bottom: 10px;
     }
-
   }
 }

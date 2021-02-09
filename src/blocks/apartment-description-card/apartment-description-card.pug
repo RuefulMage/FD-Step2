@@ -1,33 +1,31 @@
 include ../rate-button/rate-button
 include ../apartment-info/apartment-info
-
 mixin apartment-description-card({images, number, price, currency, rateButtonName, starAmount, reviewsAmount, link, lux=false})
-    article.apartment-description-card
-        .apartment-description-card__slider.js-apartment-description-card__slider
-            each item in images
-                .apartment-description-card__slider-item.js-apartment-description-card__slider-item
-                    img.apartment-description-card__image(src=require("./images/" + item) alt="apartment photo")
-            .apartment-description-card__slider-buttons
-                .apartment-description-card__prev-wrapper
-                    -
-                        let prevButtonClasses = ["apartment-description-card__prev-button",
-                                "js-apartment-description-card__prev-button"]
-                    button(class=prevButtonClasses) expand_more
-
-                .apartment-description-card__next-wrapper
-                    -
-                        let nextButtonClasses = ["apartment-description-card__next-button",
-                                "js-apartment-description-card__next-button"]
-                    button(class=nextButtonClasses) expand_more
-            .apartment-description-card__indicator-list
-                each item in images
-                    .apartment-description-card__indicator.js-apartment-description-card__indicator
-        .apartment-description-card__info
-            .apartment-description-card__main-info
-                +apartment-info({number: number, price: price, currency: currency, largeNumber: false, lux: lux})
-            .apartment-description-card__quality
-                form.apartment-description-card__rating(method="POST" action=link)
-                    +rate-button(rateButtonName, starAmount, true)
-                .apartment-description-card__reviews
-                    .apartment-description-card__review-amount=reviewsAmount
-                    .apartment-description-card__review &nbsp;Отзывов
+  article.apartment-description-card
+    .apartment-description-card__slider.js-apartment-description-card__slider
+      each item in images
+        .apartment-description-card__slider-item.js-apartment-description-card__slider-item
+          img.apartment-description-card__image(src=require("./images/" + item) alt="apartment photo")
+      .apartment-description-card__slider-buttons
+        .apartment-description-card__prev-wrapper
+          -
+            let prevButtonClasses = ["apartment-description-card__prev-button",
+              "js-apartment-description-card__prev-button"]
+          button(class=prevButtonClasses) expand_more
+        .apartment-description-card__next-wrapper
+          -
+            let nextButtonClasses = ["apartment-description-card__next-button",
+              "js-apartment-description-card__next-button"]
+          button(class=nextButtonClasses) expand_more
+      .apartment-description-card__indicator-list
+        each item in images
+          .apartment-description-card__indicator.js-apartment-description-card__indicator
+    .apartment-description-card__info
+      .apartment-description-card__main-info
+        +apartment-info({number: number, price: price, currency: currency, largeNumber: false, lux: lux})
+      .apartment-description-card__quality
+        form.apartment-description-card__rating(method="POST" action=link)
+          +rate-button(rateButtonName, starAmount, true)
+        .apartment-description-card__reviews
+          .apartment-description-card__review-amount=reviewsAmount
+          .apartment-description-card__review &nbsp;Отзывов

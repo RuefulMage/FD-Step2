@@ -1,7 +1,7 @@
 mixin rate-button(name, starAmount, link, disabled=false)
-    - let starClasses = ["rate-button__star"]
-    if disabled
-        - starClasses.push("rate-button__star_disabled")
-    form.rate-button(method="" action=link)
-        each item in [1,2,3,4,5]
-            input(class=starClasses type="radio" name=name value=item checked=(item === starAmount) disabled=disabled)
+  - let starClasses = ["rate-button__star"]
+  if disabled
+    - starClasses.push("rate-button__star_disabled")
+  form.rate-button(method="" action=link)
+    each item in [1,2,3,4,5]
+      input(class=starClasses type="radio" name=name value=item checked=(item === starAmount) disabled=disabled)

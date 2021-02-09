@@ -3,7 +3,6 @@
 .date-dropdown {
   display: flex;
 
-
   &__header {
     margin-bottom: 6px;
     color: $dark-100;
@@ -37,7 +36,6 @@
       width: 44px;
       color: $dark-50;
       font-size: 1.5rem; //24px при базовом размере шрифта 16px
-
       font-family: "Material Icons";
       cursor: pointer;
       content: "expand_more";
@@ -67,14 +65,13 @@
     padding-left: 15px;
     color: $dark-75;
     font-size: .875rem; //14px при базовом размере шрифта 16px
-
     font-family: Montserrat, OpenSans, sans-serif;
     line-height: 1.5rem; //24px при базовом размере шрифта 16px
     border: 0;
     border-radius: inherit;
     outline: none;
     cursor: pointer;
-    
+
     @media (max-width: 350px) {
       padding-left: 9px;
     }

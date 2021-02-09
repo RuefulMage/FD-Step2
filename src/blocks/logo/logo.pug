@@ -1,7 +1,7 @@
 mixin logo(colored=false)
-    - let classes = ["logo"]
-    - let image = "logo-gray.svg"
-    if colored
-        - classes.push("logo_colored")
-        - image = "logo-colored.svg"
-    img(class=classes src=require("../../blocks/logo/images/" + image) alt="toxin logo")
+  - let classes = ["logo"]
+  - let image = "logo-gray.svg"
+  if colored
+    - classes.push("logo_colored")
+    - image = "logo-colored.svg"
+  img(class=classes src=require("../../blocks/logo/images/" + image) alt="toxin logo")

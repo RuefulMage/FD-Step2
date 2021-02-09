@@ -1,12 +1,11 @@
 include ../social-net-icon/social-net-icon
-
 mixin copyright(text, socials)
-    .copyright
-        .copyright__container
-            .copyright__logo
-                +logo-with-text()
-            .copyright__text=text
-            .copyright__socials
-                each item in socials
-                    .copyright__socials-item
-                        +social-net-icon(item.icon,item.link)
+  .copyright
+    .copyright__container
+      .copyright__logo
+        +logo-with-text()
+      .copyright__text=text
+      .copyright__socials
+        each item in socials
+          .copyright__socials-item
+            +social-net-icon(item.icon,item.link)

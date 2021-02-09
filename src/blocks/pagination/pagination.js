@@ -1,9 +1,7 @@
 function hangUpListenerToPagination(paginationElement) {
   const itemClass = 'js-pagination__item';
-
   let paginationPage = parseInt(paginationElement.getAttribute('data-current-page'), 10);
   const items = paginationElement.getElementsByClassName(itemClass);
-
   for (let i = 0; i < items.length; i += 1) {
     items[i].addEventListener('click', clickHandler);
   }

@@ -10,7 +10,6 @@
     margin-bottom: 70px;
     padding-left: 30px;
 
-
     @media (max-width: 1160px) {
       display: none;
     }
@@ -47,16 +46,9 @@
     }
   }
 
-  &__col-1 {
-  }
-
-  &__col-2 {
-  }
-
   &__col-3 {
     max-width: 320px;
   }
-
 
   &__item {
     margin-bottom: 40px;
@@ -67,5 +59,4 @@
       max-width: 270px;
     }
   }
-
 }

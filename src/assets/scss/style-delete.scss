@@ -117,18 +117,17 @@ table {
   border-spacing: 0;
 }
 
-
 *::before,
 *::after {
   box-sizing: border-box;
 }
-//
+
 ul,
 ol,
 li {
   padding: 0;
 }
-//
+
 body {
   margin: 0;
   padding: 0;
@@ -137,9 +136,7 @@ body {
 a {
   margin: 0;
 }
-//
-//
-//
+
 ///* Убираем внешние отступы */
 body,
 h1,
@@ -168,7 +165,6 @@ li {
   list-style: none;
 }
 
-//
 ///* Упрощаем работу с изображениями */
 img {
   display: block;
@@ -194,7 +190,6 @@ a {
 a:hover strong {
   color: inherit;
 }
-
 
 ///*Удаление стандартного вида у чекбоксов и радио-кнопок*/
 input[type="checkbox"],

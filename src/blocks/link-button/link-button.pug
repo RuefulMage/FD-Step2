@@ -1,11 +1,11 @@
 mixin link-button({text, link, filled=false, large=false, disabled = false})
-    - let content_classes = ["link-button__content"]
-    - let wrapper_classes = ["link-button"]
-    if filled
-        - content_classes.push("link-button__content_filled")
-    if disabled
-        - wrapper_classes.push("link-button_disabled")
-    if large
-        - content_classes.push("link-button__content_large")
-    div(class=wrapper_classes)
-        a(class=content_classes href=link)=text
+  - let content_classes = ["link-button__content"]
+  - let wrapper_classes = ["link-button"]
+  if filled
+    - content_classes.push("link-button__content_filled")
+  if disabled
+    - wrapper_classes.push("link-button_disabled")
+  if large
+    - content_classes.push("link-button__content_large")
+  div(class=wrapper_classes)
+    a(class=content_classes href=link)=text

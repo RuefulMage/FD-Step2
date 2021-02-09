@@ -15,7 +15,6 @@
     outline: none;
     cursor: pointer;
 
-
     &:hover {
 
       &:not(checked) {
@@ -41,11 +40,8 @@
 
     &:checked {
       --opacity: 1;
-
       border-color: $purple;
     }
-
-
   }
 
   &__text {

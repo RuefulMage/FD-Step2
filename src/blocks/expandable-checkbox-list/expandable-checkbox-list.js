@@ -1,7 +1,6 @@
 function hangUpListenerToExpandableList(checkboxListButton) {
   const rotatedArrowClass = 'expandable-checkbox-list__arrow_rotated';
   const expandedListClass = 'expandable-checkbox-list__list_expanded';
-
   checkboxListButton.addEventListener('click', handleClick);
 
   function handleClick(event) {

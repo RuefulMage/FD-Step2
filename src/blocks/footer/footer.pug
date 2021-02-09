@@ -2,30 +2,27 @@ include ../logo-with-text/logo-with-text
 include ../subscription-textfiled/subscription-textfield
 include ../footer-navigation/footer-navigation
 include ../copyright/copyright
-
 mixin footer({descriptionText, menu, subscriptionTitle, subscriptionDescription, link})
-
-    footer.footer
-        .footer__wrapper
-            .footer__container
-                .footer__company-desription
-                    .footer__logo
-                        +logo-with-text()
-                    p.footer__description-text=descriptionText
-                .footer__subscription-and-menu-wrapper
-                    nav.footer__menu
-                        each subMenu in menu
-                            .footer__submenu
-                                +footer-navigation(subMenu.title, subMenu.links)
-                    .footer__subsription-form
-                        h3.footer__subcription-form-title=subscriptionTitle
-                        .footer__subcription-form-text=subscriptionDescription
-                        .footer__subcription-form-field
-                            +subscription-textfield("Your email address", "Email", "mock-address")
-        .footer__copyright-wrapper
-
-            +copyright("Copyright © 2018 Toxin отель. Все права зачищены.",
-                [{icon: "", link: "https://twitter.com/"},
-                    {icon: "", link: "https://www.facebook.com/"},
-                    {icon: "", link: "https://www.instagram.com/"}]
-            )
+  footer.footer
+    .footer__wrapper
+      .footer__container
+        .footer__company-desription
+          .footer__logo
+            +logo-with-text()
+          p.footer__description-text=descriptionText
+        .footer__subscription-and-menu-wrapper
+          nav.footer__menu
+            each subMenu in menu
+              .footer__submenu
+                +footer-navigation(subMenu.title, subMenu.links)
+          .footer__subsription-form
+            h3.footer__subcription-form-title=subscriptionTitle
+            .footer__subcription-form-text=subscriptionDescription
+            .footer__subcription-form-field
+              +subscription-textfield("Your email address", "Email", "mock-address")
+    .footer__copyright-wrapper
+      +copyright("Copyright © 2018 Toxin отель. Все права зачищены.",
+        [{icon: "", link: "https://twitter.com/"},
+          {icon: "", link: "https://www.facebook.com/"},
+          {icon: "", link: "https://www.instagram.com/"}]
+      )

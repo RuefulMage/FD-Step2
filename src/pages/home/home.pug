@@ -1,20 +1,18 @@
 extends ../layout/layout
-
 block page-meta
-    meta(name="keywords" content="Home, Toxin")
-    meta(name="description" content="Toxin home page")
-    title Home
-
+  meta(name="keywords" content="Home, Toxin")
+  meta(name="description" content="Toxin home page")
+  title Home
 block content
-    include ../../blocks/find-apartment-card/find-apartment-card
-    main.home
-        .home__container
-            .home__card
-                +find-apartment-card({
-                    header: "Найдём номера под ваши пожелания",
-                    dateDropdownHeaders: ["прибытие", "выезд"],
-                    dropdownHeader: "гости",
-                    buttonText: "подобрать номер",
-                    link: "mock-address"
-                })
-            p.home__tagline Лучшие номера для вашей работы, отдыха и просто вдохновения
+  include ../../blocks/find-apartment-card/find-apartment-card
+  main.home
+    .home__container
+      .home__card
+        +find-apartment-card({
+          header: "Найдём номера под ваши пожелания",
+          dateDropdownHeaders: ["прибытие", "выезд"],
+          dropdownHeader: "гости",
+          buttonText: "подобрать номер",
+          link: "mock-address"
+        })
+      p.home__tagline Лучшие номера для вашей работы, отдыха и просто вдохновения

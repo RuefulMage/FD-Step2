@@ -1,13 +1,10 @@
 extends ../layout/layout
-
 block page-meta
-    meta(name="keywords" content="Sign in, Log in, Toxin")
-    meta(name="description" content="Toxin sign in page")
-    title Sign in
-
+  meta(name="keywords" content="Sign in, Log in, Toxin")
+  meta(name="description" content="Toxin sign in page")
+  title Sign in
 block content
-    include ../../blocks/signin-card/signin-card
-    main.sign-in__container
-        .sign-in__card
-            +signin-card("mock-address")
-
+  include ../../blocks/signin-card/signin-card
+  main.sign-in__container
+    .sign-in__card
+      +signin-card("mock-address")

@@ -1,6 +1,5 @@
 function hangUpListenerToLikeButton(likeButton) {
   const coloredLikeButtonClass = 'like-button_colored';
-
   likeButton.addEventListener('click', clickHandler);
 
   function clickHandler() {

@@ -1,11 +1,10 @@
 mixin header-navigation(links)
-    ul.header-navigation
-        each item in links
-            - let linkClasses = ["header-navigation__link"]
-            if item.current
-                - linkClasses.push("header-navigation__link_current")
-            if item.dropdowned
-                - linkClasses.push("header-navigation__link_dropdowned")
-
-            li.header-navigation__nav-item
-                a(class=linkClasses href=item.link)=item.text
+  ul.header-navigation
+    each item in links
+      - let linkClasses = ["header-navigation__link"]
+      if item.current
+        - linkClasses.push("header-navigation__link_current")
+      if item.dropdowned
+        - linkClasses.push("header-navigation__link_dropdowned")
+      li.header-navigation__nav-item
+        a(class=linkClasses href=item.link)=item.text

@@ -6,7 +6,6 @@
 
   &__button {
     --opacity: 0;
-
     position: relative;
     flex-shrink: 0;
     width: 20px;
@@ -30,7 +29,6 @@
 
     &:checked {
       --opacity: 1;
-
       border-color: $purple;
     }
 
@@ -49,7 +47,6 @@
       transition: opacity .3s;
       content: "";
     }
-
   }
 
   &__text {

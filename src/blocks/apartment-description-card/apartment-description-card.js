@@ -11,12 +11,9 @@ function createImagesSlider(element) {
   let currentId = 0;
   items[currentId].classList.add(currentImageClass);
   indicators[currentId].classList.add(currentIndicatorClass);
-
   const prevButton = element.querySelector(`.${prevButtonClass}`);
   const nextButton = element.querySelector(`.${nextButtonClass}`);
-
   nextButton.addEventListener('click', handleNextButtonClick);
-
   prevButton.addEventListener('click', handlePrevButtonClick);
 
   function handleNextButtonClick() {
@@ -42,11 +39,11 @@ function createImagesSlider(element) {
     items[currentId].classList.add(currentImageClass);
     indicators[currentId].classList.add(currentIndicatorClass);
   }
+
   function handleIndicatorClick(event) {
     const indicator = event.currentTarget;
     items[currentId].classList.remove(currentImageClass);
     indicators[currentId].classList.remove(currentIndicatorClass);
-
     indicators.forEach((item, index) => {
       if (item === indicator) {
         currentId = index;

@@ -4,19 +4,32 @@
     "es6": true,
     "jquery": true
   },
-  "extends": ["plugin:fsd/all","airbnb"],
-  "plugins": ["fsd"],
+  "extends": [
+    "plugin:fsd/all",
+    "airbnb"
+  ],
+  "plugins": [
+    "fsd"
+  ],
   "rules": {
-    "prefer-destructuring": ["error", {
-      "VariableDeclarator": {
-        "array": false,
-        "object": true
-      },
-      "AssignmentExpression": {
-        "array": false,
-        "object": true
+    "prefer-destructuring": [
+      "error",
+      {
+        "VariableDeclarator": {
+          "array": false,
+          "object": true
+        },
+        "AssignmentExpression": {
+          "array": false,
+          "object": true
+        }
       }
-    }],
-    "no-use-before-define": ["error", { "functions": false }]
+    ],
+    "no-use-before-define": [
+      "error",
+      {
+        "functions": false
+      }
+    ]
   }
 }

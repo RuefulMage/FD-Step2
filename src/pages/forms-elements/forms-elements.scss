@@ -31,7 +31,6 @@
     display: flex;
     margin-bottom: 100px;
 
-
     @media (max-width: 1160px) {
       justify-content: space-around;
     }
@@ -46,10 +45,8 @@
     }
   }
 
-
   &__column {
     width: 100%;
-
 
     @media (max-width: 1160px) {
       max-width: 320px;
@@ -61,9 +58,6 @@
       flex-direction: column;
       max-width: 500px;
     }
-
-
-
   }
 
   &__col-1 {
@@ -90,7 +84,6 @@
   &__item {
     max-width: 320px;
     margin-bottom: 20px;
-
 
     @media (max-width: 768px) {
       max-width: 100%;
@@ -161,7 +154,6 @@
   &__subitem-inline {
     display: inline-block;
     margin-right: 20px;
-
 
     @media (max-width: 768px) {
       width: 100%;

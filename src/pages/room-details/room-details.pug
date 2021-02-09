@@ -1,83 +1,77 @@
 extends ../layout/layout
-
 block page-meta
-    meta(name="keywords" content="Room, Toxin")
-    meta(name="description" content="Toxin room details page")
-    title Room details
-
+  meta(name="keywords" content="Room, Toxin")
+  meta(name="description" content="Toxin room details page")
+  title Room details
 block content
-    include ../../blocks/icon-text/icon-text
-    include ../../blocks/pie-chart/pie-chart
-    include ../../blocks/bullet-list/bullet-list
-    include ../../blocks/comment/comment
-    include ../../blocks/apartment-booking-card/apartment-booking-card
-    include ../../blocks/dropdown/dropdown
-
-    -
-        let path = require('path');
-        let fs = require('fs');
-        let pieChartData = JSON.parse(fs.readFileSync(path.normalize("src/pages/room-details/pie-chart-data.json")));
-        let bookingCardData = JSON.parse(fs.readFileSync(path.normalize("src/pages/room-details/booking-card-data.json")))
-    .room-details
-        .room-details__images-wrapper
-            .room-details__main-image
-            .room-details__subimages-wrapper
-                .room-details__subimage
-                .room-details__subimage
-        main.room-details__info-wrapper
-            section.room-details__info
-                .room-details__row
-                    .room-details__advantages-list
-                        .room-details__content-block-label
-                            h2.room-details__content-block-name Сведения о номере
-                        .room-details__advantage
-                            +icon-text("insert_emoticon", "Комфорт", "Шумопоглощающие стены", true)
-                        .room-details__advantage
-                            +icon-text("location_city", "Удобство", "Окно в каждой из спален", true)
-                        .room-details__advantage
-                            +icon-text("whatshot", "Уют", "Номер оснащён камином")
-                    .room-details__impressions
-                        .room-details__content-block-label
-                            h2.room-details__content-block-name Впечатления от номера
-                        +pie-chart(pieChartData.totalAmount, pieChartData.sectors)
-                .room-details__row
-                    .room-details__comments-list
-                        .room-details__content-block-label
-                            h2.room-details__content-block-name Отзывы посетителей номера
-                            span.room-details__content-block-amount 2 отзыва
-                        .room-details__comment
-                            +comment({
-                                avatar: "comment-avatar-1.jpg",
-                                fullName: "Мурад Сарафанов",
-                                lastViewedTime: "5 дней назад",
-                                likeAmount: 12,
-                                commentText: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
-                                liked: true
-                            })
-                        .room-details__comment
-                            +comment({
-                                avatar: "comment-avatar-2.jpg",
-                                fullName: "Патрисия Стёклышкова",
-                                lastViewedTime: "Неделю назад",
-                                likeAmount: 2,
-                                commentText: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"
-                            })
-
-                .room-details__row
-                    .room-details__rules
-                        .room-details__content-block-label.room-details__content-block-label_with-indent
-                            h2.room-details__content-block-name Правила
-                        +bullet-list([
-                            {text: "Нельзя с питомцами", style: "default", withPadding: "true"},
-                            {text: "Без вечеринок и мероприятий", style: "default", withPadding: "true"},
-                            {text: "Время прибытия — после 13:00, а выезд до 12:00", style: "default"}
-                        ])
-
-                    .room-details__cancellation
-                        .room-details__content-block-label
-                            h2.room-details__content-block-name Отмена
-                        p.room-details__text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее
-                            | чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
-
-            section.room-details__card
-                +apartment-booking-card(bookingCardData)
+  include ../../blocks/icon-text/icon-text
+  include ../../blocks/pie-chart/pie-chart
+  include ../../blocks/bullet-list/bullet-list
+  include ../../blocks/comment/comment
+  include ../../blocks/apartment-booking-card/apartment-booking-card
+  include ../../blocks/dropdown/dropdown
+  -
+    let path = require('path');
+    let fs = require('fs');
+    let pieChartData = JSON.parse(fs.readFileSync(path.normalize("src/pages/room-details/pie-chart-data.json")));
+    let bookingCardData = JSON.parse(fs.readFileSync(path.normalize("src/pages/room-details/booking-card-data.json")))
+  .room-details
+    .room-details__images-wrapper
+      .room-details__main-image
+      .room-details__subimages-wrapper
+        .room-details__subimage
+        .room-details__subimage
+    main.room-details__info-wrapper
+      section.room-details__info
+        .room-details__row
+          .room-details__advantages-list
+            .room-details__content-block-label
+              h2.room-details__content-block-name Сведения о номере
+            .room-details__advantage
+              +icon-text("insert_emoticon", "Комфорт", "Шумопоглощающие стены", true)
+            .room-details__advantage
+              +icon-text("location_city", "Удобство", "Окно в каждой из спален", true)
+            .room-details__advantage
+              +icon-text("whatshot", "Уют", "Номер оснащён камином")
+          .room-details__impressions
+            .room-details__content-block-label
+              h2.room-details__content-block-name Впечатления от номера
+            +pie-chart(pieChartData.totalAmount, pieChartData.sectors)
+        .room-details__row
+          .room-details__comments-list
+            .room-details__content-block-label
+              h2.room-details__content-block-name Отзывы посетителей номера
+              span.room-details__content-block-amount 2 отзыва
+            .room-details__comment
+              +comment({
+                avatar: "comment-avatar-1.jpg",
+                fullName: "Мурад Сарафанов",
+                lastViewedTime: "5 дней назад",
+                likeAmount: 12,
+                commentText: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
+                liked: true
+              })
+            .room-details__comment
+              +comment({
+                avatar: "comment-avatar-2.jpg",
+                fullName: "Патрисия Стёклышкова",
+                lastViewedTime: "Неделю назад",
+                likeAmount: 2,
+                commentText: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"
+              })
+        .room-details__row
+          .room-details__rules
+            .room-details__content-block-label.room-details__content-block-label_with-indent
+              h2.room-details__content-block-name Правила
+            +bullet-list([
+              {text: "Нельзя с питомцами", style: "default", withPadding: "true"},
+              {text: "Без вечеринок и мероприятий", style: "default", withPadding: "true"},
+              {text: "Время прибытия — после 13:00, а выезд до 12:00", style: "default"}
+            ])
+          .room-details__cancellation
+            .room-details__content-block-label
+              h2.room-details__content-block-name Отмена
+            p.room-details__text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее
+              | чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+      section.room-details__card
+        +apartment-booking-card(bookingCardData)
