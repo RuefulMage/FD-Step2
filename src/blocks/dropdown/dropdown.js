@@ -30,7 +30,7 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
   }
 
   const expandButton = element.querySelector(`.${expandButtonClass}`);
-  expandButton.addEventListener('click', expandButtonClickHandler);
+  expandButton.addEventListener('click', handleExpandButtonClick);
   itemsDomElementsArray.forEach((itemElement) => {
     const itemId = itemElement.getAttribute('data-id');
     items.set(
@@ -51,27 +51,27 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
     toggleDisabledButton(+currentItem.amount,
       currentItem.minAmount, currentItem.maxAmount, currentItem);
     const { decreaseButton } = items.get(itemId);
-    decreaseButton.addEventListener('click', decreaseButtonClickHandler);
+    decreaseButton.addEventListener('click', handleDecreaseButtonClick);
     const { increaseButton } = items.get(itemId);
-    increaseButton.addEventListener('click', increaseButtonClickHandler);
+    increaseButton.addEventListener('click', handleIncreaseButtonClick);
   });
 
   if (withButtons) {
     clearButton = element.querySelector(`.${clearButtonClass}`);
-    clearButton.addEventListener('click', clearButtonClickHandler);
+    clearButton.addEventListener('click', handleClearButtonClick);
     applyButton = element.querySelector(`.${appendButtonClass}`);
-    applyButton.addEventListener('click', applyButtonClickHandler);
+    applyButton.addEventListener('click', handleApplyButtonClick);
     toggleClearButtonVisibility();
   }
   currentSetInputTextFunction();
 
-  function applyButtonClickHandler(event) {
+  function handleApplyButtonClick(event) {
     event.preventDefault();
     element.classList.remove(dropdownExpandedClass);
     expandButton.classList.remove(expandButtonRotatedClass);
   }
 
-  function clearButtonClickHandler(event) {
+  function handleClearButtonClick(event) {
     event.preventDefault();
     if (totalAmount > 0) {
       totalAmount = 0;
@@ -82,7 +82,7 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
     }
   }
 
-  function expandButtonClickHandler(event) {
+  function handleExpandButtonClick(event) {
     event.preventDefault();
     if (element.classList.contains(dropdownExpandedClass)) {
       element.classList.remove(dropdownExpandedClass);
@@ -93,7 +93,7 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
     }
   }
 
-  function decreaseButtonClickHandler(event) {
+  function handleDecreaseButtonClick(event) {
     event.preventDefault();
     const itemDOMElement = this.closest(`.${menuItemClass}`);
     const itemId = itemDOMElement.getAttribute('data-id');
@@ -107,7 +107,7 @@ function createDropdown(element, withButtons, textInInputIsTotalAmount) {
     }
   }
 
-  function increaseButtonClickHandler(event) {
+  function handleIncreaseButtonClick(event) {
     event.preventDefault();
     const itemDOMElement = this.closest(`.${menuItemClass}`);
     const itemId = itemDOMElement.getAttribute('data-id');

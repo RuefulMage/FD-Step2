@@ -7,9 +7,9 @@ function createBurgerMenu(element) {
   const navElement = element.querySelector(`.${navClassName}`);
   const authElement = element.querySelector(`.${authClassName}`);
   const burgerElement = element.querySelector(`.${burgerClassName}`);
-  burgerElement.addEventListener('click', handleClick);
+  burgerElement.addEventListener('click', handleBurgerButtonClick);
 
-  function handleClick() {
+  function handleBurgerButtonClick() {
     navElement.classList.toggle(shownNavModifier);
     authElement.classList.toggle(shownAuthModifier);
     let burgerChild;

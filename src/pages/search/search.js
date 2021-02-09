@@ -3,13 +3,13 @@ function initShowFormButton(buttonElement) {
   const filterHiddenClass = 'search__filter-column_hidden';
   const filterElement = buttonElement.parentElement
     .querySelector(`.${filterClass}`);
-  buttonElement.addEventListener('click', buttonClickHandler);
+  buttonElement.addEventListener('click', handleFilterButtonClick);
   if (document.body.clientWidth <= 880) {
     filterElement.classList.add(filterHiddenClass);
   }
-  filterResizeHandler(filterElement);
+  addWindowResizeHandler(filterElement);
 
-  function buttonClickHandler() {
+  function handleFilterButtonClick() {
     if (filterElement.classList.contains(filterHiddenClass)) {
       filterElement.classList.remove(filterHiddenClass);
     } else {
@@ -18,10 +18,10 @@ function initShowFormButton(buttonElement) {
   }
 }
 
-function filterResizeHandler(filterElement) {
-  window.addEventListener('resize', resizeHandler);
+function addWindowResizeHandler(filterElement) {
+  window.addEventListener('resize', handleWindowResize);
 
-  function resizeHandler() {
+  function handleWindowResize() {
     const filterHiddenClass = 'search__filter-column_hidden';
     if (document.body.clientWidth >= 880) {
       filterElement.classList.remove(filterHiddenClass);

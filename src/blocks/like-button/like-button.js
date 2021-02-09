@@ -1,8 +1,8 @@
 function hangUpListenerToLikeButton(likeButton) {
   const coloredLikeButtonClass = 'like-button_colored';
-  likeButton.addEventListener('click', clickHandler);
+  likeButton.addEventListener('click', handleLikeButtonClick);
 
-  function clickHandler() {
+  function handleLikeButtonClick() {
     const icon = this.firstChild.firstChild;
     const likeAmount = this.firstChild.lastChild;
     if (this.classList.contains(coloredLikeButtonClass)) {
