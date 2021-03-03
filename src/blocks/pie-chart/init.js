@@ -1,6 +1,6 @@
-import createPieChart from './pie-chart';
+import PieChart from './PieChart';
 
 const chartElements = document.getElementsByClassName('js-pie-chart');
 for (let i = 0; i < chartElements.length; i += 1) {
-  createPieChart(chartElements[i]);
+  new PieChart(chartElements[i]);
 }

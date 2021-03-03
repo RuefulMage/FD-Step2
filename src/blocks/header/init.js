@@ -1,6 +1,6 @@
-import createBurgerMenu from './header';
+import BurgerMenu from './BurgerMenu';
 
 const burgers = document.querySelectorAll('.js-header');
 for (let i = 0; i < burgers.length; i += 1) {
-  createBurgerMenu(burgers[i]);
+  new BurgerMenu(burgers[i]);
 }
