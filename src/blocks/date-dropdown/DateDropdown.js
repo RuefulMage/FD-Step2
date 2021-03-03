@@ -6,7 +6,8 @@ class DateDropdown {
   static clearButtonClass = 'date-dropdown__calendar-clear-button';
   static appendButtonClass = 'date-dropdown__calendar-append-button';
   static buttonsWrapperClass = 'date-dropdown__calendar-buttons-wrapper';
-  static showButtonHiddenModifier = 'date-dropdown__label_hidden';
+  static showButtonClass = 'date-dropdown__expand-button';
+  static showButtonHiddenModifier = 'date-dropdown__expand-button_hidden';
 
   static monthsNames = new Map([
     [0, 'янв'], [1, 'фев'],
@@ -90,7 +91,11 @@ class DateDropdown {
   }
 
   toggleShowButton() {
-    this.dateDropdownInputs.forEach(input => input.parentElement.classList.toggle(DateDropdown.showButtonHiddenModifier));
+    this.dateDropdownInputs.forEach(input => {
+      const parentElement = input.parentElement;
+      const buttonElement = parentElement.querySelector(`.${DateDropdown.showButtonClass}`);
+      buttonElement.classList.toggle(DateDropdown.showButtonHiddenModifier);
+    });
   }
 
   clearInputs = () => {
