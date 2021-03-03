@@ -79,10 +79,6 @@
     @media (max-width: 350px) {
       display: none;
     }
-
-    &:hover &-text {
-      display: block;
-    }
   }
 
   &__total {
