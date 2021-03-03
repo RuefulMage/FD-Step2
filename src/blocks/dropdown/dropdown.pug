@@ -11,7 +11,7 @@ mixin dropdown({placeholder, items, expanded=false, withButtons=false, generalFo
     - expandButtonClasses.push("dropdown__expand-button_rotated");
   - dropdownClasses.push(dropdownJSClass);
   div(class=dropdownClasses data-placeholder=placeholder data-forms=generalForms)
-    .dropdown__field
+    .dropdown__field.js-dropdown__field
       .dropdown__text.js-dropdown__text
       button(class=expandButtonClasses) expand_more
     .dropdown__menu

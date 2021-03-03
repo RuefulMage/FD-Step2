@@ -11,6 +11,7 @@ class Dropdown{
   static clearButtonClass = 'js-dropdown__clear-button';
   static appendButtonClass = 'js-dropdown__apply-button';
   static inputTextClass = 'js-dropdown__text';
+  static fieldClass = 'js-dropdown__field';
 
   constructor(element, withButtons, textInInputIsTotalAmount) {
     this.element = element;
@@ -19,16 +20,14 @@ class Dropdown{
   }
 
   init(textInInputIsTotalAmount) {
-    this.generalForms = this.element.getAttribute('data-forms') || 'элемент, элемента, элементов';
-    this.generalForms = this.generalForms.split(',');
-    this.placeholder = this.element.getAttribute('data-placeholder');
-    this.itemsDomElementsArray = this.element.querySelectorAll(`.${Dropdown.menuItemClass}`);
-    this.items = new Map();
+
     this.totalAmount = 0;
     this.inputField = this.element.querySelector(`.${Dropdown.inputTextClass}`);
-    this.initText(textInInputIsTotalAmount);
     this.expandButton = this.element.querySelector(`.${Dropdown.expandButtonClass}`);
-    this.expandButton.addEventListener('click', this.handleExpandButtonClick);
+    this.field = this.element.querySelector(`.${Dropdown.fieldClass}`);
+    this.field.addEventListener('click', this.handleExpandButtonClick);
+    window.addEventListener('click', this.handleWindowClick);
+    this.initText(textInInputIsTotalAmount);
     this.initItems();
     if (this.withButtons) {
       this.addButtonsListeners();
@@ -37,6 +36,8 @@ class Dropdown{
   }
 
   initItems() {
+    this.itemsDomElementsArray = this.element.querySelectorAll(`.${Dropdown.menuItemClass}`);
+    this.items = new Map();
     this.itemsDomElementsArray.forEach((itemElement) => {
       const itemId = itemElement.getAttribute('data-id');
       this.items.set(
@@ -64,10 +65,19 @@ class Dropdown{
   }
 
   initText(textInInputIsTotalAmount) {
+    this.generalForms = this.element.getAttribute('data-forms') || 'элемент, элемента, элементов';
+    this.generalForms = this.generalForms.split(',');
+    this.placeholder = this.element.getAttribute('data-placeholder');
     if (textInInputIsTotalAmount) {
       this.currentSetInputTextFunction = this.setSelectedTextByTotalAmount;
     } else {
       this.currentSetInputTextFunction = this.setSelectedText;
+    }
+  }
+
+  handleWindowClick = (event) => {
+    if( !this.element.contains(event.target)) {
+      this.closeDropdown();
     }
   }
 
@@ -81,8 +91,7 @@ class Dropdown{
 
   handleApplyButtonClick = (event) => {
     event.preventDefault();
-    this.element.classList.remove(Dropdown.dropdownExpandedClass);
-    this.expandButton.classList.remove(Dropdown.expandButtonRotatedClass);
+    this.closeDropdown();
   }
 
   handleClearButtonClick = (event) => {
@@ -99,11 +108,9 @@ class Dropdown{
   handleExpandButtonClick = (event) => {
     event.preventDefault();
     if (this.element.classList.contains(Dropdown.dropdownExpandedClass)) {
-      this.element.classList.remove(Dropdown.dropdownExpandedClass);
-      this.expandButton.classList.remove(Dropdown.expandButtonRotatedClass);
+      this.closeDropdown();
     } else {
-      this.element.classList.add(Dropdown.dropdownExpandedClass);
-      this.expandButton.classList.add(Dropdown.expandButtonRotatedClass);
+      this.openDropdown();
     }
   }
 
@@ -133,6 +140,16 @@ class Dropdown{
         this.toggleClearButtonVisibility();
       }
     }
+  }
+
+  openDropdown() {
+    this.element.classList.add(Dropdown.dropdownExpandedClass);
+    this.expandButton.classList.add(Dropdown.expandButtonRotatedClass);
+  }
+
+  closeDropdown() {
+    this.element.classList.remove(Dropdown.dropdownExpandedClass);
+    this.expandButton.classList.remove(Dropdown.expandButtonRotatedClass);
   }
 
   toggleDisabledButton(amount, minAmount, maxAmount, item) {
