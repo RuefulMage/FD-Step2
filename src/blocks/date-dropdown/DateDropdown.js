@@ -61,10 +61,6 @@ class DateDropdown {
     this.setInputsValues();
   }
 
-  getOptions() {
-
-  }
-
   showCalendar = () => {
     this.calendarData.show();
   }
