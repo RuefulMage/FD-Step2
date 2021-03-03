@@ -6,6 +6,7 @@ class DateDropdown {
   static clearButtonClass = 'date-dropdown__calendar-clear-button';
   static appendButtonClass = 'date-dropdown__calendar-append-button';
   static buttonsWrapperClass = 'date-dropdown__calendar-buttons-wrapper';
+  static showButtonHiddenModifier = 'date-dropdown__label_hidden';
 
   static monthsNames = new Map([
     [0, 'янв'], [1, 'фев'],
@@ -16,6 +17,7 @@ class DateDropdown {
     [10, 'ноб'], [11, 'дек'],
   ]);
 
+
   options = {
     multipleDatesSeparator: ' - ',
     range: true,
@@ -25,8 +27,11 @@ class DateDropdown {
       this.dates = date;
       this.clearInputs();
     },
-    onHide: () => {
-      this.setInputsValues();
+    onShow: (_, animationCompleted) => {
+      this.handleCalendarShow(animationCompleted);
+    },
+    onHide: (_, animationCompleted) => {
+      this.handleCalendarHide(animationCompleted);
     },
     navTitles: {
       days: 'MM yyyy',
@@ -41,9 +46,8 @@ class DateDropdown {
 
   init() {
     this.calendarData = $(this.dateDropdownInputs[0]).datepicker(this.options).data('datepicker');
-    if (this.dateDropdownInputs.length === 2) {
-      this.dateDropdownInputs[1].addEventListener('click', this.showCalendar);
-    }
+    this.dateDropdownInputs.forEach(input => input.addEventListener('click', this.handleShowCalendarButtonClick));
+    this.isHide = true;
     this.createCalendarButtonsBlock('очистить',
       'применить', this.calendarData, this.dateDropdownInputs);
     let startDateInterval = this.node.getAttribute('data-start-interval');
@@ -61,8 +65,32 @@ class DateDropdown {
     this.setInputsValues();
   }
 
-  showCalendar = () => {
-    this.calendarData.show();
+  handleShowCalendarButtonClick = () => {
+    if(this.isHide) {
+      this.calendarData.show();
+    } else {
+      this.calendarData.hide();
+    }
+  }
+
+
+  handleCalendarHide = (animationCompleted) => {
+    if( !this.isHide && animationCompleted) {
+      this.setInputsValues();
+      this.toggleShowButton();
+      this.isHide = true;
+    }
+  }
+
+  handleCalendarShow = (animationCompleted) => {
+    if( this.isHide && animationCompleted){
+      this.toggleShowButton();
+      this.isHide = false;
+    }
+  }
+
+  toggleShowButton() {
+    this.dateDropdownInputs.forEach(input => input.parentElement.classList.toggle(DateDropdown.showButtonHiddenModifier));
   }
 
   clearInputs = () => {

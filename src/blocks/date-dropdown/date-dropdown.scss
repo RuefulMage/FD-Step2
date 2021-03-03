@@ -45,6 +45,10 @@
         width: auto;
       }
     }
+
+    &_hidden:after {
+      transform: rotate(-180deg);
+    }
   }
 
   &__input-wrapper {
