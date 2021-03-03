@@ -1,8 +1,10 @@
 @import "../../assets/scss/colors.scss";
 
 .form-button {
-  position: relative;
-  padding: 16px 40px;
+  padding: 9px 0 9px 46px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
   color: white;
   font-weight: bold;
   font-size: .75rem; //12px при базовом размере шрифта 16px
@@ -25,14 +27,19 @@
     background: $gradient-semitransparent;
   }
 
+  &__text {
+    width: 100%;
+    text-align: center;
+  }
+
   &__arrow {
-    position: absolute;
-    top: calc(50% - 12px);
-    right: 10px;
+    width: 100%;
+    max-width: 44px;
     font-weight: normal;
     font-size: 1.5rem; //24px при базовом размере шрифта 16px
     font-family: "Material Icons";
     text-transform: none;
+    text-align: center;
 
     @media (max-width: 320px) {
       display: none;
