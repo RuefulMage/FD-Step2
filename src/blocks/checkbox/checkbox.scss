@@ -17,6 +17,7 @@
     transition: border-color .3s;
 
     &:hover {
+
       &:not(checked) {
         border-color: $purple;
       }

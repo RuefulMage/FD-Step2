@@ -1,10 +1,10 @@
 @import "../../assets/scss/colors.scss";
 
 .form-button {
-  padding: 9px 0 9px 46px;
-  box-sizing: border-box;
   display: flex;
   align-items: center;
+  box-sizing: border-box;
+  padding: 9px 0 9px 46px;
   color: white;
   font-weight: bold;
   font-size: .75rem; //12px при базовом размере шрифта 16px
@@ -38,8 +38,8 @@
     font-weight: normal;
     font-size: 1.5rem; //24px при базовом размере шрифта 16px
     font-family: "Material Icons";
-    text-transform: none;
     text-align: center;
+    text-transform: none;
 
     @media (max-width: 320px) {
       display: none;

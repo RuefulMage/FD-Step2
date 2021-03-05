@@ -1,7 +1,9 @@
 @import "../../assets/scss/colors.scss";
 
 $max-page: 100;
+
 .pagination {
+
   &__pages {
     display: flex;
     margin-bottom: 10px;

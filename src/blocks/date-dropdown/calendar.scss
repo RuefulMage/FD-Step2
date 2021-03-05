@@ -1,6 +1,7 @@
 @import "../../assets/scss/colors";
 
 .date-dropdown__calendar {
+
   &-arrow {
     color: $purple;
     font-size: 1.5rem; //24px при базовом размере шрифта 16px
@@ -130,6 +131,7 @@
   }
 
   &.-range-from- {
+
     &:after {
       border-top-left-radius: 22px;
       border-bottom-left-radius: 22px;
@@ -137,6 +139,7 @@
   }
 
   &.-range-to- {
+
     &:after {
       border-top-right-radius: 22px;
       border-bottom-right-radius: 22px;

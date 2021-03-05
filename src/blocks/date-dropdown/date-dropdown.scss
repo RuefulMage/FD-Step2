@@ -61,7 +61,7 @@
     }
   }
 
-  &__expand-button{
+  &__expand-button {
     display: flex;
     justify-content: center;
     box-sizing: border-box;
@@ -71,7 +71,7 @@
     font-size: 1.5rem; //24px при базовом размере шрифта 16px
     font-family: "Material Icons";
     user-select: none;
-    pointer-events:none;
+    pointer-events: none;
 
     &_hidden {
       transform: rotate(-180deg);

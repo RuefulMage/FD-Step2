@@ -1,4 +1,4 @@
-import DateDropdown from "./DateDropdown";
+import DateDropdown from './DateDropdown';
 
 const dateDropdownsList = document.getElementsByClassName('js-date-dropdown');
 for (let i = 0; i < dateDropdownsList.length; i += 1) {
