@@ -1,4 +1,4 @@
-class Pagination{
+class Pagination {
   static itemClass = 'js-pagination__item';
 
   constructor(paginationElement) {
@@ -26,4 +26,5 @@ class Pagination{
     this.paginationElement.setAttribute('data-current-page', this.paginationPage);
   }
 }
+
 export default Pagination;

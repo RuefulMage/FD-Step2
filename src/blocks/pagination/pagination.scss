@@ -1,9 +1,7 @@
 @import "../../assets/scss/colors.scss";
 
 $max-page: 100;
-
 .pagination {
-
   &__pages {
     display: flex;
     margin-bottom: 10px;
@@ -61,17 +59,14 @@ $max-page: 100;
         content: "...";
       }
     }
-
     // 2 before
     .pagination__item:nth-child(#{$i - 2}) {
       display: flex;
     }
-
     // before
     .pagination__item:nth-child(#{$i - 1}) {
       display: flex;
     }
-
     // active
     .pagination__item:nth-child(#{$i}) {
       display: flex;
@@ -82,17 +77,14 @@ $max-page: 100;
         display: none;
       }
     }
-
     // next
     .pagination__item:nth-child(#{$i + 1}):not(:last-child) {
       display: flex;
     }
-
     // 2 next
     .pagination__item:nth-child(#{$i + 2}):not(:last-child) {
       display: flex;
     }
-
     // 3 next
     .pagination__item:nth-child(#{$i + 3}):not(:last-child):not(:nth-last-child(2)) {
       display: flex;

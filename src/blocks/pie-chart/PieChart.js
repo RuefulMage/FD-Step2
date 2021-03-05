@@ -1,4 +1,4 @@
-class PieChart{
+class PieChart {
   static sectorClass = 'js-pie-chart__circle';
   static sectorHoveredModifier = 'pie-chart__circle_hovered';
   static gradientIdBasis = 'gradient-color-';
@@ -11,7 +11,7 @@ class PieChart{
     this.init();
   }
 
-  init(){
+  init() {
     this.totalAmount = +this.chartElement.getAttribute('data-amount');
     this.votesAmountElement = this.chartElement.querySelector(`.${PieChart.votesElementClass}`);
     this.votesAmountWrapper = this.chartElement.querySelector(`.${PieChart.votesWrapperClass}`);
@@ -21,7 +21,7 @@ class PieChart{
     this.initSectors();
   };
 
-  initSectors(){
+  initSectors() {
     let offset = 0;
     this.sectors.forEach((sector, index) => {
       const amount = +sector.getAttribute('data-amount');
@@ -56,7 +56,7 @@ class PieChart{
     element.setAttribute('stroke-dashoffset', offsetLength);
   }
 
-  hangUpMouseEventListeners(elements, amount, startColor, endColor){
+  hangUpMouseEventListeners(elements, amount, startColor, endColor) {
     const sector = elements[0];
 
     const handleMouseOver = () => {

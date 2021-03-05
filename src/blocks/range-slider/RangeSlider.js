@@ -1,7 +1,6 @@
 import noUiSlider from 'nouislider';
 
 class RangeSlider {
-
   constructor(sliderElement) {
     this.sliderElement = sliderElement;
     this.init();

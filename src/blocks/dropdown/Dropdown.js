@@ -1,4 +1,4 @@
-class Dropdown{
+class Dropdown {
   static expandButtonClass = 'js-dropdown__expand-button';
   static dropdownExpandedClass = 'dropdown_expanded';
   static expandButtonRotatedClass = 'dropdown__expand-button_rotated';
@@ -20,7 +20,6 @@ class Dropdown{
   }
 
   init(textInInputIsTotalAmount) {
-
     this.totalAmount = 0;
     this.inputField = this.element.querySelector(`.${Dropdown.inputTextClass}`);
     this.expandButton = this.element.querySelector(`.${Dropdown.expandButtonClass}`);
@@ -52,14 +51,13 @@ class Dropdown{
           increaseButton: itemElement.querySelector(`.${Dropdown.increaseButtonClass}`),
         },
       );
-
       const currentItem = this.items.get(itemId);
       this.totalAmount += +currentItem.amount;
       this.toggleDisabledButton(+currentItem.amount,
         currentItem.minAmount, currentItem.maxAmount, currentItem);
-      const { decreaseButton } = this.items.get(itemId);
+      const {decreaseButton} = this.items.get(itemId);
       decreaseButton.addEventListener('click', this.handleDecreaseButtonClick);
-      const { increaseButton } = this.items.get(itemId);
+      const {increaseButton} = this.items.get(itemId);
       increaseButton.addEventListener('click', this.handleIncreaseButtonClick);
     });
   }
@@ -76,7 +74,7 @@ class Dropdown{
   }
 
   handleWindowClick = (event) => {
-    if( !this.element.contains(event.target)) {
+    if (!this.element.contains(event.target)) {
       this.closeDropdown();
     }
   }
@@ -153,8 +151,8 @@ class Dropdown{
   }
 
   toggleDisabledButton(amount, minAmount, maxAmount, item) {
-    const { decreaseButton } = item;
-    const { increaseButton } = item;
+    const {decreaseButton} = item;
+    const {increaseButton} = item;
     let isDisabledClassShouldBeDeleted = amount !== minAmount
       && decreaseButton.classList.contains(Dropdown.decreaseButtonDisabledClass);
     if (amount === minAmount) {
@@ -193,7 +191,7 @@ class Dropdown{
       if (this.items.get(key).amount === 0) {
         flag = true;
       } else {
-        const { forms } = this.items.get(key);
+        const {forms} = this.items.get(key);
         result += `${this.items.get(key).amount} ${this.getProperWordForm(this.items.get(key).amount, forms)}`;
       }
     });

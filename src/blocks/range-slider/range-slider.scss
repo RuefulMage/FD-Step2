@@ -1,7 +1,6 @@
 @import "../../assets/scss/colors.scss";
 
 .range-slider {
-
   &__result-container {
     display: flex;
     justify-content: space-between;
@@ -25,7 +24,6 @@
     height: 6px;
   }
 }
-
 // Переопределение свойств плагина
 .noUi-target {
   box-sizing: border-box;

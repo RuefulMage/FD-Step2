@@ -16,7 +16,6 @@
     cursor: pointer;
 
     &:hover {
-
       &:not(checked) {
         border-color: $purple;
       }

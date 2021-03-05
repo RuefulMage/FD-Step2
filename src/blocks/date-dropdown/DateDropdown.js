@@ -8,7 +8,6 @@ class DateDropdown {
   static buttonsWrapperClass = 'date-dropdown__calendar-buttons-wrapper';
   static showButtonClass = 'date-dropdown__expand-button';
   static showButtonHiddenModifier = 'date-dropdown__expand-button_hidden';
-
   static monthsNames = new Map([
     [0, 'янв'], [1, 'фев'],
     [2, 'мар'], [3, 'апр'],
@@ -17,8 +16,6 @@ class DateDropdown {
     [8, 'сен'], [9, 'окт'],
     [10, 'ноб'], [11, 'дек'],
   ]);
-
-
   options = {
     multipleDatesSeparator: ' - ',
     range: true,
@@ -67,16 +64,15 @@ class DateDropdown {
   }
 
   handleShowCalendarButtonClick = () => {
-    if(this.isHide) {
+    if (this.isHide) {
       this.calendarData.show();
     } else {
       this.calendarData.hide();
     }
   }
 
-
   handleCalendarHide = (animationCompleted) => {
-    if( !this.isHide && animationCompleted) {
+    if (!this.isHide && animationCompleted) {
       this.setInputsValues();
       this.toggleShowButton();
       this.isHide = true;
@@ -84,7 +80,7 @@ class DateDropdown {
   }
 
   handleCalendarShow = (animationCompleted) => {
-    if( this.isHide && animationCompleted){
+    if (this.isHide && animationCompleted) {
       this.toggleShowButton();
       this.isHide = false;
     }
@@ -121,7 +117,7 @@ class DateDropdown {
     calendarDomElement.append(calendarButtonsBlock);
   }
 
-  addButtonsHandlers(clearButton, appendButton){
+  addButtonsHandlers(clearButton, appendButton) {
     clearButton.addEventListener('click', this.handleClearButtonClick);
     appendButton.addEventListener('click', this.handleAppendButtonClick);
   }

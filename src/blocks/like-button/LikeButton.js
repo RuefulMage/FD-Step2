@@ -1,4 +1,4 @@
-class LikeButton{
+class LikeButton {
   static coloredLikeButtonClass = 'like-button_colored';
 
   constructor(likeButton) {
@@ -20,4 +20,5 @@ class LikeButton{
     }
   }
 }
+
 export default LikeButton;

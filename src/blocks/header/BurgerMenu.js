@@ -1,4 +1,4 @@
-class BurgerMenu{
+class BurgerMenu {
   static shownNavModifier = 'header__navigation_shown';
   static shownAuthModifier = 'header__auth_shown';
   static navClassName = 'js-header__navigation';

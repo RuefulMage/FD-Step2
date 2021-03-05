@@ -1,4 +1,4 @@
-class ImagesSlider{
+class ImagesSlider {
   static sliderItemClass = 'js-apartment-description-card__slider-item';
   static indicatorsClass = 'js-apartment-description-card__indicator';
   static currentImageClass = 'apartment-description-card__slider-item_showing';
@@ -67,4 +67,5 @@ class ImagesSlider{
     this.indicators[this.currentId].classList.add(ImagesSlider.currentIndicatorClass);
   }
 }
+
 export default ImagesSlider;

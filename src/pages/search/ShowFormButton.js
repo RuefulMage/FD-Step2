@@ -2,7 +2,6 @@ class ShowFormButton {
   static filterClass = 'js-search__filter-column';
   static filterHiddenClass = 'search__filter-column_hidden';
 
-
   constructor(buttonElement) {
     this.buttonElement = buttonElement;
     this.init();
@@ -34,7 +33,6 @@ class ShowFormButton {
     }
     window.addEventListener('resize', handleWindowResize);
   }
-
 }
 
 export default ShowFormButton;
