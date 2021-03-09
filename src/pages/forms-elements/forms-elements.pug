@@ -1,64 +1,272 @@
-include ../../blocks/textfield/textfield
-include ../../blocks/dropdown/dropdown
-include ../../blocks/date-dropdown/date-dropdown
-include ../../blocks/subscription-textfiled/subscription-textfield
-include ../../blocks/expandable-checkbox-list/expandable-checkbox-list
-include ../../blocks/icon-text/icon-text
-include ../../blocks/checkbox/checkbox
-include ../../blocks/range-slider/range-slider
-include ../../blocks/radio-button/radio-button
-include ../../blocks/toggle/toggle
-include ../../blocks/like-button/like-button
-include ../../blocks/rate-button/rate-button
-include ../../blocks/link-button/link-button
-include ../../blocks/link/link
-include ../../blocks/form-button/form-button
-include ../../blocks/pagination/pagination
-include ../../blocks/rich-checkbox/rich-checkbox
-include ../../blocks/bullet-list/bullet-list
-include ../../blocks/comment/comment
-include ../../blocks/logo/logo
-doctype html
-html(lang="en")
-  head
-    link(rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png")
-    link(rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png")
-    link(rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png")
-    link(rel="mask-icon" href="../../assets/favicons/pinned-safari-icon.svg" color="purple")
-    link(rel="manifest" href="../../assets/favicons/site.webmanifest")
-    meta(name="msapplication-TileColor" content="#da532c")
-    meta(name="theme-color" content="#ffffff")
-    meta(charset="utf-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1, user-scalable=no")
-    meta(name="keywords" content="Form, Toxin")
-    meta(name="description" content="Toxin form elements demonstration page")
-    title Forms Elements
-  body
-    .forms-elements__wrapper
-      .forms-elements__logo
-        +logo()
-      main.forms-elements__container
-        .forms-elements__row
-          .forms-elements__column.forms-elements__col-1
-            .forms-elements__item
-              .forms-elements__item-label
-                h3.forms-elements__item-header text field
-                span.forms-elements__item-state default
-              +textfield({type: "email", placeholder: "Email", name: "default-textfield"})
-            .forms-elements__item
-              .forms-elements__item-label
-                h3.forms-elements__item-header text field
-                span.forms-elements__item-state hover / focus
-              +textfield({
-                type: "email",
-                placeholder: "This is pretty awesome",
-                name: "hovered-textfield",
-                hovered: true
+extends ../main-layout/main-layout
+block page-meta
+  meta(name="keywords" content="Form, Toxin")
+  meta(name="description" content="Toxin form elements demonstration page")
+  title Forms Elements
+block body
+  include ../../blocks/textfield/textfield
+  include ../../blocks/dropdown/dropdown
+  include ../../blocks/date-dropdown/date-dropdown
+  include ../../blocks/subscription-textfiled/subscription-textfield
+  include ../../blocks/expandable-checkbox-list/expandable-checkbox-list
+  include ../../blocks/icon-text/icon-text
+  include ../../blocks/checkbox/checkbox
+  include ../../blocks/range-slider/range-slider
+  include ../../blocks/radio-button/radio-button
+  include ../../blocks/toggle/toggle
+  include ../../blocks/like-button/like-button
+  include ../../blocks/rate-button/rate-button
+  include ../../blocks/link-button/link-button
+  include ../../blocks/link/link
+  include ../../blocks/form-button/form-button
+  include ../../blocks/pagination/pagination
+  include ../../blocks/rich-checkbox/rich-checkbox
+  include ../../blocks/bullet-list/bullet-list
+  include ../../blocks/comment/comment
+  include ../../blocks/logo/logo
+  .forms-elements__wrapper
+    .forms-elements__logo
+      +logo()
+    main.forms-elements__container
+      .forms-elements__row
+        .forms-elements__column.forms-elements__col-1
+          .forms-elements__item
+            .forms-elements__item-label
+              h3.forms-elements__item-header text field
+              span.forms-elements__item-state default
+            +textfield({type: "email", placeholder: "Email", name: "default-textfield"})
+          .forms-elements__item
+            .forms-elements__item-label
+              h3.forms-elements__item-header text field
+              span.forms-elements__item-state hover / focus
+            +textfield({
+              type: "email",
+              placeholder: "This is pretty awesome",
+              name: "hovered-textfield",
+              hovered: true
+            })
+          .forms-elements__item
+            .forms-elements__item-label
+              h3.forms-elements__item-header dropdown
+              span.forms-elements__item-state default
+            +dropdown({
+              placeholder: "Сколько гостей", items: [
+                {
+                  id: "adults",
+                  minAmount: "0",
+                  maxAmount: "100",
+                  forms: "взрослый,взрослых,взрослых",
+                  itemName: "взрослые",
+                  startAmount: "0"
+                },
+                {
+                  id: "children",
+                  minAmount: "0",
+                  maxAmount: "100",
+                  forms: "ребенок,ребенка,ребят",
+                  itemName: "дети",
+                  startAmount: "0"
+                },
+                {
+                  id: "baby",
+                  minAmount: "0",
+                  maxAmount: "100",
+                  forms: "младенец,младенца,младенцев",
+                  itemName: "младенцы",
+                  startAmount: "0"
+                }
+              ], withButtons: true, generalForms: "гость,гостя,гостей"
+            })
+          .forms-elements__item.forms-elements__item_margin-large
+            .forms-elements__item-label
+              h3.forms-elements__item-header masked text field
+              span.forms-elements__item-state default
+            +textfield({
+              type: "text",
+              placeholder: "ДД.ММ.ГГГГ",
+              name: "masked-text-filed",
+              masked: true
+            })
+          .forms-elements__item.forms-elements__item_margin-large
+            +date-dropdown({
+              twoInputs: true,
+              headers: ["date dropdown", "date dropdown"],
+              startDateInterval: "2019-08-23"
+            })
+          .forms-elements__item.forms-elements__item_width-small.forms-elements__item_margin-large
+            .forms-elements__item-label
+              h3.forms-elements__item-header filter date dropdown
+            +date-dropdown({startDateInterval: "2019-08-19, 2019-08-23"})
+          .forms-elements__item.forms-elements__item_width-small.forms-elements__item_margin-large
+            .forms-elements__item-label
+              h3.forms-elements__item-header subscription text field
+            +subscription-textfield("Email", "email", "mock-address")
+        .forms-elements__column.forms-elements__col-2
+          .forms-elements__column.forms-elements__col-2-1
+            .forms-elements__item.forms-elements__item_width-small.forms-elements__item_margin-large
+              .forms-elements__item-label.forms-elements__item-label_margin-large
+                h3.forms-elements__item-header checkbox buttons
+              .forms-elements__subitem
+                +checkbox("Можно курить")
+              .forms-elements__subitem
+                +checkbox("Можно с питомцами", false, true)
+              .forms-elements__subitem
+                +checkbox("Можно пригласить гостей (до 10 человек)", false, true)
+            .forms-elements__item.forms-elements__item_width-small.forms-elements__item_margin-large
+              .forms-elements__item-label.forms-elements__item-label_margin-large
+                h3.forms-elements__item-header radio buttons
+              .forms-elements__subitem-inline
+                +radio-button("male", "gender", "Мужчина")
+              .forms-elements__subitem-inline
+                +radio-button("female", "gender", "Женщина")
+            .forms-elements__item.forms-elements__item_width-small.forms-elements__item_margin-large
+              .forms-elements__item-label.forms-elements__item-label_margin-large
+                h3.forms-elements__item-header toggle
+              .forms-elements__subitem
+                +toggle("true", "email-routing", "Получать спецпредложения", true)
+              .forms-elements__subitem
+                +toggle("false", "email-routing", "Получать спецпредложения")
+            .forms-elements__item.forms-elements__item_width-small.forms-elements__item_margin-large
+              .forms-elements__item-label.forms-elements__item-label_margin-large
+                h3.forms-elements__item-header like button
+              .forms-elements__subitem-inline
+                +like-button("false", "like", "2")
+              .forms-elements__subitem-inline
+                +like-button("true", "like", "12", true)
+            .forms-elements__item.forms-elements__item_width-small
+              .forms-elements__item-label.forms-elements__item-label_margin-large
+                h3.forms-elements__item-header rate button
+              .forms-elements__subitem-inline
+                +rate-button("rate-4", 4, "mock-address")
+              .forms-elements__subitem-inline
+                +rate-button("rate-5", 5, "mock-address")
+          .forms-elements__column.forms-elements__col-2-2
+            .forms-elements__item.forms-elements__item_margin-large.forms-elements__item_width-small
+              +range-slider({
+                text: "Range Slider",
+                startLowValue: 5000,
+                startHighValue: 10000,
+                minValue: 500,
+                maxValue: 15000
               })
-            .forms-elements__item
+            .forms-elements__item.forms-elements__item_margin-large
+              .forms-elements__item-label.forms-elements__item-label_margin-large
+                h3.forms-elements__item-header buttons
+              .forms-elements__subitem.forms-elements__subitem_margin-large
+                .forms-elements__subitem-inline.forms-elements__subitem-inline_width-big
+                  +link-button({
+                    text: "click me",
+                    link: "mock-address",
+                    filled: true,
+                    large: true
+                  })
+                .forms-elements__subitem-inline.forms-elements__subitem-inline_width-big
+                  +link-button({
+                    text: "click me",
+                    link: "mock-address",
+                    filled: true,
+                    large: true,
+                    disabled: true
+                  })
+              .forms-elements__subitem.forms-elements__subitem_margin-large
+                .forms-elements__subitem-inline.forms-elements__subitem-inline_width-big
+                  +link-button({
+                    text: "click me",
+                    link: "mock-address",
+                    filled: false,
+                    large: true
+                  })
+                .forms-elements__subitem-inline.forms-elements__subitem-inline_width-big
+                  +link-button({
+                    text: "click me",
+                    link: "mock-address",
+                    filled: false,
+                    large: true,
+                    disabled: true
+                  })
+              .forms-elements__subitem.forms-elements__subitem_margin-large
+                .forms-elements__subitem-inline
+                  +link("click me", "mock-address")
+                .forms-elements__subitem-inline
+                  +link("click me", "mock-address", true)
+              .forms-elements__subitem
+                +form-button("перейти к оплате")
+            .forms-elements__item.forms-elements__item_width-supersmall
+              .forms-elements__item-label.forms-elements__item-label_margin-large
+                h3.forms-elements__item-header pagination
+              .forms-elements__pagination
+                +pagination("1", "15", "mock-address", "1 – 12 из 100+ вариантов аренды")
+      .forms-elements__row.forms-elements__row_margin-small
+        .forms-elements__column.forms-elements__col-1
+          .forms-elements__item.forms-elements__item_width-small
+            .forms-elements__item-label
+              h3.forms-elements__item-header dropdown
+              span.forms-elements__item-state default
+            +dropdown({
+              placeholder: "Сколько гостей", items: [
+                {
+                  id: "bedrooms",
+                  minAmount: "0",
+                  maxAmount: "100",
+                  forms: "спальня,спальни,спален",
+                  itemName: "спальни",
+                  startAmount: "2"
+                },
+                {
+                  id: "beds",
+                  minAmount: "0",
+                  maxAmount: "100",
+                  forms: "кровать,кровати,кроватей",
+                  itemName: "кровати",
+                  startAmount: "2"
+                },
+                {
+                  id: "bathrooms",
+                  minAmount: "0",
+                  maxAmount: "100",
+                  forms: "ванная комната,ванные комнаты,ванных комнат",
+                  itemName: "ванные комнаты",
+                  startAmount: "0"
+                }
+              ]
+            })
+          .forms-elements__item.forms-elements__item_width-small.forms-elements__item_expanded
+            .forms-elements__item-label
+              h3.forms-elements__item-header dropdown
+              span.forms-elements__item-state expanded
+            +dropdown({
+              placeholder: "Сколько гостей", items: [
+                {
+                  id: "bedrooms",
+                  minAmount: "0",
+                  maxAmount: "100",
+                  forms: "спальня,спальни,спален",
+                  itemName: "спальни",
+                  startAmount: "2"
+                },
+                {
+                  id: "beds",
+                  minAmount: "0",
+                  maxAmount: "100",
+                  forms: "кровать,кровати,кроватей",
+                  itemName: "кровати",
+                  startAmount: "2"
+                },
+                {
+                  id: "bathrooms",
+                  minAmount: "0",
+                  maxAmount: "100",
+                  forms: "ванная комната,ванные комнаты,ванных комнат",
+                  itemName: "ванные комнаты",
+                  startAmount: "0"
+                }
+              ], expanded: true
+            })
+        .forms-elements__column.forms-elements__col-2
+          .forms-elements__column.forms-elements__col-2-1
+            .forms-elements__item.forms-elements__item_expanded
               .forms-elements__item-label
                 h3.forms-elements__item-header dropdown
-                span.forms-elements__item-state default
               +dropdown({
                 placeholder: "Сколько гостей", items: [
                   {
@@ -85,309 +293,91 @@ html(lang="en")
                     itemName: "младенцы",
                     startAmount: "0"
                   }
-                ], withButtons: true, generalForms: "гость,гостя,гостей"
+                ], expanded: true, withButtons: true, generalForms: "гость,гостя,гостей"
               })
-            .forms-elements__item.forms-elements__item_margin-large
-              .forms-elements__item-label
-                h3.forms-elements__item-header masked text field
-                span.forms-elements__item-state default
-              +textfield({
-                type: "text",
-                placeholder: "ДД.ММ.ГГГГ",
-                name: "masked-text-filed",
-                masked: true
-              })
-            .forms-elements__item.forms-elements__item_margin-large
-              +date-dropdown({
-                twoInputs: true,
-                headers: ["date dropdown", "date dropdown"],
-                startDateInterval: "2019-08-23"
-              })
-            .forms-elements__item.forms-elements__item_width-small.forms-elements__item_margin-large
-              .forms-elements__item-label
-                h3.forms-elements__item-header filter date dropdown
-              +date-dropdown({startDateInterval: "2019-08-19, 2019-08-23"})
-            .forms-elements__item.forms-elements__item_width-small.forms-elements__item_margin-large
-              .forms-elements__item-label
-                h3.forms-elements__item-header subscription text field
-              +subscription-textfield("Email", "email", "mock-address")
-          .forms-elements__column.forms-elements__col-2
-            .forms-elements__column.forms-elements__col-2-1
-              .forms-elements__item.forms-elements__item_width-small.forms-elements__item_margin-large
-                .forms-elements__item-label.forms-elements__item-label_margin-large
-                  h3.forms-elements__item-header checkbox buttons
-                .forms-elements__subitem
-                  +checkbox("Можно курить")
-                .forms-elements__subitem
-                  +checkbox("Можно с питомцами", false, true)
-                .forms-elements__subitem
-                  +checkbox("Можно пригласить гостей (до 10 человек)", false, true)
-              .forms-elements__item.forms-elements__item_width-small.forms-elements__item_margin-large
-                .forms-elements__item-label.forms-elements__item-label_margin-large
-                  h3.forms-elements__item-header radio buttons
-                .forms-elements__subitem-inline
-                  +radio-button("male", "gender", "Мужчина")
-                .forms-elements__subitem-inline
-                  +radio-button("female", "gender", "Женщина")
-              .forms-elements__item.forms-elements__item_width-small.forms-elements__item_margin-large
-                .forms-elements__item-label.forms-elements__item-label_margin-large
-                  h3.forms-elements__item-header toggle
-                .forms-elements__subitem
-                  +toggle("true", "email-routing", "Получать спецпредложения", true)
-                .forms-elements__subitem
-                  +toggle("false", "email-routing", "Получать спецпредложения")
-              .forms-elements__item.forms-elements__item_width-small.forms-elements__item_margin-large
-                .forms-elements__item-label.forms-elements__item-label_margin-large
-                  h3.forms-elements__item-header like button
-                .forms-elements__subitem-inline
-                  +like-button("false", "like", "2")
-                .forms-elements__subitem-inline
-                  +like-button("true", "like", "12", true)
-              .forms-elements__item.forms-elements__item_width-small
-                .forms-elements__item-label.forms-elements__item-label_margin-large
-                  h3.forms-elements__item-header rate button
-                .forms-elements__subitem-inline
-                  +rate-button("rate-4", 4, "mock-address")
-                .forms-elements__subitem-inline
-                  +rate-button("rate-5", 5, "mock-address")
-            .forms-elements__column.forms-elements__col-2-2
-              .forms-elements__item.forms-elements__item_margin-large.forms-elements__item_width-small
-                +range-slider({
-                  text: "Range Slider",
-                  startLowValue: 5000,
-                  startHighValue: 10000,
-                  minValue: 500,
-                  maxValue: 15000
-                })
-              .forms-elements__item.forms-elements__item_margin-large
-                .forms-elements__item-label.forms-elements__item-label_margin-large
-                  h3.forms-elements__item-header buttons
-                .forms-elements__subitem.forms-elements__subitem_margin-large
-                  .forms-elements__subitem-inline.forms-elements__subitem-inline_width-big
-                    +link-button({
-                      text: "click me",
-                      link: "mock-address",
-                      filled: true,
-                      large: true
-                    })
-                  .forms-elements__subitem-inline.forms-elements__subitem-inline_width-big
-                    +link-button({
-                      text: "click me",
-                      link: "mock-address",
-                      filled: true,
-                      large: true,
-                      disabled: true
-                    })
-                .forms-elements__subitem.forms-elements__subitem_margin-large
-                  .forms-elements__subitem-inline.forms-elements__subitem-inline_width-big
-                    +link-button({
-                      text: "click me",
-                      link: "mock-address",
-                      filled: false,
-                      large: true
-                    })
-                  .forms-elements__subitem-inline.forms-elements__subitem-inline_width-big
-                    +link-button({
-                      text: "click me",
-                      link: "mock-address",
-                      filled: false,
-                      large: true,
-                      disabled: true
-                    })
-                .forms-elements__subitem.forms-elements__subitem_margin-large
-                  .forms-elements__subitem-inline
-                    +link("click me", "mock-address")
-                  .forms-elements__subitem-inline
-                    +link("click me", "mock-address", true)
-                .forms-elements__subitem
-                  +form-button("перейти к оплате")
-              .forms-elements__item.forms-elements__item_width-supersmall
-                .forms-elements__item-label.forms-elements__item-label_margin-large
-                  h3.forms-elements__item-header pagination
-                .forms-elements__pagination
-                  +pagination("1", "15", "mock-address", "1 – 12 из 100+ вариантов аренды")
-        .forms-elements__row.forms-elements__row_margin-small
-          .forms-elements__column.forms-elements__col-1
-            .forms-elements__item.forms-elements__item_width-small
+          .forms-elements__column.forms-elements__col-2-2
+            .forms-elements__item.forms-elements__item_expanded
               .forms-elements__item-label
                 h3.forms-elements__item-header dropdown
-                span.forms-elements__item-state default
               +dropdown({
                 placeholder: "Сколько гостей", items: [
                   {
-                    id: "bedrooms",
+                    id: "adults",
                     minAmount: "0",
                     maxAmount: "100",
-                    forms: "спальня,спальни,спален",
-                    itemName: "спальни",
+                    forms: "взрослый,взрослых,взрослых",
+                    itemName: "взрослые",
                     startAmount: "2"
                   },
                   {
-                    id: "beds",
+                    id: "children",
                     minAmount: "0",
                     maxAmount: "100",
-                    forms: "кровать,кровати,кроватей",
-                    itemName: "кровати",
-                    startAmount: "2"
+                    forms: "ребенок,ребенка,ребят",
+                    itemName: "дети",
+                    startAmount: "1"
                   },
                   {
-                    id: "bathrooms",
+                    id: "baby",
                     minAmount: "0",
                     maxAmount: "100",
-                    forms: "ванная комната,ванные комнаты,ванных комнат",
-                    itemName: "ванные комнаты",
+                    forms: "младенец,младенца,младенцев",
+                    itemName: "младенцы",
                     startAmount: "0"
                   }
-                ]
+                ], expanded: true, withButtons: true, generalForms: "гость,гостя,гостей"
               })
-            .forms-elements__item.forms-elements__item_width-small.forms-elements__item_expanded
-              .forms-elements__item-label
-                h3.forms-elements__item-header dropdown
-                span.forms-elements__item-state expanded
-              +dropdown({
-                placeholder: "Сколько гостей", items: [
-                  {
-                    id: "bedrooms",
-                    minAmount: "0",
-                    maxAmount: "100",
-                    forms: "спальня,спальни,спален",
-                    itemName: "спальни",
-                    startAmount: "2"
-                  },
-                  {
-                    id: "beds",
-                    minAmount: "0",
-                    maxAmount: "100",
-                    forms: "кровать,кровати,кроватей",
-                    itemName: "кровати",
-                    startAmount: "2"
-                  },
-                  {
-                    id: "bathrooms",
-                    minAmount: "0",
-                    maxAmount: "100",
-                    forms: "ванная комната,ванные комнаты,ванных комнат",
-                    itemName: "ванные комнаты",
-                    startAmount: "0"
-                  }
-                ], expanded: true
-              })
-          .forms-elements__column.forms-elements__col-2
-            .forms-elements__column.forms-elements__col-2-1
-              .forms-elements__item.forms-elements__item_expanded
-                .forms-elements__item-label
-                  h3.forms-elements__item-header dropdown
-                +dropdown({
-                  placeholder: "Сколько гостей", items: [
-                    {
-                      id: "adults",
-                      minAmount: "0",
-                      maxAmount: "100",
-                      forms: "взрослый,взрослых,взрослых",
-                      itemName: "взрослые",
-                      startAmount: "0"
-                    },
-                    {
-                      id: "children",
-                      minAmount: "0",
-                      maxAmount: "100",
-                      forms: "ребенок,ребенка,ребят",
-                      itemName: "дети",
-                      startAmount: "0"
-                    },
-                    {
-                      id: "baby",
-                      minAmount: "0",
-                      maxAmount: "100",
-                      forms: "младенец,младенца,младенцев",
-                      itemName: "младенцы",
-                      startAmount: "0"
-                    }
-                  ], expanded: true, withButtons: true, generalForms: "гость,гостя,гостей"
-                })
-            .forms-elements__column.forms-elements__col-2-2
-              .forms-elements__item.forms-elements__item_expanded
-                .forms-elements__item-label
-                  h3.forms-elements__item-header dropdown
-                +dropdown({
-                  placeholder: "Сколько гостей", items: [
-                    {
-                      id: "adults",
-                      minAmount: "0",
-                      maxAmount: "100",
-                      forms: "взрослый,взрослых,взрослых",
-                      itemName: "взрослые",
-                      startAmount: "2"
-                    },
-                    {
-                      id: "children",
-                      minAmount: "0",
-                      maxAmount: "100",
-                      forms: "ребенок,ребенка,ребят",
-                      itemName: "дети",
-                      startAmount: "1"
-                    },
-                    {
-                      id: "baby",
-                      minAmount: "0",
-                      maxAmount: "100",
-                      forms: "младенец,младенца,младенцев",
-                      itemName: "младенцы",
-                      startAmount: "0"
-                    }
-                  ], expanded: true, withButtons: true, generalForms: "гость,гостя,гостей"
-                })
-        .forms-elements__row.forms-elements__row-3
-          .forms-elements__column.forms-elements__col-1
+      .forms-elements__row.forms-elements__row-3
+        .forms-elements__column.forms-elements__col-1
+          .forms-elements__item.forms-elements__item_width-small
+            +expandable-checkbox-list("expandable checkbox list", [
+              {text: "Завтрак", checked: false},
+              {text: "Письменный стол", checked: true},
+              {text: "Стул для кормления", checked: true},
+              {text: "Кроватка", checked: true},
+              {text: "Телевизор", checked: false},
+              {text: "Шампунь", checked: false}
+            ])
+          .forms-elements__item.forms-elements__item_width-small
+            +expandable-checkbox-list("expandable checkbox list", [
+              {text: "Завтрак", checked: false},
+              {text: "Письменный стол", checked: true},
+              {text: "Стул для кормления", checked: true},
+              {text: "Кроватка", checked: true},
+              {text: "Телевизор", checked: false},
+              {text: "Шампунь", checked: false}
+            ], true)
+        .forms-elements__column.forms-elements__col-2
+          .forms-elements__column.forms-elements__col-2-1
             .forms-elements__item.forms-elements__item_width-small
-              +expandable-checkbox-list("expandable checkbox list", [
-                {text: "Завтрак", checked: false},
-                {text: "Письменный стол", checked: true},
-                {text: "Стул для кормления", checked: true},
-                {text: "Кроватка", checked: true},
-                {text: "Телевизор", checked: false},
-                {text: "Шампунь", checked: false}
+              .forms-elements__item-label.forms-elements__item-label_margin-large
+                h3.forms-elements__item-header rich checkbox buttons
+              .forms-elements__subitem
+                +rich-checkbox("Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
+              .forms-elements__subitem
+                +rich-checkbox("Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.")
+          .forms-elements__column.forms-elements__col-2-2
+            .forms-elements__item
+              .forms-elements__item-label
+                h3.forms-elements__item-label bullet list
+              +bullet-list([
+                {text: "Нельзя с питомцами", style: "default", withPadding: "true"},
+                {text: "Без вечеринок и мероприятий", style: "default", withPadding: "true"},
+                {text: "Время прибытия — после 13:00, а выезд до 12:00", style: "default"}
               ])
-            .forms-elements__item.forms-elements__item_width-small
-              +expandable-checkbox-list("expandable checkbox list", [
-                {text: "Завтрак", checked: false},
-                {text: "Письменный стол", checked: true},
-                {text: "Стул для кормления", checked: true},
-                {text: "Кроватка", checked: true},
-                {text: "Телевизор", checked: false},
-                {text: "Шампунь", checked: false}
-              ], true)
-          .forms-elements__column.forms-elements__col-2
-            .forms-elements__column.forms-elements__col-2-1
-              .forms-elements__item.forms-elements__item_width-small
-                .forms-elements__item-label.forms-elements__item-label_margin-large
-                  h3.forms-elements__item-header rich checkbox buttons
-                .forms-elements__subitem
-                  +rich-checkbox("Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
-                .forms-elements__subitem
-                  +rich-checkbox("Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.")
-            .forms-elements__column.forms-elements__col-2-2
-              .forms-elements__item
-                .forms-elements__item-label
-                  h3.forms-elements__item-label bullet list
-                +bullet-list([
-                  {text: "Нельзя с питомцами", style: "default", withPadding: "true"},
-                  {text: "Без вечеринок и мероприятий", style: "default", withPadding: "true"},
-                  {text: "Время прибытия — после 13:00, а выезд до 12:00", style: "default"}
-                ])
-        .forms-elements__row.forms-elements__row-4
-          .forms-elements__column.forms-elements__col-1
-            .forms-elements__item
-              +icon-text("insert_emoticon", "Комфорт", "Шумопоглощающие стены", true)
-            .forms-elements__item
-              +icon-text("location_city", "Удобство", "Окно в каждой из спален", true)
-          .forms-elements__column.forms-elements__col-2
-            .forms-elements__item.forms-elements__item_width-100
-              +comment({
-                avatar: "comment-avatar-1.jpg",
-                fullName: "Мурад Сарафанов",
-                lastViewedTime: "5 дней назад",
-                likeAmount: 12,
-                commentText: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
-                liked: true
-              })
+      .forms-elements__row.forms-elements__row-4
+        .forms-elements__column.forms-elements__col-1
+          .forms-elements__item
+            +icon-text("insert_emoticon", "Комфорт", "Шумопоглощающие стены", true)
+          .forms-elements__item
+            +icon-text("location_city", "Удобство", "Окно в каждой из спален", true)
+        .forms-elements__column.forms-elements__col-2
+          .forms-elements__item.forms-elements__item_width-100
+            +comment({
+              avatar: "comment-avatar-1.jpg",
+              fullName: "Мурад Сарафанов",
+              lastViewedTime: "5 дней назад",
+              likeAmount: 12,
+              commentText: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
+              liked: true
+            })
