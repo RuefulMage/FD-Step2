@@ -200,7 +200,7 @@ class Dropdown {
       result += '...';
     }
     if (this.totalAmount === 0) {
-      result = placeholder;
+      result = this.placeholder;
     }
     this.inputField.innerText = result;
   }
