@@ -114,7 +114,8 @@ module.exports = {
       filename: `./index.html`
     }),
     new CopyWebpackPlugin([
-      {from: `${PATHS.src}/**/**/images/*`, to: `${PATHS.assets}images/[name].[ext]`}
+      {from: `${PATHS.src}/**/**/images/*`, to: `${PATHS.assets}images/[name].[ext]`},
+      {from: `${PATHS.src}/**/**/favicons/*`, to: `${PATHS.assets}favicons/[name].[ext]`}
     ]),
     new webpack.ProvidePlugin({
       $: 'jquery',
