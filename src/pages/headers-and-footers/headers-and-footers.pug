@@ -1,14 +1,14 @@
-include ../../blocks/logo/logo
-include ../../blocks/header/header
-include ../../blocks/footer/footer
-include ../../blocks/copyright/copyright
-include ../../blocks/small-footer/small-footer
 extends ../main-layout/main-layout
 block page-meta
   meta(name="keywords" content="Header, Footer, Toxin")
   meta(name="description" content="Toxin headers and footers demonstration page")
   title Headers & Footers
 block body
+  include ../../blocks/logo/logo
+  include ../../blocks/header/header
+  include ../../blocks/footer/footer
+  include ../../blocks/copyright/copyright
+  include ../../blocks/small-footer/small-footer
   .headers-and-footers__wrapper
     .headers-and-footers__logo
       +logo()
