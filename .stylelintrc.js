@@ -3,6 +3,7 @@ module.exports = {
     "stylelint-config-rational-order"],
   plugins: ["stylelint-order", "stylelint-scss"],
   rules: {
-    "max-nesting-depth": 3
+    "max-nesting-depth": 3,
+    "string-quotes": ["single"]
   }
 };
