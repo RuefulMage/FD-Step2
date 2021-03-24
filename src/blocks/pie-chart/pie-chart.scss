@@ -1,4 +1,4 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
 .pie-chart {
   display: flex;
@@ -39,12 +39,12 @@
 
   &__votes-amount {
     margin-bottom: 5px;
-    font: bold 1.5rem Quicksand, OpenSans, sans-serif;
+    font: bold 1.5rem Quicksand, Arial, sans-serif;
   }
 
   &__sign {
     font-size: 12px;
-    font-family: Montserrat, OpenSans, sans-serif;
+    font-family: Montserrat, Arial, sans-serif;
     text-transform: uppercase;
   }
 
@@ -64,7 +64,7 @@
       height: 10px;
       background-color: $dark-100;
       border-radius: 100%;
-      content: "";
+      content: '';
     }
   }
 }

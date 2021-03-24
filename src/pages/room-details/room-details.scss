@@ -1,4 +1,4 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
 .room-details {
   border-bottom: 1px solid $dark-25;
@@ -19,7 +19,7 @@
   &__main-image {
     width: 68%;
     height: 100%;
-    background: padding-box no-repeat center/cover url("images/room-photo-1.jpg");
+    background: padding-box no-repeat center/cover url('images/room-photo-1.jpg');
 
     @media (max-width: 500px) {
       width: 100%;
@@ -42,11 +42,11 @@
     background: no-repeat center;
 
     &:first-child {
-      background-image: url("images/room-photo-3.jpg");
+      background-image: url('images/room-photo-3.jpg');
     }
 
     &:last-child {
-      background-image: url("images/room-photo-2.jpg");
+      background-image: url('images/room-photo-2.jpg');
     }
   }
 

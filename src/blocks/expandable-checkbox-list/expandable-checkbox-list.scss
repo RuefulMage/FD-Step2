@@ -1,4 +1,4 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
 .expandable-checkbox-list {
 
@@ -27,7 +27,7 @@
     width: 100%;
     max-width: 44px;
     color: $dark-50;
-    font: 1.5rem "Material Icons";
+    font: 1.5rem 'Material Icons';
 
     &_rotated {
       transform: rotate(-180deg);

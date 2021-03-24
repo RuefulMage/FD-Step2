@@ -1,4 +1,4 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
 .bullet-list {
 
@@ -17,7 +17,7 @@
       height: 10px;
       background-color: $dark-25;
       border-radius: 100%;
-      content: "";
+      content: '';
     }
 
     &_with-paddings {

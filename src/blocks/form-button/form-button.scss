@@ -1,4 +1,4 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
 .form-button {
   display: flex;
@@ -35,7 +35,7 @@
   &__arrow {
     width: 100%;
     max-width: 44px;
-    font: normal 1.5rem Material Icons;
+    font: normal 1.5rem 'Material Icons';
     text-align: center;
     text-transform: none;
 

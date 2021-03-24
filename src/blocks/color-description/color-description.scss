@@ -1,4 +1,4 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
 .color-description {
   display: flex;
@@ -49,6 +49,6 @@
 
   &__code {
     font-size: 1.1875rem; //19px при базовом размере шрифта 16px
-    font-family: Quicksand, OpenSans, sans-serif;
+    font-family: Quicksand, Arial, sans-serif;
   }
 }

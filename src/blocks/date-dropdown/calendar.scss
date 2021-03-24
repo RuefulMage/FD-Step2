@@ -1,11 +1,11 @@
-@import "../../assets/scss/colors";
+@import '../../assets/scss/colors';
 
 .date-dropdown__calendar {
 
   &-arrow {
     color: $purple;
     font-size: 1.5rem; //24px при базовом размере шрифта 16px
-    font-family: "Material Icons";
+    font-family: 'Material Icons';
   }
 
   &-buttons-wrapper {
@@ -126,7 +126,7 @@
       height: 100%;
       background: $gradient;
       opacity: .25;
-      content: "";
+      content: '';
     }
   }
 

@@ -1,9 +1,9 @@
-@import "./colors.scss";
+@import './colors.scss';
 
 html {
   color: $dark-75;
   font-size: 16px;
-  font-family: Montserrat, OpenSans, sans-serif;
+  font-family: Montserrat, Arial, sans-serif;
   background: white;
 }
 
@@ -15,20 +15,20 @@ h1 {
   color: $dark-100;
   font-weight: bold;
   font-size: 1.5rem; //24px при базовом размере шрифта 16px
-  font-family: Quicksand, OpenSans, sans-serif;
+  font-family: Quicksand, Arial, sans-serif;
 }
 
 h2 {
   color: $dark-100;
   font-weight: bold;
   font-size: 1.1875rem; //19px при базовом размере шрифта 16px
-  font-family: Quicksand, OpenSans, sans-serif;
+  font-family: Quicksand, Arial, sans-serif;
 }
 
 h3 {
   color: $dark-100;
   font-weight: bold;
   font-size: .75rem; //12px при базовом размере шрифта 16px
-  font-family: Montserrat, OpenSans, sans-serif;
+  font-family: Montserrat, Arial, sans-serif;
   line-height: .9375rem; //15px при базовом размере шрифта 16px
 }

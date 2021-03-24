@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     padding: 19px 0 19px 5px;
-    background: padding-box no-repeat center/cover url("./images/registration-background.jpg");
+    background: padding-box no-repeat center/cover url('./images/registration-background.jpg');
 
     @media (max-width: 1190px) {
       padding: 19px 30px;

@@ -1,4 +1,4 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
 .toggle {
   display: flex;
@@ -34,7 +34,7 @@
       background: $dark-25;
       border-radius: 100%;
       transition: left .3s;
-      content: "";
+      content: '';
     }
 
     &:checked {

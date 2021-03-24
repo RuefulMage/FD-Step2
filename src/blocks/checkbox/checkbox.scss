@@ -1,4 +1,4 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
 .checkbox {
   display: flex;
@@ -45,7 +45,7 @@
       transform: rotate(45deg);
       opacity: var(--opacity, 0);
       transition: opacity .3s;
-      content: "";
+      content: '';
     }
   }
 

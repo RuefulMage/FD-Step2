@@ -1,4 +1,4 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
 .subscription-textfield {
   display: flex;
@@ -16,7 +16,7 @@
     width: 100%;
     padding-left: 14px;
     color: $dark-75;
-    font: .875rem Montserrat, OpenSans, sans-serif;
+    font: .875rem Montserrat, Arial, sans-serif;
     border: 0;
     border-radius: inherit;
     outline: none;
@@ -31,7 +31,7 @@
     justify-content: center;
     width: 100%;
     max-width: 44px;
-    font: 1.5rem "Material Icons";
+    font: 1.5rem 'Material Icons';
     background: $gradient;
     -webkit-background-clip: text;
     outline: none;

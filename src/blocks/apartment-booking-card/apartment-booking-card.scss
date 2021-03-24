@@ -1,4 +1,4 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
 .apartment-booking-card {
   box-sizing: border-box;
@@ -87,7 +87,7 @@
     color: $dark-100;
     font-weight: bold;
     font-size: 1.1875rem; //19px при базовом размере шрифта 16px
-    font-family: Quicksand, OpenSans, sans-serif;
+    font-family: Quicksand, Arial, sans-serif;
   }
 
   &__line {

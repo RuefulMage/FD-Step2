@@ -1,4 +1,4 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
 $max-page: 100;
 
@@ -24,7 +24,7 @@ $max-page: 100;
 
     &_last {
       color: white;
-      font: 1.5rem Material Icons;
+      font: 1.5rem 'Material Icons';
       background: $secondary-gradient;
     }
 
@@ -42,7 +42,7 @@ $max-page: 100;
     }
   }
 
-  &:not([data-current-page="1"]) &__item:nth-child(1) {
+  &:not([data-current-page='1']) &__item:nth-child(1) {
     display: flex;
   }
 }
@@ -57,7 +57,7 @@ $max-page: 100;
 
       &:after {
         color: $dark-50;
-        content: "...";
+        content: '...';
       }
     }
     // 2 before
@@ -95,7 +95,7 @@ $max-page: 100;
       &:after {
         color: $dark-50;
         font-size: .75rem; //12px при базовом размере шрифта 16px
-        content: "...";
+        content: '...';
       }
     }
   }

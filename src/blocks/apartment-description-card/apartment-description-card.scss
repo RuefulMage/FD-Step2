@@ -1,4 +1,4 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
 .apartment-description-card {
   border-radius: 4px;
@@ -57,7 +57,7 @@
   &__prev-button,
   &__next-button {
     color: white;
-    font: 1.5rem "Material Icons";
+    font: 1.5rem 'Material Icons';
     outline: none;
     transform: rotate(90deg);
 

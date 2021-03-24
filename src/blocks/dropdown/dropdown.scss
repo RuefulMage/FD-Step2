@@ -1,4 +1,4 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
 .dropdown {
   position: relative;
@@ -29,7 +29,7 @@
     width: 100%;
     max-width: 44px;
     color: $dark-50;
-    font: 1.5rem "Material Icons";
+    font: 1.5rem 'Material Icons';
     outline: none;
     cursor: pointer;
     user-select: none;

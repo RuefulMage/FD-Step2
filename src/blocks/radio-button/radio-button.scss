@@ -1,4 +1,4 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
 .radio-button {
   display: flex;
@@ -35,7 +35,7 @@
       background: $gradient;
       border-radius: 100%;
       opacity: var(--opacity, 0);
-      content: "";
+      content: '';
     }
 
     &:checked {

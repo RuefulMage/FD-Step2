@@ -1,4 +1,4 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
 .header-navigation {
   display: flex;
@@ -48,8 +48,8 @@
 
       &:after {
         font-size: 1.5rem; //24px при базовом размере шрифта 16px
-        font-family: "Material Icons";
-        content: "expand_more";
+        font-family: 'Material Icons';
+        content: 'expand_more';
       }
     }
 

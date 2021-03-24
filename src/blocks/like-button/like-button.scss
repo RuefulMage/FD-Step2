@@ -1,4 +1,4 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
 .like-button {
   box-sizing: border-box;
@@ -32,7 +32,7 @@
     align-items: center;
     justify-content: center;
     width: 50%;
-    font-family: "Material Icons";
+    font-family: 'Material Icons';
   }
 
   &__amount {

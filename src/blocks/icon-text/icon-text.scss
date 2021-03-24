@@ -1,4 +1,4 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
 .icon-text {
   display: flex;
@@ -6,7 +6,7 @@
   &__icon {
     display: flex;
     font-size: 3rem; //48px при базовом размере шрифта 16px
-    font-family: "Material Icons";
+    font-family: 'Material Icons';
     background: $gradient;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

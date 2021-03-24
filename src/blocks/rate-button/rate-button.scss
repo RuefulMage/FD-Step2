@@ -1,4 +1,4 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
 .rate-button {
   display: flex;
@@ -7,12 +7,12 @@
     outline: none;
 
     &:after {
-      font: 1.5rem "Material Icons";
+      font: 1.5rem 'Material Icons';
       line-height: 1.25rem; //20px при базовом размере шрифта 16px
       background: $gradient;
       -webkit-background-clip: text;
       cursor: pointer;
-      content: "star";
+      content: 'star';
       user-select: none;
       -webkit-text-fill-color: transparent;
     }
@@ -20,7 +20,7 @@
     &:checked ~ & {
 
       &:after {
-        content: "star_border";
+        content: 'star_border';
       }
     }
   }

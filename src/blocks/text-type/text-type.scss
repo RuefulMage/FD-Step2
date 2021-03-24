@@ -1,4 +1,4 @@
-@import "../../assets/scss/colors.scss";
+@import '../../assets/scss/colors.scss';
 
 .text-type {
   display: flex;
@@ -32,13 +32,13 @@
 
     &_font_large {
       color: $dark-100;
-      font: bold 1.5rem Quicksand, OpenSans, sans-serif;
+      font: bold 1.5rem Quicksand, Arial, sans-serif;
       line-height: 1.875rem; //30px при базовом размере шрифта 16px
     }
 
     &_font_medium {
       color: $dark-100;
-      font: bold 1.1875rem Quicksand, OpenSans, sans-serif;
+      font: bold 1.1875rem Quicksand, Arial, sans-serif;
       line-height: 1.5rem; //24px при базовом размере шрифта 16px
     }
 
