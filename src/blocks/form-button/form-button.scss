@@ -35,9 +35,7 @@
   &__arrow {
     width: 100%;
     max-width: 44px;
-    font-weight: normal;
-    font-size: 1.5rem; //24px при базовом размере шрифта 16px
-    font-family: "Material Icons";
+    font: normal 1.5rem Material Icons;
     text-align: center;
     text-transform: none;
 

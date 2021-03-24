@@ -24,8 +24,7 @@ $max-page: 100;
 
     &_last {
       color: white;
-      font-size: 1.5rem; //24px при базовом размере шрифта 16px
-      font-family: "Material Icons";
+      font: 1.5rem Material Icons;
       background: $secondary-gradient;
     }
 

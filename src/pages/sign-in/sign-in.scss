@@ -4,11 +4,7 @@
     display: flex;
     justify-content: center;
     padding: 172px 0;
-    background-image: url("./images/sign-in-background.jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-origin: padding-box;
+    background: padding-box no-repeat center/cover url("./images/sign-in-background.jpg");
 
     @media (max-width: 1190px) {
       padding-right: 30px;

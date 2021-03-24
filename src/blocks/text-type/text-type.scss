@@ -32,17 +32,13 @@
 
     &_font_large {
       color: $dark-100;
-      font-weight: bold;
-      font-size: 1.5rem; //24px при базовом размере шрифта 16px
-      font-family: Quicksand, OpenSans, sans-serif;
+      font: bold 1.5rem Quicksand, OpenSans, sans-serif;
       line-height: 1.875rem; //30px при базовом размере шрифта 16px
     }
 
     &_font_medium {
       color: $dark-100;
-      font-weight: bold;
-      font-size: 1.1875rem; //19px при базовом размере шрифта 16px
-      font-family: Quicksand, OpenSans, sans-serif;
+      font: bold 1.1875rem Quicksand, OpenSans, sans-serif;
       line-height: 1.5rem; //24px при базовом размере шрифта 16px
     }
 

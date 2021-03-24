@@ -4,15 +4,10 @@
     display: flex;
     justify-content: center;
     padding: 19px 0 19px 5px;
-    background-image: url("./images/registration-background.jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-origin: padding-box;
+    background: padding-box no-repeat center/cover url("./images/registration-background.jpg");
 
     @media (max-width: 1190px) {
-      padding-right: 30px;
-      padding-left: 30px;
+      padding: 19px 30px;
     }
   }
 

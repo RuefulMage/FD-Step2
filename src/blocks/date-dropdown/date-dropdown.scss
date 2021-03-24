@@ -44,8 +44,7 @@
     width: 100%;
     padding-left: 15px;
     color: $dark-75;
-    font-size: .875rem; //14px при базовом размере шрифта 16px
-    font-family: Montserrat, OpenSans, sans-serif;
+    font: .875rem Montserrat, OpenSans, sans-serif;
     line-height: 1.5rem; //24px при базовом размере шрифта 16px
     border: 0;
     border-radius: inherit;
@@ -68,8 +67,7 @@
     width: 100%;
     max-width: 44px;
     color: $dark-50;
-    font-size: 1.5rem; //24px при базовом размере шрифта 16px
-    font-family: "Material Icons";
+    font: 1.5rem "Material Icons";
     user-select: none;
     pointer-events: none;
 

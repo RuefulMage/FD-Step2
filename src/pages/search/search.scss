@@ -13,8 +13,7 @@
     @media (max-width: 880px) {
       flex-direction: column;
       align-items: center;
-      padding-right: 30px;
-      padding-left: 30px;
+      padding: 30px 30px 80px;
     }
   }
 
@@ -133,8 +132,7 @@
   &__result-item {
     width: 100%;
     max-width: 270px;
-    margin-right: 12px;
-    margin-bottom: 17px;
+    margin: 0 12px 17px 0;
 
     @media (min-width: 1160px) {
 

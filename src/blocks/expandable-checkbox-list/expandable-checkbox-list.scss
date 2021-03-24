@@ -27,8 +27,7 @@
     width: 100%;
     max-width: 44px;
     color: $dark-50;
-    font-size: 1.5rem; //24px при базовом размере шрифта 16px
-    font-family: "Material Icons";
+    font: 1.5rem "Material Icons";
 
     &_rotated {
       transform: rotate(-180deg);

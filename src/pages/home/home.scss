@@ -1,13 +1,8 @@
 @import "../../assets/scss/colors.scss";
 
 .home {
-  padding-top: 70px;
-  padding-bottom: 22px;
-  background-image: url("./images/home-background.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  background-origin: padding-box;
+  padding: 70px 0 22px;
+  background: padding-box no-repeat center/cover url("./images/home-background.jpg");
 
   &__container {
     display: flex;
@@ -16,8 +11,7 @@
     margin: 0 auto;
 
     @media (max-width: 1190px) {
-      padding-right: 30px;
-      padding-left: 30px;
+      padding: 0 30px;
     }
 
     @media (max-width: 1024px) {

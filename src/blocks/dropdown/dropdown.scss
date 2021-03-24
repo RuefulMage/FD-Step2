@@ -29,8 +29,7 @@
     width: 100%;
     max-width: 44px;
     color: $dark-50;
-    font-size: 1.5rem; //24px при базовом размере шрифта 16px
-    font-family: "Material Icons";
+    font: 1.5rem "Material Icons";
     outline: none;
     cursor: pointer;
     user-select: none;
@@ -50,9 +49,7 @@
     display: none;
     box-sizing: border-box;
     width: 100%;
-    padding-top: 4px;
-    padding-right: 7px;
-    padding-left: 14px;
+    padding: 4px 7px 0 14px;
     background: white;
     border: 1px solid $dark-50;
     border-top: 0;

@@ -57,8 +57,7 @@
   &__prev-button,
   &__next-button {
     color: white;
-    font-size: 1.5rem; //24px при базовом размере шрифта 16px
-    font-family: "Material Icons";
+    font: 1.5rem "Material Icons";
     outline: none;
     transform: rotate(90deg);
 
