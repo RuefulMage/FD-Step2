@@ -1,15 +1,12 @@
 .sign-in {
+  display: flex;
+  justify-content: center;
+  padding: 172px 0;
+  background: padding-box no-repeat center/cover url('./images/sign-in-background.jpg');
 
-  &__container {
-    display: flex;
-    justify-content: center;
-    padding: 172px 0;
-    background: padding-box no-repeat center/cover url('./images/sign-in-background.jpg');
-
-    @media (max-width: 1190px) {
-      padding-right: 30px;
-      padding-left: 30px;
-    }
+  @media (max-width: 1190px) {
+    padding-right: 30px;
+    padding-left: 30px;
   }
 
   &__card {

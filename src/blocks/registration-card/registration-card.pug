@@ -3,10 +3,12 @@ include ../radio-button/radio-button
 include ../toggle/toggle
 include ../form-button/form-button
 include ../link-button/link-button
+include ../title/title
 mixin registration-card(mainTitle, link)
   .registration-card
     .registration-card__container
-      h1.registration-card__title=mainTitle
+      .registration-card__title
+        +title('high', mainTitle, true)
       form.registration-card__form(method="POST" action=link)
         .registration-card__name-field
           +textfield({type: "text", placeholder: "Имя", name: "name"})
@@ -17,10 +19,12 @@ mixin registration-card(mainTitle, link)
             +radio-button("Мужчина", "gender", "Мужчина")
           .registration-card__choice-variant
             +radio-button("Женщина", "gender", "Женщина")
-        h3.registration-card__subtitle дата рождения
+        .registration-card__subtitle
+          +title('low', 'дата рождения')
         .registration-card__birth-date-field
           +textfield({type: "text", placeholder: "ДД.ММ.ГГГГ", name: "birth-date", masked: true})
-        h3.registration-card__subtitle данные для входа в сервис
+        .registration-card__subtitle
+          +title('low', 'данные для входа в сервис')
         .registration-card__email-field
           +textfield({type: "email", placeholder: "Email", name: "email"})
         .registration-card__password-field

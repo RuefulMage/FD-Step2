@@ -24,7 +24,8 @@ block body
   include ../../blocks/bullet-list/bullet-list
   include ../../blocks/comment/comment
   include ../../blocks/logo/logo
-  .forms-elements__wrapper
+  include ../../blocks/title/title
+  .forms-elements
     .forms-elements__logo
       +logo()
     main.forms-elements__container
@@ -32,12 +33,14 @@ block body
         .forms-elements__column.forms-elements__col-1
           .forms-elements__item
             .forms-elements__item-label
-              h3.forms-elements__item-header text field
+              .forms-elements__item-header
+                +title('low', 'text field')
               span.forms-elements__item-state default
             +textfield({type: "email", placeholder: "Email", name: "default-textfield"})
           .forms-elements__item
             .forms-elements__item-label
-              h3.forms-elements__item-header text field
+              .forms-elements__item-header
+                +title('low', 'text field')
               span.forms-elements__item-state hover / focus
             +textfield({
               type: "email",
@@ -47,7 +50,8 @@ block body
             })
           .forms-elements__item
             .forms-elements__item-label
-              h3.forms-elements__item-header dropdown
+              .forms-elements__item-header
+                +title('low', 'dropdown')
               span.forms-elements__item-state default
             +dropdown({
               placeholder: "Сколько гостей", items: [
@@ -79,7 +83,8 @@ block body
             })
           .forms-elements__item.forms-elements__item_margin-large
             .forms-elements__item-label
-              h3.forms-elements__item-header masked text field
+              .forms-elements__item-header
+                +title('low', 'masked text field')
               span.forms-elements__item-state default
             +textfield({
               type: "text",
@@ -95,17 +100,20 @@ block body
             })
           .forms-elements__item.forms-elements__item_width-small.forms-elements__item_margin-large
             .forms-elements__item-label
-              h3.forms-elements__item-header filter date dropdown
+              .forms-elements__item-header
+                +title('low', 'filter date dropdown')
             +date-dropdown({startDateInterval: "2019-08-19, 2019-08-23"})
           .forms-elements__item.forms-elements__item_width-small.forms-elements__item_margin-large
             .forms-elements__item-label
-              h3.forms-elements__item-header subscription text field
+              .forms-elements__item-header
+                +title('low', 'subscription text field')
             +subscription-textfield("Email", "email", "mock-address")
         .forms-elements__column.forms-elements__col-2
           .forms-elements__column.forms-elements__col-2-1
             .forms-elements__item.forms-elements__item_width-small.forms-elements__item_margin-large
               .forms-elements__item-label.forms-elements__item-label_margin-large
-                h3.forms-elements__item-header checkbox buttons
+                .forms-elements__item-header
+                  +title('low', 'checkbox buttons')
               .forms-elements__subitem
                 +checkbox("Можно курить")
               .forms-elements__subitem
@@ -114,28 +122,32 @@ block body
                 +checkbox("Можно пригласить гостей (до 10 человек)", false, true)
             .forms-elements__item.forms-elements__item_width-small.forms-elements__item_margin-large
               .forms-elements__item-label.forms-elements__item-label_margin-large
-                h3.forms-elements__item-header radio buttons
+                .forms-elements__item-header
+                  +title('low', 'radio buttons')
               .forms-elements__subitem-inline
                 +radio-button("male", "gender", "Мужчина")
               .forms-elements__subitem-inline
                 +radio-button("female", "gender", "Женщина")
             .forms-elements__item.forms-elements__item_width-small.forms-elements__item_margin-large
               .forms-elements__item-label.forms-elements__item-label_margin-large
-                h3.forms-elements__item-header toggle
+                .forms-elements__item-header
+                  +title('low', 'toggle')
               .forms-elements__subitem
                 +toggle("true", "email-routing", "Получать спецпредложения", true)
               .forms-elements__subitem
                 +toggle("false", "email-routing", "Получать спецпредложения")
             .forms-elements__item.forms-elements__item_width-small.forms-elements__item_margin-large
               .forms-elements__item-label.forms-elements__item-label_margin-large
-                h3.forms-elements__item-header like button
+                .forms-elements__item-header
+                  +title('low', 'like button')
               .forms-elements__subitem-inline
                 +like-button("false", "like", "2")
               .forms-elements__subitem-inline
                 +like-button("true", "like", "12", true)
             .forms-elements__item.forms-elements__item_width-small
               .forms-elements__item-label.forms-elements__item-label_margin-large
-                h3.forms-elements__item-header rate button
+                .forms-elements__item-header
+                  +title('low', 'rate button')
               .forms-elements__subitem-inline
                 +rate-button("rate-4", 4, "mock-address")
               .forms-elements__subitem-inline
@@ -151,7 +163,8 @@ block body
               })
             .forms-elements__item.forms-elements__item_margin-large
               .forms-elements__item-label.forms-elements__item-label_margin-large
-                h3.forms-elements__item-header buttons
+                .forms-elements__item-header
+                  +title('low', 'buttons')
               .forms-elements__subitem.forms-elements__subitem_margin-large
                 .forms-elements__subitem-inline.forms-elements__subitem-inline_width-big
                   +link-button({
@@ -193,14 +206,16 @@ block body
                 +form-button("перейти к оплате")
             .forms-elements__item.forms-elements__item_width-supersmall
               .forms-elements__item-label.forms-elements__item-label_margin-large
-                h3.forms-elements__item-header pagination
+                .forms-elements__item-header
+                  +title('low', 'pagination')
               .forms-elements__pagination
                 +pagination("1", "15", "mock-address", "1 – 12 из 100+ вариантов аренды")
       .forms-elements__row.forms-elements__row_margin-small
         .forms-elements__column.forms-elements__col-1
           .forms-elements__item.forms-elements__item_width-small
             .forms-elements__item-label
-              h3.forms-elements__item-header dropdown
+              .forms-elements__item-header
+                +title('low', 'dropdown')
               span.forms-elements__item-state default
             +dropdown({
               placeholder: "Сколько гостей", items: [
@@ -232,7 +247,8 @@ block body
             })
           .forms-elements__item.forms-elements__item_width-small.forms-elements__item_expanded
             .forms-elements__item-label
-              h3.forms-elements__item-header dropdown
+              .forms-elements__item-header
+                +title('low', 'dropdown')
               span.forms-elements__item-state expanded
             +dropdown({
               placeholder: "Сколько гостей", items: [
@@ -266,7 +282,8 @@ block body
           .forms-elements__column.forms-elements__col-2-1
             .forms-elements__item.forms-elements__item_expanded
               .forms-elements__item-label
-                h3.forms-elements__item-header dropdown
+                .forms-elements__item-header
+                  +title('low', 'dropdown')
               +dropdown({
                 placeholder: "Сколько гостей", items: [
                   {
@@ -298,7 +315,8 @@ block body
           .forms-elements__column.forms-elements__col-2-2
             .forms-elements__item.forms-elements__item_expanded
               .forms-elements__item-label
-                h3.forms-elements__item-header dropdown
+                .forms-elements__item-header
+                  +title('low', 'dropdown')
               +dropdown({
                 placeholder: "Сколько гостей", items: [
                   {
@@ -351,7 +369,8 @@ block body
           .forms-elements__column.forms-elements__col-2-1
             .forms-elements__item.forms-elements__item_width-small
               .forms-elements__item-label.forms-elements__item-label_margin-large
-                h3.forms-elements__item-header rich checkbox buttons
+                .forms-elements__item-header
+                  +title('low', 'rich checkbox buttons')
               .forms-elements__subitem
                 +rich-checkbox("Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
               .forms-elements__subitem
@@ -359,7 +378,8 @@ block body
           .forms-elements__column.forms-elements__col-2-2
             .forms-elements__item
               .forms-elements__item-label
-                h3.forms-elements__item-label bullet list
+                .forms-elements__item-header
+                  +title('low', 'bullet list')
               +bullet-list([
                 {text: "Нельзя с питомцами", style: "default", withPadding: "true"},
                 {text: "Без вечеринок и мероприятий", style: "default", withPadding: "true"},

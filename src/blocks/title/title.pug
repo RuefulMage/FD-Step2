@@ -1,0 +1,12 @@
+mixin title(level, text, height)
+  - heightClass = ''
+  if height === 'large'
+    - heightClass = 'title_height-large'
+  else if height === 'middle'
+    - heightClass = 'title_height-middle'
+  if level === 'high'
+    h1(class="title title_level-high " + heightClass)=text
+  else if level === 'middle'
+    h2(class="title title_level-middle " + heightClass)=text
+  else
+    h3(class="title title_level-low " + heightClass)=text

@@ -1,4 +1,5 @@
 include ../checkbox/checkbox
+include ../title/title
 mixin expandable-checkbox-list(title, itemsList, expanded=false)
   - let listClasses = ["expandable-checkbox-list__list"]
   - let buttonClasses = ["expandable-checkbox-list__arrow"]
@@ -7,7 +8,8 @@ mixin expandable-checkbox-list(title, itemsList, expanded=false)
     - buttonClasses.push("expandable-checkbox-list__arrow_rotated")
   .expandable-checkbox-list
     button.expandable-checkbox-list__button.js-expandable-checkbox-list__button
-      h3.expandable-checkbox-list__title=title
+      .expandable-checkbox-list__title
+        +title('low', title)
       div(class=buttonClasses) expand_more
     ul(class=listClasses)
       each item in itemsList

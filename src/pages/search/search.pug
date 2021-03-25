@@ -12,6 +12,7 @@ block content
   include ../../blocks/expandable-checkbox-list/expandable-checkbox-list
   include ../../blocks/apartment-description-card/apartment-description-card
   include ../../blocks/pagination/pagination
+  include ../../blocks/title/title
   -
     let path = require('path');
     let fs = require('fs');
@@ -22,11 +23,13 @@ block content
       form.search__filter-column.js-search__filter-column(method="POST" action="mock-address")
         .search__stay-in-hotel-dates
           .search__filter-item-label
-            h3.search__filter-item-name Даты пребывания в отеле
+            .search__filter-item-name
+              +title('low', 'Даты пребывания в отеле')
           +date-dropdown({startDateInterval: "2019-08-19, 2019-08-23"})
         .search__guests
           .search__filter-item-label
-            h3.search__filter-item-name Гости
+            .search__filter-item-name
+              +title('low', 'Гости')
           +dropdown({
             placeholder: "Сколько гостей",
             items: [{
@@ -69,7 +72,8 @@ block content
           p.search__price-range-description Стоимость за сутки пребывания в номере
         .search__permisions-list
           .search__filter-item-label.search__filter-item-label_margin-large
-            h3.search__filter-item-name Правила дома
+            .search__filter-item-name
+              +title('low', 'Правила дома')
           .search__permision
             +checkbox("Можно курить")
           .search__permision
@@ -78,14 +82,16 @@ block content
             +checkbox("Можно пригласить гостей (до 10 человек)", false, true)
         .search__accessibility
           .search__filter-item-label.search__filter-item-label_margin-large
-            h3.search__filter-item-name Доступность
+            .search__filter-item-name
+              +title('low', 'Доступность')
           .search__accessibility-item
             +rich-checkbox("Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
           .search__accessibility-item
             +rich-checkbox("Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.")
         .search__facilities
           .search__filter-item-label
-            h3.search__filter-item-name удобства номера
+            .search__filter-item-name
+              +title('low', 'удобства номера')
           +dropdown({
             placeholder: "Сколько гостей",
             items: [
@@ -125,7 +131,8 @@ block content
             {text: "Шампунь", checked: false}
           ])
       section.search__result
-        h1.search__results-header Номера, которые мы для вас подобрали
+        .search__results-header
+          +title('high', 'Номера, которые мы для вас подобрали', 'large')
         .search__results-list
           each card in descriptionCardsData
             .search__result-item

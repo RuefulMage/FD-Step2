@@ -1,14 +1,17 @@
 include ../date-dropdown/date-dropdown
 include ../dropdown/dropdown
 include ../form-button/form-button
+include ../title/title
 mixin find-apartment-card({header, dateDropdownHeaders, dropdownHeader, buttonText, link})
   .find-apartment-card
-    h1.find-apartment-card__header=header
+    .find-apartment-card__header
+      +title('high', header, true)
     form.find-apartment-card__form(method="POST" action=link)
       .find-apartment-card__date-dropdown
         +date-dropdown({twoInputs: true, headers: dateDropdownHeaders})
       .find-apartment-card__guests
-        h3.find-apartment-card__guests-header=dropdownHeader
+        .find-apartment-card__guests-header
+          +title('low', dropdownHeader)
         .find-apartment-card__guests-dropdown
           +dropdown({
             placeholder: "Сколько гостей", items: [
