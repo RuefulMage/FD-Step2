@@ -19,10 +19,17 @@
     text-transform: uppercase;
   }
 
-  &-clear-button {
-    color: $dark-50;
+  &-clear-button, &-append-button {
+    background: none;
+    font: inherit;
+    border: none;
     text-transform: inherit;
     outline: none;
+    cursor: pointer;
+  }
+
+  &-clear-button {
+    color: $dark-50;
 
     &:focus {
       color: $dark-75;
@@ -31,8 +38,6 @@
 
   &-append-button {
     color: $purple;
-    text-transform: inherit;
-    outline: none;
 
     &:focus {
       color: purple;

@@ -1,4 +1,3 @@
-import './assets/scss/style-delete.scss';
 import 'nouislider/distribute/nouislider.css';
 import 'air-datepicker/src/sass/datepicker.scss';
 import 'air-datepicker/src/sass/navigation.scss';

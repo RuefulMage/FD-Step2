@@ -1,6 +1,8 @@
 @import '../../assets/scss/colors.scss';
 
 .bullet-list {
+  padding: 0;
+  margin: 0;
 
   &__bullet {
     position: relative;
@@ -8,6 +10,7 @@
     color: $dark-75;
     line-height: 1.5rem; //24px при базовом размере шрифта 16px
     text-align: left;
+    list-style: none;
 
     &:before {
       position: absolute;

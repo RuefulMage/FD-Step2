@@ -9,8 +9,13 @@
     text-transform: uppercase;
   }
 
+  &__menu{
+    margin: 0;
+  }
+
   &__menu-item {
     margin-bottom: 20px;
+    list-style: none;
 
     &:last-child {
       margin-bottom: 0;

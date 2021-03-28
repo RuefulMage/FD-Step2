@@ -4,6 +4,8 @@
   display: flex;
 
   &__star {
+    margin: 0;
+    appearance: none;
     outline: none;
 
     &:after {

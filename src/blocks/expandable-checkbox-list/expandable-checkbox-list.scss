@@ -39,6 +39,8 @@
 
   &__list {
     display: none;
+    margin: 0;
+    padding: 0;
 
     &_expanded {
       display: block;
@@ -47,6 +49,7 @@
 
   &__list-item {
     margin-bottom: 10px;
+    list-style: none;
 
     &:last-child {
       margin-bottom: 0;
