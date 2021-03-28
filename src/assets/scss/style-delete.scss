@@ -5,14 +5,10 @@ fieldset,
 form,
 label,
 legend,
-table,
-caption,
-figure,
 footer,
 header,
 menu,
 nav,
-output,
 section,
 article {
   margin: 0;
@@ -53,7 +49,6 @@ li {
 ul,
 ol,
 li,
-button,
 input{
   margin: 0;
   padding: 0;
@@ -63,18 +58,6 @@ li {
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-button {
-  padding: 0;
-  color: inherit;
-  font: inherit;
-  background-color: transparent;
-  border: 0;
-
-  /* отображаем курсор в виде руки при наведении; некоторые
-    считают, что необходимо оставлять стрелочный вид для кнопок */
-  cursor: pointer;
 }
 
 ///*Удаление стандартного вида у чекбоксов и радио-кнопок*/

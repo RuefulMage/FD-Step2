@@ -24,6 +24,10 @@
     padding: 20px;
     border: 1px solid $dark-25;
     outline: none;
+    color: inherit;
+    font: inherit;
+    background: none;
+    cursor: pointer;
 
     @media (max-width: 880px) {
       display: block;

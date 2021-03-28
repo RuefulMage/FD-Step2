@@ -32,6 +32,8 @@
     font: 1.5rem 'Material Icons';
     outline: none;
     cursor: pointer;
+    background: none;
+    border: none;
     user-select: none;
 
     &:focus {
@@ -94,7 +96,10 @@
     border: 1px solid $dark-25;
     border-radius: 100%;
     outline: none;
+    font: inherit;
     user-select: none;
+    background: none;
+    cursor: pointer;
 
     &:focus {
       font-weight: bold;
@@ -121,11 +126,15 @@
 
   &__clear-button,
   &__apply-button {
+    font-family: inherit;
     font-weight: bold;
     font-size: .75rem; //12px при базовом размере шрифта 16px
     line-height: .9375rem; //15px при базовом размере шрифта 16px
     text-transform: uppercase;
     outline: none;
+    background: none;
+    border: none;
+    cursor: pointer;
   }
 
   &__clear-button {

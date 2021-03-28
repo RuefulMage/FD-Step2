@@ -60,6 +60,9 @@
     font: 1.5rem 'Material Icons';
     outline: none;
     transform: rotate(90deg);
+    background: none;
+    border: none;
+    cursor: pointer;
 
     &:focus {
       font-weight: bold;

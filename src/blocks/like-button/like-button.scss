@@ -5,8 +5,11 @@
   min-width: 40px;
   padding: 1px;
   color: $dark-25;
+  font-family: inherit;
   font-size: .625rem; //10px при базовом размере шрифта 16px
   background: $dark-25;
+  border: none;
+  cursor: pointer;
   border-radius: 10px;
   outline: none;
 
