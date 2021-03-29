@@ -30,10 +30,10 @@
     max-width: 44px;
     color: $dark-50;
     font: 1.5rem 'Material Icons';
-    outline: none;
-    cursor: pointer;
     background: none;
     border: none;
+    outline: none;
+    cursor: pointer;
     user-select: none;
 
     &:focus {
@@ -92,14 +92,14 @@
   &__increase {
     box-sizing: border-box;
     color: $dark-50;
+    font: inherit;
     font-size: 1.125rem; //18px при базовом размере шрифта 16px
+    background: none;
     border: 1px solid $dark-25;
     border-radius: 100%;
     outline: none;
-    font: inherit;
-    user-select: none;
-    background: none;
     cursor: pointer;
+    user-select: none;
 
     &:focus {
       font-weight: bold;
@@ -126,14 +126,14 @@
 
   &__clear-button,
   &__apply-button {
-    font-family: inherit;
     font-weight: bold;
     font-size: .75rem; //12px при базовом размере шрифта 16px
+    font-family: inherit;
     line-height: .9375rem; //15px при базовом размере шрифта 16px
     text-transform: uppercase;
-    outline: none;
     background: none;
     border: none;
+    outline: none;
     cursor: pointer;
   }
 

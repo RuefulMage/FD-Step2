@@ -19,11 +19,12 @@
     text-transform: uppercase;
   }
 
-  &-clear-button, &-append-button {
-    background: none;
+  &-clear-button,
+  &-append-button {
     font: inherit;
-    border: none;
     text-transform: inherit;
+    background: none;
+    border: none;
     outline: none;
     cursor: pointer;
   }

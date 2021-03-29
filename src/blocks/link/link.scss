@@ -6,8 +6,8 @@
   font-size: .75rem; //12px при базовом размере шрифта 16px
   line-height: .9375rem; //15px при базовом размере шрифта 16px
   text-transform: uppercase;
-  user-select: none;
   text-decoration: none;
+  user-select: none;
 
   &_disabled {
     color: $dark-50;

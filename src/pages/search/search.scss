@@ -22,11 +22,11 @@
     width: 100%;
     margin-bottom: 30px;
     padding: 20px;
-    border: 1px solid $dark-25;
-    outline: none;
     color: inherit;
     font: inherit;
     background: none;
+    border: 1px solid $dark-25;
+    outline: none;
     cursor: pointer;
 
     @media (max-width: 880px) {
@@ -103,10 +103,10 @@
   }
 
   &__price-range-description {
+    margin: 0;
     color: $dark-50;
     font-size: .75rem; //12px при базовом размере шрифта 16px
     line-height: 1.25rem; //20px при базовом размере шрифта 16px
-    margin: 0;
   }
 
   &__result {

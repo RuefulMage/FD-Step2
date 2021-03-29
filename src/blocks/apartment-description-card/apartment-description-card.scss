@@ -58,10 +58,10 @@
   &__next-button {
     color: white;
     font: 1.5rem 'Material Icons';
-    outline: none;
-    transform: rotate(90deg);
     background: none;
     border: none;
+    outline: none;
+    transform: rotate(90deg);
     cursor: pointer;
 
     &:focus {

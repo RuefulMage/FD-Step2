@@ -7,15 +7,15 @@
   padding: 9px 0 9px 46px;
   color: white;
   font-weight: bold;
+  font-size: .75rem; //12px при базовом размере шрифта 16px
   font-family: inherit;
   line-height: inherit;
-  border: none;
-  cursor: pointer;
-  font-size: .75rem; //12px при базовом размере шрифта 16px
   text-transform: uppercase;
   background: $gradient;
+  border: none;
   border-radius: 22px;
   outline: none;
+  cursor: pointer;
   user-select: none;
 
   @media (max-width: 320px) {

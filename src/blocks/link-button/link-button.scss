@@ -28,9 +28,9 @@
     font-weight: bold;
     font-size: .75rem; //12px при базовом размере шрифта 16px
     text-transform: uppercase;
+    text-decoration: none;
     background: white;
     border-radius: inherit;
-    text-decoration: none;
 
     &_filled {
       color: white;

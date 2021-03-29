@@ -5,13 +5,13 @@
   min-width: 40px;
   padding: 1px;
   color: $dark-25;
-  font-family: inherit;
   font-size: .625rem; //10px при базовом размере шрифта 16px
+  font-family: inherit;
   background: $dark-25;
   border: none;
-  cursor: pointer;
   border-radius: 10px;
   outline: none;
+  cursor: pointer;
 
   &:focus {
     box-shadow: 0 0 2px $dark-50;

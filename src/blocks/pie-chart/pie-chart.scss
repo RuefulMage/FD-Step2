@@ -48,18 +48,18 @@
     text-transform: uppercase;
   }
 
-  &__list{
+  &__list {
     margin: 0;
     padding: 0;
   }
 
   &__list-item {
     position: relative;
-    list-style: none;
     padding-left: 15px;
     color: $dark-75;
     line-height: 1.5rem; //24px при базовом размере шрифта 16px
     text-align: left;
+    list-style: none;
     cursor: pointer;
 
     &-point {
