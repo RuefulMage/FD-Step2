@@ -14,7 +14,7 @@ block body
   -
     let path = require('path');
     let fs = require('fs');
-    let bookingCardData = JSON.parse(fs.readFileSync(path.normalize("src/pages/cards/booking-card-data.json")))
+    let bookingCardData = JSON.parse(fs.readFileSync(path.normalize('src/pages/cards/booking-card-data.json')))
   .cards
     .cards__logo
       +logo()
@@ -22,14 +22,14 @@ block body
       .cards__column.cards__col-1
         .cards__item
           +find-apartment-card({
-            header: "Найдём номера под ваши пожелания",
-            dateDropdownHeaders: ["прибытие", "выезд"],
-            dropdownHeader: "гости",
-            buttonText: "подобрать номер",
-            link: "mock-address"
+            header: 'Найдём номера под ваши пожелания',
+            dateDropdownHeaders: ['прибытие', 'выезд'],
+            dropdownHeader: 'гости',
+            buttonText: 'подобрать номер',
+            link: 'mock-address'
           })
         .cards__item
-          +registration-card("Регистрация аккаунта", "mock-address")
+          +registration-card('Регистрация аккаунта', 'mock-address')
       .cards__column.cards__col-2
         .cards__item
           +apartment-booking-card(bookingCardData)
@@ -37,33 +37,33 @@ block body
           +signin-card()
       .cards__column.cards__col-3
         .cards__item
-          +date-dropdown({static: true, startDateInterval: "2019-08-19, 2019-08-23"})
+          +date-dropdown({static: true, startDateInterval: '2019-08-19, 2019-08-23'})
         .cards__item.cards__item_width-small
           +apartment-description-card({
-            images: ["apartment-photo-1.jpg",
-              "apartment-photo-2.jpg",
-              "apartment-photo-3.jpg",
-              "apartment-photo-4.jpg"],
-            number: "888",
-            price: "9&nbsp;990",
-            currency: "₽",
-            rateButtonName: "card-rate-lux",
+            images: ['apartment-photo-1.jpg',
+              'apartment-photo-2.jpg',
+              'apartment-photo-3.jpg',
+              'apartment-photo-4.jpg'],
+            number: '888',
+            price: '9&nbsp;990',
+            currency: '₽',
+            rateButtonName: 'card-rate-lux',
             starAmount: 5,
-            reviewsAmount: "145",
+            reviewsAmount: '145',
             lux: true,
-            link: "mock-address"
+            link: 'mock-address'
           })
         .cards__item.cards__item_width-small
           +apartment-description-card({
-            images: ["apartment-photo-2.jpg",
-              "apartment-photo-3.jpg",
-              "apartment-photo-4.jpg",
-              "apartment-photo-5.jpg"],
-            number: "840",
-            price: "9&nbsp;990",
-            currency: "₽",
-            rateButtonName: "card-rate-lux",
+            images: ['apartment-photo-2.jpg',
+              'apartment-photo-3.jpg',
+              'apartment-photo-4.jpg',
+              'apartment-photo-5.jpg'],
+            number: '840',
+            price: '9&nbsp;990',
+            currency: '₽',
+            rateButtonName: 'card-rate-lux',
             starAmount: 5,
-            reviewsAmount: "65",
-            link: "mock-address"
+            reviewsAmount: '65',
+            link: 'mock-address'
           })

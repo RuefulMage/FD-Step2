@@ -1,11 +1,11 @@
 include ../checkbox/checkbox
 include ../title/title
 mixin expandable-checkbox-list(title, itemsList, expanded=false)
-  - let listClasses = ["expandable-checkbox-list__list"]
-  - let buttonClasses = ["expandable-checkbox-list__arrow"]
+  - let listClasses = ['expandable-checkbox-list__list']
+  - let buttonClasses = ['expandable-checkbox-list__arrow']
   if expanded
-    - listClasses.push("expandable-checkbox-list__list_expanded");
-    - buttonClasses.push("expandable-checkbox-list__arrow_rotated")
+    - listClasses.push('expandable-checkbox-list__list_expanded');
+    - buttonClasses.push('expandable-checkbox-list__arrow_rotated')
   .expandable-checkbox-list
     button.expandable-checkbox-list__button.js-expandable-checkbox-list__button
       .expandable-checkbox-list__title

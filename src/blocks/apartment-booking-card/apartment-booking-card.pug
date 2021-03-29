@@ -8,38 +8,38 @@ mixin apartment-booking-card({number, price, currency, lux=false, dateDropdownHe
     .apartment-booking-card__main-info
       +apartment-info({number: number, price: price, currency: currency, largeNumber: true, lux: lux})
     .apartment-booking-card__date-dropdown
-      +date-dropdown({twoInputs: true, headers: dateDropdownHeaders, startDateInterval: "2019-08-19, 2019-08-23"})
+      +date-dropdown({twoInputs: true, headers: dateDropdownHeaders, startDateInterval: '2019-08-19, 2019-08-23'})
     .apartment-booking-card__guests
       .apartment-booking-card__guests-header
         +title('low', dropdownHeader)
       .apartment-booking-card__guests-dropdown
         +dropdown({
-          placeholder: "Сколько гостей", items: [
+          placeholder: 'Сколько гостей', items: [
             {
-              id: "adults",
-              minAmount: "0",
-              maxAmount: "100",
-              forms: "взрослый,взрослых,взрослых",
-              itemName: "взрослые",
-              startAmount: "2"
+              id: 'adults',
+              minAmount: '0',
+              maxAmount: '100',
+              forms: 'взрослый,взрослых,взрослых',
+              itemName: 'взрослые',
+              startAmount: '2'
             },
             {
-              id: "children",
-              minAmount: "0",
-              maxAmount: "100",
-              forms: "ребенок,ребенка,ребят",
-              itemName: "дети",
-              startAmount: "1"
+              id: 'children',
+              minAmount: '0',
+              maxAmount: '100',
+              forms: 'ребенок,ребенка,ребят',
+              itemName: 'дети',
+              startAmount: '1'
             },
             {
-              id: "baby",
-              minAmount: "0",
-              maxAmount: "100",
-              forms: "младенец,младенца,младенцев",
-              itemName: "младенцы",
-              startAmount: "0"
+              id: 'baby',
+              minAmount: '0',
+              maxAmount: '100',
+              forms: 'младенец,младенца,младенцев',
+              itemName: 'младенцы',
+              startAmount: '0'
             }
-          ], expanded: false, withButtons: true, generalForms: "гость,гостя,гостей"
+          ], expanded: false, withButtons: true, generalForms: 'гость,гостя,гостей'
         })
     .apartment-booking-card__cheque
       .apartment-booking-card__cheque-item

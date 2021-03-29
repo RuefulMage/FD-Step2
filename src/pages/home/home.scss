@@ -29,9 +29,9 @@
   &__tagline {
     align-self: flex-end;
     max-width: 260px;
+    margin: 0;
     line-height: 1.5rem; //24px при базовом размере шрифта 16px
     text-align: right;
-    margin: 0;
 
     @media (max-width: 1024px) {
       align-self: center;
