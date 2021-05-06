@@ -4,9 +4,10 @@
     "es6": true,
     "jquery": true
   },
+  "parser": "babel-eslint",
   "extends": [
     "plugin:fsd/all",
-    "airbnb"
+    "airbnb/base"
   ],
   "plugins": [
     "fsd"
