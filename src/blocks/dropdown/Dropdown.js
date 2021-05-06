@@ -1,16 +1,28 @@
 class Dropdown {
   static expandButtonClass = 'js-dropdown__expand-button';
+
   static dropdownExpandedClass = 'dropdown_expanded';
+
   static expandButtonRotatedClass = 'dropdown__expand-button_rotated';
+
   static menuItemClass = 'js-dropdown__menu-item';
+
   static decreaseButtonClass = 'js-dropdown__decrease';
+
   static decreaseButtonDisabledClass = 'dropdown__decrease_disabled';
+
   static increaseButtonClass = 'js-dropdown__increase';
+
   static increaseButtonDisabledClass = 'dropdown__increase_disabled';
+
   static amountClass = 'js-dropdown__amount';
+
   static clearButtonClass = 'js-dropdown__clear-button';
+
   static appendButtonClass = 'js-dropdown__apply-button';
+
   static inputTextClass = 'js-dropdown__text';
+
   static fieldClass = 'js-dropdown__field';
 
   constructor(element, withButtons, textInInputIsTotalAmount) {
@@ -55,9 +67,9 @@ class Dropdown {
       this.totalAmount += +currentItem.amount;
       this.toggleDisabledButton(+currentItem.amount,
         currentItem.minAmount, currentItem.maxAmount, currentItem);
-      const {decreaseButton} = this.items.get(itemId);
+      const { decreaseButton } = this.items.get(itemId);
       decreaseButton.addEventListener('click', this.handleDecreaseButtonClick);
-      const {increaseButton} = this.items.get(itemId);
+      const { increaseButton } = this.items.get(itemId);
       increaseButton.addEventListener('click', this.handleIncreaseButtonClick);
     });
   }
@@ -151,8 +163,8 @@ class Dropdown {
   }
 
   toggleDisabledButton(amount, minAmount, maxAmount, item) {
-    const {decreaseButton} = item;
-    const {increaseButton} = item;
+    const { decreaseButton } = item;
+    const { increaseButton } = item;
     let isDisabledClassShouldBeDeleted = amount !== minAmount
       && decreaseButton.classList.contains(Dropdown.decreaseButtonDisabledClass);
     if (amount === minAmount) {
@@ -191,7 +203,7 @@ class Dropdown {
       if (this.items.get(key).amount === 0) {
         flag = true;
       } else {
-        const {forms} = this.items.get(key);
+        const { forms } = this.items.get(key);
         result += `${this.items.get(key).amount} ${this.getProperWordForm(this.items.get(key).amount, forms)}`;
       }
     });
@@ -248,7 +260,6 @@ class Dropdown {
       this.clearButton.classList.add('dropdown__clear-button_hidden');
     }
   }
-
 }
 
 export default Dropdown;

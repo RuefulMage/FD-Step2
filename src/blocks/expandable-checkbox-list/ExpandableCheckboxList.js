@@ -1,5 +1,6 @@
 class ExpandableCheckboxList {
   static rotatedArrowClass = 'expandable-checkbox-list__arrow_rotated';
+
   static expandedListClass = 'expandable-checkbox-list__list_expanded';
 
   constructor(checkboxListButton) {

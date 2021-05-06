@@ -1,5 +1,6 @@
 class ShowFormButton {
   static filterClass = 'js-search__filter-column';
+
   static filterHiddenClass = 'search__filter-column_hidden';
 
   constructor(buttonElement) {
@@ -30,7 +31,7 @@ class ShowFormButton {
       if (document.body.clientWidth >= 880) {
         this.filterElement.classList.remove(ShowFormButton.filterHiddenClass);
       }
-    }
+    };
     window.addEventListener('resize', handleWindowResize);
   }
 }

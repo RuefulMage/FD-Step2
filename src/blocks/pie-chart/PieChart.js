@@ -1,9 +1,14 @@
 class PieChart {
   static sectorClass = 'js-pie-chart__circle';
+
   static sectorHoveredModifier = 'pie-chart__circle_hovered';
+
   static gradientIdBasis = 'gradient-color-';
+
   static votesWrapperClass = 'js-pie-chart__votes';
+
   static votesElementClass = 'js-pie-chart__votes-amount';
+
   static bulletClass = 'js-pie-chart__list-item';
 
   constructor(chartElement) {
@@ -19,7 +24,7 @@ class PieChart {
     this.sectors = this.chartElement.querySelectorAll(`.${PieChart.sectorClass}`);
     this.bullets = this.chartElement.querySelectorAll(`.${PieChart.bulletClass}`);
     this.initSectors();
-  };
+  }
 
   initSectors() {
     let offset = 0;
@@ -65,13 +70,13 @@ class PieChart {
       this.votesAmountWrapper.style.background = `linear-gradient(${startColor}, ${endColor})`;
       this.votesAmountWrapper.style.webkitBackgroundClip = 'text';
       this.votesAmountWrapper.style.webkitTextFillColor = 'transparent';
-    }
+    };
 
     const handleMouseOut = () => {
       sector.classList.remove(PieChart.sectorHoveredModifier);
       this.votesAmountElement.innerText = this.totalAmount;
       this.votesAmountWrapper.style = '';
-    }
+    };
 
     elements.forEach((item) => item.addEventListener('mouseover', handleMouseOver));
     elements.forEach((item) => item.addEventListener('mouseout', handleMouseOut));
