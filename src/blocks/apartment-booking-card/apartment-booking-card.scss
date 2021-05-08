@@ -1,7 +1,6 @@
 @import '../../assets/scss/colors.scss';
 
 .apartment-booking-card {
-  box-sizing: border-box;
   padding: 40px 30px 30px;
   border: 1px solid rgba(0, 0, 0, .12);
   border-radius: 4px;
@@ -62,11 +61,9 @@
   }
 
   &__price-note {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box;
     width: 20px;
     height: 20px;
     color: $dark-25;

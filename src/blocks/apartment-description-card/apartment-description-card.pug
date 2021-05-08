@@ -1,6 +1,7 @@
 include ../rate-button/rate-button
 include ../apartment-info/apartment-info
-mixin apartment-description-card({images, number, price, currency, rateButtonName, starAmount, reviewsAmount, link, lux=false})
+
+mixin apartment-description-card({ images, number, price, currency, rateButtonName, starAmount, reviewsAmount, link, lux=false })
   article.apartment-description-card
     .apartment-description-card__slider.js-apartment-description-card__slider
       each item in images
@@ -22,10 +23,13 @@ mixin apartment-description-card({images, number, price, currency, rateButtonNam
           .apartment-description-card__indicator.js-apartment-description-card__indicator
     .apartment-description-card__info
       .apartment-description-card__main-info
-        +apartment-info({number: number, price: price, currency: currency, largeNumber: false, lux: lux})
+        +apartment-info({
+          number: number, price: price,
+          currency: currency, lux: lux
+        })
       .apartment-description-card__quality
         form.apartment-description-card__rating(method="POST" action=link)
           +rate-button(rateButtonName, starAmount, true)
         .apartment-description-card__reviews
-          .apartment-description-card__review-amount=reviewsAmount
+          .apartment-description-card__review-amount !{ reviewsAmount }
           .apartment-description-card__review &nbsp;Отзывов

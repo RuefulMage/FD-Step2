@@ -3,12 +3,13 @@ include ../date-dropdown/date-dropdown
 include ../form-button/form-button
 include ../dropdown/dropdown
 include ../title/title
-mixin apartment-booking-card({number, price, currency, lux=false, dateDropdownHeaders, dropdownHeader, expression, expressionResult, servicePriceLabel, servicePrice, extraServiceLabel,  extraServicePrice, totalPrice, noteTexts, buttonText, link})
+
+mixin apartment-booking-card({ number, price, currency, lux=false, dateDropdownHeaders, dropdownHeader, expression, expressionResult, servicePriceLabel, servicePrice, extraServiceLabel,  extraServicePrice, totalPrice, noteTexts, buttonText, link })
   form.apartment-booking-card(method="POST" action=link)
     .apartment-booking-card__main-info
-      +apartment-info({number: number, price: price, currency: currency, largeNumber: true, lux: lux})
+      +apartment-info({ number: number, price: price, currency: currency, largeNumber: true, lux: lux })
     .apartment-booking-card__date-dropdown
-      +date-dropdown({twoInputs: true, headers: dateDropdownHeaders, startDateInterval: '2019-08-19, 2019-08-23'})
+      +date-dropdown({ twoInputs: true, headers: dateDropdownHeaders, startDateInterval: '2019-08-19, 2019-08-23' })
     .apartment-booking-card__guests
       .apartment-booking-card__guests-header
         +title('low', dropdownHeader)
@@ -39,25 +40,25 @@ mixin apartment-booking-card({number, price, currency, lux=false, dateDropdownHe
               itemName: 'младенцы',
               startAmount: '0'
             }
-          ], expanded: false, withButtons: true, generalForms: 'гость,гостя,гостей'
+          ], withButtons: true, generalForms: 'гость,гостя,гостей'
         })
     .apartment-booking-card__cheque
       .apartment-booking-card__cheque-item
-        .apartment-booking-card__price-label !{expression}
-        span.apartment-booking-card__result !{expressionResult}
+        .apartment-booking-card__price-label !{ expression }
+        span.apartment-booking-card__result !{ expressionResult }
       .apartment-booking-card__cheque-item
         .apartment-booking-card__price-info
-          .apartment-booking-card__price-label !{servicePriceLabel}
+          .apartment-booking-card__price-label !{ servicePriceLabel }
           .apartment-booking-card__price-note(title=noteTexts[0]) i
-        .apartment-booking-card__result !{servicePrice}
+        .apartment-booking-card__result !{ servicePrice }
       .apartment-booking-card__cheque-item
         .apartment-booking-card__price-info
-          .apartment-booking-card__price-label=extraServiceLabel
+          .apartment-booking-card__price-label !{ extraServiceLabel }
           .apartment-booking-card__price-note(title=noteTexts[1]) i
-        .apartment-booking-card__result !{extraServicePrice}
+        .apartment-booking-card__result !{ extraServicePrice }
       .apartment-booking-card__total
         .apartment-booking-card__total-label Итого
         .apartment-booking-card__line
-        .apartment-booking-card__total-sum !{totalPrice}
+        .apartment-booking-card__total-sum !{ totalPrice }
     .apartment-booking-card__button
       +form-button(buttonText)

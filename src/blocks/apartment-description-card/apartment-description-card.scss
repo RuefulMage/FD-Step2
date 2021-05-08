@@ -6,10 +6,6 @@
 
   &__slider {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-sizing: border-box;
     height: 152px;
     overflow: hidden;
     border-top-left-radius: inherit;
@@ -18,7 +14,6 @@
 
   &__slider-item {
     position: absolute;
-    width: 100%;
     opacity: 0;
 
     &_showing {
@@ -44,7 +39,6 @@
   &__next-wrapper {
     z-index: 1;
     display: flex;
-    align-items: center;
     justify-content: center;
     width: 44px;
     background: linear-gradient(90deg, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
@@ -74,12 +68,10 @@
     right: 15px;
     bottom: 15px;
     display: flex;
-    justify-content: flex-end;
   }
 
   &__indicator {
     z-index: 1;
-    box-sizing: border-box;
     width: 8px;
     height: 8px;
     margin-right: 4px;
@@ -97,9 +89,6 @@
   }
 
   &__info {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
     padding: 24px 20px 20px;
   }
 
