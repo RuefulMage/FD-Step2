@@ -7,10 +7,10 @@
   &__bullet {
     position: relative;
     padding-left: 20px;
-    color: $dark-75;
     line-height: 1.5rem; //24px при базовом размере шрифта 16px
     text-align: left;
     list-style: none;
+    padding-bottom: 10px;
 
     &:before {
       position: absolute;
@@ -23,8 +23,8 @@
       content: '';
     }
 
-    &_with-paddings {
-      padding-bottom: 10px;
+    &:last-child{
+      padding-bottom: 0;
     }
   }
 }

@@ -1,9 +1,6 @@
 mixin bullet-list(bulletList)
   ul.bullet-list
     each bullet in bulletList
-      -  let classes = ['bullet-list__bullet']
-      if bullet.withPadding
-        - classes.push('bullet-list__bullet_with-paddings')
-      li(class=classes)=bullet.text
+      li.bullet-list__bullet !{ bullet }
     else
       li There are no values
