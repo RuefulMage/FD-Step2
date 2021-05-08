@@ -1,6 +1,7 @@
 @import './colors.scss';
 
 html {
+  box-sizing: border-box;
   color: $dark-75;
   font-size: 16px;
   font-family: Montserrat, Arial, sans-serif;
@@ -11,4 +12,8 @@ body {
   margin: 0;
   font-size: .875rem; //14px при базовом размере шрифта 16px
   line-height: 1;
+}
+
+*{
+  box-sizing: inherit;
 }
