@@ -38,7 +38,6 @@
       position: absolute;
       top: 4px;
       left: 6px;
-      box-sizing: border-box;
       width: 6px;
       height: 8px;
       border-width: 2px;
@@ -58,6 +57,7 @@
     line-height: 1.125rem; //18px при базовом размере шрифта 16px
     cursor: pointer;
     user-select: none;
+    text-align: left;
 
     &_bold {
       color: $dark-75;

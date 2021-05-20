@@ -1,16 +1,12 @@
 @import '../../assets/scss/colors.scss';
 
 .comment-box {
-  display: flex;
-  flex-direction: column;
 
   &__user-container {
     display: flex;
   }
 
   &__user-avatar {
-    display: block;
-    box-sizing: border-box;
     height: 48px;
     border: 2px solid white;
     border-radius: 100%;
