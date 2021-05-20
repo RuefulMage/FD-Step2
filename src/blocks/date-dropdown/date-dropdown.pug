@@ -1,5 +1,6 @@
 include ../title/title
-mixin date-dropdown({twoInputs=false, static=false, headers, startDateInterval})
+
+mixin date-dropdown({ twoInputs=false, static=false, headers, startDateInterval })
   //- startDateInterval - строка вида ГГГГ-ММ-ДД, ГГГГ-ММ-ДД
   .date-dropdown.js-date-dropdown(data-start-interval=startDateInterval)
     if static

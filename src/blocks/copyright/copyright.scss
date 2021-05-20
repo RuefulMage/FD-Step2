@@ -1,8 +1,6 @@
 @import '../../assets/scss/colors.scss';
 
 .copyright {
-  box-sizing: border-box;
-  width: 100%;
   padding: 23px 20px;
   box-shadow: 0 10px 20px rgba(31, 32, 65, .05);
 
@@ -32,7 +30,6 @@
   }
 
   &__text {
-    text-align: center;
 
     @media (max-width: 750px) {
       margin-bottom: 25px;

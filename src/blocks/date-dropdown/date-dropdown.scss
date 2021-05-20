@@ -10,7 +10,6 @@
 
   &__label {
     display: flex;
-    box-sizing: border-box;
     width: 100%;
     padding: 9px 0;
     border: 1px solid $dark-25;
@@ -39,12 +38,10 @@
   }
 
   &__input {
-    box-sizing: border-box;
     width: 100%;
     padding-left: 15px;
     color: $dark-75;
     font: .875rem Montserrat, Arial, sans-serif;
-    line-height: 1.5rem; //24px при базовом размере шрифта 16px
     border: 0;
     border-radius: inherit;
     outline: none;
@@ -62,7 +59,6 @@
   &__expand-button {
     display: flex;
     justify-content: center;
-    box-sizing: border-box;
     width: 100%;
     max-width: 44px;
     color: $dark-50;
