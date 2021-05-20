@@ -1,44 +1,38 @@
 class Dropdown {
   static expandButtonClass = 'js-dropdown__expand-button';
-
   static dropdownExpandedClass = 'dropdown_expanded';
-
   static expandButtonRotatedClass = 'dropdown__expand-button_rotated';
-
   static menuItemClass = 'js-dropdown__menu-item';
-
   static decreaseButtonClass = 'js-dropdown__decrease';
-
   static decreaseButtonDisabledClass = 'dropdown__decrease_disabled';
-
   static increaseButtonClass = 'js-dropdown__increase';
-
   static increaseButtonDisabledClass = 'dropdown__increase_disabled';
-
   static amountClass = 'js-dropdown__amount';
-
   static clearButtonClass = 'js-dropdown__clear-button';
-
   static appendButtonClass = 'js-dropdown__apply-button';
-
   static inputTextClass = 'js-dropdown__text';
-
   static fieldClass = 'js-dropdown__field';
 
-  constructor(element, withButtons, textInInputIsTotalAmount) {
+  constructor(element, withButtons) {
     this.element = element;
     this.withButtons = withButtons;
-    this.init(textInInputIsTotalAmount);
+    this.init();
   }
 
-  init(textInInputIsTotalAmount) {
+  init() {
     this.totalAmount = 0;
     this.inputField = this.element.querySelector(`.${Dropdown.inputTextClass}`);
     this.expandButton = this.element.querySelector(`.${Dropdown.expandButtonClass}`);
     this.field = this.element.querySelector(`.${Dropdown.fieldClass}`);
     this.field.addEventListener('click', this.handleExpandButtonClick);
+    this.separatedElementsInInput = this.element.getAttribute('data-separated-elements') || '';
+    if (this.separatedElementsInInput === ''){
+      this.separatedElementsInInput = []
+    } else {
+      this.separatedElementsInInput = this.separatedElementsInInput.split(', ')
+    }
     window.addEventListener('click', this.handleWindowClick);
-    this.initText(textInInputIsTotalAmount);
+    this.initText();
     this.initItems();
     if (this.withButtons) {
       this.addButtonsListeners();
@@ -74,15 +68,11 @@ class Dropdown {
     });
   }
 
-  initText(textInInputIsTotalAmount) {
+  initText() {
     this.generalForms = this.element.getAttribute('data-forms') || 'элемент, элемента, элементов';
     this.generalForms = this.generalForms.split(',');
     this.placeholder = this.element.getAttribute('data-placeholder');
-    if (textInInputIsTotalAmount) {
-      this.currentSetInputTextFunction = this.setSelectedTextByTotalAmount;
-    } else {
-      this.currentSetInputTextFunction = this.setSelectedText;
-    }
+    this.currentSetInputTextFunction = this.setSelectedText;
   }
 
   handleWindowClick = (event) => {
@@ -181,40 +171,32 @@ class Dropdown {
     }
   }
 
-  setSelectedTextByTotalAmount() {
-    let result = '';
-    if (this.totalAmount === 0) {
-      result = this.placeholder;
-    } else {
-      result = `${this.totalAmount} ${this.getProperWordForm(this.totalAmount, this.generalForms)}`;
-    }
-    this.inputField.innerText = result;
-  }
-
   setSelectedText() {
-    let result = '';
-    let flag = false;
-    Array.from(this.items.keys()).forEach((key) => {
-      const isCommaNeeded = result !== ''
-        && this.items.get(key).amount !== 0;
-      if (isCommaNeeded) {
-        result += ', ';
-      }
-      if (this.items.get(key).amount === 0) {
-        flag = true;
-      } else {
-        const { forms } = this.items.get(key);
-        result += `${this.items.get(key).amount} ${this.getProperWordForm(this.items.get(key).amount, forms)}`;
-      }
-    });
-    const isThreeDotsNeeded = flag === true && this.totalAmount > 0;
-    if (isThreeDotsNeeded) {
-      result += '...';
-    }
     if (this.totalAmount === 0) {
-      result = this.placeholder;
+      this.inputField.innerText = this.placeholder;
+      return;
     }
-    this.inputField.innerText = result;
+    let resultString = ''
+    let restAmount = this.totalAmount
+    Array.from(this.separatedElementsInInput).forEach(key => {
+      const item = this.items.get(key)
+      if (resultString !== '' && item.amount > 0) {
+        resultString += ', ';
+      }
+      if (item.amount > 0) {
+        resultString += `${item.amount} ${this.getProperWordForm(item.amount, item.forms)}`;
+      }
+      restAmount -= item.amount;
+    });
+
+    if (restAmount > 0) {
+      let restItemsString = `${restAmount} ${this.getProperWordForm(restAmount, this.generalForms)}`;
+      if (restAmount < this.totalAmount) {
+        restItemsString += ', ';
+      }
+      resultString = `${restItemsString}${resultString}`
+    }
+    this.inputField.innerText = resultString;
   }
 
   getProperWordForm(number, forms) {

@@ -1,6 +1,6 @@
 //- items - массив объектов {id, minAmount, maxAmount, forms(формы слова), itemName, startAmount}
 include ../title/title
-mixin dropdown({placeholder, items, expanded=false, withButtons=false, generalForms})
+mixin dropdown({placeholder, items, expanded=false, withButtons=false, generalForms, separatedElementsInInput=''})
   - let dropdownClasses = ['dropdown'];
   - let dropdownJSClass = 'js-dropdown';
   - let expandButtonClasses = ['dropdown__expand-button', 'js-dropdown__expand-button'];
@@ -11,7 +11,7 @@ mixin dropdown({placeholder, items, expanded=false, withButtons=false, generalFo
     - dropdownClasses.push('dropdown_expanded');
     - expandButtonClasses.push('dropdown__expand-button_rotated');
   - dropdownClasses.push(dropdownJSClass);
-  div(class=dropdownClasses data-placeholder=placeholder data-forms=generalForms)
+  div(class=dropdownClasses data-placeholder=placeholder data-forms=generalForms data-separated-elements=separatedElementsInInput)
     .dropdown__field.js-dropdown__field
       .dropdown__text.js-dropdown__text
       button(class=expandButtonClasses) expand_more
