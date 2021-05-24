@@ -58,7 +58,8 @@ block content
               }
             ],
             withButtons: true,
-            generalForms: 'гость,гостя,гостей'
+            generalForms: 'гость,гостя,гостей',
+            separatedElementsInInput: 'baby'
           })
         .search__price-range
           .search__price-range-slider
@@ -93,7 +94,7 @@ block content
             .search__filter-item-name
               +title('low', 'удобства номера')
           +dropdown({
-            placeholder: 'Сколько гостей',
+            placeholder: 'Удобства номера',
             items: [
               {
                 id: 'bedrooms',
@@ -119,7 +120,7 @@ block content
                 itemName: 'ванные комнаты',
                 startAmount: '0'
               }
-            ]
+            ], generalForms: 'удобство, удобства, удобств', separatedElementsInInput: 'bedrooms, beds, bathrooms'
           })
         .search__extra-facilities
           +expandable-checkbox-list('дополнительные удобства', [

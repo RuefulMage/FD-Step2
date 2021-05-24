@@ -79,7 +79,7 @@ block body
                   itemName: 'младенцы',
                   startAmount: '0'
                 }
-              ], withButtons: true, generalForms: 'гость,гостя,гостей'
+              ], withButtons: true, generalForms: 'гость,гостя,гостей', separatedElementsInInput: 'baby'
             })
           .forms-elements__item.forms-elements__item_margin-large
             .forms-elements__item-label
@@ -218,7 +218,7 @@ block body
                 +title('low', 'dropdown')
               span.forms-elements__item-state default
             +dropdown({
-              placeholder: 'Сколько гостей', items: [
+              placeholder: 'Удобства номера', items: [
                 {
                   id: 'bedrooms',
                   minAmount: '0',
@@ -243,7 +243,7 @@ block body
                   itemName: 'ванные комнаты',
                   startAmount: '0'
                 }
-              ]
+              ], generalForms: 'удобство, удобства, удобств', separatedElementsInInput: 'bedrooms, beds, bathrooms'
             })
           .forms-elements__item.forms-elements__item_width-small.forms-elements__item_expanded
             .forms-elements__item-label
@@ -251,7 +251,8 @@ block body
                 +title('low', 'dropdown')
               span.forms-elements__item-state expanded
             +dropdown({
-              placeholder: 'Сколько гостей', items: [
+              placeholder: 'Удобства номера',
+              items: [
                 {
                   id: 'bedrooms',
                   minAmount: '0',
@@ -276,7 +277,10 @@ block body
                   itemName: 'ванные комнаты',
                   startAmount: '0'
                 }
-              ], expanded: true
+              ],
+              expanded: true,
+              generalForms: 'удобство, удобства, удобств',
+              separatedElementsInInput: 'bedrooms, beds, bathrooms'
             })
         .forms-elements__column.forms-elements__col-2
           .forms-elements__column.forms-elements__col-2-1
@@ -285,7 +289,8 @@ block body
                 .forms-elements__item-header
                   +title('low', 'dropdown')
               +dropdown({
-                placeholder: 'Сколько гостей', items: [
+                placeholder: 'Сколько гостей',
+                items: [
                   {
                     id: 'adults',
                     minAmount: '0',
@@ -310,7 +315,11 @@ block body
                     itemName: 'младенцы',
                     startAmount: '0'
                   }
-                ], expanded: true, withButtons: true, generalForms: 'гость,гостя,гостей'
+                ],
+                expanded: true,
+                withButtons: true,
+                generalForms: 'гость,гостя,гостей',
+                separatedElementsInInput: 'baby'
               })
           .forms-elements__column.forms-elements__col-2-2
             .forms-elements__item.forms-elements__item_expanded
@@ -318,7 +327,8 @@ block body
                 .forms-elements__item-header
                   +title('low', 'dropdown')
               +dropdown({
-                placeholder: 'Сколько гостей', items: [
+                placeholder: 'Сколько гостей',
+                items: [
                   {
                     id: 'adults',
                     minAmount: '0',
@@ -343,7 +353,11 @@ block body
                     itemName: 'младенцы',
                     startAmount: '0'
                   }
-                ], expanded: true, withButtons: true, generalForms: 'гость,гостя,гостей'
+                ],
+                expanded: true,
+                withButtons: true,
+                generalForms: 'гость,гостя,гостей',
+                separatedElementsInInput: 'baby'
               })
       .forms-elements__row.forms-elements__row-3
         .forms-elements__column.forms-elements__col-1
