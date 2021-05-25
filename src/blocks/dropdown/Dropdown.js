@@ -3,10 +3,10 @@ class Dropdown {
   static dropdownExpandedClass = 'dropdown_expanded';
   static expandButtonRotatedClass = 'dropdown__expand-button_rotated';
   static menuItemClass = 'js-dropdown__menu-item';
-  static decreaseButtonClass = 'js-dropdown__decrease';
-  static decreaseButtonDisabledClass = 'dropdown__decrease_disabled';
-  static increaseButtonClass = 'js-dropdown__increase';
-  static increaseButtonDisabledClass = 'dropdown__increase_disabled';
+  static decreaseButtonClass = 'js-dropdown__decrease-button';
+  static decreaseButtonDisabledClass = 'dropdown__decrease-button_disabled';
+  static increaseButtonClass = 'js-dropdown__increase-button';
+  static increaseButtonDisabledClass = 'dropdown__increase-button_disabled';
   static amountClass = 'js-dropdown__amount';
   static clearButtonClass = 'js-dropdown__clear-button';
   static appendButtonClass = 'js-dropdown__apply-button';

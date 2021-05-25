@@ -3,14 +3,15 @@ include ../subscription-textfiled/subscription-textfield
 include ../footer-navigation/footer-navigation
 include ../copyright/copyright
 include ../title/title
-mixin footer({descriptionText, menu, subscriptionTitle, subscriptionDescription, link})
+
+mixin footer({ descriptionText, menu, subscriptionTitle, subscriptionDescription, link })
   footer.footer
     .footer__wrapper
       .footer__container
         .footer__company-description
           .footer__logo
             +logo-with-text()
-          p.footer__description-text=descriptionText
+          p.footer__description-text !{ descriptionText }
         .footer__subscription-and-menu-wrapper
           nav.footer__menu
             each subMenu in menu
@@ -19,12 +20,12 @@ mixin footer({descriptionText, menu, subscriptionTitle, subscriptionDescription,
           .footer__subsription-form
             .footer__subscription-form-title
               +title('low', subscriptionTitle)
-            .footer__subscription-form-text=subscriptionDescription
+            .footer__subscription-form-text !{ subscriptionDescription }
             .footer__subscription-form-field
               +subscription-textfield('Your email address', 'Email', 'mock-address')
     .footer__copyright-wrapper
       +copyright('Copyright © 2018 Toxin отель. Все права зачищены.',
-        [{icon: '', link: 'https://twitter.com/'},
-          {icon: '', link: 'https://www.facebook.com/'},
-          {icon: '', link: 'https://www.instagram.com/'}]
+        [{ icon: '', link: 'https://twitter.com/' },
+          { icon: '', link: 'https://www.facebook.com/' },
+          { icon: '', link: 'https://www.instagram.com/' }]
       )

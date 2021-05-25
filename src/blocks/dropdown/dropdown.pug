@@ -1,11 +1,12 @@
 //- items - массив объектов {id, minAmount, maxAmount, forms(формы слова), itemName, startAmount}
 include ../title/title
-mixin dropdown({placeholder, items, expanded=false, withButtons=false, generalForms, separatedElementsInInput=''})
+
+mixin dropdown({ placeholder, items, expanded=false, withButtons=false, generalForms, separatedElementsInInput='' })
   - let dropdownClasses = ['dropdown'];
   - let dropdownJSClass = 'js-dropdown';
   - let expandButtonClasses = ['dropdown__expand-button', 'js-dropdown__expand-button'];
   if withButtons
-    - dropdownJSClass = dropdownJSClass + '_with-buttons';
+    - dropdownJSClass = `${ dropdownJSClass }_with-buttons`;
     - dropdownClasses.push('dropdown_with-buttons')
   if expanded
     - dropdownClasses.push('dropdown_expanded');
@@ -21,9 +22,9 @@ mixin dropdown({placeholder, items, expanded=false, withButtons=false, generalFo
           .dropdown__menu-item-name
             +title('low', item.itemName)
           .dropdown__menu-item-controls
-            button.dropdown__decrease.js-dropdown__decrease -
-            span.dropdown__amount.js-dropdown__amount=item.startAmount
-            button.dropdown__increase.js-dropdown__increase +
+            button.dropdown__decrease-button.js-dropdown__decrease-button -
+            span.dropdown__amount.js-dropdown__amount !{ item.startAmount }
+            button.dropdown__increase-button.js-dropdown__increase-button +
       if withButtons
         .dropdown__buttons-wrapper
           button.dropdown__clear-button.js-dropdown__clear-button очистить

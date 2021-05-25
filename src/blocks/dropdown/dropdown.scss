@@ -5,7 +5,6 @@
 
   &__field {
     display: flex;
-    box-sizing: border-box;
     padding: 9px 0;
     border: 1px solid $dark-25;
     border-radius: 2px 2px 0 0;
@@ -34,7 +33,6 @@
     border: none;
     outline: none;
     cursor: pointer;
-    user-select: none;
 
     &:focus {
       font-weight: bold;
@@ -47,9 +45,8 @@
 
   &__menu {
     position: absolute;
-    z-index: 3;
+    z-index: 1;
     display: none;
-    box-sizing: border-box;
     width: 100%;
     padding: 4px 7px 0 14px;
     background: white;
@@ -79,8 +76,8 @@
   }
 
   &__amount,
-  &__decrease,
-  &__increase {
+  &__decrease-button,
+  &__increase-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -88,9 +85,8 @@
     height: 30px;
   }
 
-  &__decrease,
-  &__increase {
-    box-sizing: border-box;
+  &__decrease-button,
+  &__increase-button {
     color: $dark-50;
     font: inherit;
     font-size: 1.125rem; //18px при базовом размере шрифта 16px
@@ -99,7 +95,6 @@
     border-radius: 100%;
     outline: none;
     cursor: pointer;
-    user-select: none;
 
     &:focus {
       font-weight: bold;
@@ -129,7 +124,6 @@
     font-weight: bold;
     font-size: .75rem; //12px при базовом размере шрифта 16px
     font-family: inherit;
-    line-height: .9375rem; //15px при базовом размере шрифта 16px
     text-transform: uppercase;
     background: none;
     border: none;
