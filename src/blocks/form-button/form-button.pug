@@ -3,5 +3,5 @@ mixin form-button(text, isWidthUnlimited=true)
   if isWidthUnlimited
     - buttonClasses.push('form-button_width-unlimited')
   button(type="submit" class=buttonClasses)
-    span.form-button__text=text
+    span.form-button__text !{ text }
     span.form-button__arrow arrow_forward

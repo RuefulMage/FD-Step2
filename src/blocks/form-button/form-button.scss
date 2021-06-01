@@ -3,7 +3,6 @@
 .form-button {
   display: flex;
   align-items: center;
-  box-sizing: border-box;
   padding: 9px 0 9px 46px;
   color: white;
   font-weight: bold;
@@ -33,14 +32,12 @@
 
   &__text {
     width: 100%;
-    text-align: center;
   }
 
   &__arrow {
     width: 100%;
     max-width: 44px;
     font: normal 1.5rem 'Material Icons';
-    text-align: center;
     text-transform: none;
 
     @media (max-width: 320px) {

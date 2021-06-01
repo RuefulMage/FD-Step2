@@ -1,8 +1,6 @@
 @import '../../assets/scss/colors.scss';
 
 .header {
-  box-sizing: border-box;
-  width: 100%;
   padding: 15px 20px;
   box-shadow: 0 10px 20px rgba(31, 32, 65, .05);
 
@@ -30,7 +28,7 @@
     cursor: pointer;
   }
 
-  &__burger {
+  &__burger-button {
     display: none;
     flex-direction: column;
     justify-content: space-between;
@@ -43,23 +41,23 @@
     }
   }
 
-  &__burger-element {
+  &__burger-button-element {
     height: 5px;
     background: black;
+  }
 
-    &_active {
+  &__burger-button_active &__burger-button-element {
 
-      &:first-child {
-        transform: translateY(250%) rotate(-45deg);
-      }
+    &:first-child {
+      transform: translateY(250%) rotate(-45deg);
+    }
 
-      &:last-child {
-        transform: translateY(-250%) rotate(45deg);
-      }
+    &:last-child {
+      transform: translateY(-250%) rotate(45deg);
+    }
 
-      &:not(:first-child):not(:last-child) {
-        visibility: hidden;
-      }
+    &:not(:first-child):not(:last-child) {
+      visibility: hidden;
     }
   }
 
@@ -81,7 +79,7 @@
     }
   }
 
-  &__auth {
+  &__auth-info {
     @media (max-width: 700px) {
       display: none;
 
@@ -129,4 +127,5 @@
       padding-top: 10px;
     }
   }
+
 }
