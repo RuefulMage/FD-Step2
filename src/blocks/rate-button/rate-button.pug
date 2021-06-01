@@ -1,4 +1,4 @@
 mixin rate-button(name, starAmount, link)
-  form.rate-button(method="" action=link)
+  form.rate-button(action=link)
     each item in [1,2,3,4,5]
-      input.rate-button__star( type="radio" name=name value=item checked=(item === starAmount))
+      input.rate-button__star(type="radio" name=name value=item checked=(item === starAmount))

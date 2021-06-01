@@ -1,17 +1,17 @@
 import noUiSlider from 'nouislider';
 
 class RangeSlider {
-  constructor(sliderElement) {
-    this.sliderElement = sliderElement;
+  constructor(slider) {
+    this.slider = slider;
     this.init();
   }
 
   init() {
-    const startValues = [+this.sliderElement.getAttribute('data-start-low-value'),
-      +this.sliderElement.getAttribute('data-start-high-value')];
-    const minValue = +this.sliderElement.getAttribute('data-min-value');
-    const maxValue = +this.sliderElement.getAttribute('data-max-value');
-    noUiSlider.create(this.sliderElement, {
+    const startValues = [+this.slider.getAttribute('data-start-low-value'),
+      +this.slider.getAttribute('data-start-high-value')];
+    const minValue = +this.slider.getAttribute('data-min-value');
+    const maxValue = +this.slider.getAttribute('data-max-value');
+    noUiSlider.create(this.slider, {
       start: startValues,
       connect: true,
       range: {
@@ -19,8 +19,8 @@ class RangeSlider {
         max: maxValue,
       },
     });
-    this.rangeInterval = this.sliderElement.previousSibling.lastChild;
-    this.sliderElement.noUiSlider.on('update', this.updateFunction);
+    this.rangeInterval = this.slider.previousSibling.lastChild;
+    this.slider.noUiSlider.on('update', this.updateFunction);
   }
 
   updateFunction = (values) => {

@@ -1,28 +1,28 @@
 class PieChart {
-  static sectorClass = 'js-pie-chart__circle';
+  static sectorClass = 'js-pie-chart__sector';
 
-  static sectorHoveredModifier = 'pie-chart__circle_hovered';
+  static sectorHoveredModifier = 'pie-chart__sector_hovered';
 
   static gradientIdBasis = 'gradient-color-';
 
-  static votesWrapperClass = 'js-pie-chart__votes';
+  static votesWrapperClass = 'js-pie-chart__votes-wrapper';
 
   static votesElementClass = 'js-pie-chart__votes-amount';
 
-  static bulletClass = 'js-pie-chart__list-item';
+  static bulletClass = 'js-pie-chart__bullet';
 
   constructor(chartElement) {
-    this.chartElement = chartElement;
+    this.pieChart = chartElement;
     this.init();
   }
 
   init() {
-    this.totalAmount = +this.chartElement.getAttribute('data-amount');
-    this.votesAmountElement = this.chartElement.querySelector(`.${PieChart.votesElementClass}`);
-    this.votesAmountWrapper = this.chartElement.querySelector(`.${PieChart.votesWrapperClass}`);
+    this.totalAmount = +this.pieChart.getAttribute('data-amount');
+    this.votesAmountElement = this.pieChart.querySelector(`.${PieChart.votesElementClass}`);
+    this.votesWrapper = this.pieChart.querySelector(`.${PieChart.votesWrapperClass}`);
     this.votesAmountElement.innerText = this.totalAmount;
-    this.sectors = this.chartElement.querySelectorAll(`.${PieChart.sectorClass}`);
-    this.bullets = this.chartElement.querySelectorAll(`.${PieChart.bulletClass}`);
+    this.sectors = this.pieChart.querySelectorAll(`.${PieChart.sectorClass}`);
+    this.bullets = this.pieChart.querySelectorAll(`.${PieChart.bulletClass}`);
     this.initSectors();
   }
 
@@ -67,15 +67,15 @@ class PieChart {
     const handleMouseOver = () => {
       sector.classList.add(PieChart.sectorHoveredModifier);
       this.votesAmountElement.innerText = amount;
-      this.votesAmountWrapper.style.background = `linear-gradient(${startColor}, ${endColor})`;
-      this.votesAmountWrapper.style.webkitBackgroundClip = 'text';
-      this.votesAmountWrapper.style.webkitTextFillColor = 'transparent';
+      this.votesWrapper.style.background = `linear-gradient(${startColor}, ${endColor})`;
+      this.votesWrapper.style.webkitBackgroundClip = 'text';
+      this.votesWrapper.style.webkitTextFillColor = 'transparent';
     };
 
     const handleMouseOut = () => {
       sector.classList.remove(PieChart.sectorHoveredModifier);
       this.votesAmountElement.innerText = this.totalAmount;
-      this.votesAmountWrapper.style = '';
+      this.votesWrapper.style = '';
     };
 
     elements.forEach((item) => item.addEventListener('mouseover', handleMouseOver));

@@ -4,13 +4,12 @@ $max-page: 100;
 
 .pagination {
 
-  &__pages {
+  &__pages-wrapper {
     display: flex;
     margin-bottom: 10px;
   }
 
   &__description {
-    color: $dark-75;
     text-align: center;
   }
 
@@ -33,7 +32,6 @@ $max-page: 100;
       color: $dark-50;
       font-weight: bold;
       font-size: .75rem; //12px при базовом размере шрифта 16px
-      text-transform: uppercase;
     }
 
     &:last-child,

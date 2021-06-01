@@ -1,11 +1,10 @@
 @import '../../assets/scss/colors.scss';
 
 .rate-button {
-  display: flex;
+  max-width: fit-content;
 
   &__star {
     margin: 0;
-    outline: none;
     appearance: none;
 
     &:after {

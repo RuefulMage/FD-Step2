@@ -1,5 +1,5 @@
 class Pagination {
-  static itemClass = 'js-pagination__item';
+  static pagesWrapperClass = 'js-pagination__pages-wrapper'
 
   constructor(paginationElement) {
     this.paginationElement = paginationElement;
@@ -7,23 +7,25 @@ class Pagination {
   }
 
   init() {
-    this.paginationPage = parseInt(this.paginationElement.getAttribute('data-current-page'), 10);
-    const items = this.paginationElement.getElementsByClassName(Pagination.itemClass);
-    for (let i = 0; i < items.length; i += 1) {
-      items[i].addEventListener('click', this.handlePageButtonClick);
-    }
+    this.pagesWrapper = this.paginationElement.querySelector(`.${Pagination.pagesWrapperClass}`)
+    this.page = parseInt(this.paginationElement.getAttribute('data-current-page'), 10);
+    this.addListener();
   }
 
-  handlePageButtonClick = (event) => {
-    const go = event.currentTarget.getAttribute('data-page-number');
+  addListener = () => {
+    this.pagesWrapper.addEventListener('click', this.handlePagesWrapperClick);
+  }
+
+  handlePagesWrapperClick = (event) => {
+    const go = event.target.getAttribute('data-page-number') || null;
     if (go === '+1') {
-      this.paginationPage += 1;
+      this.page += 1;
     } else if (go === '-1') {
-      this.paginationPage -= 1;
-    } else {
-      this.paginationPage = parseInt(go, 10);
+      this.page -= 1;
+    } else if (go !== null) {
+      this.page = parseInt(go, 10);
     }
-    this.paginationElement.setAttribute('data-current-page', this.paginationPage);
+    this.paginationElement.setAttribute('data-current-page', this.page);
   }
 }
 

@@ -1,8 +1,11 @@
 mixin pagination(currentPage, pageAmount, link, description)
   - let pageNumber = 1;
+  - let pageClasses = 'pagination__item pagination__item_page';
+  - let lastPageClasses = 'pagination__item pagination__item_last';
+
   .pagination.js-pagination(data-current-page=currentPage)
-    .pagination__pages
+    .pagination__pages-wrapper.js-pagination__pages-wrapper
       while pageNumber <= pageAmount
-        a(data-page-number= pageNumber href=link + pageNumber class="pagination__item js-pagination__item pagination__item_page")=pageNumber++
-      a(data-page-number= "+1" href=link + "next" class="pagination__item js-pagination__item pagination__item_last") arrow_forward
-    .pagination__description=description
+        a(data-page-number=pageNumber href=`${ link }${ pageNumber }` class=pageClasses) !{ pageNumber++ }
+      a(data-page-number="+1" href=`${link}next` class=lastPageClasses) arrow_forward
+    .pagination__description !{ description }
