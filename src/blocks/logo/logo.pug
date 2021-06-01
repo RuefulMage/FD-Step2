@@ -4,4 +4,4 @@ mixin logo(colored=false)
   if colored
     - classes.push('logo_colored')
     - image = 'logo-colored.svg'
-  img(class=classes src=require('../../blocks/logo/images/' + image) alt="toxin logo")
+  img(class=classes src=require(`../../blocks/logo/images/${image}`) alt="toxin logo")

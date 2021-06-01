@@ -6,5 +6,5 @@ mixin like-button(value, name, likeAmount, liked=false)
     - buttonClasses.push('like-button_colored')
   button(class=buttonClasses name=name)
     .like-button__content
-      .like-button__icon=icon
-      .like-button__amount=likeAmount
+      .like-button__icon !{ icon }
+      .like-button__amount !{ likeAmount }

@@ -6,7 +6,6 @@
   background: $gradient;
   border-radius: 22px;
   outline: none;
-  cursor: pointer;
   user-select: none;
 
   &:focus,
@@ -22,7 +21,6 @@
 
   &__content {
     display: flex;
-    justify-content: center;
     padding: 9px 18px;
     color: $purple;
     font-weight: bold;

@@ -3,20 +3,25 @@ class LikeButton {
 
   constructor(likeButton) {
     this.likeButton = likeButton;
-    likeButton.addEventListener('click', this.handleLikeButtonClick);
+    this.addHandler();
+  }
+
+  addHandler = () => {
+    this.likeButton.addEventListener('click', this.handleLikeButtonClick);
   }
 
   handleLikeButtonClick = () => {
     const icon = this.likeButton.firstChild.firstChild;
-    const likeAmount = this.likeButton.firstChild.lastChild;
-    if (this.likeButton.classList.contains(LikeButton.coloredLikeButtonClass)) {
+    const amount = this.likeButton.firstChild.lastChild;
+    const isLiked = this.likeButton.classList.contains(LikeButton.coloredLikeButtonClass);
+    if (isLiked) {
       this.likeButton.classList.remove(LikeButton.coloredLikeButtonClass);
       icon.textContent = 'favorite_border';
-      likeAmount.textContent = +likeAmount.textContent - 1;
+      amount.textContent = +amount.textContent - 1;
     } else {
       this.likeButton.classList.add(LikeButton.coloredLikeButtonClass);
       icon.textContent = 'favorite';
-      likeAmount.textContent = +likeAmount.textContent + 1;
+      amount.textContent = +amount.textContent + 1;
     }
   }
 }
