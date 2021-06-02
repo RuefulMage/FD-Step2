@@ -1,4 +1,5 @@
 include ../social-net-icon/social-net-icon
+
 mixin small-footer(text, socials)
   .small-footer
     .small-footer__container
@@ -8,4 +9,4 @@ mixin small-footer(text, socials)
       .small-footer__socials
         each item in socials
           .small-footer__socials-item
-            +social-net-icon(item.icon,item.link)
+            +social-net-icon(item.icon, item.link)

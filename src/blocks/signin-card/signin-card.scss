@@ -1,8 +1,6 @@
 @import '../../assets/scss/colors.scss';
 
 .signin-card {
-  box-sizing: border-box;
-  width: 100%;
   padding: 40px 30px 20px;
   border: 1px solid rgba(0, 0, 0, .12);
   border-radius: 4px;
@@ -40,8 +38,6 @@
   }
 
   &__sign-in-button-wrapper {
-    width: 100%;
-    max-width: 99px;
     margin-bottom: 10px;
   }
 }

@@ -2,18 +2,19 @@ include ../textfield/textfield
 include ../form-button/form-button
 include ../link-button/link-button
 include ../title/title
+
 mixin signin-card(link)
   .signin-card
     .signin-card__title
       +title('high', 'Войти', true)
     form.signin-card__form(method="POST" action=link)
       .signin-card__email-field
-        +textfield({type: 'email', placeholder: 'Email', name: 'email'})
+        +textfield({ type: 'email', placeholder: 'Email', name: 'email' })
       .signin-card__password-field
-        +textfield({type: 'password', placeholder: 'Пароль', name: 'password'})
+        +textfield({ type: 'password', placeholder: 'Пароль', name: 'password' })
       .signin-card__button-wrapper
         +form-button('Войти')
     .signin-card__no-accaunt-wrapper
       p.signin-card__no-accaunt-text Нет аккаунта на Toxin?
       .signin-card__sign-in-button-wrapper
-        +link-button({text: 'Создать', link: 'mock-address', large: true})
+        +link-button({ text: 'Создать', link: 'mock-address', large: true })

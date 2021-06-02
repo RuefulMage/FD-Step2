@@ -2,7 +2,6 @@
 
 .subscription-textfield {
   display: flex;
-  box-sizing: border-box;
   padding: 9px 0;
   border: 1px solid $dark-25;
   border-radius: 4px;
@@ -13,7 +12,6 @@
   }
 
   &__textfield {
-    width: 100%;
     padding-left: 14px;
     color: $dark-75;
     font: .875rem Montserrat, Arial, sans-serif;
@@ -27,8 +25,6 @@
   }
 
   &__button {
-    display: flex;
-    justify-content: center;
     width: 100%;
     max-width: 44px;
     font: 1.5rem 'Material Icons';

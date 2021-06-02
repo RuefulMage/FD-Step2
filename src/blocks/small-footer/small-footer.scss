@@ -1,8 +1,6 @@
 @import '../../assets/scss/colors.scss';
 
 .small-footer {
-  box-sizing: border-box;
-  width: 100%;
   padding: 120px 0;
   box-shadow: 0 10px 20px rgba(31, 32, 65, .05);
 
@@ -10,9 +8,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    max-width: 1160px;
-    margin: auto;
   }
 
   &__logo {

@@ -1,4 +1,4 @@
 mixin text-type(name, text, type)
   .text-type
-    .text-type__name(class="text-type__name_font_" + type)=name
-    p.text-type__text(class="text-type__text_font_" + type)=text
+    .text-type__name(class=`text-type__name_font_${ type }`) !{ name }
+    p.text-type__text(class=`text-type__text_font_${ type }`) !{ text }
