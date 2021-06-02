@@ -1,30 +1,33 @@
 extends ../main-layout/main-layout
+
+include ../../blocks/textfield/textfield
+include ../../blocks/dropdown/dropdown
+include ../../blocks/date-dropdown/date-dropdown
+include ../../blocks/subscription-textfiled/subscription-textfield
+include ../../blocks/expandable-checkbox-list/expandable-checkbox-list
+include ../../blocks/icon-text/icon-text
+include ../../blocks/checkbox/checkbox
+include ../../blocks/range-slider/range-slider
+include ../../blocks/radio-button/radio-button
+include ../../blocks/toggle/toggle
+include ../../blocks/like-button/like-button
+include ../../blocks/rate-button/rate-button
+include ../../blocks/link-button/link-button
+include ../../blocks/link/link
+include ../../blocks/form-button/form-button
+include ../../blocks/pagination/pagination
+include ../../blocks/rich-checkbox/rich-checkbox
+include ../../blocks/bullet-list/bullet-list
+include ../../blocks/comment/comment
+include ../../blocks/logo/logo
+include ../../blocks/title/title
+
 block page-meta
   meta(name="keywords" content="Form, Toxin")
   meta(name="description" content="Toxin form elements demonstration page")
   title Forms Elements
+
 block body
-  include ../../blocks/textfield/textfield
-  include ../../blocks/dropdown/dropdown
-  include ../../blocks/date-dropdown/date-dropdown
-  include ../../blocks/subscription-textfiled/subscription-textfield
-  include ../../blocks/expandable-checkbox-list/expandable-checkbox-list
-  include ../../blocks/icon-text/icon-text
-  include ../../blocks/checkbox/checkbox
-  include ../../blocks/range-slider/range-slider
-  include ../../blocks/radio-button/radio-button
-  include ../../blocks/toggle/toggle
-  include ../../blocks/like-button/like-button
-  include ../../blocks/rate-button/rate-button
-  include ../../blocks/link-button/link-button
-  include ../../blocks/link/link
-  include ../../blocks/form-button/form-button
-  include ../../blocks/pagination/pagination
-  include ../../blocks/rich-checkbox/rich-checkbox
-  include ../../blocks/bullet-list/bullet-list
-  include ../../blocks/comment/comment
-  include ../../blocks/logo/logo
-  include ../../blocks/title/title
   .forms-elements
     .forms-elements__logo
       +logo()
@@ -36,7 +39,7 @@ block body
               .forms-elements__item-header
                 +title('low', 'text field')
               span.forms-elements__item-state default
-            +textfield({type: 'email', placeholder: 'Email', name: 'default-textfield'})
+            +textfield({ type: 'email', placeholder: 'Email', name: 'default-textfield' })
           .forms-elements__item
             .forms-elements__item-label
               .forms-elements__item-header
@@ -102,7 +105,7 @@ block body
             .forms-elements__item-label
               .forms-elements__item-header
                 +title('low', 'filter date dropdown')
-            +date-dropdown({startDateInterval: '2019-08-19, 2019-08-23'})
+            +date-dropdown({ startDateInterval: '2019-08-19, 2019-08-23' })
           .forms-elements__item.forms-elements__item_width-small.forms-elements__item_margin-large
             .forms-elements__item-label
               .forms-elements__item-header
@@ -186,14 +189,12 @@ block body
                   +link-button({
                     text: 'click me',
                     link: 'mock-address',
-                    filled: false,
                     large: true
                   })
                 .forms-elements__subitem-inline.forms-elements__subitem-inline_width-big
                   +link-button({
                     text: 'click me',
                     link: 'mock-address',
-                    filled: false,
                     large: true,
                     disabled: true
                   })
@@ -405,7 +406,7 @@ block body
           .forms-elements__item
             +icon-text('location_city', 'Удобство', 'Окно в каждой из спален', true)
         .forms-elements__column.forms-elements__col-2
-          .forms-elements__item.forms-elements__item_width-100
+          .forms-elements__item.forms-elements__item_width-max
             +comment({
               avatar: 'comment-avatar-1.jpg',
               fullName: 'Мурад Сарафанов',

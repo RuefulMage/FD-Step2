@@ -13,7 +13,6 @@
   }
 
   &__container {
-    box-sizing: border-box;
     max-width: 1160px;
     margin: 0 auto;
 
@@ -89,8 +88,7 @@
       max-width: 266px;
     }
 
-    &_width-100 {
-      width: 100%;
+    &_width-max {
       max-width: 711px;
     }
 
@@ -113,7 +111,6 @@
 
   &__item-label {
     display: flex;
-    align-items: flex-start;
     justify-content: space-between;
     margin-bottom: 5px;
     text-transform: uppercase;
@@ -126,7 +123,6 @@
   &__item-state {
     color: $dark-50;
     font-size: .75rem; //12px при базовом размере шрифта 16px
-    line-height: .9375; //15px при базовом размере шрифта 16px
   }
 
   &__subitem {
@@ -152,7 +148,6 @@
     }
 
     &_width-big {
-      width: 100%;
       max-width: 99px;
     }
 

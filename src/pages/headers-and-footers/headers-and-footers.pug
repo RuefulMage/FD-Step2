@@ -1,75 +1,77 @@
 extends ../main-layout/main-layout
+
+include ../../blocks/logo/logo
+include ../../blocks/header/header
+include ../../blocks/footer/footer
+include ../../blocks/copyright/copyright
+include ../../blocks/small-footer/small-footer
+
 block page-meta
   meta(name="keywords" content="Header, Footer, Toxin")
   meta(name="description" content="Toxin headers and footers demonstration page")
   title Headers & Footers
+
 block body
-  include ../../blocks/logo/logo
-  include ../../blocks/header/header
-  include ../../blocks/footer/footer
-  include ../../blocks/copyright/copyright
-  include ../../blocks/small-footer/small-footer
   .headers-and-footers
     .headers-and-footers__logo
       +logo()
-    .headers-and-footers__container
-      .headers-and-footers__item
-        +header({
-          links: [{link: 'mock-address', text: 'О нас', current: true, dropdowned: false},
-            {link: 'mock-address', text: 'Услуги', current: false, dropdowned: true},
-            {link: 'mock-address', text: 'Вакансии', current: false, dropdowned: false},
-            {link: 'mock-address', text: 'Новости', current: false, dropdowned: false},
-            {link: 'mock-address', text: 'Соглашения', current: false, dropdowned: true}],
-          loginButtonText: 'войти',
-          registerButtonText: 'зарегистрироваться'
-        })
-      .headers-and-footers__item
-        +header({
-          links: [{link: 'mock-address', text: 'О нас', current: true, dropdowned: false},
-            {link: 'mock-address', text: 'Услуги', current: false, dropdowned: true},
-            {link: 'mock-address', text: 'Вакансии', current: false, dropdowned: false},
-            {link: 'mock-address', text: 'Новости', current: false, dropdowned: false},
-            {link: 'mock-address', text: 'Соглашения', current: false, dropdowned: true}],
-          loginButtonText: 'войти',
-          registerButtonText: 'зарегистрироваться',
-          authorized: true,
-          username: 'Юлий Цезарь'
-        })
-      .headers-and-footers__item
-        +footer({
-          descriptionText: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
-          menu: [{
-            title: 'навигация', links: [{link: 'mock-address', text: 'О нас'},
-              {link: 'mock-address', text: 'Новости'}, {
-                link: 'mock-address',
-                text: 'Служба поддержки'
-              }, {link: 'mock-address', text: 'Услуги'}]
-          },
-            {
-              title: 'о нас',
-              links: [{link: 'mock-address', text: 'О сервисе'}, {
-                link: 'mock-address',
-                text: 'Наша команда'
-              },
-                {link: 'mock-address', text: 'Вакансии'},
-                {link: 'mock-address', text: 'Инвесторы'}]
-            },
-            {
-              title: 'Служба поддержки',
-              links: [{link: 'mock-address', text: 'Соглашения'}, {
-                link: 'mock-address',
-                text: 'Сообщества'
-              }, {link: 'mock-address', text: 'Связь с нами'}]
-            },
-          ],
-          subscriptionTitle: 'Подписка',
-          subscriptionDescription: 'Получайте специальные предложения и новости сервиса',
-          link: 'mock-address'
-        })
-      .headers-and-footers__item.headers-and-footers__item_width-small
-        +small-footer('Copyright © 2018 Toxin отель. Все права зачищены.', [{
-          icon: '',
-          link: 'https://twitter.com/'
+    .headers-and-footers__item
+      +header({
+        links: [{ link: 'mock-address', text: 'О нас', current: true, dropdowned: false },
+          { link: 'mock-address', text: 'Услуги', current: false, dropdowned: true },
+          { link: 'mock-address', text: 'Вакансии', current: false, dropdowned: false },
+          { link: 'mock-address', text: 'Новости', current: false, dropdowned: false },
+          { link: 'mock-address', text: 'Соглашения', current: false, dropdowned: true }],
+        loginButtonText: 'войти',
+        registerButtonText: 'зарегистрироваться'
+      })
+    .headers-and-footers__item
+      +header({
+        links: [{ link: 'mock-address', text: 'О нас', current: true, dropdowned: false },
+          { ink: 'mock-address', text: 'Услуги', current: false, dropdowned: true },
+          { link: 'mock-address', text: 'Вакансии', current: false, dropdowned: false },
+          { link: 'mock-address', text: 'Новости', current: false, dropdowned: false },
+          { link: 'mock-address', text: 'Соглашения', current: false, dropdowned: true }],
+        loginButtonText: 'войти',
+        registerButtonText: 'зарегистрироваться',
+        authorized: true,
+        username: 'Юлий Цезарь'
+      })
+    .headers-and-footers__item
+      +footer({
+        descriptionText: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
+        menu: [{
+          title: 'навигация', links: [{ link: 'mock-address', text: 'О нас' },
+            { link: 'mock-address', text: 'Новости' }, {
+              link: 'mock-address',
+              text: 'Служба поддержки'
+            }, { link: 'mock-address', text: 'Услуги' }]
         },
-          {icon: '', link: 'https://www.facebook.com/'},
-          {icon: '', link: 'https://www.instagram.com/'}])
+          {
+            title: 'о нас',
+            links: [{ link: 'mock-address', text: 'О сервисе' }, {
+              link: 'mock-address',
+              text: 'Наша команда'
+            },
+              { link: 'mock-address', text: 'Вакансии' },
+              { link: 'mock-address', text: 'Инвесторы' }]
+          },
+          {
+            title: 'Служба поддержки',
+            links: [{ link: 'mock-address', text: 'Соглашения' }, {
+              link: 'mock-address',
+              text: 'Сообщества'
+            }, { link: 'mock-address', text: 'Связь с нами' }]
+          },
+        ],
+        subscriptionTitle: 'Подписка',
+        subscriptionDescription: 'Получайте специальные предложения и новости сервиса',
+        link: 'mock-address'
+      })
+    .headers-and-footers__item.headers-and-footers__item_width-small
+      +small-footer('Copyright © 2018 Toxin отель. Все права зачищены.', [{
+        icon: '',
+        link: 'https://twitter.com/'
+      },
+        { icon: '', link: 'https://www.facebook.com/' },
+        { icon: '', link: 'https://www.instagram.com/' }])

@@ -1,20 +1,24 @@
 extends ../main-layout/main-layout
+
+include ../../blocks/logo/logo
+include ../../blocks/find-apartment-card/find-apartment-card
+include ../../blocks/apartment-booking-card/apartment-booking-card
+include ../../blocks/date-dropdown/date-dropdown
+include ../../blocks/registration-card/registration-card
+include ../../blocks/signin-card/signin-card
+include ../../blocks/apartment-description-card/apartment-description-card
+
 block page-meta
     meta(name="keywords" content="Cards, Toxin")
     meta(name="description" content="Toxin cards demonstration page")
     title Cards
+
 block body
-  include ../../blocks/logo/logo
-  include ../../blocks/find-apartment-card/find-apartment-card
-  include ../../blocks/apartment-booking-card/apartment-booking-card
-  include ../../blocks/date-dropdown/date-dropdown
-  include ../../blocks/registration-card/registration-card
-  include ../../blocks/signin-card/signin-card
-  include ../../blocks/apartment-description-card/apartment-description-card
   -
     let path = require('path');
     let fs = require('fs');
     let bookingCardData = JSON.parse(fs.readFileSync(path.normalize('src/pages/cards/booking-card-data.json')))
+
   .cards
     .cards__logo
       +logo()
@@ -37,7 +41,7 @@ block body
           +signin-card()
       .cards__column.cards__col-3
         .cards__item
-          +date-dropdown({static: true, startDateInterval: '2019-08-19, 2019-08-23'})
+          +date-dropdown({ static: true, startDateInterval: '2019-08-19, 2019-08-23' })
         .cards__item.cards__item_width-small
           +apartment-description-card({
             images: ['apartment-photo-1.jpg',
