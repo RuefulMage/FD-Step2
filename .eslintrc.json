@@ -13,6 +13,7 @@
     "fsd"
   ],
   "rules": {
+    "no-param-reassign": [2, { "props": false }],
     "prefer-destructuring": [
       "error",
       {
