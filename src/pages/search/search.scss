@@ -6,7 +6,6 @@
   &__container {
     display: flex;
     justify-content: center;
-    max-width: 1160px;
     margin: 0 auto;
     padding: 30px 20px 80px;
 
@@ -110,8 +109,6 @@
   }
 
   &__result {
-    display: flex;
-    flex-direction: column;
     max-width: 835px;
 
     @media (max-width: 1160px) {
@@ -158,6 +155,7 @@
   }
 
   &__pagination {
-    align-self: center;
+    display: flex;
+    justify-content: center;
   }
 }

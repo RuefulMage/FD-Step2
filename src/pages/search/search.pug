@@ -1,22 +1,26 @@
 extends ../pages-layout/pages-layout
+
+include ../../blocks/date-dropdown/date-dropdown
+include ../../blocks/dropdown/dropdown
+include ../../blocks/range-slider/range-slider
+include ../../blocks/checkbox/checkbox
+include ../../blocks/rich-checkbox/rich-checkbox
+include ../../blocks/expandable-checkbox-list/expandable-checkbox-list
+include ../../blocks/apartment-description-card/apartment-description-card
+include ../../blocks/pagination/pagination
+include ../../blocks/title/title
+
 block page-meta
   meta(name="keywords" content="Search, Toxin")
   meta(name="description" content="Toxin search page")
   title Search
+
 block content
-  include ../../blocks/date-dropdown/date-dropdown
-  include ../../blocks/dropdown/dropdown
-  include ../../blocks/range-slider/range-slider
-  include ../../blocks/checkbox/checkbox
-  include ../../blocks/rich-checkbox/rich-checkbox
-  include ../../blocks/expandable-checkbox-list/expandable-checkbox-list
-  include ../../blocks/apartment-description-card/apartment-description-card
-  include ../../blocks/pagination/pagination
-  include ../../blocks/title/title
   -
     let path = require('path');
     let fs = require('fs');
-    let descriptionCardsData = JSON.parse(fs.readFileSync(path.normalize('src/pages/search/description-cards-data.json')))
+    let descriptionCardsData = JSON.parse(fs.readFileSync(path.normalize('src/pages/search/description-cards-data.json')));
+
   main.search
     .search__container
       button.search__show-filter-button.js-search__show-filter-button Фильтр
@@ -25,7 +29,7 @@ block content
           .search__filter-item-label
             .search__filter-item-name
               +title('low', 'Даты пребывания в отеле')
-          +date-dropdown({startDateInterval: '2019-08-19, 2019-08-23'})
+          +date-dropdown({ startDateInterval: '2019-08-19, 2019-08-23' })
         .search__guests
           .search__filter-item-label
             .search__filter-item-name
@@ -124,12 +128,12 @@ block content
           })
         .search__extra-facilities
           +expandable-checkbox-list('дополнительные удобства', [
-            {text: 'Завтрак', checked: false},
-            {text: 'Письменный стол', checked: true},
-            {text: 'Стул для кормления', checked: true},
-            {text: 'Кроватка', checked: true},
-            {text: 'Телевизор', checked: false},
-            {text: 'Шампунь', checked: false}
+            { text: 'Завтрак', checked: false },
+            { text: 'Письменный стол', checked: true },
+            { text: 'Стул для кормления', checked: true },
+            { text: 'Кроватка', checked: true },
+            { text: 'Телевизор', checked: false },
+            { text: 'Шампунь', checked: false }
           ])
       section.search__result
         .search__results-header

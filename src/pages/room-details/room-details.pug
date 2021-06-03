@@ -1,21 +1,24 @@
 extends ../pages-layout/pages-layout
+
+include ../../blocks/icon-text/icon-text
+include ../../blocks/pie-chart/pie-chart
+include ../../blocks/bullet-list/bullet-list
+include ../../blocks/comment/comment
+include ../../blocks/apartment-booking-card/apartment-booking-card
+include ../../blocks/title/title
+
 block page-meta
   meta(name="keywords" content="Room, Toxin")
   meta(name="description" content="Toxin room details page")
   title Room details
+
 block content
-  include ../../blocks/icon-text/icon-text
-  include ../../blocks/pie-chart/pie-chart
-  include ../../blocks/bullet-list/bullet-list
-  include ../../blocks/comment/comment
-  include ../../blocks/apartment-booking-card/apartment-booking-card
-  include ../../blocks/dropdown/dropdown
-  include ../../blocks/title/title
   -
     let path = require('path');
     let fs = require('fs');
     let pieChartData = JSON.parse(fs.readFileSync(path.normalize('src/pages/room-details/pie-chart-data.json')));
-    let bookingCardData = JSON.parse(fs.readFileSync(path.normalize('src/pages/room-details/booking-card-data.json')))
+    let bookingCardData = JSON.parse(fs.readFileSync(path.normalize('src/pages/room-details/booking-card-data.json')));
+
   .room-details
     .room-details__images-wrapper
       .room-details__main-image
