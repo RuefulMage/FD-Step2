@@ -1,10 +1,11 @@
 class ExpandableCheckboxList {
   static rotatedArrowClass = 'expandable-checkbox-list__arrow_rotated';
+
   static expandedListClass = 'expandable-checkbox-list__list_expanded';
 
   constructor(checkboxListButton) {
     this.checkboxListButton = checkboxListButton;
-    checkboxListButton.addEventListener('click', this.handleButtonClick);
+    this.addListener();
   }
 
   handleButtonClick = (event) => {
@@ -18,6 +19,10 @@ class ExpandableCheckboxList {
       checkboxList.classList.add(ExpandableCheckboxList.expandedListClass);
       icon.classList.add(ExpandableCheckboxList.rotatedArrowClass);
     }
+  }
+
+  addListener = () => {
+    this.checkboxListButton.addEventListener('click', this.handleButtonClick);
   }
 }
 

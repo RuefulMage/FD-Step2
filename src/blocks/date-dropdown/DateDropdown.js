@@ -2,12 +2,19 @@ import 'air-datepicker';
 
 class DateDropdown {
   static defaultInputString = 'ДД.ММ.ГГГГ';
+
   static defaultSingleInputString = 'дд месяц';
+
   static clearButtonClass = 'date-dropdown__calendar-clear-button';
+
   static appendButtonClass = 'date-dropdown__calendar-append-button';
+
   static buttonsWrapperClass = 'date-dropdown__calendar-buttons-wrapper';
+
   static showButtonClass = 'date-dropdown__expand-button';
+
   static showButtonHiddenModifier = 'date-dropdown__expand-button_hidden';
+
   static monthsNames = new Map([
     [0, 'янв'], [1, 'фев'],
     [2, 'мар'], [3, 'апр'],
@@ -38,12 +45,12 @@ class DateDropdown {
   };
 
   constructor(node, calendarClass) {
-    this.dateDropdownInputs = node.querySelectorAll(`.${calendarClass}`);
     this.node = node;
-    this.init();
+    this.init(calendarClass);
   }
 
-  init() {
+  init(calendarClass) {
+    this.dateDropdownInputs = this.node.querySelectorAll(`.${calendarClass}`);
     this.calendarData = $(this.dateDropdownInputs[0]).datepicker(this.options).data('datepicker');
     this.dateDropdownInputs.forEach((input) => input.addEventListener('click', this.handleShowCalendarButtonClick));
     this.isHide = true;
@@ -96,7 +103,9 @@ class DateDropdown {
   }
 
   clearInputs = () => {
-    this.dateDropdownInputs.forEach(input => input.value = '');
+    this.dateDropdownInputs.forEach((input) => {
+      input.value = '';
+    });
   }
 
   createCalendarButtonsBlock(clearButtonName, appendButtonName) {

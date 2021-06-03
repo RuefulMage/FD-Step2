@@ -1,16 +1,28 @@
 class Dropdown {
   static expandButtonClass = 'js-dropdown__expand-button';
+
   static dropdownExpandedClass = 'dropdown_expanded';
+
   static expandButtonRotatedClass = 'dropdown__expand-button_rotated';
+
   static menuItemClass = 'js-dropdown__menu-item';
+
   static decreaseButtonClass = 'js-dropdown__decrease-button';
+
   static decreaseButtonDisabledClass = 'dropdown__decrease-button_disabled';
+
   static increaseButtonClass = 'js-dropdown__increase-button';
+
   static increaseButtonDisabledClass = 'dropdown__increase-button_disabled';
+
   static amountClass = 'js-dropdown__amount';
+
   static clearButtonClass = 'js-dropdown__clear-button';
+
   static appendButtonClass = 'js-dropdown__apply-button';
+
   static inputTextClass = 'js-dropdown__text';
+
   static fieldClass = 'js-dropdown__field';
 
   constructor(element, withButtons) {
@@ -26,10 +38,10 @@ class Dropdown {
     this.field = this.element.querySelector(`.${Dropdown.fieldClass}`);
     this.field.addEventListener('click', this.handleExpandButtonClick);
     this.separatedElementsInInput = this.element.getAttribute('data-separated-elements') || '';
-    if (this.separatedElementsInInput === ''){
-      this.separatedElementsInInput = []
+    if (this.separatedElementsInInput === '') {
+      this.separatedElementsInInput = [];
     } else {
-      this.separatedElementsInInput = this.separatedElementsInInput.split(', ')
+      this.separatedElementsInInput = this.separatedElementsInInput.split(', ');
     }
     window.addEventListener('click', this.handleWindowClick);
     this.initText();
@@ -59,7 +71,7 @@ class Dropdown {
       );
       const currentItem = this.items.get(itemId);
       this.totalAmount += +currentItem.amount;
-      this.toggleDisabledButton(+currentItem.amount,
+      Dropdown.toggleDisabledButton(+currentItem.amount,
         currentItem.minAmount, currentItem.maxAmount, currentItem);
       const { decreaseButton } = this.items.get(itemId);
       decreaseButton.addEventListener('click', this.handleDecreaseButtonClick);
@@ -152,7 +164,56 @@ class Dropdown {
     this.expandButton.classList.remove(Dropdown.expandButtonRotatedClass);
   }
 
-  toggleDisabledButton(amount, minAmount, maxAmount, item) {
+  setSelectedText() {
+    if (this.totalAmount === 0) {
+      this.inputField.innerText = this.placeholder;
+      return;
+    }
+    let resultString = '';
+    let restAmount = this.totalAmount;
+    Array.from(this.separatedElementsInInput).forEach((key) => {
+      const item = this.items.get(key);
+      if (resultString !== '' && item.amount > 0) {
+        resultString += ', ';
+      }
+      if (item.amount > 0) {
+        resultString += `${item.amount} ${Dropdown.getProperWordForm(item.amount, item.forms)}`;
+      }
+      restAmount -= item.amount;
+    });
+
+    if (restAmount > 0) {
+      let restItemsString = `${restAmount} ${Dropdown.getProperWordForm(restAmount, this.generalForms)}`;
+      if (restAmount < this.totalAmount) {
+        restItemsString += ', ';
+      }
+      resultString = `${restItemsString}${resultString}`;
+    }
+    this.inputField.innerText = resultString;
+  }
+
+  setAmount(itemId, amount) {
+    const item = this.items.get(itemId);
+    item.amount = amount;
+    item.amountContainsElement.innerText = this.items.get(itemId).amount;
+    this.currentSetInputTextFunction();
+    Dropdown.toggleDisabledButton(+this.items.get(itemId).amount,
+      +this.items.get(itemId).minAmount, +this.items.get(itemId).maxAmount, this.items.get(itemId));
+  }
+
+  toggleClearButtonVisibility() {
+    const isDisabledClassShouldDeleted = this.clearButton.classList.contains('dropdown__clear-button_hidden')
+      && this.totalAmount !== 0;
+    const isDisabledClassShouldAdded = !this.clearButton.classList.contains('dropdown__clear-button_hidden')
+      && this.totalAmount === 0;
+    if (isDisabledClassShouldDeleted) {
+      this.clearButton.classList.remove('dropdown__clear-button_hidden');
+    } else if (isDisabledClassShouldAdded) {
+      this.clearButton.classList.add('dropdown__clear-button_hidden');
+    }
+  }
+
+  static toggleDisabledButton(amount, minAmount, maxAmount, item) {
     const { decreaseButton } = item;
     const { increaseButton } = item;
     let isDisabledClassShouldBeDeleted = amount !== minAmount
@@ -171,35 +232,7 @@ class Dropdown {
     }
   }
 
-  setSelectedText() {
-    if (this.totalAmount === 0) {
-      this.inputField.innerText = this.placeholder;
-      return;
-    }
-    let resultString = ''
-    let restAmount = this.totalAmount
-    Array.from(this.separatedElementsInInput).forEach(key => {
-      const item = this.items.get(key)
-      if (resultString !== '' && item.amount > 0) {
-        resultString += ', ';
-      }
-      if (item.amount > 0) {
-        resultString += `${item.amount} ${this.getProperWordForm(item.amount, item.forms)}`;
-      }
-      restAmount -= item.amount;
-    });
-
-    if (restAmount > 0) {
-      let restItemsString = `${restAmount} ${this.getProperWordForm(restAmount, this.generalForms)}`;
-      if (restAmount < this.totalAmount) {
-        restItemsString += ', ';
-      }
-      resultString = `${restItemsString}${resultString}`
-    }
-    this.inputField.innerText = resultString;
-  }
-
-  getProperWordForm(number, forms) {
+  static getProperWordForm(number, forms) {
     let result = '';
     let residue = number % 100;
     if (residue >= 11 && residue <= 19) {
@@ -220,27 +253,6 @@ class Dropdown {
       }
     }
     return result;
-  }
-
-  setAmount(itemId, amount) {
-    const item = this.items.get(itemId);
-    item.amount = amount;
-    item.amountContainsElement.innerText = this.items.get(itemId).amount;
-    this.currentSetInputTextFunction();
-    this.toggleDisabledButton(+this.items.get(itemId).amount,
-      +this.items.get(itemId).minAmount, +this.items.get(itemId).maxAmount, this.items.get(itemId));
-  }
-
-  toggleClearButtonVisibility() {
-    const isDisabledClassShouldDeleted = this.clearButton.classList.contains('dropdown__clear-button_hidden')
-      && this.totalAmount !== 0;
-    const isDisabledClassShouldAdded = !this.clearButton.classList.contains('dropdown__clear-button_hidden')
-      && this.totalAmount === 0;
-    if (isDisabledClassShouldDeleted) {
-      this.clearButton.classList.remove('dropdown__clear-button_hidden');
-    } else if (isDisabledClassShouldAdded) {
-      this.clearButton.classList.add('dropdown__clear-button_hidden');
-    }
   }
 }
 

@@ -7,7 +7,7 @@ class Pagination {
   }
 
   init() {
-    this.pagesWrapper = this.paginationElement.querySelector(`.${Pagination.pagesWrapperClass}`)
+    this.pagesWrapper = this.paginationElement.querySelector(`.${Pagination.pagesWrapperClass}`);
     this.page = parseInt(this.paginationElement.getAttribute('data-current-page'), 10);
     this.addListener();
   }

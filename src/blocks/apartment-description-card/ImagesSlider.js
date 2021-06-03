@@ -1,9 +1,14 @@
 class ImagesSlider {
   static sliderItemClass = 'js-apartment-description-card__slider-item';
+
   static indicatorsClass = 'js-apartment-description-card__indicator';
+
   static currentImageClass = 'apartment-description-card__slider-item_showing';
+
   static currentIndicatorClass = 'apartment-description-card__indicator_current';
+
   static prevButtonClass = 'js-apartment-description-card__prev-button';
+
   static nextButtonClass = 'js-apartment-description-card__next-button';
 
   constructor(element) {

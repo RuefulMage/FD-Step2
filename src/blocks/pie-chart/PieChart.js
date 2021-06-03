@@ -34,31 +34,14 @@ class PieChart {
       if (index !== 0) {
         offset += sectorPercent;
       }
-      this.setSectorPosition(sector, sectorPercent, offset);
+      PieChart.setSectorPosition(sector, sectorPercent, offset);
       const bullet = this.bullets[index];
       const gradientElement = document.querySelector(`#${PieChart.gradientIdBasis + (index + 1)}`);
       const startColor = gradientElement.children[0].getAttribute('stop-color');
       const endColor = gradientElement.children[1].getAttribute('stop-color');
       this.hangUpMouseEventListeners([sector, bullet], amount, startColor, endColor);
-      this.addColorToBullet(bullet, startColor, endColor);
+      PieChart.addColorToBullet(bullet, startColor, endColor);
     });
-  }
-
-  setSectorPosition(element, percent, offsetPercent) {
-    const pi = 22 / 7;
-    const radius = element.getAttribute('r');
-    const circumference = 2 * pi * radius;
-    let sectionLength = circumference * (percent / 100);
-    let restLength = circumference * ((100 - percent) / 100);
-    const offsetLength = circumference * (offsetPercent / 100) - 1;
-    if (sectionLength !== 0) {
-      sectionLength -= 2;
-    }
-    if (restLength !== 0) {
-      restLength += 2;
-    }
-    element.setAttribute('stroke-dasharray', `${sectionLength},${restLength}`);
-    element.setAttribute('stroke-dashoffset', offsetLength);
   }
 
   hangUpMouseEventListeners(elements, amount, startColor, endColor) {
@@ -82,7 +65,24 @@ class PieChart {
     elements.forEach((item) => item.addEventListener('mouseout', handleMouseOut));
   }
 
-  addColorToBullet(bullet, startColor, endColor) {
+  static setSectorPosition(element, percent, offsetPercent) {
+    const pi = 22 / 7;
+    const radius = element.getAttribute('r');
+    const circumference = 2 * pi * radius;
+    let sectionLength = circumference * (percent / 100);
+    let restLength = circumference * ((100 - percent) / 100);
+    const offsetLength = circumference * (offsetPercent / 100) - 1;
+    if (sectionLength !== 0) {
+      sectionLength -= 2;
+    }
+    if (restLength !== 0) {
+      restLength += 2;
+    }
+    element.setAttribute('stroke-dasharray', `${sectionLength},${restLength}`);
+    element.setAttribute('stroke-dashoffset', offsetLength);
+  }
+
+  static addColorToBullet(bullet, startColor, endColor) {
     const bulletPointer = bullet.children[0];
     bulletPointer.style.background = `linear-gradient(${startColor}, ${endColor})`;
   }
