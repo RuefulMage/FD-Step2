@@ -6,11 +6,11 @@
 
   &__bullet {
     position: relative;
+    padding-bottom: 10px;
     padding-left: 20px;
     line-height: 1.5rem; //24px при базовом размере шрифта 16px
     text-align: left;
     list-style: none;
-    padding-bottom: 10px;
 
     &:before {
       position: absolute;
@@ -23,7 +23,7 @@
       content: '';
     }
 
-    &:last-child{
+    &:last-child {
       padding-bottom: 0;
     }
   }

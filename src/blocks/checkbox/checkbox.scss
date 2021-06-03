@@ -55,9 +55,9 @@
     padding-left: 10px;
     color: $dark-50;
     line-height: 1.125rem; //18px при базовом размере шрифта 16px
+    text-align: left;
     cursor: pointer;
     user-select: none;
-    text-align: left;
 
     &_bold {
       color: $dark-75;
