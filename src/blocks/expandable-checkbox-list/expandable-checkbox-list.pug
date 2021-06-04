@@ -15,4 +15,4 @@ mixin expandable-checkbox-list(title, itemsList, expanded=false)
     ul(class=listClasses)
       each item in itemsList
         li.expandable-checkbox-list__list-item
-          +checkbox(item.text, false, item.checked)
+          +checkbox({ text: item.text, checked: item.checked })
