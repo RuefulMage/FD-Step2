@@ -20,11 +20,35 @@ module.exports = {
     paths: PATHS
   },
   entry: {
-    app: PATHS.src
+    app: `${PATHS.src}/index.js`,
+    cards: `${PATHS.src}/pages/cards/cards.js`,
+    home: `${PATHS.src}/pages/home/home.js`,
+    index: `${PATHS.src}/pages/index/index.js`,
+    registration: `${PATHS.src}/pages/registration/registration.js`,
+    search: `${PATHS.src}/pages/search/search.js`,
+    'colors-and-fonts': `${PATHS.src}/pages/colors-and-fonts/colors-and-fonts.js`,
+    'forms-elements': `${PATHS.src}/pages/forms-elements/forms-elements.js`,
+    'headers-and-footers': `${PATHS.src}/pages/headers-and-footers/headers-and-footers.js`,
+    'pages-layout': `${PATHS.src}/pages/pages-layout/pages-layout.js`,
+    'room-details': `${PATHS.src}/pages/room-details/room-details.js`,
+    'sign-in': `${PATHS.src}/pages/sign-in/sign-in.js`,
   },
   output: {
-    filename: `${PATHS.assets}js/[name].js`,
+    filename: `${PATHS.assets}js/[name].[hash].js`,
     path: PATHS.dist,
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+      cacheGroups: {
+        vendor: {
+          name: 'vendors',
+          test: /node_modules/,
+          chunks: 'all',
+          enforce: true
+        }
+      }
+    }
   },
   module: {
     rules: [
@@ -106,12 +130,13 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: `${PATHS.assets}css/[name].css`,
+      filename: `${PATHS.assets}css/[name].[hash].css`,
     }),
     new HtmlWebpackPlugin({
-      hash: false,
       template: `${PATHS.src}/pages/index/index.pug`,
-      filename: `./index.html`
+      filename: `./index.html`,
+      title: 'Custom template',
+      inject: false
     }),
     new CopyWebpackPlugin([
       {from: `${PATHS.src}/**/**/images/*`, to: `${PATHS.assets}images/[name].[ext]`},
@@ -124,7 +149,8 @@ module.exports = {
     }),
     ...PAGES.map(page => new HtmlWebpackPlugin({
       template: `${PATHS.src}/${PATHS.pages}${page}/${page}.pug`,
-      filename: `./${PATHS.pages}${page}/${page}.html`
+      filename: `./${PATHS.pages}${page}/${page}.html`,
+      inject: false
     }))
   ],
 }
