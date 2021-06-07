@@ -13,6 +13,9 @@ include ../../blocks/title/title
 block page-meta
   meta(name="keywords" content="Search, Toxin")
   meta(name="description" content="Toxin search page")
+  each file in htmlWebpackPlugin.files.css
+    if /search|app/i.test(file)
+      link(href=file rel="stylesheet")
   title Search
 
 block content
@@ -144,3 +147,7 @@ block content
               +apartment-description-card(card)
         .search__pagination
           +pagination('1', '15', 'mock-address', '1 – 12 из 100+ вариантов аренды')
+
+  each file in htmlWebpackPlugin.files.js
+    if /search|app/i.test(file)
+      script(src=file)

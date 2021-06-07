@@ -11,6 +11,9 @@ include ../../blocks/apartment-description-card/apartment-description-card
 block page-meta
     meta(name="keywords" content="Cards, Toxin")
     meta(name="description" content="Toxin cards demonstration page")
+    each file in htmlWebpackPlugin.files.css
+      if /cards|app/i.test(file)
+        link(href=file rel="stylesheet")
     title Cards
 
 block body
@@ -71,3 +74,7 @@ block body
             reviewsAmount: '65',
             link: 'mock-address'
           })
+
+  each file in htmlWebpackPlugin.files.js
+    if /cards|app/i.test(file)
+      script(src=file)

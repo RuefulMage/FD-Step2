@@ -25,6 +25,9 @@ include ../../blocks/title/title
 block page-meta
   meta(name="keywords" content="Form, Toxin")
   meta(name="description" content="Toxin form elements demonstration page")
+  each file in htmlWebpackPlugin.files.css
+    if /forms\-elements|app/i.test(file)
+      link(href=file rel="stylesheet")
   title Forms Elements
 
 block body
@@ -415,3 +418,7 @@ block body
               commentText: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
               liked: true
             })
+
+  each file in htmlWebpackPlugin.files.js
+    if /forms\-elements|app/i.test(file)
+      script(src=file)

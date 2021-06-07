@@ -10,6 +10,9 @@ include ../../blocks/title/title
 block page-meta
   meta(name="keywords" content="Room, Toxin")
   meta(name="description" content="Toxin room details page")
+  each file in htmlWebpackPlugin.files.css
+    if /room\-details|app/i.test(file)
+      link(href=file rel="stylesheet")
   title Room details
 
 block content
@@ -83,3 +86,7 @@ block content
               | чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
       section.room-details__card
         +apartment-booking-card(bookingCardData)
+
+  each file in htmlWebpackPlugin.files.js
+    if /room\-details|app/i.test(file)
+      script(src=file)

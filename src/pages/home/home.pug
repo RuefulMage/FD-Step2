@@ -5,6 +5,9 @@ include ../../blocks/find-apartment-card/find-apartment-card
 block page-meta
   meta(name="keywords" content="Home, Toxin")
   meta(name="description" content="Toxin home page")
+  each file in htmlWebpackPlugin.files.css
+    if /home|app/i.test(file)
+      link(href=file rel="stylesheet")
   title Home
 
 block content
@@ -19,3 +22,7 @@ block content
           link: 'mock-address'
         })
       p.home__tagline Лучшие номера для вашей работы, отдыха и просто вдохновения
+
+  each file in htmlWebpackPlugin.files.js
+    if /home|app/i.test(file)
+      script(src=file)

@@ -9,6 +9,9 @@ include ../../blocks/small-footer/small-footer
 block page-meta
   meta(name="keywords" content="Header, Footer, Toxin")
   meta(name="description" content="Toxin headers and footers demonstration page")
+  each file in htmlWebpackPlugin.files.css
+    if /headers\-and\-footers|app/i.test(file)
+      link(href=file rel="stylesheet")
   title Headers & Footers
 
 block body
@@ -75,3 +78,7 @@ block body
       },
         { icon: '', link: 'https://www.facebook.com/' },
         { icon: '', link: 'https://www.instagram.com/' }])
+
+  each file in htmlWebpackPlugin.files.js
+    if /headers\-and\-footers|app/i.test(file)
+      script(src=file)

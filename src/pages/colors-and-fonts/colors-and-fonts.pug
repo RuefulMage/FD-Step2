@@ -7,6 +7,9 @@ include ../../blocks/text-type/text-type
 block page-meta
   meta(name="keywords" content="Colors, Fonts, Toxin")
   meta(name="description" content="Toxin colors and fonts demonstration page")
+  each file in htmlWebpackPlugin.files.css
+    if /colors\-and\-fonts|app/i.test(file)
+      link(href=file rel="stylesheet")
   title Colors & Fonts
 
 block body
@@ -38,3 +41,7 @@ block body
           +text-type('H3', 'This is a label or CTA text', 'small')
         .colors-and-fonts__item.colors-and-fonts__item_margin-large.colors-and-fonts__item_width-large
           +text-type('Body', 'This is the body text which is used for most of the design, like paragraphs, lists, etc.')
+
+  each file in htmlWebpackPlugin.files.js
+    if /colors\-and\-fonts|app/i.test(file)
+      script(src=file)

@@ -5,9 +5,16 @@ include ../../blocks/registration-card/registration-card
 block page-meta
   meta(name="keywords" content="Registration, Toxin")
   meta(name="description" content="Toxin registration page")
+  each file in htmlWebpackPlugin.files.css
+    if /registration|app/i.test(file)
+      link(href=file rel="stylesheet")
   title Registration
 
 block content
   main.registration
     .registration__card
       +registration-card('Регистрация аккаунта', 'mock-address')
+
+  each file in htmlWebpackPlugin.files.js
+    if /registration|app/i.test(file)
+      script(src=file)

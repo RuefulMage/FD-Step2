@@ -3,7 +3,9 @@ extends ../main-layout/main-layout
 block page-meta
     meta(name="keywords" content="Toxin")
     meta(name="description" content="Toxin demonstration page")
-    link(href="./assets/css/app.css" rel="stylesheet")
+    each file in htmlWebpackPlugin.files.css
+      if /app|index/i.test(file)
+        link(href=file rel="stylesheet")
     title Index
 
 block body
@@ -29,3 +31,7 @@ block body
           a.index__item-link(href="./pages/registration/registration.html") registration
         .index__item
           a.index__item-link(href="./pages/sign-in/sign-in.html") sign in
+
+  each file in htmlWebpackPlugin.files.js
+    if /app|index/i.test(file)
+      script(src=file)

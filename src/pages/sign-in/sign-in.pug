@@ -5,9 +5,16 @@ include ../../blocks/signin-card/signin-card
 block page-meta
   meta(name="keywords" content="Sign in, Log in, Toxin")
   meta(name="description" content="Toxin sign in page")
+  each file in htmlWebpackPlugin.files.css
+    if /sign\-in|app/i.test(file)
+      link(href=file rel="stylesheet")
   title Sign in
 
 block content
   main.sign-in
     .sign-in__card
       +signin-card('mock-address')
+
+  each file in htmlWebpackPlugin.files.js
+    if /sign\-in|app/i.test(file)
+      script(src=file)
