@@ -29,26 +29,12 @@ module.exports = {
     'colors-and-fonts': `${PATHS.src}/pages/colors-and-fonts/colors-and-fonts.js`,
     'forms-elements': `${PATHS.src}/pages/forms-elements/forms-elements.js`,
     'headers-and-footers': `${PATHS.src}/pages/headers-and-footers/headers-and-footers.js`,
-    'pages-layout': `${PATHS.src}/pages/pages-layout/pages-layout.js`,
     'room-details': `${PATHS.src}/pages/room-details/room-details.js`,
     'sign-in': `${PATHS.src}/pages/sign-in/sign-in.js`,
   },
   output: {
     filename: `${PATHS.assets}js/[name].[hash].js`,
     path: PATHS.dist,
-  },
-  optimization: {
-    splitChunks: {
-      chunks: "all",
-      cacheGroups: {
-        vendor: {
-          name: 'vendors',
-          test: /node_modules/,
-          chunks: 'all',
-          enforce: true
-        }
-      }
-    }
   },
   module: {
     rules: [
