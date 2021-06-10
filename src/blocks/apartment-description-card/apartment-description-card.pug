@@ -1,7 +1,7 @@
 include ../rate-button/rate-button
 include ../apartment-info/apartment-info
 
-mixin apartment-description-card({ images, number, price, currency, rateButtonName, starAmount, reviewsAmount, link, lux=false })
+mixin apartment-description-card({ images, number, price, currency, rateButtonName, starAmount, reviewsAmount, link, lux = false })
   article.apartment-description-card
     .apartment-description-card__slider.js-apartment-description-card__slider
       each item in images

@@ -1,6 +1,6 @@
 include ../checkbox/checkbox
 
-mixin rich-checkbox(primaryText, secondaryText, checked=false)
+mixin rich-checkbox(primaryText, secondaryText, checked = false)
   .rich-checkbox
     +checkbox({ text: primaryText, bold: true, checked: checked })
     span.rich-checkbox__secondary-text !{ secondaryText }

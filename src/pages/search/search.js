@@ -15,7 +15,7 @@ import '../../blocks/dropdown/dropdown.scss';
 import '../../blocks/range-slider/range-slider.scss';
 import '../../blocks/checkbox/checkbox.scss';
 import '../../blocks/rich-checkbox/rich-checkbox.scss';
-import '../../blocks/checkbox/checkbox.scss';
+
 import '../../blocks/expandable-checkbox-list/expandable-checkbox-list.scss';
 import '../../blocks/apartment-description-card/apartment-description-card.scss';
 import '../../blocks/rate-button/rate-button.scss';

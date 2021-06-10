@@ -1,9 +1,9 @@
 include ../like-button/like-button
 
-mixin comment({ avatar, fullName, lastViewedTime, likeAmount, commentText , liked=false })
+mixin comment({ avatar, fullName, lastViewedTime, likeAmount, commentText , liked = false })
   section.comment-box
     .comment-box__user-container
-      img.comment-box__user-avatar(src=require('./images/' + avatar), alt="avatar")
+      img.comment-box__user-avatar(src=require(`./images/${ avatar }`), alt="avatar")
       .comment-box__user-info
         .comment-box__username !{ fullName }
         .comment-box__last-viewed !{ lastViewedTime }

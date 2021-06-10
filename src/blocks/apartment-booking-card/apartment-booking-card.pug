@@ -4,7 +4,7 @@ include ../form-button/form-button
 include ../dropdown/dropdown
 include ../title/title
 
-mixin apartment-booking-card({ number, price, currency, lux=false, dateDropdownHeaders, dropdownHeader, expression, expressionResult, servicePriceLabel, servicePrice, extraServiceLabel,  extraServicePrice, totalPrice, noteTexts, buttonText, link })
+mixin apartment-booking-card({ number, price, currency, lux = false, dateDropdownHeaders, dropdownHeader, expression, expressionResult, servicePriceLabel, servicePrice, extraServiceLabel,  extraServicePrice, totalPrice, noteTexts, buttonText, link })
   form.apartment-booking-card(method="POST" action=link)
     .apartment-booking-card__main-info
       +apartment-info({ number: number, price: price, currency: currency, largeNumber: true, lux: lux })

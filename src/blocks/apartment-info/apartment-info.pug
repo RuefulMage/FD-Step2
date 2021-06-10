@@ -1,4 +1,4 @@
-mixin apartment-info({ number, price, currency, largeNumber=false, lux=false })
+mixin apartment-info({ number, price, currency, largeNumber = false, lux = false })
   - let number_classes = ['apartment-info__number']
   if largeNumber
     - number_classes.push('apartment-info__number_large')
@@ -9,6 +9,5 @@ mixin apartment-info({ number, price, currency, largeNumber=false, lux=false })
       if lux
         span.apartment-info__lux &nbsp;люкс
     .apartment-info__price-wrapper
-      - let priceWithCurrency = price + currency;
-      span.apartment-info__price !{ priceWithCurrency }
+      span.apartment-info__price !{ `${ price }${ currency }` }
       span.apartment-info__measure &nbsp;в сутки
