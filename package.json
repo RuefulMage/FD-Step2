@@ -7,8 +7,8 @@
     "dev": "webpack-dev-server --open --config webpackConfigs/webpack.dev.conf.js",
     "build": "webpack --config webpackConfigs/webpack.build.conf.js",
     "deploy": "gh-pages -d dist",
-    "stylelint": "stylelint '**/*{.css,.scss}'",
-    "stylelint:fix": "stylelint '**/*{.css,.scss}' --fix",
+    "stylelint": "stylelint **/*{.css,.scss}",
+    "stylelint:fix": "stylelint **/*{.css,.scss} --fix",
     "eslint": "eslint src/**/*.js",
     "eslint:fix": "eslint src/**/*.js --fix"
   },
